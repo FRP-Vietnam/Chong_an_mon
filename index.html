@@ -35,7 +35,6 @@
             <div class="flex items-center space-x-4">
                 <span class="flex items-center text-slate-200"><i class="fa-solid fa-shield-halved text-brand-gold mr-1.5"></i> <span data-i18n="topbar_title">Mạng Lưới Tư Vấn & Bọc Phủ FRP Chống Ăn Mòn Quốc Tế</span></span>
             </div>
-            <!-- Thanh chọn nhanh ngôn ngữ -->
             <div class="flex items-center space-x-2">
                 <span class="text-slate-400 text-[11px] mr-1">Language:</span>
                 <button onclick="switchLanguage('vi')" id="btn-vi" class="px-2 py-0.5 rounded text-[11px] font-bold bg-brand-gold text-navy-950 transition">VI</button>
@@ -51,7 +50,6 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Gọi trực tiếp file logo.png từ kho GitHub của bạn -->
                 <div class="flex items-center space-x-3.5 cursor-pointer py-1" onclick="window.scrollTo({top:0, behavior:'smooth'})">
                     <div class="h-12 sm:h-14 flex-shrink-0 flex items-center">
                         <img src="logo.png" alt="COMPOSITE FRP SOLUTIONS" class="h-full w-auto object-contain">
@@ -89,52 +87,76 @@
         </div>
     </section>
 
-    <!-- CHEMICAL RESISTANCE MATRIX HUB (4 KHỐI CHI TIẾT ĐẦY ĐỦ) -->
+    <!-- CHEMICAL RESISTANCE MATRIX HUB (CỰC KỲ CHI TIẾT & CHUYÊN SÂU KỸ THUẬT) -->
     <section id="matrix-calculator" class="py-16 bg-navy-900 border-t border-white/10">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="glass-card rounded-2xl p-6 sm:p-10 shadow-2xl border border-white/20">
                 <div class="text-center mb-10">
-                    <h2 class="text-xl sm:text-2xl font-black text-white mb-2"><i class="fa-solid fa-flask-vial text-brand-gold mr-2"></i> <span data-i18n="matrix_heading">Tra Cứu Ma Trận Kháng Hóa Chất Quốc Tế</span></h2>
-                    <p class="text-xs text-slate-300" data-i18n="matrix_sub">Hệ thống phân tích tự động đề xuất giải pháp nhựa tối ưu giữa Derakane và Swancor.</p>
+                    <h2 class="text-xl sm:text-2xl font-black text-white mb-2"><i class="fa-solid fa-flask-vial text-brand-gold mr-2"></i> <span data-i18n="matrix_heading">Tra Cứu Ma Trận Kháng Hóa Chất & Đề Xuất Kỹ Thuật Chuyên Sâu</span></h2>
+                    <p class="text-xs text-slate-300 max-w-3xl mx-auto" data-i18n="matrix_sub">Hệ thống phân tích ma trận kỹ thuật đa tầng đối chiếu tiêu chuẩn kháng hóa chất quốc tế (ASTM / ISO) giúp xác định chính xác chủng loại nhựa, cấu trúc lớp lót (CR Barrier) và tuổi thọ thiết kế.</p>
                 </div>
 
-                <!-- 4 Khối tra cứu chi tiết -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <!-- Khối 1 -->
-                    <div class="bg-navy-950 p-4 rounded-xl border border-white/10">
-                        <label class="block text-[11px] font-bold text-brand-gold uppercase mb-2" data-i18n="m_block1">1. Hóa Chất Chính (H1)</label>
-                        <input type="text" id="chemH1" placeholder="VD: H2SO4, HCl, NaOH..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+                <!-- Bảng tra 4 khối thông số chi tiết -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+                    <!-- Khối 1: Hóa chất chính -->
+                    <div class="bg-navy-950 p-5 rounded-xl border border-white/10 shadow-inner">
+                        <label class="block text-xs font-black text-brand-gold uppercase mb-2"><i class="fa-solid fa-atom mr-1"></i> 1. Hóa Chất Chính (H1)</label>
+                        <select id="chemH1" class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold mb-3">
+                            <option value="H2SO4">Axit Sunfuric (H2SO4)</option>
+                            <option value="HCl">Axit Clohydric (HCl)</option>
+                            <option value="HNO3">Axit Nitric (HNO3)</option>
+                            <option value="H3PO4">Axit Photphoric (H3PO4)</option>
+                            <option value="NaOH">Xút / Natri Hydroxit (NaOH)</option>
+                            <option value="NaOCl">Javen / Natri Hypoclorit (NaOCl)</option>
+                            <option value="SOLVENT">Dung môi hữu cơ / Toluene / Acetone</option>
+                            <option value="OTHER">Hóa chất đặc biệt khác...</option>
+                        </select>
+                        <input type="text" id="chemH1Custom" placeholder="Hoặc nhập tên hóa chất tùy chỉnh..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2 text-xs text-slate-300 focus:outline-none focus:border-brand-gold">
                     </div>
-                    <!-- Khối 2 -->
-                    <div class="bg-navy-950 p-4 rounded-xl border border-white/10">
-                        <label class="block text-[11px] font-bold text-brand-gold uppercase mb-2" data-i18n="m_block2">2. Hóa Chất Phối Hợp (H2)</label>
-                        <input type="text" id="chemH2" placeholder="VD: NaCl, HNO3 phụ..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+
+                    <!-- Khối 2: Hóa chất phối hợp -->
+                    <div class="bg-navy-950 p-5 rounded-xl border border-white/10 shadow-inner">
+                        <label class="block text-xs font-black text-brand-gold uppercase mb-2"><i class="fa-solid fa-circle-nodes mr-1"></i> 2. Hóa Chất Phối Hợp (H2)</label>
+                        <input type="text" id="chemH2" placeholder="VD: NaCl, FeCl3, Muối sulfat..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold mb-3">
+                        <p class="text-[11px] text-slate-400 italic">Thành phần đi kèm trong dung dịch làm việc (nếu có).</p>
                     </div>
-                    <!-- Khối 3 -->
-                    <div class="bg-navy-950 p-4 rounded-xl border border-white/10">
-                        <label class="block text-[11px] font-bold text-brand-gold uppercase mb-2" data-i18n="m_block3">3. Nồng Độ & Nhiệt Độ</label>
-                        <div class="flex space-x-2">
-                            <input type="text" id="chemConc" placeholder="Nồng độ %" class="w-1/2 bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white">
-                            <input type="text" id="chemTemp" placeholder="Nhiệt độ °C" class="w-1/2 bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white">
+
+                    <!-- Khối 3: Nồng độ & Nhiệt độ -->
+                    <div class="bg-navy-950 p-5 rounded-xl border border-white/10 shadow-inner">
+                        <label class="block text-xs font-black text-brand-gold uppercase mb-2"><i class="fa-solid fa-temperature-high mr-1"></i> 3. Nồng Độ & Nhiệt Độ</label>
+                        <div class="space-y-2 mb-2">
+                            <div>
+                                <span class="text-[10px] text-slate-300 block mb-0.5">Nồng độ làm việc (%):</span>
+                                <input type="number" id="chemConc" value="30" min="1" max="100" class="w-full bg-navy-900 border border-white/20 rounded-lg p-2 text-xs text-white">
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-300 block mb-0.5">Nhiệt độ vận hành (°C):</span>
+                                <input type="number" id="chemTemp" value="45" min="0" max="150" class="w-full bg-navy-900 border border-white/20 rounded-lg p-2 text-xs text-white">
+                            </div>
                         </div>
                     </div>
-                    <!-- Khối 4 -->
-                    <div class="bg-navy-950 p-4 rounded-xl border border-white/10">
-                        <label class="block text-[11px] font-bold text-brand-gold uppercase mb-2" data-i18n="m_block4">4. Biến Thể / Tạp Chất</label>
-                        <input type="text" id="chemVar" placeholder="VD: Khí Cl2, HF..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
+
+                    <!-- Khối 4: Biến thể / Tạp chất bay hơi -->
+                    <div class="bg-navy-950 p-5 rounded-xl border border-white/10 shadow-inner">
+                        <label class="block text-xs font-black text-brand-gold uppercase mb-2"><i class="fa-solid fa-wind mr-1"></i> 4. Biến Thể / Khí Bay Hơi</label>
+                        <input type="text" id="chemVar" placeholder="VD: Khí Cl2, hơi HCl, SO2, HF..." class="w-full bg-navy-900 border border-white/20 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-brand-gold mb-2">
+                        <span class="text-[10px] text-slate-400 block italic">Pha hơi đỉnh bồn hoặc khí phát sinh trong phản ứng hóa học.</span>
                     </div>
                 </div>
 
                 <div class="text-center">
-                    <button onclick="calculateMatrix()" class="bg-brand-gold hover:bg-amber-500 text-navy-950 font-black py-3 px-10 rounded-xl text-xs shadow-lg transition">
-                        <i class="fa-solid fa-calculator mr-2"></i> <span data-i18n="matrix_btn">TRA CỨU GIẢI PHÁP NHỰA TỐI ƯU</span>
+                    <button onclick="calculateMatrix()" class="bg-brand-gold hover:bg-amber-500 text-navy-950 font-black py-3.5 px-10 rounded-xl text-xs shadow-xl transition transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-calculator mr-2"></i> <span data-i18n="matrix_btn">PHÂN TÍCH & ĐỀ XUẤT GIẢI PHÁP NHỰA TỐI ƯU</span>
                     </button>
                 </div>
 
-                <!-- Dynamic Result Box -->
-                <div id="resultBox" class="hidden bg-navy-950 border border-brand-gold/50 rounded-xl p-6 mt-6">
-                    <h3 class="text-xs font-black text-brand-gold uppercase mb-3"><i class="fa-solid fa-square-check mr-2"></i><span data-i18n="matrix_result_title">Kết Quả Phân Tích Ma Trận Kỹ Thuật:</span></h3>
-                    <div id="resultContent" class="text-xs text-slate-200 space-y-2"></div>
+                <!-- Dynamic Detailed Technical Result Box -->
+                <div id="resultBox" class="hidden bg-navy-950 border-2 border-brand-gold/60 rounded-2xl p-6 sm:p-8 mt-8 shadow-2xl">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                        <h3 class="text-sm font-black text-brand-gold uppercase tracking-wider"><i class="fa-solid fa-square-check mr-2"></i><span data-i18n="matrix_result_title">BẢNG KẾT QUẢ ĐỐI SOÁT KỸ THUẬT & ĐỀ XUẤT VẬT LIỆU</span></h3>
+                        <span class="bg-brand-gold/20 text-brand-gold text-[10px] px-3 py-1 rounded-full font-bold">Standard ASTM / ISO Compliance</span>
+                    </div>
+                    <div id="resultContent" class="space-y-4 text-xs text-slate-200"></div>
                 </div>
             </div>
         </div>
@@ -148,7 +170,7 @@
                 <p class="text-xs text-slate-300" data-i18n="brand_sub">Hệ thống tài liệu kỹ thuật tập trung chuyên sâu độc quyền vào Derakane và Swancor.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-brand-gold/30">
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-brand-gold/35">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-base font-black text-brand-gold">DERAKANE (Dòng Cao Cấp)</h3>
                         <span class="bg-brand-gold/20 text-brand-gold text-[10px] px-2.5 py-1 rounded-full font-bold">Premium Vinyl Ester</span>
@@ -161,7 +183,7 @@
                         <li><i class="fa-solid fa-check text-brand-gold mr-2"></i><strong>Độ bền thiết kế:</strong> 15 - 20 năm trong điều kiện khắc nghiệt</li>
                     </ul>
                 </div>
-                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-cyan-500/30">
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border border-cyan-500/35">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-base font-black text-cyan-300">SWANCOR (Dòng Kinh Tế)</h3>
                         <span class="bg-cyan-500/20 text-cyan-300 text-[10px] px-2.5 py-1 rounded-full font-bold">Economic Solution</span>
@@ -218,298 +240,4 @@
                         </div>
                         <div>
                             <label class="block text-[11px] font-bold text-slate-300 mb-1" data-i18n="file2_label">Đính kèm hình ảnh hiện trạng (.jpg, .png)</label>
-                            <input type="file" class="w-full text-xs text-slate-300 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-brand-gold file:text-navy-950 file:font-bold hover:file:bg-amber-500">
-                        </div>
-                    </div>
-
-                    <div class="text-center pt-4">
-                        <button type="submit" class="bg-brand-gold hover:bg-amber-500 text-navy-950 font-black py-3 px-10 rounded-xl text-xs shadow-lg transition" data-i18n="form_submit_btn">
-                            GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-navy-950 border-t border-navy-800 py-8 text-center text-xs text-slate-400">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p>© 2026 COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK. All rights reserved.</p>
-            <p>Hotline/Zalo: <strong class="text-brand-gold">0906 952 142</strong> | Email: <strong class="text-cyan-400">giaiphapcompositefrp@gmail.com</strong></p>
-        </div>
-    </footer>
-
-    <!-- SCRIPT ĐA NGÔN NGỮ & MA TRẬN HÓA CHẤT -->
-    <script>
-        const translations = {
-            vi: {
-                topbar_title: "Mạng Lưới Tư Vấn & Bọc Phủ FRP Chống Ăn Mòn Quốc Tế",
-                nav_home: "Trang Chủ",
-                nav_matrix: "Ma Trận Hóa Chất",
-                nav_brands: "Derakane vs Swancor",
-                nav_consulting: "5 Bước Tư Vấn",
-                nav_packages: "3 Phương Án",
-                nav_quote: "Liên Hệ Báo Giá",
-                btn_request: "Gửi Yêu Cầu Báo Giá",
-                hero_title: "MẠNG LƯỚI GIẢI PHÁP BỌC PHỦ COMPOSITE FRP CHỐNG ĂN MÒN VIỆT NAM",
-                hero_desc: "Hệ thống chuẩn quốc tế chuyên sâu vật liệu kháng hóa chất. Phân định rõ ràng giữa dòng nhựa cao cấp <strong>DERAKANE</strong> (Ineos/Ashland) và dòng kinh tế <strong>SWANCOR</strong>.",
-                matrix_heading: "Tra Cứu Ma Trận Kháng Hóa Chất Quốc Tế",
-                matrix_sub: "Hệ thống phân tích tự động đề xuất giải pháp nhựa tối ưu giữa Derakane và Swancor.",
-                m_block1: "1. Hóa Chất Chính (H1)",
-                m_block2: "2. Hóa Chất Phối Hợp (H2)",
-                m_block3: "3. Nồng Độ & Nhiệt Độ",
-                m_block4: "4. Biến Thể / Tạp Chất",
-                matrix_btn: "TRA CỨU GIẢI PHÁP NHỰA TỐI ƯU",
-                matrix_result_title: "Kết Quả Phân Tích Ma Trận Kỹ Thuật:",
-                brand_heading: "Phân Biệt Hai Dòng Nhựa Chủ Đạo",
-                brand_sub: "Hệ thống tài liệu kỹ thuật tập trung chuyên sâu độc quyền vào Derakane và Swancor.",
-                derakane_desc: "Nhựa Vinyl Ester cao cấp toàn cầu (Ineos/Ashland), tối ưu cho môi trường khắc nghiệt nhất: Axit đặc nóng, oxy hóa mạnh, dung môi và khí Clo nhiệt độ cao.",
-                swancor_desc: "Giải pháp Vinyl Ester tiêu chuẩn kinh tế, hiệu quả cao cho bồn chứa hóa chất nồng độ trung bình, hệ thống xử lý nước thải và nhà xưởng công nghiệp.",
-                consult_heading: "Chuyên Tư Vấn Lên Phương Án Chống Ăn Mòn",
-                consult_sub: "Quy trình chuẩn hóa quốc tế từ khảo sát đến nghiệm thu bàn giao.",
-                c1_title: "01. Khảo Sát Thực Tế", c1_desc: "Đánh giá điều kiện môi trường công trình, nồng độ hóa chất và chu kỳ nhiệt độ.",
-                c2_title: "02. Hồ Sơ Kỹ Thuật & Bản Vẽ", c2_desc: "Thiết kế chi tiết lớp lót chống ăn mòn (CR barrier), định mức lớp sợi và tổng bề dày.",
-                c3_title: "03. Bóc Tách Khối Lượng", c3_desc: "Tính toán định mức nhựa Derakane/Swancor, lớp sợi mat/roving tối ưu chi phí.",
-                c4_title: "04. Biện Pháp Thi Công", c4_desc: "Kiểm soát chuẩn bị bề mặt bê tông/thép (CSP), thông gió và an toàn VOC/Styrene.",
-                c5_title: "05. Nghiệm Thu & Ngâm Test", c5_desc: "Kiểm tra độ kín khít bằng Holiday test và ngâm thử nghiệm tiêu chuẩn.",
-                c6_title: "Hỗ Trợ Chuyên Sâu 24/7", c6_desc: "Cam kết đồng hành cùng nhà thầu và chủ đầu tư trong mọi dự án lớn.",
-                form_heading: "Gửi Đề Nghị Báo Giá & Phương Án Kỹ Thuật",
-                form_sub: "Đội ngũ kỹ sư chuyên gia sẽ phản hồi phương án chi tiết trong vòng 24h.",
-                file1_label: "Đính kèm bản vẽ kỹ thuật (.pdf, .dwg)",
-                file2_label: "Đính kèm hình ảnh hiện trạng (.jpg, .png)",
-                form_submit_btn: "GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT"
-            },
-            en: {
-                topbar_title: "International Anti-Corrosion FRP Consulting & Coating Network",
-                nav_home: "Home",
-                nav_matrix: "Chemical Matrix",
-                nav_brands: "Derakane vs Swancor",
-                nav_consulting: "5-Step Consulting",
-                nav_packages: "3 Packages",
-                nav_quote: "Get a Quote",
-                btn_request: "Request Quote",
-                hero_title: "VIETNAM COMPOSITE FRP ANTI-CORROSION SOLUTIONS NETWORK",
-                hero_desc: "International standard chemical resistant material engineering. Clear distinction between premium <strong>DERAKANE</strong> (Ineos/Ashland) and economic <strong>SWANCOR</strong> resins.",
-                matrix_heading: "International Chemical Resistance Matrix Lookup",
-                matrix_sub: "Automated analysis system recommending optimal resin solutions between Derakane and Swancor.",
-                m_block1: "1. Main Chemical (H1)",
-                m_block2: "2. Co-Chemical (H2)",
-                m_block3: "3. Concentration & Temp",
-                m_block4: "4. Variant / Byproduct",
-                matrix_btn: "LOOK UP OPTIMAL RESIN SOLUTION",
-                matrix_result_title: "Technical Matrix Analysis Result:",
-                brand_heading: "Core Resin Brands Distinction",
-                brand_sub: "Technical documentation exclusively focused on Derakane and Swancor.",
-                derakane_desc: "Global premium Vinyl Ester resin (Ineos/Ashland), optimized for extreme environments: hot concentrated acids, strong oxidizers, high temp solvents & chlorine gas.",
-                swancor_desc: "Economic standard Vinyl Ester solution, highly effective for medium concentration chemical tanks, wastewater treatment systems, and industrial plants.",
-                consult_heading: "Expert Anti-Corrosion Project Consulting",
-                consult_sub: "International standardized process from site survey to handover and testing.",
-                c1_title: "01. Site Assessment", c1_desc: "Evaluate working environment conditions, chemical concentrations, and thermal cycles.",
-                c2_title: "02. Technical Drawings", c2_desc: "Design detailed corrosion-resistant barrier (CR barrier), fiber reinforcement & total thickness.",
-                c3_title: "03. Material Takeoff", c3_desc: "Calculate precise resin and glass fiber quantities to optimize project budget.",
-                c4_title: "04. Execution Method", c4_desc: "Control concrete/steel surface preparation (CSP), ventilation, and VOC/Styrene safety.",
-                c5_title: "05. Testing & Handover", c5_desc: "Verify structural leak tightness using Holiday testing and standard immersion tests.",
-                c6_title: "24/7 Expert Support", c6_desc: "Committed to partnering with contractors and investors on major projects.",
-                form_heading: "Submit Quotation & Technical Proposal Request",
-                form_sub: "Our team of expert engineers will respond with a detailed proposal within 24h.",
-                file1_label: "Attach technical drawings (.pdf, .dwg)",
-                file2_label: "Attach site condition images (.jpg, .png)",
-                form_submit_btn: "SUBMIT QUOTATION & TECHNICAL PROPOSAL REQUEST"
-            },
-            ja: {
-                topbar_title: "国際腐食防止FRPエンジニアリングネットワーク",
-                nav_home: "ホーム",
-                nav_matrix: "耐薬品性マトリックス",
-                nav_brands: "DERAKANE vs SWANCOR",
-                nav_consulting: "5ステップコンサルティング",
-                nav_packages: "3つのパッケージ",
-                nav_quote: "見積もり依頼",
-                btn_request: "お見積り",
-                hero_title: "ベトナムコンポジットFRP防食ソリューションネットワーク",
-                hero_desc: "国際基準の耐薬品材料エンジニアリング。最高級<strong>DERAKANE</strong>（Ineos/Ashland）と経済的な<strong>SWANCOR</strong>樹脂を明確に区別。",
-                matrix_heading: "国際耐薬品性マトリックス検索",
-                matrix_sub: "DerakaneとSwancorの間で最適な樹脂ソリューションを自動提案するシステム。",
-                m_block1: "1. 主薬品 (H1)",
-                m_block2: "2. 配合薬品 (H2)",
-                m_block3: "3. 濃度 & 温度",
-                m_block4: "4. 変異体 / 副生成物",
-                matrix_btn: "最適樹脂ソリューションを検索",
-                matrix_result_title: "技術マトリックス分析結果:",
-                brand_heading: "主要樹脂ブランドの区別",
-                brand_sub: "DerakaneおよびSwancorに特化した技術文書。",
-                derakane_desc: "グローバルプレミアムビニルエステル樹脂（Ineos/Ashland）。高濃度高温酸、強力な酸化剤、溶剤、高温塩素ガスなどの極限環境に最適。",
-                swancor_desc: "経済的な標準ビニルエステルソリューション。中濃度化学タンク、排水処理設備、産業プラントに高効率。",
-                consult_heading: "防食プロジェクト専門コンサルティング",
-                consult_sub: "現地調査から引き渡しまでの国際標準プロセス。",
-                c1_title: "01. 現地調査", c1_desc: "作業環境条件、化学物質濃度、温度サイクルを評価。",
-                c2_title: "02. 技術図面作成", c2_desc: "耐食バリア（CRバリア）、ガラス繊維の仕様、総厚の設計。",
-                c3_title: "03. 数量積算", c3_desc: "樹脂とガラス繊維の正確な数量を計算し、予算を最適化。",
-                c4_title: "04. 施工計画", c4_desc: "コンクリート/鋼鉄の表面処理（CSP）、換気、VOC/スチレン安全管理。",
-                c5_title: "05. 検査・引き渡し", c5_desc: "ホリデーテスターによるピンホール検査および標準浸漬テスト。",
-                c6_title: "24/7専門サポート", c6_desc: "大規模プロジェクトにおいて請負業者や投資家を全面的にサポート。",
-                form_heading: "お見積りおよび技術提案のご依頼",
-                form_sub: "専門エンジニアチームが24時間以内に詳細な提案をお送りします。",
-                file1_label: "技術図面の添付 (.pdf, .dwg)",
-                file2_label: "現況写真の添付 (.jpg, .png)",
-                form_submit_btn: "お見積りおよび技術提案を送信する"
-            },
-            ko: {
-                topbar_title: "국제 부식 방지 FRP 엔지니어링 네트워크",
-                nav_home: "홈",
-                nav_matrix: "내화학성 매트릭스",
-                nav_brands: "DERAKANE vs SWANCOR",
-                nav_consulting: "5단계 컨설팅",
-                nav_packages: "3가지 패키지",
-                nav_quote: "견적 문의",
-                btn_request: "견적 요청",
-                hero_title: "베트남 복합재 FRP 부식 방지 솔루션 네트워크",
-                hero_desc: "국제 표준 내화학 소재 엔지니어링. 최고급 <strong>DERAKANE</strong>(Ineos/Ashland)과 경제적인 <strong>SWANCOR</strong> 수지의 명확한 구분.",
-                matrix_heading: "국제 내화학성 매트릭스 조회",
-                matrix_sub: "Derakane과 Swancor 중 최적의 수지 솔루션을 자동으로 추천하는 시스템.",
-                m_block1: "1. 주 화학물질 (H1)",
-                m_block2: "2. 혼합 화학물질 (H2)",
-                m_block3: "3. 농도 & 온도",
-                m_block4: "4. 부산물 / 변형 물질",
-                matrix_btn: "최적의 수지 솔루션 검색",
-                matrix_result_title: "기술 매트릭스 분석 결과:",
-                brand_heading: "핵심 수지 브랜드 구분",
-                brand_sub: "Derakane 및 Swancor에 특화된 기술 문서.",
-                derakane_desc: "글로벌 프리미엄 비닐에스터 수지(Ineos/Ashland), 고온 고농도 산, 강력한 산화제, 고온 염소 가스 등 극한 환경에 최적화.",
-                swancor_desc: "경제적인 표준 비닐에스터 솔루션, 중농도 화학 탱크, 폐수 처리 시스템 및 산업용 공장에 고효율.",
-                consult_heading: "전문 방식(부식방지) 프로젝트 컨설팅",
-                consult_sub: "현장 조사부터 인수인계까지 국제 표준 프로세스.",
-                c1_title: "01. 현장 실사", c1_desc: "작업 환경 조건, 화학물질 농도 및 온도 주기를 평가합니다.",
-                c2_title: "02. 기술 도면 설계", c2_desc: "내식 배리어(CR barrier), 유리섬유 보강재 및 총 두께를 상세 설계합니다.",
-                c3_title: "03. 물량 산출", c3_desc: "수지 및 유리섬유 소요량을 정확히 계산하여 예산을 최적화합니다.",
-                c4_title: "04. 시공 방법", c4_desc: "콘크리트/철골 표면 처리(CSP), 환기 및 VOC/스티렌 안전 관리를 수행합니다.",
-                c5_title: "05. 검사 및 인수인계", c5_desc: "핀홀 탐지기(Holiday test) 검사 및 표준 침지 테스트를 진행합니다.",
-                c6_title: "24/7 전문 지원", c6_desc: "대규모 프로젝트에서 시공사와 투자자와 함께 동행합니다.",
-                form_heading: "견적 및 기술 제안 요청",
-                form_sub: "전문 엔지니어 팀이 24시간 이내에 상세한 제안을 회신해 드립니다.",
-                file1_label: "기술 도면 첨부 (.pdf, .dwg)",
-                file2_label: "현장 사진 첨부 (.jpg, .png)",
-                form_submit_btn: "견적 및 기술 제안 요청 전송"
-            },
-            zh: {
-                topbar_title: "国际防腐FRP工程咨询与涂层网络",
-                nav_home: "首页",
-                nav_matrix: "化学品耐受矩阵",
-                nav_brands: "DERAKANE 与 SWANCOR",
-                nav_consulting: "五步咨询",
-                nav_packages: "三种方案",
-                nav_quote: "联系报价",
-                btn_request: "发送报价请求",
-                hero_title: "越南复合材料FRP防腐解决方案网络",
-                hero_desc: "国际标准抗化学腐蚀材料工程。明确区分高端 <strong>DERAKANE</strong>（Ineos/Ashland）与经济型 <strong>SWANCOR</strong> 树脂。",
-                matrix_heading: "国际化学品耐受矩阵查询",
-                matrix_sub: "自动分析系统，为您推荐 Derakane 与 Swancor 之间的最佳树脂方案。",
-                m_block1: "1. 主化学品 (H1)",
-                m_block2: "2. 配合化学品 (H2)",
-                m_block3: "3. 浓度与温度",
-                m_block4: "4. 变体/副产物",
-                matrix_btn: "查询最优树脂方案",
-                matrix_result_title: "技术矩阵分析结果：",
-                brand_heading: "核心树脂品牌区别",
-                brand_sub: "技术资料专注于 Derakane 与 Swancor 两大主力品牌。",
-                derakane_desc: "全球高端乙烯基酯树脂（Ineos/Ashland），专为严苛环境优化：高温强酸、强氧化剂、溶剂及高温氯气环境。",
-                swancor_desc: "经济型标准乙烯基酯解决方案，经济高效，适用于中等浓度储罐、废水处理系统及工业厂房。",
-                consult_heading: "防腐方案专业咨询",
-                consult_sub: "从现场勘测到竣工交付的国际标准化流程。",
-                c1_title: "01. 现场勘测", c1_desc: "评估施工现场环境条件、化学品浓度及热循环周期。",
-                c2_title: "02. 技术图纸设计", c2_desc: "设计耐腐蚀层（CR barrier）、玻璃纤维增强层及总厚度。",
-                c3_title: "03. 工程量清单", c3_desc: "精确计算树脂及纤维用量，实现项目造价最优。",
-                c4_title: "04. 施工方案", c4_desc: "控制混凝土/钢构表面处理（CSP）、通风及VOC/苯乙烯安全。",
-                c5_title: "05. 验收与浸泡测试", c5_desc: "通过电火花检测（Holiday test）及标准浸泡测试验证密封性。",
-                c6_title: "24/7 专家支持", c6_desc: "承诺在各大项目中全程陪伴承包商与业主。",
-                form_heading: "发送报价与技术方案请求",
-                form_sub: "专业工程师团队将在24小时内回复详细方案。",
-                file1_label: "附带技术图纸 (.pdf, .dwg)",
-                file2_label: "附带现场现状图片 (.jpg, .png)",
-                form_submit_btn: "发送报价与技术方案请求"
-            }
-        };
-
-        function switchLanguage(lang) {
-            localStorage.setItem('preferred_lang', lang);
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            // Cập nhật trạng thái nút bấm active
-            ['vi', 'en', 'ja', 'ko', 'zh'].forEach(l => {
-                const btn = document.getElementById('btn-' + l);
-                if (btn) {
-                    if (l === lang) {
-                        btn.className = "px-2 py-0.5 rounded text-[11px] font-bold bg-brand-gold text-navy-950 transition shadow";
-                    } else {
-                        btn.className = "px-2 py-0.5 rounded text-[11px] font-bold bg-navy-800 text-slate-300 hover:text-white transition";
-                    }
-                }
-            });
-        }
-
-        // Tự động nhận diện ngôn ngữ trình duyệt khi khách vào web
-        window.addEventListener('DOMContentLoaded', () => {
-            let userLang = localStorage.getItem('preferred_lang');
-            if (!userLang) {
-                const browserLang = navigator.language || navigator.userLanguage;
-                if (browserLang.startsWith('en')) userLang = 'en';
-                else if (browserLang.startsWith('ja')) userLang = 'ja';
-                else if (browserLang.startsWith('ko')) userLang = 'ko';
-                else if (browserLang.startsWith('zh')) userLang = 'zh';
-                else userLang = 'vi';
-            }
-            switchLanguage(userLang);
-        });
-
-        function calculateMatrix() {
-            const h1 = document.getElementById('chemH1').value.trim();
-            const h2 = document.getElementById('chemH2').value.trim();
-            const conc = document.getElementById('chemConc').value.trim();
-            const temp = document.getElementById('chemTemp').value.trim();
-            const varChem = document.getElementById('chemVar').value.trim();
-            
-            const resultBox = document.getElementById('resultBox');
-            const resultContent = document.getElementById('resultContent');
-
-            if (!h1) {
-                alert("Vui lòng nhập tên hóa chất chính (H1).");
-                return;
-            }
-
-            resultBox.classList.remove('hidden');
-            let derakane = "Derakane 411-350 / Derakane Signia";
-            let swancor = "Swancor 901";
-            let note = "Phù hợp cho bồn bể chứa và lớp lót chống ăn mòn tiêu chuẩn.";
-
-            const h1Up = h1.toUpperCase();
-            if (h1Up.includes("H2SO4") || h1Up.includes("SULFURIC") || h1Up.includes("HNO3")) {
-                derakane = "Derakane 470 / Derakane 441 (Novolac Vinyl Ester)";
-                swancor = "Swancor 907";
-                note = "Khuyến nghị sử dụng lớp lót CR barrier 2.5mm sợi C-glass kháng axit nồng độ cao.";
-            } else if (h1Up.includes("CL2") || h1Up.includes("CLO") || h1Up.includes("SOLVENT") || varChem.toUpperCase().includes("CL2")) {
-                derakane = "Derakane 470 (High Temperature & Solvent Resistance)";
-                swancor = "Swancor 984";
-                note = "Yêu cầu dòng nhựa chịu dung môi và khí Clo nhiệt độ cao.";
-            }
-
-            resultContent.innerHTML = `
-                <p>• <strong>Hóa chất chính (H1):</strong> ${h1} | <strong>Phối hợp (H2):</strong> ${h2 || 'Không'}</p>
-                <p>• <strong>Nồng độ:</strong> ${conc || 'Tiêu chuẩn'}% | <strong>Nhiệt độ:</strong> ${temp || 'Thường'}°C | <strong>Biến thể:</strong> ${varChem || 'Không'}</p>
-                <p>• <strong>Đề xuất Dòng Cao Cấp (DERAKANE):</strong> <span class="text-brand-gold font-black">${derakane}</span></p>
-                <p>• <strong>Đề xuất Dòng Kinh Tế (SWANCOR):</strong> <span class="text-cyan-300 font-black">${swancor}</span></p>
-                <p>• <strong>Khuyến cáo kỹ thuật:</strong> ${note}</p>
-            `;
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('clientName').value;
-            alert(`Cảm ơn ${name}! Đề nghị báo giá và phương án kỹ thuật của bạn đã được gửi thành công. Kỹ sư sẽ phản hồi trong vòng 24h.`);
-        }
-    </script>
-</body>
-</html>
+                            <input type="file" class="w-full text-xs text-slate-300 file:mr-2 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-brand-gold file:text-navy-950 file:font-bold hover:
