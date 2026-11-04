@@ -4,31 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK</title>
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0f172a',
-                        accent: '#2563eb',
-                        industrial: '#1e293b'
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
 
-    <!-- Top Bar & Language Selector -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo Brand SVG sắc nét -->
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg border border-blue-400/30">
+                <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center shadow-lg border border-blue-400/30">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
                     </svg>
@@ -38,273 +24,89 @@
                     <span class="text-xs text-blue-400 font-medium tracking-widest uppercase">Vietnam International Network</span>
                 </div>
             </div>
-
-            <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#matrix" class="hover:text-blue-400 transition">Ma Trận Hóa Chất</a>
+                <a href="#brands" class="hover:text-blue-400 transition">Derakane vs Swancor</a>
                 <a href="#consulting" class="hover:text-blue-400 transition">Tư Vấn Phương Án</a>
-                <a href="#brands" class="hover:text-blue-400 transition">DERAKANE vs SWANCOR</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Liên Hệ Báo Giá</a>
             </nav>
-
-            <!-- Language Switcher -->
-            <div class="flex items-center space-x-4">
-                <select id="langSelect" class="bg-slate-900 border border-slate-700 text-xs rounded px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-blue-500">
-                    <option value="vi">VI (Tiếng Việt)</option>
-                    <option value="en">EN (English)</option>
-                    <option value="ja">JA (日本語)</option>
-                    <option value="ko">KO (한국어)</option>
-                    <option value="zh">ZH (中文)</option>
-                </select>
-            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-widest uppercase mb-6">
+    <section class="py-16 bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-800 text-center px-4">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-widest uppercase mb-4">
                 Global Industrial FRP Engineering Network
             </span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-wide leading-relaxed mb-6">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-wide mb-4">
                 MẠNG LƯỚI GIẢI PHÁP BỌC PHỦ COMPOSITE FRP CHỐNG ĂN MÒN VIỆT NAM
             </h1>
-            <p class="text-slate-400 text-base sm:text-lg max-w-3xl mx-auto mb-10 leading-relaxed">
-                Đơn vị tư vấn & thiết kế kỹ thuật chống ăn mòn hóa chất tiêu chuẩn quốc tế. Chuyên biệt giải pháp nhựa cao cấp <strong>DERAKANE</strong> (Ineos) và nhựa kinh tế <strong>SWANCOR</strong>.
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Chuyên gia tư vấn vật liệu chịu hóa chất khắt khe. Phân định rõ ràng giữa dòng nhựa cao cấp <strong>DERAKANE</strong> và dòng kinh tế <strong>SWANCOR</strong> cho mọi công trình[cite: 17, 20].
             </p>
         </div>
     </section>
 
-    <!-- Chemical Matrix Hub (Front & Center) -->
-    <section id="matrix" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-6 sm:p-10 shadow-2xl">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Tra Cứu Ma Trận Kháng Hóa Chất Quốc Tế</h2>
-                <p class="text-slate-400 text-sm">Hệ thống phân tích tự động đề xuất chủng loại nhựa tối ưu giữa Derakane và Swancor.</p>
+    <!-- Chemical Matrix Calculator -->
+    <section id="matrix" class="py-14 max-w-7xl mx-auto px-4">
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-white mb-2">Tra Cứu Ma Trận Kháng Hóa Chất</h2>
+                <p class="text-slate-400 text-sm">Hệ thống phân tích và đề xuất chủng loại nhựa tự động.</p>
             </div>
-
-            <!-- 4 Blocks Input Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <label class="block text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">1. Hóa Chất Chính (H1)</label>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <label class="block text-xs font-semibold text-blue-400 uppercase mb-2">1. Hóa Chất Chính (H1)</label>
                     <input type="text" id="chemH1" placeholder="VD: H2SO4, HCl, NaOH..." class="w-full bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <label class="block text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">2. Hóa Chất Phối Hợp (H2)</label>
-                    <input type="text" id="chemH2" placeholder="VD: NaCl, HNO3 phụ..." class="w-full bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <label class="block text-xs font-semibold text-blue-400 uppercase mb-2">2. Hóa Chất Phối Hợp (H2)</label>
+                    <input type="text" id="chemH2" placeholder="VD: NaCl, HNO3..." class="w-full bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
                 </div>
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <label class="block text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">3. Nồng Độ & Nhiệt Độ</label>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <label class="block text-xs font-semibold text-blue-400 uppercase mb-2">3. Nồng Độ & Nhiệt Độ</label>
                     <div class="flex space-x-2">
                         <input type="text" id="chemConc" placeholder="Nồng độ %" class="w-1/2 bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
                         <input type="text" id="chemTemp" placeholder="Nhiệt độ °C" class="w-1/2 bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
                     </div>
                 </div>
-                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                    <label class="block text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">4. Biến Thể / Tạp Chất</label>
+                <div class="bg-slate-900 p-4 rounded-xl border border-slate-700">
+                    <label class="block text-xs font-semibold text-blue-400 uppercase mb-2">4. Biến Thể / Tạp Chất</label>
                     <input type="text" id="chemVar" placeholder="Dung môi / Hơi khí..." class="w-full bg-slate-950 border border-slate-700 rounded p-2 text-sm text-white focus:outline-none focus:border-blue-500">
                 </div>
             </div>
-
-            <div class="text-center mb-6">
-                <button onclick="calculateMatrix()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition duration-200">
+            <div class="text-center">
+                <button onclick="calculateMatrix()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-xl shadow transition">
                     <i class="fa-solid fa-calculator mr-2"></i> TRA CỨU GIẢI PHÁP NHỰA TỐI ƯU
                 </button>
             </div>
-
-            <!-- Dynamic Result Box -->
-            <div id="resultBox" class="hidden bg-slate-950 border border-blue-500/40 rounded-xl p-6 mt-6">
-                <h3 class="text-lg font-bold text-blue-400 mb-3"><i class="fa-solid fa-square-check mr-2"></i>Kết Quả Phân Tích Ma Trận Kỹ Thuật:</h3>
-                <div id="resultContent" class="text-sm text-slate-300 space-y-2"></div>
+            <div id="resultBox" class="hidden bg-slate-950 border border-blue-500/40 rounded-xl p-5 mt-6">
+                <h3 class="text-base font-bold text-blue-400 mb-2"><i class="fa-solid fa-circle-check mr-2"></i>Kết Quả Đề Xuất Kỹ Thuật:</h3>
+                <div id="resultContent" class="text-sm text-slate-300 space-y-1"></div>
             </div>
         </div>
     </section>
 
-    <!-- Material Brands Comparison Section -->
-    <section id="brands" class="py-16 bg-slate-950/40 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Phân Biệt Dòng Nhựa Chủ Đạo</h2>
-                <p class="text-slate-400 text-sm">Hệ thống tài liệu kỹ thuật tập trung chuyên sâu vào DERAKANE và SWANCOR.</p>
+    <!-- Brands Comparison Section -->
+    <section id="brands" class="py-14 bg-slate-950/40 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white mb-2">Phân Biệt Dòng Nhựa Chủ Đạo</h2>
+                <p class="text-slate-400 text-sm">Hệ thống tài liệu tập trung độc quyền vào hai thương hiệu hàng đầu[cite: 17, 20].</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Derakane Box -->
-                <div class="bg-gradient-to-br from-blue-950/40 to-slate-900 border border-blue-500/30 p-8 rounded-2xl shadow-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-blue-400">DERAKANE (Dòng Cao Cấp)</h3>
-                        <span class="bg-blue-500/20 text-blue-300 text-xs px-3 py-1 rounded-full font-semibold">Premium Vinyl Ester</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-blue-950/30 to-slate-900 border border-blue-500/30 p-6 rounded-2xl">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-bold text-blue-400">DERAKANE (Dòng Cao Cấp)</h3>
+                        <span class="bg-blue-500/20 text-blue-300 text-xs px-2.5 py-1 rounded font-semibold">Premium Vinyl Ester</span>
                     </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Nhựa Epoxy Vinyl Ester cao cấp chuẩn quốc tế (Ineos/Ashland), tối ưu cho các môi trường ăn mòn cực kỳ khắc nghiệt: Axit oxy hóa mạnh, dung môi hữu cơ, hệ khí Clo nhiệt độ cao.
+                    <p class="text-slate-300 text-sm mb-3 leading-relaxed">
+                        Nhựa Epoxy Vinyl Ester cao cấp chuẩn quốc tế (Ineos/Ashland), chuyên dụng cho môi trường khắc nghiệt nhất: Axit đậm đặc, oxy hóa mạnh, nhiệt độ cao và dung môi khó[cite: 17, 20].
                     </p>
-                    <ul class="text-slate-400 text-xs space-y-2">
-                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i>Các mã chủ lực: Derakane 411-350, Derakane 470, Derakane 8084, Derakane 441</li>
-                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i>Độ dẻo dai cơ học cao, chịu sốc nhiệt và tuổi thọ thiết kế lên đến 15-20 năm</li>
+                    <ul class="text-slate-400 text-xs space-y-1">
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i>Mã chủ lực: Derakane 411-350, 470, 8084, 441[cite: 17]</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i>Tuổi thọ thiết kế dài hạn từ 15 - 20 năm</li>
                     </ul>
                 </div>
-
-                <!-- Swancor Box -->
-                <div class="bg-gradient-to-br from-slate-900 to-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-slate-200">SWANCOR (Dòng Kinh Tế)</h3>
-                        <span class="bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded-full font-semibold">Economic Solution</span>
-                    </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Giải pháp nhựa Vinyl Ester tiêu chuẩn kinh tế, hiệu quả cho bồn bể chứa hóa chất thông thường, bể xử lý nước thải và nhà máy công nghiệp vừa & nhỏ.
-                    </p>
-                    <ul class="text-slate-400 text-xs space-y-2">
-                        <li><i class="fa-solid fa-check text-slate-400 mr-2"></i>Các mã chủ lực: Swancor 901, Swancor 907, Swancor 984</li>
-                        <li><i class="fa-solid fa-check text-slate-400 mr-2"></i>Tối ưu chi phí đầu tư ban đầu, dễ thi công bọc phủ tại công trình</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Consulting & Steps Section -->
-    <section id="consulting" class="py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Chuyên Tư Vấn Lên Phương Án Chống Ăn Mòn</h2>
-                <p class="text-slate-400 text-sm">Quy trình chuyên nghiệp từ khảo sát thực tế đến nghiệm thu kỹ thuật.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                    <div class="text-blue-400 text-2xl font-bold mb-3">01</div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Khảo Sát & Điều Kiện Thực Tế</h3>
-                    <p class="text-slate-400 text-sm">Đánh giá môi trường làm việc tại công trình, phân tích thành phần hóa chất và nhiệt độ chu kỳ.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                    <div class="text-blue-400 text-2xl font-bold mb-3">02</div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Hồ Sơ Kỹ Thuật & Bản Vẽ</h3>
-                    <p class="text-slate-400 text-sm">Lập bản vẽ chi tiết cấu tạo lớp lót chống ăn mòn (CR barrier), định mức lớp sợi và bề dày.</p>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                    <div class="text-blue-400 text-2xl font-bold mb-3">03</div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Thi Công & Nghiệm Thu</h3>
-                    <p class="text-slate-400 text-sm">Bóc tách khối lượng vật tư, kiểm soát an toàn VOC/Styrene và kiểm tra độ kín Holiday test.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Quotation Form Section -->
-    <section id="contact" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-8 shadow-xl">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-white mb-2">Gửi Đề Nghị Báo Giá & Phương Án Kỹ Thuật</h2>
-                <p class="text-slate-400 text-sm">Đội ngũ kỹ sư chuyên gia sẽ phản hồi phương án chi tiết trong vòng 24h.</p>
-            </div>
-            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input type="text" id="clientName" placeholder="Họ và tên / Công ty của bạn" required class="bg-slate-950 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-blue-500">
-                    <input type="email" id="clientEmail" placeholder="Địa chỉ Email liên hệ" required class="bg-slate-950 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-blue-500">
-                </div>
-                <textarea id="clientNote" rows="4" placeholder="Mô tả chi tiết hóa chất, nồng độ, nhiệt độ và yêu cầu kỹ thuật công trình (Derakane hoặc Swancor)..." required class="w-full bg-slate-950 border border-slate-700 rounded p-3 text-sm text-white focus:outline-none focus:border-blue-500"></textarea>
-                
-                <!-- File Attachments -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Đính kèm bản vẽ kỹ thuật (.pdf, .dwg)</label>
-                        <input type="file" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Đính kèm hình ảnh hiện trạng (.jpg, .png)</label>
-                        <input type="file" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-500">
-                    </div>
-                </div>
-
-                <div class="text-center pt-4">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-10 rounded-xl shadow-lg transition">
-                        GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer & Admin Login -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <p>© 2026 COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK. All rights reserved.</p>
-            <div>
-                <button onclick="openAdminLogin()" class="text-xs text-slate-600 hover:text-slate-400 transition underline">
-                    <i class="fa-solid fa-lock mr-1"></i> Đăng Nhập Quản Trị
-                </button>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Admin Modal -->
-    <div id="adminModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-700 p-6 rounded-2xl w-full max-w-md relative">
-            <button onclick="closeAdminLogin()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-shield-halved mr-2 text-blue-500"></i> Đăng Nhập Hệ Thống Quản Trị</h3>
-            <div class="space-y-3">
-                <input type="email" id="adminEmail" placeholder="Email quản trị" class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-sm text-white">
-                <input type="password" id="adminPass" placeholder="Mật khẩu" class="w-full bg-slate-950 border border-slate-700 rounded p-2.5 text-sm text-white">
-                <button onclick="verifyAdmin()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded text-sm">Xác Nhận Đăng Nhập</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dynamic Logic Script -->
-    <script>
-        function calculateMatrix() {
-            const h1 = document.getElementById('chemH1').value.trim();
-            const conc = document.getElementById('chemConc').value.trim();
-            const temp = document.getElementById('chemTemp').value.trim();
-            
-            const resultBox = document.getElementById('resultBox');
-            const resultContent = document.getElementById('resultContent');
-
-            if (!h1) {
-                alert("Vui lòng nhập tên hóa chất chính (H1) để tra cứu.");
-                return;
-            }
-
-            resultBox.classList.remove('hidden');
-            let derakaneRec = "Derakane 411-350";
-            let swancorRec = "Swancor 901";
-            let note = "Phù hợp cho bồn bể và lớp lót chống ăn mòn tiêu chuẩn.";
-
-            const h1Upper = h1.toUpperCase();
-            if (h1Upper.includes("H2SO4") || h1Upper.includes("SULFURIC") || h1Upper.includes("HNO3")) {
-                derakaneRec = "Derakane 470 / Derakane 441";
-                swancorRec = "Swancor 907";
-                note = "Khuyến cáo dùng lớp lót CR barrier 2.5mm sợi C-glass chống chịu axit mạnh.";
-            } else if (h1Upper.includes("CL2") || h1Upper.includes("CLO") || h1Upper.includes("SOLVENT")) {
-                derakaneRec = "Derakane 470";
-                swancorRec = "Swancor 984";
-                note = "Yêu cầu nhựa Novolac Vinyl Ester để kháng dung môi & khí Clo nhiệt độ cao.";
-            }
-
-            resultContent.innerHTML = `
-                <p>• <strong>Môi trường tra cứu:</strong> ${h1} (Nồng độ: ${conc || 'Tiêu chuẩn'}%, Nhiệt độ: ${temp || 'Thường'}°C)</p>
-                <p>• <strong>Chỉ định Dòng Cao Cấp:</strong> <span class="text-blue-400 font-bold">${derakaneRec}</span> (Ineos / Ashland)</p>
-                <p>• <strong>Chỉ định Dòng Kinh Tế:</strong> <span class="text-slate-300 font-bold">${swancorRec}</span> (Swancor)</p>
-                <p>• <strong>Ghi chú kỹ thuật:</strong> ${note}</p>
-            `;
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('clientName').value;
-            alert(`Cảm ơn ${name}! Yêu cầu phương án kỹ thuật và báo giá của bạn đã được gửi thành công. Kỹ sư sẽ liên hệ lại trong 24h.`);
-        }
-
-        function openAdminLogin() { document.getElementById('adminModal').classList.remove('hidden'); }
-        function closeAdminLogin() { document.getElementById('adminModal').classList.add('hidden'); }
-        function verifyAdmin() {
-            const email = document.getElementById('adminEmail').value;
-            const pass = document.getElementById('adminPass').value;
-            if (email === 'giaiphapcompositefrp@gmail.com' && pass === 'Bibo10023@') {
-                alert('Đăng nhập quản trị thành công!');
-                closeAdminLogin();
-            } else {
-                alert('Sai thông tin tài khoản hoặc mật khẩu!');
-            }
-        }
-    </script>
-</body>
-</html>
+                <div class="bg-slate-900 border border-slate-7
