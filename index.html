@@ -27,9 +27,6 @@
         body { background-color: #061e3f; color: #f8fafc; font-family: 'Inter', sans-serif; }
         .bg-navy-gradient { background: linear-gradient(135deg, #041226 0%, #061e3f 50%, #0b3c7d 100%); }
         .glass-card { background: rgba(11, 60, 125, 0.45); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); }
-        .logo-text-top { color: #22252a; font-weight: 800; letter-spacing: -0.01em; }
-        .logo-text-mid { color: #0b4fa8; font-weight: 900; letter-spacing: 0.02em; }
-        .logo-text-bot { color: #22252a; font-weight: 700; letter-spacing: 0.28em; }
     </style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
@@ -42,33 +39,14 @@
         </div>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER GỌI TRỰC TIẾP LOGO.PNG -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
             
-            <!-- LOGO -->
+            <!-- HIỂN THỊ LOGO GỐC TỪ FILE logo.png -->
             <div class="flex items-center space-x-3.5 cursor-pointer py-1" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-                <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
-                    <svg viewBox="0 0 300 300" class="w-full h-full">
-                        <rect x="25" y="25" width="250" height="250" rx="48" fill="none" stroke="#0b4fa8" stroke-width="22"/>
-                        <g fill="#0b4fa8">
-                            <rect x="52" y="138" width="34" height="34" rx="5" transform="rotate(-45 69 155)"/>
-                            <rect x="88" y="102" width="34" height="34" rx="5" transform="rotate(-45 105 119)"/>
-                            <rect x="124" y="66" width="34" height="34" rx="5" transform="rotate(-45 141 83)"/>
-                            <rect x="160" y="102" width="34" height="34" rx="5" transform="rotate(-45 177 119)"/>
-                            <rect x="196" y="138" width="34" height="34" rx="5" transform="rotate(-45 213 155)"/>
-                            <rect x="88" y="174" width="34" height="34" rx="5" transform="rotate(-45 105 191)"/>
-                            <rect x="124" y="210" width="34" height="34" rx="5" transform="rotate(-45 141 227)"/>
-                            <rect x="160" y="174" width="34" height="34" rx="5" transform="rotate(-45 177 191)"/>
-                            <path d="M 124 102 L 144 82 L 174 112 L 154 132 Z"/>
-                            <path d="M 82 144 L 112 174 L 132 154 L 102 124 Z"/>
-                        </g>
-                    </svg>
-                </div>
-                <div class="flex flex-col justify-center select-none">
-                    <div class="logo-text-top text-xs sm:text-sm tracking-tight text-slate-900 leading-none">COMPOSITE FRP</div>
-                    <div class="logo-text-mid text-lg sm:text-xl md:text-2xl font-black text-brand-blue leading-none my-0.5">SOLUTIONS</div>
-                    <div class="logo-text-bot text-[8px] sm:text-[9px] font-bold text-slate-700 uppercase leading-none">VIETNAM NETWORK</div>
+                <div class="h-12 sm:h-14 flex-shrink-0">
+                    <img src="logo.png" alt="COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK" class="h-full w-auto object-contain">
                 </div>
             </div>
 
@@ -222,37 +200,13 @@
         </div>
     </section>
 
-    <!-- ĐƯỜNG DẪN ĐẾN CÁC TRANG CON -->
-    <section class="py-12 bg-navy-950 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-xl font-black text-white mb-6">KHÁM PHÁ CÁC CHUYÊN TRANG CHI TIẾT</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <a href="tu-van-ky-thuat.html" class="glass-card p-6 rounded-2xl hover:bg-brand-blue transition-all border border-cyan-500/40 text-left group">
-                    <i class="fa-solid fa-diagram-project text-cyan-400 text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-base font-bold text-white mb-1">5 Bước Tư Vấn & 3 Gói Bọc Phủ &rarr;</h3>
-                    <p class="text-xs text-slate-300">Xem chi tiết quy trình thi công từ khảo sát đến bảo hành Gói A, B, C.</p>
-                </a>
-                <a href="ung-dung.html" class="glass-card p-6 rounded-2xl hover:bg-brand-blue transition-all border border-emerald-500/40 text-left group">
-                    <i class="fa-solid fa-industry text-emerald-400 text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-base font-bold text-white mb-1">12 Lĩnh Vực Ứng Dụng &rarr;</h3>
-                    <p class="text-xs text-slate-300">Khám phá tiêu chuẩn chống ăn mòn cho xử lý nước thải, xi mạ, dầu khí...</p>
-                </a>
-                <a href="du-an-b2b.html" class="glass-card p-6 rounded-2xl hover:bg-brand-blue transition-all border border-brand-gold/40 text-left group">
-                    <i class="fa-solid fa-satellite-dish text-brand-gold text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="text-base font-bold text-white mb-1">Sàn Dự Án Mở & CRM &rarr;</h3>
-                    <p class="text-xs text-slate-300">Truy cập thông tin dự án đầu tư công nghiệp và trung tâm quản trị.</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORM BÁO GIÁ & TƯ VẤN -->
+    <!-- FORM BÁO GIÁ & TƯ VẤN (ĐẦY ĐỦ CÁC MỤC) -->
     <section id="quote-form" class="py-16 bg-navy-900 border-t border-white/10">
         <div class="max-w-3xl mx-auto px-4">
             <div class="glass-card rounded-2xl p-6 sm:p-10 border border-brand-gold/40 shadow-2xl">
                 <div class="text-center mb-8">
                     <h2 class="text-xl sm:text-2xl font-black text-white mb-2">GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT</h2>
-                    <p class="text-xs text-slate-300">Thông tin sẽ gửi trực tiếp đến Email <strong class="text-brand-gold">giaiphapcompositefrp@gmail.com</strong> & Zalo <strong class="text-brand-gold">0906 952 142</strong></p>
+                    <p class="text-xs text-slate-300">Gửi trực tiếp đến Email <strong class="text-brand-gold">giaiphapcompositefrp@gmail.com</strong> & Zalo <strong class="text-brand-gold">0906 952 142</strong></p>
                 </div>
 
                 <form onsubmit="alert('Đề nghị báo giá của bạn đã được gửi thành công!'); return false;" class="space-y-4">
@@ -267,14 +221,12 @@
                         </div>
                     </div>
 
-                    <!-- 1. HÓA CHẤT KHÁNG ĂN MÒN, NỒNG ĐỘ, NHIỆT ĐỘ -->
                     <div>
                         <label class="block text-xs font-bold text-brand-gold mb-1"><i class="fa-solid fa-flask mr-1"></i> 1. Hóa chất kháng ăn mòn, nồng độ & Nhiệt độ làm việc *</label>
-                        <input type="text" required placeholder="VD: H2SO4 30%, HCl 15%, NaOH 10%, nhiệt độ 65°C..." class="w-full bg-navy-950 border border-brand-gold/40 rounded-xl px-3.5 py-2.5 text-xs text-amber-200">
+                        <input type="text" required placeholder="VD: H2SO4 30%, HCl 15%, nhiệt độ 65°C..." class="w-full bg-navy-950 border border-brand-gold/40 rounded-xl px-3.5 py-2.5 text-xs text-amber-200">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <!-- 2. FILE BẢN VẼ ĐÍNH KÈM -->
                         <div>
                             <label class="block text-xs font-bold text-slate-300 mb-1"><i class="fa-solid fa-file-pdf mr-1"></i> 2. Đính kèm File bản vẽ (.pdf, .dwg)</label>
                             <div class="border-2 border-dashed border-white/20 rounded-xl p-3 text-center bg-navy-950/50 hover:bg-navy-950 transition-colors cursor-pointer relative">
@@ -282,8 +234,6 @@
                                 <input type="file" onchange="updateFileName(this, 'drawing-file-text')" class="absolute inset-0 opacity-0 cursor-pointer">
                             </div>
                         </div>
-
-                        <!-- 3. FILE HÌNH HIỆN TRẠNG ĐÍNH KÈM -->
                         <div>
                             <label class="block text-xs font-bold text-slate-300 mb-1"><i class="fa-solid fa-image mr-1"></i> 3. Đính kèm File hình ảnh hiện trạng (.jpg, .png)</label>
                             <div class="border-2 border-dashed border-white/20 rounded-xl p-3 text-center bg-navy-950/50 hover:bg-navy-950 transition-colors cursor-pointer relative">
@@ -291,11 +241,6 @@
                                 <input type="file" onchange="updateFileName(this, 'image-file-text')" class="absolute inset-0 opacity-0 cursor-pointer">
                             </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-1">Yêu cầu tư vấn chi tiết / Diện tích bọc phủ m²</label>
-                        <textarea rows="3" placeholder="Ghi chú hiện trạng bề mặt bê tông, tiến độ thi công dự kiến..." class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-gradient-to-r from-brand-gold via-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-700 text-navy-950 font-black py-3.5 rounded-xl shadow-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
@@ -310,10 +255,49 @@
     <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 text-slate-700 text-xs py-6 text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <p>© 2026 Mạng Lưới Giải Pháp Composite FRP Việt Nam. Hotline/Zalo: <strong class="text-brand-blue">0906 952 142</strong> | Email: <strong class="text-brand-blue">giaiphapcompositefrp@gmail.com</strong></p>
+            <p>© 2026 Mạng Lưới Giải Pháp Composite FRP Việt Nam. Hotline/Zalo: <strong class="text-brand-blue">0906 952 142</strong></p>
         </div>
     </footer>
 
     <script>
         const i18nData = {
-            VI: { topbar_network: "Mạng Lưới Tư Vấn & Bọc Phủ FRP Chống Ăn Mòn Hàng Đầu", nav_home: "Trang Chủ", nav_matrix: "Tra H
+            VI: { topbar_network: "Mạng Lưới Tư Vấn & Bọc Phủ FRP Chống Ăn Mòn Hàng Đầu", nav_home: "Trang Chủ", nav_matrix: "Tra Hóa Chất", nav_consulting: "5 Bước Tư Vấn & Gói", nav_apps: "12 Lĩnh Vực", nav_projects: "Sàn Dự Án Mở", cta_quote: "Gửi Yêu Cầu Báo Giá", hero_subtitle: "Hệ thống chuẩn quốc tế ứng dụng nhựa cao cấp DERAKANE & SWANCOR. Tư vấn trọn gói theo bản vẽ, thực tế công trình & cam kết bảo hành dài hạn." },
+            EN: { topbar_network: "Leading FRP Anti-Corrosion Consulting & Lining Network", nav_home: "Home", nav_matrix: "Chemical Matrix", nav_consulting: "5 Steps & Packages", nav_apps: "12 Sectors", nav_projects: "B2B Projects", cta_quote: "Request Proposal", hero_subtitle: "Global chemical resistance lookup matrix. Prioritizing DERAKANE premium vinylester resins & SWANCOR standards." },
+            JA: { topbar_network: "FRP防食コンサルティング＆ライニングネットワーク", nav_home: "ホーム", nav_matrix: "化学マトリックス", nav_consulting: "コンサルティング手順", nav_apps: "12分野", nav_projects: "B2B案件", cta_quote: "見積もり依頼", hero_subtitle: "国際的な耐薬品性マトリックス検索システム。" },
+            KO: { topbar_network: "FRP 방식 컨설팅 및 라이닝 네트워크", nav_home: "홈", nav_matrix: "화학 매트릭스", nav_consulting: "단계별 공법", nav_apps: "12개 분야", nav_projects: "B2B 프로젝트", cta_quote: "견적 요청", hero_subtitle: "글로벌 화학 저항성 조회 매트릭스." },
+            ZH: { topbar_network: "FRP防腐工程咨询与衬里网络", nav_home: "首页", nav_matrix: "化学矩阵", nav_consulting: "咨询流程", nav_apps: "12大应用", nav_projects: "B2B项目", cta_quote: "发送报价请求", hero_subtitle: "国际耐化学腐蚀查询矩阵。" }
+        };
+
+        function setLanguage(lang) {
+            const flags = { VI: '🇻🇳', EN: '🇬🇧', JA: '🇯🇵', KO: '🇰🇷', ZH: '🇨🇳' };
+            document.getElementById('current-lang-code').innerText = lang;
+            document.getElementById('current-lang-flag').innerText = flags[lang] || '🇻🇳';
+            const dict = i18nData[lang] || i18nData.VI;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) el.innerText = dict[key];
+            });
+        }
+
+        function updateFileName(input, elementId) {
+            const textEl = document.getElementById(elementId);
+            if(input.files && input.files[0]) {
+                textEl.innerHTML = `<strong class="text-brand-gold"><i class="fa-solid fa-check mr-1"></i> ${input.files[0].name}</strong>`;
+            }
+        }
+
+        function calculateFRPQuick(e) {
+            e.preventDefault();
+            const variant = document.getElementById('calc-variant').value.trim();
+            const resBox = document.getElementById('calc-result-box');
+            const resName = document.getElementById('res-resin-name');
+            resBox.classList.remove('hidden');
+            if (variant.toLowerCase().includes('hf')) {
+                resName.innerHTML = `<i class="fa-solid fa-shield-virus text-purple-400"></i> DUAL LAMINATE PVDF + FRP`;
+            } else {
+                resName.innerHTML = `<i class="fa-solid fa-shield-halved text-brand-gold"></i> DERAKANE 411 / Signia 411`;
+            }
+        }
+    </script>
+</body>
+</html>
