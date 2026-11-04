@@ -15,84 +15,30 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: {
-                            950: '#041226',
-                            900: '#061e3f',
-                            800: '#0b3c7d',
-                            700: '#0f4ea1',
-                            600: '#1565c0',
-                            500: '#1e88e5'
-                        },
-                        brand: {
-                            blue: '#0b4fa8',
-                            charcoal: '#22252a',
-                            gold: '#f59e0b',
-                            amber: '#d97706'
-                        }
+                        navy: { 950: '#041226', 900: '#061e3f', 800: '#0b3c7d', 700: '#0f4ea1', 600: '#1565c0', 500: '#1e88e5' },
+                        brand: { blue: '#0b4fa8', charcoal: '#22252a', gold: '#f59e0b', amber: '#d97706' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style>
-        body {
-            background-color: #061e3f;
-            color: #f8fafc;
-            font-family: 'Inter', sans-serif;
-        }
-        .bg-navy-gradient {
-            background: linear-gradient(135deg, #041226 0%, #061e3f 50%, #0b3c7d 100%);
-        }
-        .glass-card {
-            background: rgba(11, 60, 125, 0.45);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .glass-card-hover:hover {
-            background: rgba(15, 78, 161, 0.55);
-            border-color: rgba(245, 158, 11, 0.5);
-            transform: translateY(-2px);
-            transition: all 0.3s ease;
-        }
-        .logo-text-top {
-            color: #22252a;
-            font-weight: 800;
-            letter-spacing: -0.01em;
-        }
-        .logo-text-mid {
-            color: #0b4fa8;
-            font-weight: 900;
-            letter-spacing: 0.02em;
-        }
-        .logo-text-bot {
-            color: #22252a;
-            font-weight: 700;
-            letter-spacing: 0.28em;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #061e3f;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #0f4ea1;
-            border-radius: 4px;
-        }
+        body { background-color: #061e3f; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .bg-navy-gradient { background: linear-gradient(135deg, #041226 0%, #061e3f 50%, #0b3c7d 100%); }
+        .glass-card { background: rgba(11, 60, 125, 0.45); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); }
+        .glass-card-hover:hover { background: rgba(15, 78, 161, 0.55); border-color: rgba(245, 158, 11, 0.5); transform: translateY(-2px); transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- TOP ANNOUNCEMENT BAR -->
+    <!-- TOP BAR -->
     <div class="bg-navy-950 border-b border-navy-700/60 text-xs py-2 px-4 text-slate-300">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center space-x-4">
-                <span class="flex items-center text-slate-200"><i class="fa-solid fa-shield-halved text-brand-gold mr-1.5"></i> <span data-i18n="topbar_network">Mạng Lưới Tư Vấn & Bọc Phủ FRP Chống Ăn Mòn Hàng Đầu</span></span>
+                <span class="flex items-center text-slate-200"><i class="fa-solid fa-shield-halved text-brand-gold mr-1.5"></i> <span data-i18n="topbar_network">International Anti-Corrosion FRP Network</span></span>
                 <span class="hidden md:inline text-navy-600">|</span>
-                <span class="hidden md:inline text-cyan-300"><i class="fa-solid fa-certificate mr-1.5"></i> <span data-i18n="topbar_standards">Chuẩn Nhựa DERAKANE Cao Cấp / SWANCOR Kinh Tế</span></span>
+                <span class="hidden md:inline text-cyan-300"><i class="fa-solid fa-certificate mr-1.5"></i> <span data-i18n="topbar_standards">Premium DERAKANE & SWANCOR Standards</span></span>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="tel:0906952142" class="hover:text-brand-gold transition-colors"><i class="fa-solid fa-phone text-brand-gold mr-1"></i> Hotline/Zalo: 0906 952 142</a>
@@ -102,13 +48,11 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER / NAVIGATION -->
+    <!-- HEADER / NAVIGATION CHUẨN TRANG CON CHI TIẾT -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
-                <!-- EXACT REPRODUCTION OF LOGO AS PER USER IMAGE -->
-                <div class="flex items-center space-x-3.5 cursor-pointer py-1" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <div class="flex items-center space-x-3.5 cursor-pointer py-1" onclick="window.location.href='index.html'">
                     <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
                         <svg viewBox="0 0 300 300" class="w-full h-full">
                             <rect x="20" y="20" width="260" height="260" rx="45" fill="none" stroke="#0b4fa8" stroke-width="22"/>
@@ -120,515 +64,89 @@
                             </g>
                         </svg>
                     </div>
-
                     <div class="flex flex-col justify-center select-none">
-                        <div class="logo-text-top text-xs sm:text-sm tracking-tight text-slate-900 leading-none">COMPOSITE FRP</div>
-                        <div class="logo-text-mid text-lg sm:text-xl md:text-2xl font-black text-brand-blue leading-none my-0.5">SOLUTIONS</div>
-                        <div class="logo-text-bot text-[8px] sm:text-[9px] font-bold text-slate-700 uppercase leading-none">VIETNAM NETWORK</div>
+                        <div class="text-xs sm:text-sm font-extrabold text-slate-900 leading-none">COMPOSITE FRP</div>
+                        <div class="text-lg sm:text-xl md:text-2xl font-black text-brand-blue leading-none my-0.5">SOLUTIONS</div>
+                        <div class="text-[8px] sm:text-[9px] font-bold text-slate-700 uppercase tracking-widest leading-none">VIETNAM NETWORK</div>
                     </div>
                 </div>
 
-                <!-- DESKTOP NAVIGATION (ĐÃ THAY CRM THÀNH TIN TỨC) -->
                 <nav class="hidden lg:flex items-center space-x-6 text-xs font-bold text-slate-700">
-                    <a href="#hero" class="hover:text-brand-blue transition-colors py-2" data-i18n="nav_home">Trang Chủ</a>
-                    <a href="#matrix-calculator" class="hover:text-brand-blue transition-colors py-2 flex items-center gap-1">
-                        <i class="fa-solid fa-calculator text-brand-gold"></i> <span data-i18n="nav_matrix">Tra Hóa Chất</span>
-                    </a>
-                    <a href="#consulting-hub" class="hover:text-brand-blue transition-colors py-2" data-i18n="nav_consulting">5 Bước Tư Vấn</a>
-                    <a href="#packages" class="hover:text-brand-blue transition-colors py-2" data-i18n="nav_packages">3 Gói Bọc Phủ</a>
-                    <a href="#applications" class="hover:text-brand-blue transition-colors py-2" data-i18n="nav_apps">12 Lĩnh Vực</a>
-                    <a href="#projects-hub" class="hover:text-brand-blue transition-colors py-2 flex items-center gap-1">
-                        <span class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                        </span>
-                        <span data-i18n="nav_projects">Sàn Dự Án Mở</span>
-                    </a>
-                    <a href="#news-section" class="hover:text-brand-blue transition-colors py-2" data-i18n="nav_news">Tin Tức & Kỹ Thuật</a>
+                    <a href="index.html" class="text-brand-blue border-b-2 border-brand-blue pb-1" data-i18n="nav_home">Trang Chủ</a>
+                    <a href="tra-hoa-chat.html" class="hover:text-brand-blue transition-colors py-1 flex items-center gap-1"><i class="fa-solid fa-calculator text-brand-gold"></i> <span data-i18n="nav_matrix">Tra Hóa Chất</span></a>
+                    <a href="tu-van-ky-thuat.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_consulting">5 Bước Tư Vấn & Gói</a>
+                    <a href="ung-dung.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_apps">12 Lĩnh Vực</a>
+                    <a href="du-an-b2b.html" class="hover:text-brand-blue transition-colors py-1 flex items-center gap-1"><span class="h-2 w-2 rounded-full bg-brand-gold animate-ping"></span> <span data-i18n="nav_projects">Sàn Dự Án Mở</span></a>
                 </nav>
 
-                <!-- RIGHT CONTROLS: LANGUAGE & CTA -->
                 <div class="hidden sm:flex items-center space-x-3">
                     <div class="relative group">
-                        <button class="flex items-center space-x-1.5 bg-slate-100 border border-slate-300 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-800 hover:bg-slate-200 transition-colors">
-                            <span id="current-lang-flag">🇻🇳</span>
-                            <span id="current-lang-code">VI</span>
+                        <button class="flex items-center space-x-1.5 bg-slate-100 border border-slate-300 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-800">
+                            <span id="current-lang-flag">🇻🇳</span> <span id="current-lang-code">VI</span>
                             <i class="fa-solid fa-chevron-down text-[10px] text-slate-500"></i>
                         </button>
                         <div class="absolute right-0 mt-1 w-36 bg-white border border-slate-200 rounded-xl shadow-2xl hidden group-hover:block p-1 text-xs text-slate-800 z-50">
-                            <button onclick="setLanguage('VI')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center space-x-2 font-medium"><span>🇻🇳</span><span>Tiếng Việt</span></button>
-                            <button onclick="setLanguage('EN')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center space-x-2 font-medium"><span>🇬🇧</span><span>English</span></button>
-                            <button onclick="setLanguage('JA')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center space-x-2 font-medium"><span>🇯🇵</span><span>日本語</span></button>
-                            <button onclick="setLanguage('KO')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center space-x-2 font-medium"><span>🇰🇷</span><span>한국어</span></button>
-                            <button onclick="setLanguage('ZH')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center space-x-2 font-medium"><span>🇨🇳</span><span>中文</span></button>
+                            <button onclick="setLanguage('VI')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100">🇻🇳 Tiếng Việt</button>
+                            <button onclick="setLanguage('EN')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100">🇬🇧 English</button>
+                            <button onclick="setLanguage('JA')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100">🇯🇵 日本語</button>
+                            <button onclick="setLanguage('KO')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100">🇰🇷 한국어</button>
+                            <button onclick="setLanguage('ZH')" class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100">🇨🇳 中文</button>
                         </div>
                     </div>
-
-                    <a href="#quote-form" class="bg-brand-blue hover:bg-navy-700 text-white font-extrabold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-md flex items-center gap-2 transition-all">
-                        <i class="fa-solid fa-file-invoice"></i>
-                        <span data-i18n="cta_quote">Gửi Đề Nghị Báo Giá</span>
-                    </a>
-                </div>
-
-                <!-- MOBILE HAMBURGER -->
-                <div class="flex lg:hidden items-center space-x-2">
-                    <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-100 border border-slate-300 text-slate-700 hover:text-brand-blue">
-                        <i class="fa-solid fa-bars text-lg"></i>
-                    </button>
+                    <a href="#quote-form" class="bg-brand-blue hover:bg-navy-700 text-white font-extrabold px-4 py-2.5 rounded-xl text-xs shadow-md">Gửi Yêu Cầu Báo Giá</a>
                 </div>
             </div>
-        </div>
-
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 text-xs font-bold text-slate-700 shadow-xl">
-            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">Trang Chủ</a>
-            <a href="#matrix-calculator" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">Tra Hóa Chất</a>
-            <a href="#consulting-hub" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">5 Bước Tư Vấn</a>
-            <a href="#packages" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">3 Gói Bọc Phủ</a>
-            <a href="#applications" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">12 Lĩnh Vực Ứng Dụng</a>
-            <a href="#projects-hub" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">Sàn Dự Án Mở B2B</a>
-            <a href="#news-section" onclick="toggleMobileMenu()" class="block py-2 hover:text-brand-blue">Tin Tức Kỹ Thuật</a>
-            <a href="#quote-form" onclick="toggleMobileMenu()" class="block w-full text-center bg-brand-blue text-white font-bold py-2.5 rounded-xl shadow">Gửi Đề Nghị Báo Giá</a>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH PERFECTED TITLE SPACING -->
-    <section id="hero" class="relative py-12 lg:py-16 bg-navy-gradient text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto mb-10">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-800/80 border border-amber-500/30 text-brand-gold text-xs font-bold mb-6 shadow-lg">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <span>International Anti-Corrosion FRP Engineering Network</span>
-                </div>
-                
-                <!-- PERFECTED HERO TITLE WITH ENHANCED LINE-HEIGHT -->
-                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-normal tracking-wide mb-6 uppercase">
-                    MẠNG LƯỚI GIẢI PHÁP BỌC PHỦ COMPOSITE FRP CHỐNG ĂN MÒN VIỆT NAM
-                </h1>
-                
-                <p class="text-slate-300 text-xs sm:text-sm max-w-3xl mx-auto leading-relaxed" data-i18n="hero_subtitle">
-                    Hệ thống tra cứu ma trận kháng hóa chất quốc tế. Ưu tiên dòng nhựa cao cấp DERAKANE & tiêu chuẩn SWANCOR. Tư vấn trọn gói theo bản vẽ, thực tế công trình & cam kết bảo hành dài hạn.
-                </p>
+    <!-- HERO SECTION -->
+    <section class="py-16 bg-navy-gradient text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-800 border border-amber-500/30 text-brand-gold text-xs font-bold mb-6">
+                <i class="fa-solid fa-earth-americas"></i> International Anti-Corrosion FRP Engineering Network
             </div>
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black uppercase leading-normal mb-6">
+                MẠNG LƯỚI GIẢI PHÁP BỌC PHỦ COMPOSITE FRP CHỐNG ĂN MÒN VIỆT NAM
+            </h1>
+            <p class="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto mb-8">
+                Hệ thống chuẩn quốc tế ứng dụng nhựa cao cấp DERAKANE & SWANCOR. Lựa chọn các chuyên trang chi tiết dưới đây để tra cứu kỹ thuật và giải pháp công trình.
+            </p>
 
-            <!-- BẢNG TRA MA TRẬN HÓA CHẤT TÁCH BIỆT 4 KHỐI RÕ RÀNG -->
-            <div id="matrix-calculator" class="max-w-5xl mx-auto glass-card rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/20">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-white/10 pb-4 mb-6 gap-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-flask-vial text-xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-base sm:text-lg font-bold text-white">Bảng Tra Ma Trận Kháng Hóa Chất & Khuyên Dùng Keo Plast</h2>
-                            <p class="text-xs text-slate-300">Nhập đầy đủ thông tin hóa chất chính, phối hợp và biến thể phản ứng sinh ra</p>
-                        </div>
-                    </div>
-                    <button onclick="openFullMatrixModal()" class="bg-navy-700 hover:bg-navy-600 border border-white/20 text-cyan-300 text-xs font-bold px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5">
-                        <i class="fa-solid fa-table-cells"></i> <span>Xem Bảng Tra Chi Tiết Quốc Tế</span>
-                    </button>
-                </div>
-
-                <form onsubmit="calculateFRPQuick(event)" class="space-y-4">
-                    <!-- KHỐI 1: HÓA CHẤT CHÍNH (H1) -->
-                    <div class="bg-navy-950/60 p-3.5 rounded-xl border border-white/10 grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-                        <div class="sm:col-span-5">
-                            <label class="block text-[11px] font-bold text-brand-gold mb-1"><i class="fa-solid fa-circle-dot mr-1"></i> Hóa chất chính (H1)</label>
-                            <input type="text" id="calc-h1" value="Axít Sunfuric (H2SO4)" class="w-full bg-navy-900 border border-white/20 rounded-xl px-3 py-2 text-xs text-white">
-                        </div>
-                        <div class="sm:col-span-3">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nồng độ (%)</label>
-                            <input type="number" id="calc-conc" value="30" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nhiệt độ (°C)</label>
-                            <input type="number" id="calc-temp" value="65" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                    </div>
-
-                    <!-- KHỐI 2: HÓA CHẤT PHỐI HỢP (H2) -->
-                    <div class="bg-navy-950/60 p-3.5 rounded-xl border border-white/10 grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-                        <div class="sm:col-span-5">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1"><i class="fa-solid fa-plus mr-1"></i> Hóa chất phối hợp (H2)</label>
-                            <input type="text" id="calc-h2" placeholder="VD: Axít Clohydric (HCl)" class="w-full bg-navy-900 border border-white/20 rounded-xl px-3 py-2 text-xs text-white">
-                        </div>
-                        <div class="sm:col-span-3">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nồng độ (%)</label>
-                            <input type="number" id="calc-conc2" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nhiệt độ (°C)</label>
-                            <input type="number" id="calc-temp2" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                    </div>
-
-                    <!-- KHỐI 3: HÓA CHẤT PHỐI HỢP (H3) -->
-                    <div class="bg-navy-950/60 p-3.5 rounded-xl border border-white/10 grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-                        <div class="sm:col-span-5">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1"><i class="fa-solid fa-plus mr-1"></i> Hóa chất phối hợp (H3)</label>
-                            <input type="text" id="calc-h3" placeholder="VD: HNO3, NaOH..." class="w-full bg-navy-900 border border-white/20 rounded-xl px-3 py-2 text-xs text-white">
-                        </div>
-                        <div class="sm:col-span-3">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nồng độ (%)</label>
-                            <input type="number" id="calc-conc3" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nhiệt độ (°C)</label>
-                            <input type="number" id="calc-temp3" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                    </div>
-
-                    <!-- KHỐI 4: BIẾN THỂ / PHỤ PHẨM SINH RA -->
-                    <div class="bg-navy-950/80 p-3.5 rounded-xl border border-amber-500/40 grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-                        <div class="sm:col-span-5">
-                            <label class="block text-[11px] font-bold text-amber-300 mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Biến thể / Phụ phẩm sinh ra</label>
-                            <input type="text" id="calc-variant" placeholder="VD: Khí HF, Khí Cl2 bay hơi..." class="w-full bg-navy-900 border border-amber-500/40 rounded-xl px-3 py-2 text-xs text-amber-200">
-                        </div>
-                        <div class="sm:col-span-3">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nồng độ (%)</label>
-                            <input type="number" id="calc-conc-v" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                        <div class="sm:col-span-4">
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">Nhiệt độ (°C)</label>
-                            <input type="number" id="calc-temp-v" placeholder="0" class="w-full bg-navy-900 border border-white/20 rounded-xl px-2.5 py-2 text-xs text-white text-center">
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center pt-2">
-                        <button type="submit" class="w-full sm:w-auto bg-gradient-to-r from-brand-gold to-amber-600 hover:from-amber-500 hover:to-amber-700 text-navy-950 font-black px-8 py-3 rounded-xl text-xs shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-calculator"></i>
-                            <span>TRA CỨU VẬT LIỆU & PHƯƠNG ÁN KẾT CẤU</span>
-                        </button>
-                    </div>
-                </form>
-
-                <!-- RESULT DISPLAY -->
-                <div id="calc-result-box" class="mt-6 pt-6 border-t border-white/10 hidden">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-navy-950/80 p-4 rounded-xl border border-brand-gold/40">
-                        <div>
-                            <div class="text-xs text-slate-400 uppercase font-bold mb-1">CHỈ ĐỊNH NHỰA CHỐNG ĂN MÒN ƯU TIÊN</div>
-                            <div id="res-resin-name" class="text-sm font-black text-brand-gold mb-1">DERAKANE 411 / Signia 411</div>
-                            <p id="res-resin-desc" class="text-xs text-slate-300">Vinylester Epoxy dẻo dai cao cấp nhất của Ashland/Ineos. Kháng va đập nhiệt lượng & axit mạnh.</p>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-400 uppercase font-bold mb-1">QUY CHUẨN LỚP SỢI GIA CƯỜNG</div>
-                            <div id="res-layer-struct" class="text-xs font-bold text-cyan-300 mb-1">2 Lớp Mat 300g/m² + 1 Lớp C-Tissue 30g/m² + 3 Lớp Gelcoat Vinylester</div>
-                            <p class="text-xs text-slate-300">Độ dày thực tế: ~1.8mm - 2.0mm. Dùng sợi JUSHI Mat 300g/m² chống đọng khí & bong tróc.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- QUICK ACCESS BUTTONS TO DETAILED SUB-PAGES -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="tra-hoa-chat.html" class="glass-card p-5 rounded-xl hover:bg-brand-blue transition-all border border-brand-gold/40 text-left group">
+                    <i class="fa-solid fa-calculator text-brand-gold text-xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-sm font-bold text-white">Tra Ma Trận Hóa Chất &rarr;</h3>
+                    <p class="text-[11px] text-slate-300 mt-1">Tra cứu nồng độ, nhiệt độ và chỉ định keo nhựa tương thích.</p>
+                </a>
+                <a href="tu-van-ky-thuat.html" class="glass-card p-5 rounded-xl hover:bg-brand-blue transition-all border border-cyan-500/40 text-left group">
+                    <i class="fa-solid fa-diagram-project text-cyan-400 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-sm font-bold text-white">5 Bước & 3 Gói Bọc Phủ &rarr;</h3>
+                    <p class="text-[11px] text-slate-300 mt-1">Xem chi tiết quy chuẩn Gói A, B, C và phương án thi công.</p>
+                </a>
+                <a href="ung-dung.html" class="glass-card p-5 rounded-xl hover:bg-brand-blue transition-all border border-emerald-500/40 text-left group">
+                    <i class="fa-solid fa-industry text-emerald-400 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-sm font-bold text-white">12 Lĩnh Vực Ứng Dụng &rarr;</h3>
+                    <p class="text-[11px] text-slate-300 mt-1">Khám phá các tiêu chuẩn chuyên sâu theo từng ngành công nghiệp.</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 5 BƯỚC TƯ VẤN -->
-    <section id="consulting-hub" class="py-16 bg-navy-900 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 text-xs font-bold mb-2">
-                    <i class="fa-solid fa-user-gear"></i> <span>Dịch Vụ Kỹ Thuật Trọn Gói</span>
-                </div>
-                <h2 class="text-2xl sm:text-3xl font-black text-white">CHUYÊN TƯ VẤN LÊN PHƯƠNG ÁN CHỐNG ĂN MÒN</h2>
-                <p class="text-xs text-slate-300 mt-2">Đồng hành cùng Chủ đầu tư, Tư vấn thiết kế & Tổng thầu từ khảo sát đến bàn giao nghiệm thu</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold mb-3 text-sm">01</div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white mb-2">Thông Tin & Yêu Cầu Dự Án</h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">Cập nhật hóa chất, nồng độ, nhiệt độ, thời gian bảo hành mong muốn & chi phí đầu tư ban đầu.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold mb-3 text-sm">02</div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white mb-2">Nhận Bản Vẽ & Tư Vấn Đổ Bê Tông</h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">Tư vấn chống ăn mòn trước khi đổ bê tông để đạt hiệu quả tối đa, tránh bảo hành tương lai.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold mb-3 text-sm">03</div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white mb-2">Thi Công & Bóc Khối Lượng</h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">Lên phương án bóc tách khối lượng vật tư dự án, thời gian thi công dự kiến, tách bạch giá.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold mb-3 text-sm">04</div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white mb-2">An Toàn Lao Động & Hạ Tầng</h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">Phương án nguồn điện, thiết bị an toàn bảo hộ, phương án sơ cứu khí Styrene bay hơi.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold mb-3 text-sm">05</div>
-                        <h3 class="text-xs sm:text-sm font-bold text-white mb-2">Kiểm Soát Từng Bước & Ngâm Test 7 Ngày</h3>
-                        <p class="text-xs text-slate-300 leading-relaxed">Kiểm tra chất lượng từng bước & phương pháp ngâm thử nghiệm thu 7 ngày.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 text-slate-700 text-xs py-8">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>© 2026 Mạng Lưới Giải Pháp Composite FRP Việt Nam. All Rights Reserved.</div>
+            <div>Hotline/Zalo Kỹ Thuật: <strong class="text-brand-blue">0906 952 142</strong></div>
         </div>
-    </section>
+    </footer>
 
-    <!-- 3 GÓI BỌC PHỦ -->
-    <section id="packages" class="py-16 bg-navy-950/90 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1">QUY CHUẨN THI CÔNG & CAM KẾT BẢO HÀNH</h2>
-                <h3 class="text-2xl sm:text-3xl font-black text-white">3 PHƯƠNG ÁN BỌC PHỦ MẪU DÀNH CHO CÔNG TRÌNH</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/10 glass-card-hover">
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="px-3 py-1 bg-navy-800 text-cyan-400 border border-cyan-500/30 rounded-full text-xs font-bold">GÓI A</span>
-                            <span class="text-xs text-slate-400">Bảo trì tiêu chuẩn</span>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-1">BẢO TRÌ ĐỊNH KỲ (12 - 18 THÁNG)</h4>
-                        <div class="text-xs text-brand-gold font-semibold mb-4">Mã nhựa: Swancor 901 / Derakane 411</div>
-                        <div class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-4 mb-6">
-                            <div class="font-bold text-white mb-1">Gồm 3 phương án thi công lựa chọn:</div>
-                            <div class="bg-navy-900/80 p-2.5 rounded-lg border border-white/10 space-y-2">
-                                <p><strong>Phương án 1:</strong> Phun hạt mài, Lót Primer, 2 lớp Mat 300, 1 lớp C-Tissue 30g nền nhựa (Derakane 411 / Swancor 901), 1 lớp nhựa phủ.</p>
-                                <p><strong>Phương án 2:</strong> Phun hạt mài, Lót Primer, 2 lớp Mat 300, 1 lớp C-Tissue 30g nền polyester ortho. 3 lớp Gelcoat Vinylester + Vảy thủy tinh, thạch anh, màu Trắng - Xám - Trong kiểm soát.</p>
-                                <p><strong>Phương án 3 (CHỈ DERAKANE):</strong> Phun hạt mài, 3 lớp Gelcoat Vinylester <strong>Derakane 411</strong> + Vảy thủy tinh, thạch anh, đổi màu phủ kín.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#quote-form" onclick="selectPackage('GÓI A')" class="w-full text-center bg-navy-800 hover:bg-navy-700 text-white font-bold py-2.5 rounded-xl text-xs border border-white/20 transition-colors">Chọn Phương Án A</a>
-                </div>
-
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-2 border-brand-gold relative bg-navy-800/90 shadow-2xl glass-card-hover">
-                    <div class="absolute -top-3 right-6 bg-brand-gold text-navy-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">Khuyên Dùng Phổ Biến</div>
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="px-3 py-1 bg-brand-gold/20 text-brand-gold border border-brand-gold/40 rounded-full text-xs font-bold">GÓI B</span>
-                            <span class="text-xs text-amber-300">Cam kết dài hạn</span>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-1">BẢO HÀNH DÀI HẠN (5 NĂM)</h4>
-                        <div class="text-xs text-brand-gold font-semibold mb-4">Mã nhựa: DERAKANE 411 / SWANCOR 901</div>
-                        <div class="space-y-3 text-xs text-slate-200 border-t border-white/10 pt-4 mb-6">
-                            <div><strong class="text-white">Cấu tạo:</strong> Lớp nền (2 Mat 300 + 1 C-Tissue) + <strong>THÊM 3 lớp C-Tissue 30g/m²</strong> tẩm Vinylester + 3 lớp Gelcoat Glass Flake (Trắng - Xám - Trong).</div>
-                            <div class="p-3 bg-emerald-950/60 rounded-xl border border-emerald-500/30 text-emerald-300">
-                                <strong>Ưu điểm:</strong> Cấu trúc vảy thủy tinh xếp chồng chống xuyên thấu hóa chất cực tốt.
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#quote-form" onclick="selectPackage('GÓI B')" class="w-full text-center bg-gradient-to-r from-brand-gold to-amber-600 hover:from-amber-400 hover:to-amber-700 text-navy-950 font-black py-2.5 rounded-xl text-xs shadow-lg transition-all">Chọn Phương Án B (Phổ Biến)</a>
-                </div>
-
-                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/10 glass-card-hover">
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="px-3 py-1 bg-navy-800 text-purple-400 border border-purple-500/30 rounded-full text-xs font-bold">GÓI C</span>
-                            <span class="text-xs text-slate-400">Môi trường khắc nghiệt</span>
-                        </div>
-                        <h4 class="text-base font-bold text-white mb-1">CẤU TẠO ĐẶC BIỆT (10 NĂM)</h4>
-                        <div class="text-xs text-purple-300 font-semibold mb-4">Mã nhựa: DERAKANE 411 / SWANCOR 901 / Novolac 470</div>
-                        <div class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-4 mb-6">
-                            <div><strong class="text-white">Cấu tạo:</strong> Lớp nền (2 Mat 300 + 1 C-Tissue) + <strong>THÊM 6 lớp C-Tissue 30g/m²</strong> + 3 lớp Gelcoat Glass Flake (hoặc màng PVDF cho khí HF).</div>
-                            <div class="p-3 bg-emerald-950/60 rounded-xl border border-emerald-500/30 text-emerald-300">
-                                <strong>Ưu điểm:</strong> Chống ăn mòn tuyệt đối, tuổi thọ trên 10 năm.
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#quote-form" onclick="selectPackage('GÓI C')" class="w-full text-center bg-navy-800 hover:bg-navy-700 text-white font-bold py-2.5 rounded-xl text-xs border border-white/20 transition-colors">Chọn Phương Án C</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 12 LĨNH VỰC -->
-    <section id="applications" class="py-16 bg-navy-950/80 border-y border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1">GIẢI PHÁP CHUYÊN SÂU TOÀN CẦU</h2>
-                <h3 class="text-2xl sm:text-3xl font-black text-white">12 LĨNH VỰC ỨNG DỤNG BỌC PHỦ COMPOSITE FRP</h3>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-water"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">1. Bể Xử Lý Nước Thải</h4><p class="text-[11px] text-slate-300">Bọc phủ bể gom, điều hòa chống ăn mòn H2S.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-flask"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">2. Bể Xi Mạ & Tẩy Rửa</h4><p class="text-[11px] text-slate-300">Chịu axit HCl, H2SO4, HNO3, bể mạ Cromic.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-vial-circle-check"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">3. Bể Axit Đậm Đặc & Hỗn Hợp</h4><p class="text-[11px] text-slate-300">Nhựa Novolac 470 & Dual Laminate cho H2SO4 98%, HF.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-fire-extinguisher"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">4. Chống Ăn Mòn - Chống Cháy</h4><p class="text-[11px] text-slate-300">Vinylester chống cháy ASTM E84 Class 1 cho kho dung môi.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-temperature-arrow-up"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">5. Nhiệt Độ Cao & Sốc Nhiệt</h4><p class="text-[11px] text-slate-300">Chịu nhiệt liên tục đến 150°C - 180°C cho ống khói, tháp dập.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-oil-well"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">6. Dầu Khí & Nước Khai Thác</h4><p class="text-[11px] text-slate-300">Bồn chứa dầu thô, nước khai thác & đường ống chịu sương muối.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-bottle-droplet"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">7. Dung Môi Hữu Cơ Công Nghiệp</h4><p class="text-[11px] text-slate-300">Kháng Acetone, Toluene, Xylene, Benzene.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-bolt-lightning"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">8. Nhiệt Điện & Khử Lưu Huỳnh</h4><p class="text-[11px] text-slate-300">Chống ăn mòn dập bụi SO2/SO3, tháp hấp thụ FGD.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-industry"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">9. Nhà Máy Phân Bón & Hóa Chất</h4><p class="text-[11px] text-slate-300">Kháng hơi axit H2SO4, H3PO4, NH3, Urea, sàn nhà xưởng.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-cyan-400/20 text-cyan-300 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-fish-fins"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">10. Thủy Sản - Nước Mắm - Muối</h4><p class="text-[11px] text-slate-300">Chống mặn, đạt chuẩn an toàn thực phẩm cho bể ngâm mắm.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-cubes-stacked"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">11. Sản Xuất Bồn Bể Composite</h4><p class="text-[11px] text-slate-300">Chế tạo bồn Filament Winding & tháp Scrubber theo bản vẽ.</p></div>
-                <div class="glass-card rounded-2xl p-5 border border-white/10 glass-card-hover"><div class="w-10 h-10 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-warehouse"></i></div><h4 class="text-xs sm:text-sm font-bold text-white mb-1">12. Sơn Kết Cấu Thép & Mái Che</h4><p class="text-[11px] text-slate-300">Sơn vảy thủy tinh Glass Flake bảo vệ dầm thép, mái lợp FRP.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SÀN DỰ ÁN MỞ B2B -->
-    <section id="projects-hub" class="py-16 bg-navy-900 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
-                <div>
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 text-xs font-bold mb-2">
-                        <i class="fa-solid fa-satellite-dish animate-pulse"></i>
-                        <span>Thông tin B2B Mở Cập Nhật Từ Thị Trường</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-black text-white">SÀN DỰ ÁN ĐẦU TƯ CÔNG NGHIỆP MỞ</h2>
-                    <p class="text-xs text-slate-300 mt-1">Cổng thông tin dự án công khai dành cho toàn bộ kỹ sư & nhà thầu tiếp cận chào hàng</p>
-                </div>
-                <div class="flex bg-navy-950 p-1 rounded-xl border border-white/10 mt-4 md:mt-0 text-xs font-bold">
-                    <button onclick="switchProjectTab('active')" id="tab-active" class="px-3.5 py-2 rounded-lg text-white bg-navy-700 shadow transition-all">Đang Triển Khai</button>
-                    <button onclick="switchProjectTab('mou')" id="tab-mou" class="px-3.5 py-2 rounded-lg text-slate-400 hover:text-white transition-all">Đã Ký MOU</button>
-                    <button onclick="switchProjectTab('60days')" id="tab-60days" class="px-3.5 py-2 rounded-lg text-slate-400 hover:text-white transition-all">Khởi Công &lt; 60 Ngày</button>
-                </div>
-            </div>
-            <div id="project-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- RENDERED BY JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- TIN TỨC & KỸ THUẬT -->
-    <section id="news-section" class="py-16 bg-navy-950/70 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-10">
-                <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1">CẬP NHẬT KIẾN THỨC KỸ THUẬT FRP THẾ GIỚI</h2>
-                <h3 class="text-2xl font-black text-white">TIN TỨC & BÀI VIẾT KỸ THUẬT</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card rounded-2xl overflow-hidden glass-card-hover border border-white/10 flex flex-col justify-between p-6">
-                    <div>
-                        <div class="text-[10px] text-cyan-400 font-extrabold uppercase tracking-wider mb-2">Kỹ Thuật Bể Xi Mạ</div>
-                        <h4 class="text-sm font-bold text-white mb-2 leading-snug">Hướng dẫn quy trình bọc phủ composite FRP chống ăn mòn bể xi mạ đạt chuẩn kỹ thuật</h4>
-                        <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">Chi tiết ứng dụng sợi JUSHI Mat 300g/m² tẩm nhựa Vinylester DERAKANE 411 bảo vệ bể mạ Cromic...</p>
-                    </div>
-                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-slate-400"><span>Cập nhật gần đây</span><span class="text-brand-gold font-bold">Chuyên đề Xi Mạ</span></div>
-                </div>
-                <div class="glass-card rounded-2xl overflow-hidden glass-card-hover border border-white/10 flex flex-col justify-between p-6">
-                    <div>
-                        <div class="text-[10px] text-brand-gold font-extrabold uppercase tracking-wider mb-2">Sản Xuất Bồn Bể</div>
-                        <h4 class="text-sm font-bold text-white mb-2 leading-snug">Công nghệ sản xuất bồn bể composite FRP chịu hóa chất cho nhà máy phân bón & dầu khí</h4>
-                        <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">Phân tích công nghệ quấn sợi Filament Winding kết hợp bọc phủ bề mặt bằng C-Tissue kháng hơi axit...</p>
-                    </div>
-                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-slate-400"><span>Cập nhật gần đây</span><span class="text-brand-gold font-bold">Chuyên đề Bồn Bể</span></div>
-                </div>
-                <div class="glass-card rounded-2xl overflow-hidden glass-card-hover border border-white/10 flex flex-col justify-between p-6">
-                    <div>
-                        <div class="text-[10px] text-emerald-400 font-extrabold uppercase tracking-wider mb-2">Xử Lý Nước Thải</div>
-                        <h4 class="text-sm font-bold text-white mb-2 leading-snug">Bọc phủ composite FRP chống thấm chống ăn mòn bể xử lý nước thải thủy sản & luyện kim</h4>
-                        <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">Phương án gia cường chống nứt gãy bê tông bể gom nước thải công nghiệp. Khảo sát độ bền liên kết lớp lót Primer...</p>
-                    </div>
-                    <div class="pt-3 border-t border-white/10 flex justify-between items-center text-[11px] text-slate-400"><span>Cập nhật gần đây</span><span class="text-brand-gold font-bold">Chuyên đề Nước Thải</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORM BÁO GIÁ VỚI Ô ĐÍNH KÈM VÀ KHÔNG CÒN CHỮ TỰ ĐỘNG CRM -->
-    <section id="quote-form" class="py-16 bg-navy-900 border-t border-white/10 relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-card rounded-2xl p-6 sm:p-10 border border-brand-gold/40 shadow-2xl">
-                <div class="text-center mb-8">
-                    <h2 class="text-xl sm:text-2xl font-black text-white mb-2">GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT</h2>
-                    <p class="text-xs text-slate-300">Thông tin sẽ gửi trực tiếp đến Email <strong class="text-brand-gold">giaiphapcompositefrp@gmail.com</strong> & Zalo <strong class="text-brand-gold">0906 952 142</strong></p>
-                </div>
-
-                <form onsubmit="handleQuoteSubmit(event)" class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-1">Tên đơn vị / Họ tên *</label>
-                            <input type="text" id="form-name" required placeholder="Nhà thầu / Tổng thầu / CĐT..." class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-1">Số điện thoại / Zalo *</label>
-                            <input type="tel" id="form-phone" required placeholder="0906 xxx xxx" class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-1">Môi trường hóa chất & Nhiệt độ</label>
-                            <input type="text" id="form-chem" placeholder="VD: H2SO4 30%, HCl 15%, 65°C..." class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-300 mb-1">Gói bảo hành đề xuất</label>
-                            <select id="quote-package" class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold">
-                                <option value="GÓI B - Bảo hành 5 năm">Gói B: Bảo hành 5 năm (Khuyên dùng)</option>
-                                <option value="GÓI A - Bảo trì 12-18 tháng">Gói A: Bảo trì định kỳ (12-18 tháng)</option>
-                                <option value="GÓI C - Bảo hành 10 năm">Gói C: Cấu tạo đặc biệt (10 năm)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-1">Yêu cầu tư vấn chi tiết / Diện tích bọc phủ m²</label>
-                        <textarea id="form-desc" rows="3" placeholder="Ghi chú chi tiết hiện trạng công trình, tiến độ thi công dự kiến..." class="w-full bg-navy-950 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold"></textarea>
-                    </div>
-
-                    <!-- Ô ĐÍNH KÈM TỆP BẢN VẼ / HÌNH ẢNH -->
-                    <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-1">Đính kèm bản vẽ / Hình ảnh hiện trạng (.pdf, .dwg, .jpg, .png)</label>
-                        <div class="border-2 border-dashed border-white/20 rounded-xl p-4 text-center bg-navy-950/50 hover:bg-navy-950 transition-colors cursor-pointer relative">
-                            <i class="fa-solid fa-cloud-arrow-up text-brand-gold text-2xl mb-1"></i>
-                            <p class="text-xs text-slate-300" id="file-label-text">Nhấp vào đây để chọn tệp bản vẽ hoặc hình ảnh công trình đính kèm</p>
-                            <input type="file" id="form-file" onchange="updateFileName(this)" class="absolute inset-0 opacity-0 cursor-pointer">
-                        </div>
-                    </div>
-
-                    <!-- NÚT GỬI ĐÃ BỎ CHỮ TỰ ĐỘNG ĐỒNG BỘ CRM -->
-                    <button type="submit" class="w-full bg-gradient-to-r from-brand-gold via-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-700 text-navy-950 font-black py-3.5 rounded-xl shadow-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>GỬI ĐỀ NGHỊ BÁO GIÁ & PHƯƠNG ÁN KỸ THUẬT</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUNG TÂM CRM BẢO MẬT (CHỈ HIỂN THỊ KHI ĐĂNG NHẬP ĐÚNG ADMIN) -->
-    <section id="admin-crm-section" class="py-12 bg-navy-950 border-t-2 border-brand-gold hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center mb-6">
-                <div>
-                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full text-xs font-bold">TRUNG TÂM CRM QUẢN TRỊ BẢO MẬT</span>
-                    <h2 class="text-xl font-black text-white mt-2">BẢNG QUẢN LÝ DỰ ÁN & TỰ ĐỘNG HÓA TƯƠNG TÁC</h2>
-                </div>
-                <button onclick="logoutAdmin()" class="bg-rose-900/60 hover:bg-rose-800 text-rose-200 px-3 py-1.5 rounded-lg text-xs font-bold border border-rose-500/40">
-                    <i class="fa-solid fa-right-from-bracket mr-1"></i> Đăng Xuất Admin
-                </button>
-            </div>
-            <div class="overflow-x-auto glass-card rounded-2xl border border-white/20 p-4">
-                <table class="w-full text-left text-xs border-collapse">
-                    <thead>
-                        <tr class="bg-navy-800 text-brand-gold border-b border-white/20">
-                            <th class="p-3">Khách Hàng / Đơn Vị</th>
-                            <th class="p-3">Hotline / Zalo</th>
-                            <th class="p-3">Hóa Chất & Gói</th>
-                            <th class="p-3">Trạng Thái Dự Án</th>
-                            <th class="p-3 text-center">Tự Động Gửi Tin (Gmail / Zalo)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="crm-table-body" class="divide-y divide-white/10 text-slate-200">
-                        <!-- DYNAMIC -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER WITH ADMIN LOGIN -->
-    <footer class="bg-white border-t border-slate-200 text-slate-700 text-xs py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center space-x-3.5">
-                <div class="w-12 h-12 flex-shrink-0">
-                    <svg viewBox="0 0 300 300" class="w-full h-full">
-                        <rect x="20" y="20" width="260" height="260" rx="45" fill="none" stroke="#0b4fa8" stroke-width="22"/>
-                        <g fill="#0b4fa8">
-                            <path d="M 85 105 L 140 50 L 175 50 L 175 80 L 120 135 L 175 190 L 175 220 L 140 220 Z"/>
-                            <path d="M 195 50 L 230 50 L 245 70 L 195 120 Z"/>
-                            <path d="M 125 150 L 175 200 L 225 150 L 195 120 L 175 140 L 155 120 Z"/>
-                            <rect x="140" y="100" width="45" height="45" rx="8" transform="rotate(45 162.5 122.5)"/>
-                        </g>
-                    </svg>
-                </div>
-                <div class="flex
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('current-lang-code').innerText = lang;
+            const flags = { VI: '🇻🇳', EN: '🇬🇧', JA: '🇯🇵', KO: '🇰🇷', ZH: '🇨🇳' };
+            document.getElementById('current-lang-flag').innerText = flags[lang] || '🇻🇳';
+        }
+    </script>
+</body>
+</html>
