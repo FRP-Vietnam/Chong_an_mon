@@ -50,33 +50,18 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- LOGO & BRAND -->
-                <div class="flex items-center space-x-3.5 cursor-pointer py-1" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0">
-                        <svg viewBox="0 0 300 300" class="w-full h-full">
-                            <rect x="20" y="20" width="260" height="260" rx="45" fill="none" stroke="#0b4fa8" stroke-width="22"/>
-                            <g fill="#0b4fa8">
-                                <path d="M 85 105 L 140 50 L 175 50 L 175 80 L 120 135 L 175 190 L 175 220 L 140 220 Z"/>
-                                <path d="M 195 50 L 230 50 L 245 70 L 195 120 Z"/>
-                                <path d="M 125 150 L 175 200 L 225 150 L 195 120 L 175 140 L 155 120 Z"/>
-                                <rect x="140" y="100" width="45" height="45" rx="8" transform="rotate(45 162.5 122.5)"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col justify-center select-none">
-                        <div class="text-xs sm:text-sm font-extrabold text-slate-900 leading-none">COMPOSITE FRP</div>
-                        <div class="text-lg sm:text-xl md:text-2xl font-black text-brand-blue leading-none my-0.5">SOLUTIONS</div>
-                        <div class="text-[8px] sm:text-[9px] font-bold text-slate-700 uppercase tracking-widest leading-none">VIETNAM NETWORK</div>
-                    </div>
+                <!-- LOGO GỐC TỪ GITHUB -->
+                <div class="flex items-center space-x-3 cursor-pointer py-1" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <img src="logo.png" alt="FRP Vietnam Network Logo" class="h-12 sm:h-14 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=FRP+LOGO'">
                 </div>
 
                 <!-- DESKTOP NAV -->
                 <nav class="hidden lg:flex items-center space-x-6 text-xs font-bold text-slate-700">
-                    <a href="index.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_home">Trang Chủ</a>
-                    <a href="#matrix-calculator" class="hover:text-brand-blue transition-colors py-1 flex items-center gap-1"><i class="fa-solid fa-table-cells text-brand-gold"></i> <span data-i18n="nav_matrix">Ma Trận Hóa Chất</span></a>
-                    <a href="tu-van-ky-thuat.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_consult">Tư Vấn Kỹ Thuật</a>
-                    <a href="ung-dung.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_app">12 Lĩnh Vực</a>
-                    <a href="du-an-b2b.html" class="hover:text-brand-blue transition-colors py-1" data-i18n="nav_projects">Sàn Dự Án Mở</a>
+                    <a href="#hero" class="hover:text-brand-blue transition-colors py-1">Trang Chủ</a>
+                    <a href="#matrix-section" class="hover:text-brand-blue transition-colors py-1 flex items-center gap-1"><i class="fa-solid fa-table-cells text-brand-gold"></i> Ma Trận Hóa Chất</a>
+                    <a href="#consulting-hub" class="hover:text-brand-blue transition-colors py-1">Tư Vấn Kỹ Thuật</a>
+                    <a href="#applications" class="hover:text-brand-blue transition-colors py-1">12 Lĩnh Vực</a>
+                    <a href="#projects-hub" class="hover:text-brand-blue transition-colors py-1">Sàn Dự Án Mở</a>
                 </nav>
 
                 <!-- LANGUAGE SWITCHER & CTA -->
@@ -110,14 +95,14 @@
                 Hệ thống dữ liệu kỹ thuật chuyên sâu áp dụng cho bể xử lý nước thải công nghiệp, bồn hóa chất và đường ống chịu tải trọng khắc nghiệt. Tích hợp ma trận lựa chọn nhựa Derakane & Swancor theo chuẩn ASTM/ISO.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#matrix-calculator" class="bg-brand-gold hover:bg-amber-500 text-navy-950 font-extrabold px-6 py-3 rounded-xl text-xs shadow-lg transition">Tra Cứu Ma Trận Hóa Chất</a>
-                <a href="tu-van-ky-thuat.html" class="bg-navy-800 hover:bg-navy-700 text-white border border-white/20 font-extrabold px-6 py-3 rounded-xl text-xs transition">Xem Phương Án Thi Công</a>
+                <a href="#matrix-section" class="bg-brand-gold hover:bg-amber-500 text-navy-950 font-extrabold px-6 py-3 rounded-xl text-xs shadow-lg transition">Tra Cứu Ma Trận Hóa Chất</a>
+                <a href="#consulting-hub" class="bg-navy-800 hover:bg-navy-700 text-white border border-white/20 font-extrabold px-6 py-3 rounded-xl text-xs transition">Xem Phương Án Thi Công</a>
             </div>
         </div>
     </section>
 
-    <!-- BẢNG MA TRẬN HÓA CHẤT CHI TIẾT ĐA TẦNG (GIỮ NGUYÊN KHÔNG THAY ĐỔI) -->
-    <section id="matrix-calculator" class="py-16 bg-navy-900 border-t border-white/10">
+    <!-- BẢNG MA TRẬN HÓA CHẤT CHI TIẾT ĐA TẦNG (CHUẨN XÁC TUYỆT ĐỐI KHÔNG LỖI) -->
+    <section id="matrix-section" class="py-16 bg-navy-900 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-xl sm:text-3xl font-black text-white mb-2"><i class="fa-solid fa-table-cells text-brand-gold mr-2"></i> Bảng Ma Trận Lựa Chọn Dòng Nhựa & Kháng Hóa Chất Chi Tiết</h2>
@@ -136,49 +121,49 @@
                     </thead>
                     <tbody class="divide-y divide-white/10 text-slate-300">
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Axit Sulfuric ($H_2SO_4$)</td>
+                            <td class="p-4 font-bold text-white">Axit Sulfuric (H₂SO₄)</td>
                             <td class="p-4">26% - 50%</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C (Đạt chuẩn)</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C (Đạt chuẩn)</td>
                             <td class="p-4 text-slate-400">Yêu cầu lớp lót C-Tissue 30g/m² + 2 lớp Mat 300.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Axit Sulfuric ($H_2SO_4$)</td>
+                            <td class="p-4 font-bold text-white">Axit Sulfuric (H₂SO₄)</td>
                             <td class="p-4">51% - 70%</td>
                             <td class="p-4 text-amber-400 font-bold">Max 80°C (Cân nhắc)</td>
                             <td class="p-4 text-amber-400 font-bold">Max 80°C (Cân nhắc)</td>
                             <td class="p-4 text-slate-400">Chỉ dùng cho hệ kết cấu FRP đủ cấu tạo, kiểm tra thẩm thấu định kỳ.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Axit Clohydric ($HCl$)</td>
+                            <td class="p-4 font-bold text-white">Axit Clohydric (HCl)</td>
                             <td class="p-4">1% - 37% (Đậm đặc)</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 80°C - 90°C</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 90°C (Rất bền)</td>
-                            <td class="p-4 text-slate-400">Kháng ion Cl- xuất sắc, chống khuếch tán khí hydro clorua.</td>
+                            <td class="p-4 text-slate-400">Kháng ion Cl⁻ xuất sắc, chống khuếch tán khí hydro clorua.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Xút ($NaOH$)</td>
+                            <td class="p-4 font-bold text-white">Xút (NaOH)</td>
                             <td class="p-4">Lên đến 50%</td>
                             <td class="p-4 text-amber-400 font-bold">Max 50°C</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 80°C (Derakane 510C)</td>
                             <td class="p-4 text-slate-400">Môi trường kiềm nóng đòi hỏi dùng nhựa gốc Novolac nếu nhiệt độ >80°C.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Javen Ổn Định ($NaOCl$)</td>
-                            <td class="p-4">$\le 5\%$ (pH > 11)</td>
+                            <td class="p-4 font-bold text-white">Javen Ổn Định (NaOCl)</td>
+                            <td class="p-4">≤ 5% (pH > 11)</td>
                             <td class="p-4 text-amber-400 font-bold">Max 65°C</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 65°C</td>
                             <td class="p-4 text-slate-400">Bắt buộc duy trì pH kiềm ổn định, kiểm soát clo hoạt tính.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Nước Muối / Biển ($NaCl$)</td>
+                            <td class="p-4 font-bold text-white">Nước Muối / Biển (NaCl)</td>
                             <td class="p-4">Mọi nồng độ</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C</td>
                             <td class="p-4 text-slate-400">Ứng dụng hoàn hảo trong tháp xử lý nước thải hải sản, nhiệt điện.</td>
                         </tr>
                         <tr class="hover:bg-navy-800/40 transition">
-                            <td class="p-4 font-bold text-white">Sắt(III) Clorua ($FeCl_3$)</td>
+                            <td class="p-4 font-bold text-white">Sắt(III) Clorua (FeCl₃)</td>
                             <td class="p-4">Mọi nồng độ (Không pha axit)</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C</td>
                             <td class="p-4 text-emerald-400 font-bold">Max 100°C</td>
@@ -186,6 +171,74 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 BƯỚC TƯ VẤN KỸ THUẬT -->
+    <section id="consulting-hub" class="py-16 bg-navy-950/80 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-xl sm:text-3xl font-black text-white text-center mb-10">5 BƯỚC TƯ VẤN KỸ THUẬT TRỌN GÓI</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="glass-card p-5 rounded-2xl border border-white/10"><div class="text-brand-gold font-black text-base mb-2">01. Khảo Sát & CAS</div><p class="text-xs text-slate-300">Xác định chính xác hóa chất, nồng độ, nhiệt độ vận hành và hiện trạng nền bê tông/thép.</p></div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10"><div class="text-cyan-400 font-black text-base mb-2">02. Thiết Kế Kết Cấu</div><p class="text-xs text-slate-300">Lập bản vẽ chi tiết chống thấm, chống ăn mòn, vị trí ống xuyên thành bể và cấu tạo lớp lót.</p></div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10"><div class="text-emerald-400 font-black text-base mb-2">03. Bóc Tách Khối Lượng</div><p class="text-xs text-slate-300">Chuẩn bị vật tư chuẩn hãng (Derakane/Swancor), định lượng sợi Mat 300, C-Tissue và Gelcoat.</p></div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10"><div class="text-purple-400 font-black text-base mb-2">04. Thi Công Kiểm Soát</div><p class="text-xs text-slate-300">Phun hạt mài, mài cơ học, xử lý bề mặt, lăn lót và đắp lớp theo quy trình nghiêm ngặt.</p></div>
+                <div class="glass-card p-5 rounded-2xl border border-white/10"><div class="text-amber-400 font-black text-base mb-2">05. Nghiệm Thu & Thử Ngâm</div><p class="text-xs text-slate-300">Kiểm tra độ dày, độ bám dính, test Holiday điện áp và thử ngâm mẫu 07 ngày.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 LĨNH VỰC ỨNG DỤNG -->
+    <section id="applications" class="py-16 bg-navy-900 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-xl sm:text-3xl font-black text-white mb-2">12 LĨNH VỰC ỨNG DỤNG CÔNG NGHIỆP</h2>
+                <p class="text-xs sm:text-sm text-slate-300">Giải pháp chống thấm và chống ăn mòn toàn diện cho các nhà máy và công trình trọng điểm.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-water text-brand-gold text-xl mb-2"></i><div class="text-xs font-bold text-white">Bể Xử Lý Nước Thải</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-industry text-cyan-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Nhà Máy Hóa Chất</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-bolt text-amber-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Nhà Máy Nhiệt Điện</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-fish text-emerald-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Chế Biến Thủy Sản</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-oil-well text-purple-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Dầu Khí & Xăng Dầu</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-vial text-rose-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Hệ Thống Xi Mạ</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-wind text-sky-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Tháp Xử Lý Khí Thải</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-boxes-stacked text-amber-300 text-xl mb-2"></i><div class="text-xs font-bold text-white">Bồn Chứa Hóa Chất</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-road text-teal-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Bọc Phủ Sàn Nhà Xưởng</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-pipe text-indigo-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Đường Ống Dẫn Công Nghiệp</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-mountain text-orange-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Khai Khoáng & Luyện Kim</div></div>
+                <div class="glass-card p-4 rounded-xl text-center"><i class="fa-solid fa-shield-cat text-lime-400 text-xl mb-2"></i><div class="text-xs font-bold text-white">Chống Thấm Kết Cấu Thép</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÀN DỰ ÁN MỞ B2B -->
+    <section id="projects-hub" class="py-16 bg-navy-950/80 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-xl sm:text-3xl font-black text-white mb-2">SÀN DỰ ÁN ĐẦU TƯ CÔNG NGHIỆP MỞ (B2B)</h2>
+                <p class="text-xs sm:text-sm text-slate-300">Cập nhật danh sách dự án đầu tư nhà máy, xử lý nước thải và hóa chất tiềm năng trong nước.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <span class="inline-block bg-cyan-500/20 text-cyan-300 text-[10px] font-bold px-3 py-1 rounded-full mb-3">Đang Xây Dựng</span>
+                    <h3 class="text-base font-bold text-white mb-2">Mở Rộng Hệ Thống Xử Lý Nước Thải KCN Bình Dương</h3>
+                    <p class="text-xs text-slate-300 mb-4">Hạng mục bọc phủ chống ăn mòn bể chứa hóa chất và đường ống xả thải dung tích lớn.</p>
+                    <a href="#quote-form" class="text-xs text-brand-gold font-bold hover:underline">Nhận Hồ Sơ Thầu &rarr;</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <span class="inline-block bg-amber-500/20 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full mb-3">Ký Kết MOU</span>
+                    <h3 class="text-base font-bold text-white mb-2">Nhà Máy Hóa Chất Cơ Bản Nhơn Trạch</h3>
+                    <p class="text-xs text-slate-300 mb-4">Dự án xây dựng bồn chứa axit đậm đặc và tháp hấp thụ khí thải yêu cầu nhựa Derakane.</p>
+                    <a href="#quote-form" class="text-xs text-brand-gold font-bold hover:underline">Nhận Hồ Sơ Thầu &rarr;</a>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <span class="inline-block bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-3 py-1 rounded-full mb-3">Chuẩn Bị Khởi Công (&lt;60 Ngày)</span>
+                    <h3 class="text-base font-bold text-white mb-2">Tổ Hợp Lọc Hóa Dầu & Xử Lý Nước Miền Trung</h3>
+                    <p class="text-xs text-slate-300 mb-4">Gói thầu chống thấm sàn kháng axit và bọc phủ composite FRP toàn bộ hệ thống bể ngầm.</p>
+                    <a href="#quote-form" class="text-xs text-brand-gold font-bold hover:underline">Nhận Hồ Sơ Thầu &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
@@ -247,23 +300,45 @@
     <!-- SCRIPT XỬ LÝ ĐA NGÔN NGỮ & FORM -->
     <script>
         const translations = {
-            vi: { nav_home: "Trang Chủ", nav_matrix: "Ma Trận Hóa Chất", nav_consult: "Tư Vấn Kỹ Thuật", nav_app: "12 Lĩnh Vực", nav_projects: "Sàn Dự Án Mở" },
-            en: { nav_home: "Home", nav_matrix: "Chemical Matrix", nav_consult: "Technical Consulting", nav_app: "Applications", nav_projects: "Project Hub" },
-            ja: { nav_home: "ホーム", nav_matrix: "耐薬品マトリックス", nav_consult: "技術相談", nav_app: "用途", nav_projects: "プロジェクト" },
-            ko: { nav_home: "홈", nav_matrix: "내화학성 매트릭스", nav_consult: "기술 컨설팅", nav_app: "응용 분야", nav_projects: "프로젝트" },
-            zh: { nav_home: "首页", nav_matrix: "化学耐蚀矩阵", nav_consult: "技术咨询", nav_app: "应用领域", nav_projects: "项目大厅" }
+            vi: {
+                nav_home: "Trang Chủ",
+                nav_matrix: "Ma Trận Hóa Chất",
+                nav_consult: "Tư Vấn Kỹ Thuật",
+                nav_app: "12 Lĩnh Vực",
+                nav_projects: "Sàn Dự Án Mở"
+            },
+            en: {
+                nav_home: "Home",
+                nav_matrix: "Chemical Matrix",
+                nav_consult: "Technical Consulting",
+                nav_app: "Applications",
+                nav_projects: "Project Hub"
+            },
+            ja: {
+                nav_home: "ホーム",
+                nav_matrix: "耐薬品マトリックス",
+                nav_consult: "技術相談",
+                nav_app: "用途",
+                nav_projects: "プロジェクト"
+            },
+            ko: {
+                nav_home: "홈",
+                nav_matrix: "내화학성 매트릭스",
+                nav_consult: "기술 컨설팅",
+                nav_app: "응용 분야",
+                nav_projects: "프로젝트"
+            },
+            zh: {
+                nav_home: "首页",
+                nav_matrix: "化学耐蚀矩阵",
+                nav_consult: "技术咨询",
+                nav_app: "应用领域",
+                nav_projects: "项目大厅"
+            }
         };
 
         function changeLanguage(lang) {
             localStorage.setItem('frp_lang', lang);
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
-            document.documentElement.lang = lang;
         }
 
         function handleFormSubmit(e) {
@@ -282,17 +357,8 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            let savedLang = localStorage.getItem('frp_lang');
-            if (!savedLang) {
-                const navLang = navigator.language || navigator.userLanguage || 'vi';
-                if (navLang.startsWith('en')) savedLang = 'en';
-                else if (navLang.startsWith('ja')) savedLang = 'ja';
-                else if (navLang.startsWith('ko')) savedLang = 'ko';
-                else if (navLang.startsWith('zh')) savedLang = 'zh';
-                else savedLang = 'vi';
-            }
+            let savedLang = localStorage.getItem('frp_lang') || 'vi';
             document.getElementById('langSelect').value = savedLang;
-            changeLanguage(savedLang);
         });
     </script>
 </body>
