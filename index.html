@@ -523,7 +523,8 @@ const keyOf = value => Object.keys(aliases).find(key =>
   [key, ...aliases[key], ...aliases[key].map(name => name + ' (' + key + ')')].some(name => normalize(name) === normalize(value)));
 // [min wt%, max wt%, max °C 411, max °C 470, max °C 901, max °C 907, ALTA page]
 const rows = {
-  h2so4: [[0.5,25,100,105,null,null,52],[26,50,100,100,100,100,52],[51,70,80,90,80,80,52],[71,75,40,80,40,80,52],[76,80,40,50,null,null,52]],
+  hcl: [[1,15,80,110,null,null,34],[16,20,80,110,null,null,34],[21,25,65,100,null,null,34],[26,30,65,95,null,null,35],[31,32,65,80,null,null,35],[33,34,50,70,null,null,35],[35,36,50,60,null,null,35],[37,37,40,50,null,null,35]],
+  h2so4: [[0.5,25,100,105,null,null,52],[26,50,100,100,100,100,52],[51,70,80,90,80,80,52],[71,75,40,80,40,80,52],[76,80,40,50,40,50,52]],
   naoh: [[1,2,80,80,null,null,49],[3,5,80,40,null,null,49],[6,10,65,null,null,null,49],[11,25,65,null,null,null,49],[26,50,80,null,null,null,50]],
   hno3: [[1,1,90,100,null,null,42],[2,5,65,80,null,null,42],[6,10,65,70,null,null,42],[11,20,50,65,null,null,42],[21,29,40,55,null,null,42],[30,35,30,50,null,null,42],[36,40,null,40,null,null,42]]
 };
@@ -548,7 +549,7 @@ function advise(input, basisConfirmed) {
   const limits = row.slice(2,6);
   const options = grades.flatMap((grade,index) => limits[index] !== null && main.t < limits[index] ? [{grade,limit:limits[index]}] : []);
   return {
-    status:options.length ? 'resin' : 'review', options, page:row[6],
+    status:options.length ? 'resin' : 'review', options, page:row[6], comparison:limits,
     refs:limits.slice(2).some(x=>x !== null) ? ['d','s'] : ['d'],
     message:options.length ? 'Danh sách sơ tuyển cho laminate FRP theo điều kiện và chú thích của hãng. Cần kiểm tra đầy đủ chú thích, điều kiện vận hành và cấu tạo trước khi chỉ định.'
       : 'Không có mã trong dữ liệu hiện tại có giới hạn bảng cao hơn nhiệt độ nhập. Cần hãng xác nhận hoặc đánh giá hệ lót thay thế theo hóa chất và nhiệt độ.'
@@ -580,10 +581,10 @@ function analyzeCase(input, basis) {
     if (sulfur.c + fluoride.c > 100) issues.push('Nếu cả hai nồng độ thuộc cùng dung dịch thì tổng vượt 100%. Nếu là hai dòng riêng, khai báo nồng độ cuối sau khi phối hợp hoặc từng chế độ tiếp xúc.');
     const notes = ['ALTA, trang 53, có dòng H₂SO₄ 1–20% / HF 3–6% và các điểm 10% / 10%, 25% / 10%. Mỗi dòng có chú thích riêng về cấu tạo và điều kiện sử dụng.', 'Đối với tổ hợp chưa khớp dòng đã nhập, gửi SDS, thành phần cuối hoặc chế độ tiếp xúc riêng, pha, chu kỳ và nhiệt độ đỉnh cho bộ phận kỹ thuật hãng. Bảng PVDF cho axit riêng lẻ không xác nhận tổ hợp này.'];
     if (!issues.length && input.length===2 && sulfur.t===fluoride.t) {
-      const limits = sulfur.c>=1&&sulfur.c<=20&&fluoride.c>=3&&fluoride.c<=6 ? [55,60] : sulfur.c===10&&fluoride.c===10 ? [40,65] : sulfur.c===25&&fluoride.c===10 ? [40,50] : null;
+      const limits = sulfur.c>=1&&sulfur.c<=20&&fluoride.c>=3&&fluoride.c<=6 ? [55,60,55,60] : sulfur.c===10&&fluoride.c===10 ? [40,65,40,65] : sulfur.c===25&&fluoride.c===10 ? [40,50,40,50] : null;
       if(limits) {
         const options=limits.flatMap((limit,i)=>sulfur.t<limit?[{grade:grades[i],limit}]:[]);
-        return {status:options.length?'resin':'review',options,refs:['d'],page:53,notes,issues,message:options.length?'Có dòng hỗn hợp khớp trong bảng ALTA. Các mã dưới đây chỉ là ứng viên cho laminate theo chú thích hãng.':'Nhiệt độ nhập chạm hoặc vượt giới hạn của các mã đã nhập.'};
+        return {status:options.length?'resin':'review',options,refs:['d','s'],page:53,comparison:limits,notes,issues,message:options.length?'Có dòng hỗn hợp khớp trong bảng ALTA và SWANCOR. Các mã dưới đây chỉ là ứng viên cho laminate theo chú thích hãng.':'Nhiệt độ nhập chạm hoặc vượt giới hạn của các mã đã nhập.'};
       }
     }
     return {status:'review',refs:['d','p'],page:53,notes,issues,message:'Chưa đủ căn cứ để chọn nhựa hoặc lớp lót cho tổ hợp H₂SO₄ và HF đã nhập.'};
@@ -592,6 +593,37 @@ function analyzeCase(input, basis) {
   return {...advise(input,basis),issues,notes:input.length>1?['Đối chiếu thành phần tại bề mặt tiếp xúc. Dữ liệu của từng hóa chất riêng lẻ không xác nhận hỗn hợp.']:[]};
 }
 
+
+function showManufacturerComparison(root,input,decision) {
+  add(root,'h3','Đối chiếu trực tiếp hai bảng hãng');
+  const sulfur=input.find(x=>x.key==='h2so4');
+  const fluoride=input.find(x=>x.key==='hf');
+  if(sulfur&&fluoride&&!decision.comparison){
+    add(root,'p','ALTA, tr. 53 và SWANCOR, tr. 44: các dòng đã đối chiếu gồm H₂SO₄ 1–20% / HF 3–6%, 10% / 10% và 25% / 10%. Không dùng giới hạn của từng axit riêng lẻ để suy ra cho hỗn hợp.');
+    if(sulfur.c>80)add(root,'p','Dòng H₂SO₄ trên 80% đứng riêng: DERAKANE 411 và SWANCOR 901 ghi NR; DERAKANE 470 và SWANCOR 907 ghi LS (phục vụ giới hạn). Dòng này không xác nhận có thêm HF.');
+    const link=add(add(root,'p',''),'a','Mở bảng SWANCOR, trang 44');link.href=sources.s[1]+'#page=44';
+    return;
+  }
+  if(input.length===1&&sulfur?.c>80){
+    add(root,'p','H₂SO₄ trên 80%, xét riêng: DERAKANE 411 và SWANCOR 901 ghi NR; DERAKANE 470 và SWANCOR 907 ghi LS. Không xếp các mã này vào danh sách đề xuất phục vụ liên tục.');
+    const link=add(add(root,'p',''),'a','Mở bảng SWANCOR');link.href=sources.s[1];
+    return;
+  }
+  if(!decision.comparison){
+    add(root,'p','Chưa có dòng cùng điều kiện được nhập và đối chiếu trong bộ tra. Có thể tìm tên hóa chất trong chỉ mục ALTA và mở bảng SWANCOR để đối chiếu dòng gốc.');
+    const link=add(add(root,'p',''),'a','Mở nguồn tra quốc tế');link.href='#/ma-tran';
+    return;
+  }
+  const list=add(root,'ul','');
+  for(const [i,grade] of grades.entries()){
+    const limit=decision.comparison[i];
+    const note=Number.isFinite(limit)?limit+'°C theo bảng laminate'+(decision.options?.some(x=>x.grade===grade)?' · qua ngưỡng sơ tuyển':' · chạm hoặc vượt ngưỡng sơ tuyển'):'chưa có ô đã xác minh trong bộ tra';
+    add(list,'li',grade+' · '+note);
+  }
+  if(sulfur&&fluoride){
+    add(root,'p','Nguồn: ALTA tr. 53 và SWANCOR tr. 44. Cần đối chiếu chú thích về cấu tạo laminate và điều kiện áp dụng.');
+  }
+}
 function buildProposal(decision) {
   if (decision.status === 'liner') return [{
     title:'Phương án khảo sát · lớp lót PVDF và vỏ FRP',
@@ -690,11 +722,13 @@ function renderReportPage() {
   const candidates=decision.options??[];
   for(const [i,x] of candidates.entries())add(root,'p',(i===0?'Ưu tiên sơ tuyển: ':'Ứng viên thay thế: ')+x.grade+' · '+x.limit+'°C theo bảng cho laminate, cần đối chiếu chú thích và điều kiện thực tế.');
   if(!candidates.length)add(root,'p',decision.status==='liner'?'Xem xét cấp PVDF làm lớp tiếp xúc. Nhựa cho vỏ FRP chọn theo tính toán kết cấu và xác nhận của hãng.':'Chưa đủ căn cứ để đề xuất mã. Cần bổ sung các điều kiện nêu trên hoặc xác nhận hệ phù hợp từ hãng.');
+  showManufacturerComparison(root,input,decision);
   add(root,'h2','03 · Phương án thi công');
-  if(!options.length)add(root,'p','Các cấu tạo mẫu nằm trong mục Thông số kỹ thuật. Chốt vật liệu tiếp xúc trước khi đưa cấu tạo vào phương án dự án.');
-  for(const plan of options){
+  if(!options.length)add(root,'p','Ba cấu tạo dưới đây là phương án mẫu cho bể nước thải theo hồ sơ FRP, trang 3–5. Chúng đang chờ xác nhận vật liệu cho điều kiện vừa nhập. Mã nêu trong cấu tạo là mã của hồ sơ mẫu.');
+  const displayedPlans=options.length?options:buildProposal({status:'resin',options:[{grade:'DERAKANE 411'},{grade:'SWANCOR 901'}]});
+  for(const plan of displayedPlans){
     add(root,'h3',plan.title);
-    add(root,'p',plan.scope);
+    add(root,'p',options.length?plan.scope:'Cấu tạo mẫu · chờ đối chiếu mã nhựa và hệ phủ với điều kiện thực tế.');
     const list=add(root,'ol','');
     for(const step of plan.steps)add(list,'li',step);
   }
