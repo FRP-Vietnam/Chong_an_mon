@@ -63,6 +63,10 @@
     "astm-c581": [
       "ASTM C581 – đánh giá kháng hóa chất của laminate",
       "https://store.astm.org/c0581-26.html"
+    ],
+    "belzona-393": [
+      "Belzona KHIA 393 – ảnh và hồ sơ bồn FRP tại Bắc Texas",
+      "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING"
     ]
   },
   "posts": [
@@ -1058,11 +1062,11 @@
     },
     {
       "slug": "frp-trong-nha-may-hoa-chat",
-      "title": "Chuyển yêu cầu vận hành thành đặc tả bồn FRP",
-      "en": "Turning chemical plant duty into FRP vessel specifications",
+      "title": "Bồn FRP chứa axit có thể hỏng ở đâu khi chế độ vận hành thay đổi?",
+      "en": "What to verify before changing service in an FRP acid tank",
       "keywords": "chemical processing FRP, corrosion specification",
-      "source": "chemical",
-      "lead": "Mô tả vận hành cần đủ chi tiết để nhà thiết kế và hãng vật liệu cùng kiểm tra phạm vi làm việc.",
+      "source": "belzona-393",
+      "lead": "Một hồ sơ của Belzona ghi nhận lớp sợi đầu tiên lộ ra trên khoảng một nửa bề mặt bên trong bồn FRP chứa axit sulfuric đã qua sử dụng. Từ ca này, có thể thấy những câu hỏi đáng đặt ra trước khi chọn nhựa, đánh giá bồn cũ hoặc đổi nguồn hóa chất.",
       "body": "Đưa thành phần, dải nhiệt độ, vận hành bình thường và bất thường, chu kỳ rửa và tuổi thọ mục tiêu vào hồ sơ. Xác định vùng tiếp xúc và tải trọng theo từng bộ phận.",
       "conclusion": "Yêu cầu nhà thầu trình bảng đối chiếu tài liệu hãng với từng điều kiện đã nêu. Mọi giả định cần được đánh dấu để tư vấn và chủ đầu tư xác nhận trước khi sản xuất.",
       "notes": "Bảng đặc tả nên phân biệt dữ liệu do chủ đầu tư cung cấp và giả định của nhà thầu. Giả định cần được xác nhận trước khi duyệt sản xuất.",
@@ -1083,7 +1087,7 @@
         "Danh sách giả định cần duyệt"
       ],
       "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
-      "seoDescription": "Tổ chức dữ liệu thành bộ điều kiện thiết kế và đánh giá chào giá bằng cùng một biểu mẫu. Bài phân tích đặc tả bồn FRP cho nhà máy hóa chất kèm checklist hồ sơ dự án.",
+      "seoDescription": "Từ ca lộ sợi trong bồn FRP chứa axit sulfuric, tìm hiểu cách đối chiếu vùng tiếp xúc, chế độ vệ sinh và giới hạn thiết kế trước khi thay đổi vận hành.",
       "question": "Một bảng đối chiếu vật liệu tốt phải cho thấy gì?",
       "answer": "Mỗi dòng nối một điều kiện thực tế với mã nhựa, cấu tạo và tài liệu nguồn. Chỗ chưa có dữ liệu ghi rõ người cung cấp và thời điểm cần xác nhận. Nhờ vậy khi so sánh hồ sơ có thể nhìn ngay khác biệt về phạm vi.",
       "section": "Ứng dụng",
@@ -1091,6 +1095,33 @@
         "Điều kiện vận hành",
         "Đặc tả hệ FRP",
         "Hồ sơ phê duyệt"
+      ],
+      "enSummary": "A published refinery case documented exposed glass reinforcement in a spent sulfuric acid tank. This article uses that observation to explain how an operating change can alter the evidence needed to review a corrosion barrier. The source does not establish a universal material limit.",
+      "gallery": {
+        "url": "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING",
+        "credit": "Belzona · KHIA 393",
+        "caption": "Ảnh hiện trường của nhà cung cấp gồm toàn cảnh bồn và cận cảnh nền FRP."
+      },
+      "story": [
+        {
+          "paragraphs": [
+            "Ca hư hỏng xảy ra tại một nhà máy lọc dầu ở Bắc Texas. Hồ sơ của Belzona mô tả các vùng mất gelcoat và lớp sợi gia cường đầu tiên lộ trên khoảng 50% bề mặt trong. Con số đó là tỷ lệ diện tích theo mô tả của nguồn. Hồ sơ công khai không cho đủ nồng độ, nhiệt độ và cấu tạo ban đầu để suy ra giới hạn làm việc của một mã nhựa cụ thể."
+          ]
+        },
+        {
+          "heading": "Một dòng “bồn chứa axit” bỏ sót những gì?",
+          "paragraphs": [
+            "Giả sử nhà máy dự định dùng lại bồn cũ cho một dòng axit có nguồn cấp khác. Tên hóa chất trên hồ sơ có thể vẫn giống, nhưng dữ liệu cần đối chiếu là thành phần và dải nồng độ thực tế, nhiệt độ khi nạp, thời gian lưu, tồn dư từ mẻ trước và chế độ vệ sinh. Một thông số trung bình trong ca sản xuất có thể bỏ qua đợt tiếp xúc ngắn lúc chuyển mẻ.",
+            "Hãy đưa bản vẽ bồn ra cùng nhật ký vận hành. Đáy bồn có thể còn giữ dung dịch sau xả. Thành bồn có một dải mực chất lỏng thay đổi. Cổ nạp, mặt dưới nắp và khoảng không phía trên cần xem xét riêng nếu có bắn tóe hoặc ngưng tụ. Cách đánh dấu theo vị trí giúp người khảo sát biết cần chụp ở đâu và giúp hãng nhựa biết điều kiện nào cần xác nhận."
+          ]
+        },
+        {
+          "heading": "Ảnh lộ sợi giúp khoanh vùng hư hỏng",
+          "paragraphs": [
+            "Khi khảo sát bồn cũ, ghi ảnh có vị trí, thước tỷ lệ và ranh giới giữa vùng nhìn còn nguyên với vùng lộ sợi. Đối chiếu với mực vận hành, vị trí cấp liệu và lịch sử sửa chữa. Nếu dấu hiệu chỉ tập trung quanh cổ nạp, câu hỏi điều tra khác với tình huống dấu hiệu trải rộng dưới mực chất lỏng. Một ảnh cận cảnh cho thấy tình trạng bề mặt tại điểm chụp. Mức độ hư hỏng bên dưới cần được đánh giá theo kế hoạch khảo sát của dự án.",
+            "Trước khi đổi điều kiện vận hành, hãy yêu cầu đơn vị thiết kế xác định vùng nào còn trong phạm vi hồ sơ cũ, vùng nào cần hãng xác nhận lại và vùng nào cần khảo sát thêm. Khi hỏi về DERAKANE hoặc SWANCOR, gửi kèm mã nhựa hiện hữu nếu truy xuất được, bản vẽ cấu tạo lớp tiếp xúc và dữ liệu của từng chế độ. Chỉ tên thương hiệu sẽ để lại phần quan trọng nhất của bài toán chưa có câu trả lời."
+          ]
+        }
       ]
     },
     {
