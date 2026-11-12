@@ -95,6 +95,10 @@ jobs:
                 "World Bank · Da Nang Sustainable City Development Project",
                 "https://documents1.worldbank.org/curated/en/112921644260666901/pdf/Vietnam-Da-Nang-Sustainable-City-Development-Project.pdf",
                 "water-treatment-header"
+              ],
+              "astm-c581": [
+                "ASTM C581 – đánh giá kháng hóa chất của laminate",
+                "https://store.astm.org/c0581-26.html"
               ]
             },
             "posts": [
@@ -996,34 +1000,73 @@ jobs:
               },
               {
                 "slug": "ho-so-moi-thau-frp",
-                "title": "Hồ sơ mời thầu bọc FRP cho công trình nước thải Việt Nam",
-                "en": "Tender documentation for FRP wastewater linings in Vietnam",
+                "title": "Mời thầu bọc phủ Composite FRP cho bể xử lý nước thải: cách so giá và nghiệm thu",
+                "en": "Tendering FRP corrosion linings for wastewater tanks",
                 "keywords": "FRP lining tender, Vietnam wastewater specification",
-                "source": "hcm",
-                "lead": "Một hồ sơ tốt giúp các nhà thầu báo giá trên cùng điều kiện và giúp chủ đầu tư so sánh cấu tạo thực tế.",
-                "body": "Đưa bản đồ hạng mục, trạng thái nền, điều kiện hóa chất, phạm vi sửa, yêu cầu thử mẫu và mốc nghiệm thu vào hồ sơ. Tách hạng mục bắt buộc khỏi phần tùy chọn cần đơn giá riêng.",
-                "conclusion": "Khi đánh giá hồ sơ, hỏi nhà thầu về phương pháp truy xuất vật liệu, hồ sơ nhà sản xuất và bản vẽ chi tiết. Tránh dùng tên dự án tham khảo như bằng chứng về cấu tạo đã thi công.",
-                "notes": "Yêu cầu nhà thầu khai rõ các phần loại trừ trong báo giá. Những phần như sửa nền, thử mẫu và nghiệm thu có thể làm hai báo giá khác phạm vi.",
+                "source": "astm-c581",
+                "lead": "Hai báo giá cùng ghi “bọc FRP 3 lớp” vẫn có thể chênh hàng chục triệu đồng vì khác phạm vi sửa nền, cổ ống và kiểm tra. Bài này có ví dụ tính lại giá và mẫu bảng nghiệm thu để chủ đầu tư và tư vấn dùng khi làm rõ hồ sơ.",
+                "body": "Khi mời đội thi công bọc phủ Composite FRP, hãy phát hành cùng một bản vẽ và bảng điều kiện vận hành cho tất cả nhà thầu. Trên bản vẽ, đánh số đáy, thành, vùng dao động mực nước, mặt dưới nắp và từng cổ ống. Bảng vận hành ghi thành phần nước thải đã biết, hóa chất vệ sinh, nhiệt độ cao nhất và thời gian tiếp xúc theo vùng. Nếu dữ liệu chưa có, ghi ai cung cấp và khi nào chốt. Nhà thầu dùng cùng một bộ dữ liệu sẽ phải giải thích rõ vì sao chọn cấu tạo khác nhau.",
+                "conclusion": "Trước khi chốt giá, ký bảng phạm vi và kế hoạch kiểm tra kèm bản vẽ. Hồ sơ bàn giao cần có bản đồ điểm sửa, kết quả kiểm tra lại, mã lô nhựa, giới hạn vận hành và điều kiện bảo hành. Nếu bể thay đổi nguồn nước thải hoặc hóa chất vệ sinh, dùng bộ hồ sơ này để đối chiếu trước khi đổi chế độ vận hành.",
+                "notes": "Mẫu thử ngâm phải có mã lô và hồ sơ cấu tạo tương ứng với phương án chào. Thỏa thuận trước đơn vị thực hiện, mẫu đối chứng, môi trường thử, các mốc quan sát và điều kiện đạt. Với kế hoạch sàng lọc 7 ngày của dự án, ghi tình trạng ban đầu và các dấu hiệu phồng, nứt, bong hoặc lộ sợi theo từng mốc. ASTM C581 cung cấp phương pháp đánh giá nhựa nhiệt rắn trong laminate gia cường sợi thủy tinh làm việc với chất lỏng. Một phép ngâm sàng lọc 7 ngày chỉ có giá trị trong phạm vi đã thỏa thuận.",
                 "focus": "đội thi công Composite FRP chống ăn mòn",
                 "sections": [
                   {
-                    "heading": "Đặt các nhà thầu trên cùng đầu bài",
-                    "text": "Nêu hiện trạng nền, phạm vi sửa, khu vực tiếp xúc và yêu cầu kiểm tra. Tách phần bắt buộc khỏi tùy chọn để so sánh đơn giá. Yêu cầu báo rõ phần không bao gồm như thử mẫu hoặc xử lý nền bất thường."
+                    "heading": "Quy đổi hai báo giá về cùng một phạm vi",
+                    "text": "Giả sử bể có 100 m² bề mặt, 12 m² nền cần sửa cục bộ và 4 cổ ống. Gói A chào 480.000 đồng/m² cho phần bọc, cộng 14 triệu đồng sửa nền, 6 triệu đồng cho cổ ống và 5 triệu đồng cho mẫu và hồ sơ kiểm tra. Tổng quy đổi là 73 triệu đồng. Gói B chào 650.000 đồng/m² cho cả bốn hạng mục, tổng 65 triệu đồng. Đây là số giả định trước thuế để minh họa cách quy đổi, không phải báo giá thị trường. Chênh lệch đổi chiều từ 17 triệu đồng nếu chỉ so đơn giá bọc sang 8 triệu đồng nếu so cùng phạm vi. Bước tiếp theo là đối chiếu chất lượng cấu tạo và nội dung kiểm tra của hai gói."
                   },
                   {
-                    "heading": "So sánh hồ sơ kỹ thuật trước so giá",
-                    "text": "Đối chiếu bản vẽ cấu tạo, vị trí xuyên thành, cách kiểm tra độ kín và hồ sơ vật liệu. Đặt tiêu chí cho cả giai đoạn thi công và bàn giao. Ca tham chiếu chỉ dùng khi nêu rõ hạng mục và điều kiện."
+                    "heading": "Buộc hồ sơ làm rõ lớp nào tiếp xúc với nước thải",
+                    "text": "Yêu cầu nhà thầu nộp mặt cắt và bảng vật liệu riêng cho từng phương án. Bảng ghi mã nhựa từng lớp, loại gia cường, chiều dày thiết kế, lớp bề mặt tiếp xúc, yêu cầu đóng rắn và chi tiết xử lý tại chân tường, cổ ống và mép kết thúc. Khi đề xuất DERAKANE hoặc SWANCOR, hồ sơ cần ghi đúng mã và chỉ rõ dòng trong hướng dẫn hãng ứng với môi trường thực tế. Nếu điều kiện là hỗn hợp hoặc vượt phạm vi công bố, lập mục cần xác nhận riêng. Quyết định thay mã cần được duyệt lại cùng điều kiện vận hành và cấu tạo đề xuất."
+                  },
+                  {
+                    "heading": "Chọn phương án theo nền và khả năng thi công",
+                    "text": "Với nền đã được xác nhận ổn định, phương án bọc FRP liên kết trực tiếp cần hồ sơ sửa nền, xử lý khe và bằng chứng kiểm tra tại những vị trí dễ bị che khuất. Khi khảo sát thấy nền có vấn đề về ẩm, thấm ngược hoặc chuyển vị, cần tìm nguyên nhân trước và yêu cầu thiết kế chi tiết xử lý phù hợp. Nếu phải cân nhắc lớp lót độc lập hoặc hệ hai lớp, so sánh thêm chi tiết neo, mối nối, kiểm tra độ kín và khả năng sửa chữa khi bể đã vận hành."
+                  },
+                  {
+                    "heading": "Đọc ảnh hiện trường để biết nhà thầu đã ghi nhận gì",
+                    "text": "Hồ sơ SGI Composites tại Chelsea cho thấy ảnh bể bê tông chứa nước sau khi hoàn thành lớp lót FRP. Khi dùng dự án tham chiếu trong hồ sơ thầu bể nước thải, yêu cầu ảnh có chú thích từng giai đoạn và đối chiếu vị trí chụp với bản vẽ. Ảnh hoàn thiện của bể chứa nước giúp tham khảo hình thức lớp lót. Khả năng kháng nước thải phải được xác định theo điều kiện và cấu tạo của dự án đang xét."
                   }
                 ],
                 "checks": [
-                  "Bảng phạm vi và loại trừ",
-                  "Ma trận yêu cầu kỹ thuật",
-                  "Tiêu chí nghiệm thu"
+                  "Phát hành cùng một bản vẽ, bảng tiếp xúc và bảng khối lượng cho tất cả nhà thầu.",
+                  "Yêu cầu nhà thầu ghi riêng giá sửa nền, xử lý cổ ống, mẫu thử và kiểm tra.",
+                  "Ghi rõ người ký xác nhận ở từng mốc và cách xử lý khi kết quả sai lệch."
                 ],
-                "seoDescription": "Đặt các nhà thầu trên cùng đầu bài và so sánh hồ sơ kỹ thuật trước so giá. Bài phân tích hồ sơ mời thầu bọc FRP bể nước thải kèm checklist hồ sơ dự án.",
-                "question": "Hai hồ sơ bọc FRP chênh giá thì nên hỏi gì?",
-                "answer": "Đối chiếu diện tích, phần xử lý nền, cấu tạo, kiểm tra và hồ sơ bàn giao. Yêu cầu mỗi bên nêu phần loại trừ và điều kiện tính phát sinh. Sau khi cân bằng phạm vi, mới so đơn giá.",
-                "section": "Dự án"
+                "seoDescription": "Mẫu so giá bọc phủ Composite FRP bể xử lý nước thải, kèm cách làm rõ mã nhựa, khối lượng sửa nền và bảng nghiệm thu.",
+                "question": "Bể thử kín bằng nước đạt rồi có thể bỏ thử mẫu kháng hóa chất không?",
+                "answer": "Hai phép kiểm tra trả lời hai câu hỏi khác nhau. Thử kín kiểm tra sự rò rỉ theo quy trình đã duyệt. Thử mẫu đánh giá sự thay đổi của vật liệu trong môi trường thử. Nếu thiết kế yêu cầu cả hai, cần nộp kết quả riêng cho từng phép.",
+                "section": "Thi công",
+                "enSummary": "A comparable wastewater tank lining tender identifies the service conditions, substrate repairs, laminate build-up, penetrations and inspection obligations. The worked example converts two different bids to the same scope before comparing their technical merits. The inspection plan separates substrate acceptance, work before concealment, final watertightness and chemical compatibility screening.",
+                "sourceNote": "Ví dụ dự toán là giả định biên tập. Hồ sơ ảnh SGI là công trình bể chứa nước tại Anh.",
+                "gallery": {
+                  "url": "https://www.sgicomposites.co.uk/about/case-studies/grp-lining-for-concrete-water-storage-tanks/",
+                  "src": "https://www.sgicomposites.co.uk/content/uploads/2025/02/concrete-water-5.jpg",
+                  "alt": "Lớp lót composite FRP hoàn thiện bên trong bể bê tông chứa nước tại Chelsea, London",
+                  "credit": "SGI Composites",
+                  "caption": "Lớp lót FRP hoàn thiện tại bể bê tông chứa nước ở Chelsea, London. Ảnh tham khảo về hiện trường thi công."
+                },
+                "inspection": [
+                  [
+                    "Trước khi bọc",
+                    "Nền, khe, vị trí thấm và cổ ống",
+                    "Biên bản chấp thuận nền, ảnh định vị và phần sửa đã xử lý"
+                  ],
+                  [
+                    "Trước khi che khuất",
+                    "Chi tiết chân tường, xuyên ống, mép lớp bọc",
+                    "Ảnh có mã vị trí và đối chiếu bản vẽ đã duyệt"
+                  ],
+                  [
+                    "Sau đóng rắn",
+                    "Bề mặt, điểm sửa và phép đo theo hồ sơ",
+                    "Sơ đồ vị trí kiểm tra, kết quả và biên bản kiểm tra lại"
+                  ],
+                  [
+                    "Trước bàn giao",
+                    "Thử kín và kết quả mẫu ngâm nếu có yêu cầu",
+                    "Biên bản thử riêng, phạm vi áp dụng và chữ ký chứng kiến"
+                  ]
+                ]
               },
               {
                 "slug": "ban-giao-va-bao-tri",
@@ -1092,7 +1135,8 @@ jobs:
           }
           function gallery(p){
             if(!p.gallery)return '';
-            const {url,credit,caption}=p.gallery;
+            const {url,credit,caption,src,alt}=p.gallery;
+            if(src&&alt)return '<figure class="field-photo"><a href="'+esc(url)+'"><img src="'+esc(src)+'" alt="'+esc(alt)+'" decoding="async"></a><figcaption>'+esc(caption)+' <a href="'+esc(url)+'">'+esc(credit)+'</a></figcaption></figure>';
             return '<aside class="field-gallery"><a href="'+esc(url)+'">Xem ảnh hiện trường ↗</a><p>'+esc(caption)+'</p><small>'+esc(credit)+'</small></aside>';
           }
           const readtime=p=>Math.max(1,Math.ceil([p.lead,p.body,p.notes,p.conclusion,p.answer,...(p.sections??[]).map(x=>x.text)].join(' ').trim().split(/\s+/).length/180));
@@ -1108,6 +1152,7 @@ jobs:
            const social='<meta property="og:type" content="article"><meta property="og:title" content="'+esc(p.title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(canonical)+'">';
            const related=ordered.filter(x=>x.slug!==p.slug&&category(x)===category(p)).slice(0,3);
            const contents=[['boi-canh','Bối cảnh kỹ thuật',para(p.body)],...(p.sections??[]).map((x,i)=>['phan-tich-'+i,x.heading,para(x.text)]),['kiem-tra','Điểm cần kiểm tra',para(p.notes)],['ap-dung','Áp dụng vào dự án',para(p.conclusion)]];
+           if(p.inspection?.length)contents.push(['moc-nghiem-thu','Bảng mốc nghiệm thu đưa vào hồ sơ','<div class="table-scroll"><table><thead><tr><th>Mốc</th><th>Kiểm tra</th><th>Bằng chứng bàn giao</th></tr></thead><tbody>'+p.inspection.map(row=>'<tr>'+row.map(cell=>'<td>'+esc(cell)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>']);
            if(p.checks?.length)contents.push(['checklist','Checklist hồ sơ dự án','<ul class="checklist">'+p.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>']);
            if(p.question&&p.answer)contents.push(['hoi-dap','Hỏi đáp kỹ thuật','<h3>'+esc(p.question)+'</h3>'+para(p.answer)]);
            const sources='<ul><li><a href="'+esc(url)+'">'+esc(source)+'</a></li>'+(p.sourceNote?'<li>'+esc(p.sourceNote)+'</li>':'')+(p.reference?'<li><a href="'+esc(p.reference)+'">Nguồn bổ sung</a></li>':'')+'</ul>';
@@ -1163,6 +1208,8 @@ jobs:
           *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8f8;color:#122c3e;font:16px/1.7 'DM Sans',system-ui,sans-serif}.shell{width:min(1160px,calc(100% - 40px));margin:auto}.mast{background:#fff;border-bottom:1px solid #dbe4e8}.bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}.brand img{display:block;width:140px;height:54px;object-fit:contain}.bar nav{display:flex;gap:clamp(.7rem,3vw,2.1rem);font-weight:650;font-size:.88rem}.bar a,footer a{color:inherit;text-decoration:none}.bar [aria-current]{color:#00695e}.intro{margin:clamp(2rem,5vw,4.3rem) 0 1.35rem}.intro p,.lede{color:#3b5868}.intro p{font-size:1.12rem}.intro h1,.article h1{font-size:clamp(2.05rem,5vw,3.8rem);line-height:1.14;letter-spacing:-.035em;margin:0}.topics{display:flex;flex-wrap:wrap;gap:.55rem;padding:0;margin:0 0 1.8rem;list-style:none}.topics a{display:block;border:1px solid #cbdadf;border-radius:30px;padding:.35rem .78rem;background:white;text-decoration:none;font-size:.88rem}.featured{display:grid;grid-template-columns:1fr 1fr;background:#102e3d;color:#fff;border-radius:16px;overflow:hidden;align-items:stretch}.featured>div{padding:clamp(1rem,4vw,2.5rem)}.featured h2{font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.29;margin:.6rem 0}.featured a{color:inherit}.featured p{color:#d7e5ea}.featured .meta{color:#c9e2e6}.featured .visual{border-radius:0;align-self:stretch}.featured .visual-grid{min-height:100%;display:grid;place-items:center}.section-title{margin:2.45rem 0 1rem;font-size:1.6rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem;padding:0;list-style:none}.card{background:white;border:1px solid #dce5e8;border-radius:12px;overflow:hidden}.card-content{padding:1.1rem}.card h2{margin:.55rem 0;font-size:1.08rem;line-height:1.42}.card p{font-size:.91rem;color:#405d6e;margin:.5rem 0 1rem}.card a,.featured h2 a{text-decoration:none}.meta{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;font-size:.78rem;font-weight:700;color:#286467}.meta span+span:before,.meta time:before{content:'·';margin-right:.65rem;color:inherit}.more{font-size:.86rem;font-weight:750}.more span{margin-left:.3rem}a{color:#075f69;text-underline-offset:.18em}a:hover{text-decoration:underline}.visual{--deep:#164957;--mid:#0a5c60;--line:#8fe2d0;color:#fff;margin:0;overflow:hidden;border-radius:12px;background:var(--deep)}.theme-1{--deep:#263b57;--mid:#314f72;--line:#b8d8fb}.theme-2{--deep:#24454a;--mid:#2a6057;--line:#b0edc6}.theme-3{--deep:#203957;--mid:#2a5279;--line:#abd7ff}.theme-4{--deep:#4e3e36;--mid:#684d3d;--line:#f9d0a0}.visual-grid{background:radial-gradient(circle at 90% 15%,var(--mid),transparent 52%),repeating-linear-gradient(0deg,transparent,transparent 19px,#ffffff14 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,#ffffff14 20px);padding:clamp(.8rem,3vw,1.7rem)}.visual ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;width:100%}.visual li{display:flex;flex-direction:column;gap:.25rem;min-width:0;border-top:2px solid var(--line);background:#071d2f80;padding:.6rem .55rem;font-size:clamp(.75rem,1.6vw,1rem);line-height:1.35;overflow-wrap:anywhere}.visual li span{font-size:.74rem;letter-spacing:.08em;color:var(--line)}.visual figcaption{padding:.65rem 1rem;font-size:.8rem;color:#e7f1f2}.card .visual{border-radius:0}.card .visual li{font-size:.73rem}.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1rem;margin-bottom:3rem}.topic-index{background:white;border:1px solid #dce5e8;padding:.8rem 1rem;border-radius:.6rem;scroll-margin-top:1rem}.topic-index h3{margin:.3rem 0}.topic-index ul{padding-left:1.2rem;font-size:.88rem}.article{max-width:1040px}.crumb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0;font-size:.86rem}.article-head{max-width:900px}.article h1{margin:.65rem 0}.lede{font-size:clamp(1rem,2vw,1.28rem);margin:0 0 1.4rem}.article-head .visual-grid{padding:clamp(1rem,5vw,2.6rem)}.article-grid{display:grid;grid-template-columns:minmax(0,690px) minmax(160px,1fr);gap:2rem;margin:2rem 0}.prose{min-width:0}.prose section{scroll-margin-top:1rem}.prose h2{font-size:1.33rem;line-height:1.35;margin:1.65rem 0 .55rem}.prose section:first-child h2{margin-top:0}.prose p{margin:.4rem 0 1rem}.toc{align-self:start;border:1px solid #dbe5e8;border-radius:.7rem;background:white;padding:.9rem;font-size:.84rem}.toc h2{font-size:1rem;margin:0}.toc ul{margin:.4rem 0;padding-left:1.15rem}.toc li{margin:.25rem 0}.checklist,.english{background:#eaf4f3;border-left:3px solid #2a7c78;padding:1rem 1rem 1rem 1.6rem}.english h2{margin-top:0;font-size:1rem}.related{border-top:1px solid #dbe5e8;margin:2rem 0 3rem}.related ul{padding-left:1.2rem}footer{padding:1.25rem 0;background:#102e3d;color:#eaf5f5}footer .shell{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}:focus-visible{outline:2px solid #0a8190;outline-offset:3px}@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.article-grid{gap:1.25rem}}@media(max-width:620px){.shell{width:calc(100% - 28px)}.bar{min-height:60px}.brand img{width:105px;height:44px}.bar nav{font-size:.75rem}.featured,.cards,.article-grid{grid-template-columns:1fr}.article-grid .toc{grid-row:1}.intro h1,.article h1{letter-spacing:-.02em}.featured .visual-grid{min-height:auto}}
           
           .featured{grid-template-columns:minmax(0,1fr);max-width:none}.featured h2{max-width:30ch}.field-gallery{padding:1rem 1.3rem;border:1px solid #b5cbd5;border-left:4px solid #147b8b;border-radius:.6rem;background:#edf5f7;margin:1.5rem 0 0}.field-gallery a{font-weight:800;color:#105266}.field-gallery p{margin:.4rem 0;font-size:1rem}.field-gallery small{color:#395967}.card-content{padding:1.25rem 1.4rem}.card h2{font-size:clamp(1.12rem,1.8vw,1.45rem);line-height:1.23}.card h2 a{text-decoration:none}.card h2 a:hover{text-decoration:underline}.card p{line-height:1.55}
+          
+          .field-photo{margin:1.7rem 0 0}.field-photo img{display:block;width:100%;max-height:480px;object-fit:contain;background:#e4edf1;border-radius:14px}.field-photo figcaption{padding:.75rem 0;font-size:.92rem;color:#395967}.table-scroll{overflow:auto}.table-scroll table{border-collapse:collapse;min-width:36rem;width:100%}.table-scroll :is(th,td){padding:.8rem;text-align:left;vertical-align:top;border-bottom:1px solid #b5cbd5}.table-scroll th{background:#edf5f7}
           FRP_END
       - name: Research and generate
         if: github.event_name == 'schedule' || inputs.generate_article == true
