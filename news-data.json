@@ -72,7 +72,7 @@
       "body": "Bồn chứa có ít nhất ba vùng cần xét: vùng ngập, đường mực chất lỏng và vùng hơi có thể ngưng tụ. Khi có nhiều hóa chất, cần hỏi chúng cùng có mặt hay xuất hiện luân phiên. Ghi thêm điều kiện rửa bồn, nhiệt độ đỉnh và thời gian lưu; chỉ tra theo môi trường tương ứng.",
       "conclusion": "Trong hồ sơ thầu, yêu cầu nhà cung cấp trình bảng hãng có phiên bản, dòng tra, chú thích và cấu tạo tương ứng. Chốt lớp tiếp xúc, lớp chịu lực và chi tiết cổ ống riêng. Một tên thương mại không đủ để xác nhận toàn bộ hệ.",
       "notes": "Ví dụ khi hai hồ sơ cùng ghi axit sulfuric nhưng một hồ sơ thiếu nhiệt độ đỉnh, chưa nên xếp hai lựa chọn ngang nhau. Đặt câu hỏi bổ sung ngay trong bảng yêu cầu vật liệu.",
-      "focus": "chọn nhựa DERAKANE cho bồn FRP",
+      "focus": "nhựa DERAKANE vinyl ester 411 và 470",
       "sections": [
         {
           "heading": "Lập bảng điều kiện theo từng vùng tiếp xúc",
@@ -109,7 +109,7 @@
       "body": "Đọc cả tên chất, khoảng nồng độ, cột mã nhựa, đơn vị nhiệt độ và chú thích. Những dòng dành cho hỗn hợp phải khớp thành phần thực tế. Khi một ô ghi NR, LS hoặc để trống, lưu nguyên trạng trong hồ sơ so sánh.",
       "conclusion": "Bảng so sánh kỹ thuật cần có cột ghi nguồn của từng mã, nhiệt độ vận hành và khoảng trống dữ liệu. Đề nghị hãng xác nhận bằng văn bản khi chọn ngoài phạm vi đã công bố.",
       "notes": "Nếu nhà thầu chỉ gửi ảnh chụp một ô, yêu cầu thêm tên cột, tên dòng và chú thích. Đây là cách đơn giản để phát hiện nhầm phiên bản hoặc nhầm mã.",
-      "focus": "bảng kháng hóa chất SWANCOR",
+      "focus": "nhựa SWANCOR vinyl ester 901 và 907",
       "sections": [
         {
           "heading": "Đọc dữ liệu theo đúng cột mã nhựa",
@@ -257,7 +257,7 @@
       "body": "Khi đọc hồ sơ nhà cung cấp, kiểm tra cấu tạo trên nền nào, số lớp, quy cách từng lớp và dữ liệu kiểm tra của toàn hệ. Đối với kết cấu đã bọc laminate, cần xác định khả năng liên kết giữa lớp phủ và bề mặt cũ.",
       "conclusion": "Nghiệm thu theo bản đồ chiều dày, điểm kiểm tra độ liên tục và hồ sơ sửa chữa. Màu các lớp hỗ trợ nhận diện vùng bỏ sót nhưng hồ sơ phải có số đo hoặc kết quả kiểm tra theo thiết kế.",
       "notes": "Trong so sánh phương án, ghi rõ lớp vảy thay thế hay bổ sung cho lớp bọc đang có. Hai cách có phạm vi kiểm tra và điểm dừng khác nhau.",
-      "focus": "lớp phủ vinylester vảy thủy tinh",
+      "focus": "nhựa vinyl ester vảy thủy tinh",
       "sections": [
         {
           "heading": "So sánh hệ phủ trên cùng một nền",
@@ -331,7 +331,7 @@
       "body": "Khảo sát lỗ rỗ, bề mặt yếu, vật liệu cũ và khe nứt. Chọn biện pháp tạo nhám phù hợp với hệ đã duyệt; các vị trí góc, mép và sau cổ ống cần kế hoạch tiếp cận cụ thể.",
       "conclusion": "Lập biên bản nền trước khi che phủ, có bản đồ vùng sửa, hình ảnh và số đo theo yêu cầu của hệ. Chỉ chuyển sang lớp lót sau khi các sai lệch về nền đã được xử lý.",
       "notes": "Với bể đang hoạt động, lập riêng danh sách nền cũ, nền sửa và vị trí không thể tiếp cận trước khi dừng bể. Dùng danh sách đó để dự trù thời gian khảo sát.",
-      "focus": "chuẩn bị nền bê tông trước khi bọc FRP",
+      "focus": "đội thi công bọc phủ Composite FRP",
       "sections": [
         {
           "heading": "Chia nền theo hiện trạng thực tế",
@@ -356,7 +356,12 @@
         "Khảo sát nền",
         "Tạo nhám",
         "Nghiệm thu nền"
-      ]
+      ],
+      "gallery": {
+        "url": "https://www.sgicomposites.co.uk/about/case-studies/hospital-potable-water-storage-tank-refurbishment/",
+        "credit": "SGI Composites",
+        "caption": "Ảnh thi công lớp bọc FRP tại đáy bể nước sạch bệnh viện. Tham khảo cách ghi nhận các giai đoạn thi công."
+      }
     },
     {
       "slug": "lop-lot-be-tong-thep",
@@ -479,7 +484,7 @@
       "body": "Nên lập ma trận gồm nền, lót, lớp trám, gia cường, lớp cản hóa chất và hoàn thiện. Ở mỗi mốc, thống nhất tài liệu đối chiếu, phạm vi kiểm, người ký và cách xử lý vùng chưa đạt.",
       "conclusion": "Nhật ký lô vật liệu và ảnh theo vị trí giúp truy xuất. Khi chuyển ca, bàn giao cả thời gian phủ chồng, vùng còn chờ nghiệm thu và những chỗ phải kiểm tra lại.",
       "notes": "Đặt điểm dừng ở nơi có nguy cơ phải bóc lớp sau để kiểm tra. Thống nhất từ đầu ai được giải phóng điểm dừng và ghi ở biểu mẫu nào.",
-      "focus": "nghiệm thu từng lớp bọc FRP",
+      "focus": "nghiệm thu đội dán sợi composite",
       "sections": [
         {
           "heading": "Lập kế hoạch theo các điểm dừng",
@@ -542,81 +547,88 @@
         "Ghi nhận thi công",
         "Mốc kiểm tra cuối",
         "Giới hạn kết luận"
-      ]
+      ],
+      "gallery": {
+        "url": "https://khia.belzona.com/pdf/download/8082",
+        "credit": "Belzona · KHIA 8082",
+        "caption": "Ảnh lớp bọc sợi thủy tinh bị hư hỏng ở đáy bồn sản xuất phân bón tại Bồ Đào Nha."
+      }
     },
     {
       "slug": "nhieu-loc-thi-nghe",
-      "title": "Nhiêu Lộc – Thị Nghè: đọc yêu cầu vật liệu từ hồ sơ nước thải",
-      "en": "Nhieu Loc–Thi Nghe wastewater project procurement context",
-      "keywords": "Vietnam wastewater treatment, Ho Chi Minh City sanitation",
+      "title": "Bọc phủ Composite FRP chống ăn mòn bể xử lý nước thải",
+      "en": "FRP corrosion linings for wastewater treatment tanks",
+      "keywords": "wastewater tank FRP lining, composite corrosion protection",
       "source": "hcm",
-      "lead": "Hồ sơ dự án vệ sinh môi trường TP.HCM cho thấy tuyến thu gom và công trình xử lý cần được đọc như một hệ thống liên kết.",
-      "body": "Từ tài liệu dự án, có thể xác định các giao diện giữa thu gom, dẫn nước và xử lý. Để lập yêu cầu lớp bọc, vẫn cần bản vẽ cụ thể, danh mục hóa chất vận hành và yêu cầu bảo trì của từng hạng mục.",
-      "conclusion": "Thông tin công khai phục vụ tìm hiểu dự án. Mọi yêu cầu về mã nhựa, lớp phủ hoặc gói mua sắm cần được xác minh trong hồ sơ kỹ thuật và tài liệu mời thầu tương ứng.",
-      "notes": "Thông tin về tuyến thu gom có ích cho việc đặt câu hỏi về điều kiện của từng thiết bị. Bài này không xác định mã nhựa hoặc nhà thầu của dự án.",
-      "focus": "hồ sơ nước thải Nhiêu Lộc – Thị Nghè",
+      "lead": "Đánh giá vùng ngâm, vùng dao động mực nước và khoảng không phía trên trước khi lập đặc tả lớp bọc FRP cho bể xử lý nước thải.",
+      "body": "Hồ sơ bể cần mô tả môi trường tiếp xúc ở đáy, thành, vùng bắn tóe và phía trên mực nước. Mỗi vùng cần được đối chiếu với cấu tạo lớp bọc và phạm vi được hãng vật liệu xác nhận.",
+      "conclusion": "Bản vẽ phân vùng là cơ sở để so sánh hồ sơ chào thầu và truy xuất vị trí sửa chữa sau bàn giao.",
+      "notes": "Đối chiếu dữ liệu vận hành theo từng vùng và bản vẽ các điểm xuyên ống.",
+      "focus": "chống thấm chống ăn mòn bể xử lý nước thải",
       "sections": [
         {
-          "heading": "Phân biệt tài liệu dự án và đặc tả vật liệu",
-          "text": "Hồ sơ công khai của dự án có thể giúp hiểu phạm vi thu gom, dẫn nước và xử lý. Để viết đặc tả lớp bọc, cần đọc bản vẽ và điều kiện từng hạng mục. Các hồ sơ công khai dùng trong bài chưa xác nhận mã nhựa hay cấu tạo của thiết bị cụ thể."
+          "heading": "Xác định vùng tiếp xúc và điểm chuyển tiếp",
+          "text": "Đánh dấu chân tường, mạch ngừng, cổ ống, mép kết thúc và vùng dao động mực nước trên bản vẽ. Đưa từng chi tiết vào hồ sơ nghiệm thu theo khu vực để dễ đối chiếu ảnh hiện trường."
         },
         {
-          "heading": "Câu hỏi dành cho tư vấn và đơn vị vận hành",
-          "text": "Xác định vị trí nào ngập, có dòng hóa chất riêng hoặc cần bảo trì trong thời gian dừng ngắn. Ghi yêu cầu tiếp cận, mặt bằng thi công và trách nhiệm cung cấp dữ liệu. Chỉ đưa yêu cầu vật liệu vào gói thầu sau khi chủ đầu tư duyệt đầu vào."
+          "heading": "Hồ sơ chống thấm chống ăn mòn bể xử lý nước thải",
+          "text": "Ghi riêng nguồn nước, hóa chất vệ sinh và các kịch bản vận hành bất thường. Chốt nền, lớp cản tiếp xúc, phạm vi thử mẫu, hồ sơ vật liệu và tiêu chí đánh giá trước khi giao đội thi công."
         }
       ],
       "checks": [
-        "Phạm vi hạng mục",
-        "Điều kiện tiếp xúc và bảo trì",
-        "Tài liệu mời thầu tương ứng"
+        "Bản vẽ phân vùng tiếp xúc",
+        "Hồ sơ lớp bọc theo nền và vùng vận hành",
+        "Ảnh các chi tiết trước khi che khuất"
       ],
       "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
-      "seoDescription": "Phân biệt tài liệu dự án và đặc tả vật liệu và câu hỏi dành cho tư vấn và đơn vị vận hành. Bài phân tích hồ sơ nước thải Nhiêu Lộc – Thị Nghè kèm checklist hồ sơ dự án.",
-      "question": "Tài liệu Nhiêu Lộc – Thị Nghè có thể dùng thế nào trong hồ sơ thầu?",
-      "answer": "Dùng để mô tả bối cảnh hạ tầng và nhận diện giao diện công trình. Đặc tả lớp bọc phải dựa trên tài liệu mời thầu, bản vẽ và dữ liệu vận hành tương ứng. Ghi tên tài liệu và phạm vi sử dụng để người đọc kiểm chứng.",
+      "seoDescription": "Cách lập đặc tả bọc phủ Composite FRP chống ăn mòn bể xử lý nước thải theo vùng ngâm, vùng bắn tóe và các điểm xuyên ống.",
+      "question": "Có thể dùng cùng một cấu tạo cho toàn bể?",
+      "answer": "Cần kiểm tra điều kiện tiếp xúc ở từng vùng và xác nhận cấu tạo ứng với trường hợp bất lợi của vùng đó.",
       "section": "Dự án",
       "visual": [
         "Tuyến thu gom",
         "Hạng mục xử lý",
         "Hồ sơ vật liệu"
-      ]
+      ],
+      "sourceNote": "Phân tích ứng dụng FRP cho bể công nghiệp. Hồ sơ nguồn cung cấp bối cảnh ngành nước."
     },
     {
       "slug": "da-nang-thoat-nuoc",
-      "title": "Đà Nẵng: đưa điều kiện vận hành vào hồ sơ thoát nước",
-      "en": "Da Nang drainage project and operating specifications",
-      "keywords": "Da Nang wastewater, Vietnam urban drainage",
+      "title": "Chống ăn mòn sàn hóa chất bằng Composite FRP: khảo sát nền và mép thu gom",
+      "en": "FRP corrosion linings for chemical handling floors",
+      "keywords": "chemical floor FRP lining, secondary containment, FRP corrosion barrier",
       "source": "danang",
-      "lead": "Dự án phát triển bền vững Đà Nẵng là nguồn tham khảo về cách đặt hạ tầng thoát nước trong bối cảnh phát triển đô thị.",
-      "body": "Đối với tư vấn vật liệu, hãy tìm phần mô tả công trình rồi lập danh sách vùng ngập, vùng bắn tóe và nơi phát sinh ngưng tụ. Yêu cầu vận hành và tiếp cận bảo trì cần đi cùng đánh giá nền và cấu tạo bảo vệ.",
-      "conclusion": "Khi dùng một báo cáo hoàn thành dự án để tham khảo, tách phạm vi công trình đã công bố khỏi đề xuất kỹ thuật cho dự án mới. Không suy ra thương hiệu đã sử dụng nếu hồ sơ không nêu.",
-      "notes": "Hồ sơ đô thị cung cấp bối cảnh về phạm vi đầu tư. Chỉ dùng thông số thuộc đúng hạng mục khi thiết kế lớp bọc hoặc yêu cầu báo giá.",
-      "focus": "hồ sơ thoát nước và xử lý nước thải Đà Nẵng",
+      "lead": "Sàn hóa chất cần được khảo sát theo vùng tiếp xúc, đường thu gom và chi tiết mép kết thúc của lớp bọc FRP.",
+      "body": "Lập bản đồ vị trí tràn, đường thoát và vùng có tải xe. Khảo sát nền tại khe, cổ thoát sàn và chân vách để xác định chi tiết lớp bọc Composite FRP theo thiết kế.",
+      "conclusion": "Thống nhất bản vẽ chi tiết và tiêu chí nghiệm thu theo vùng trước khi triển khai.",
+      "notes": "Yêu cầu chi tiết mặt cắt tại chân tường, mép hố thu và khe chuyển vị.",
+      "focus": "chống ăn mòn sàn hóa chất",
       "sections": [
         {
-          "heading": "Đọc phạm vi đầu tư theo từng công trình",
-          "text": "Tài liệu dự án cho biết bối cảnh đô thị và hạ tầng. Khi chuyển sang đánh giá lớp bọc, dùng hồ sơ thiết kế để phân biệt mương, bể, trạm bơm và tuyến dẫn. Ghi rõ vị trí tiếp xúc nước, nơi bắn tóe và vùng khí ẩm."
+          "heading": "Khoanh vùng tiếp xúc trước khi chọn lớp bọc",
+          "text": "Ghi hóa chất, nhiệt độ, thời gian đọng và chế độ vệ sinh theo từng khu vực. Khu vực pha chế, lối đi và hố thu có thể cần các chi tiết bảo vệ khác nhau."
         },
         {
-          "heading": "Bổ sung điều kiện tiếp cận vào yêu cầu thầu",
-          "text": "Khi công trình nằm trong mạng thoát nước đang vận hành, điều kiện cô lập, vệ sinh và kiểm tra ảnh hưởng đến tổ chức thi công. Yêu cầu nhà thầu mô tả trình tự khảo sát, xử lý nền và nghiệm thu từng vùng. Dữ liệu của dự án tham chiếu cần được ghi đúng phạm vi."
+          "heading": "Tách điều kiện chống ăn mòn và tải cơ học",
+          "text": "Hồ sơ cần nêu cách kiểm tra lớp cản hóa chất, bề mặt chống trượt và vùng chịu tải cơ học. Trên bản vẽ bàn giao, ghi vị trí khe và vùng chuyển tiếp để theo dõi sau vận hành."
         }
       ],
       "checks": [
-        "Sơ đồ hạng mục",
-        "Điều kiện tiếp cận và dừng vận hành",
-        "Yêu cầu kiểm tra lớp bọc"
+        "Bản đồ vùng tràn và đường thu gom",
+        "Chi tiết lớp bọc ở khe và mép",
+        "Hồ sơ kiểm tra nền"
       ],
       "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
-      "seoDescription": "Đọc phạm vi đầu tư theo từng công trình và bổ sung điều kiện tiếp cận vào yêu cầu thầu. Bài phân tích hồ sơ thoát nước và xử lý nước thải Đà Nẵng kèm checklist hồ sơ dự án.",
-      "question": "Đơn vị thiết kế cần gì ngoài báo cáo dự án Đà Nẵng?",
-      "answer": "Cần bản vẽ hạng mục, điều kiện cô lập khi thi công, hiện trạng nền và môi trường tiếp xúc. Những dữ liệu này giúp xây dựng phương pháp khảo sát và nghiệm thu khả thi tại vị trí thực tế.",
+      "seoDescription": "Khảo sát chống ăn mòn sàn hóa chất bằng Composite FRP theo vùng tràn, khe, hố thu và tải cơ học.",
+      "question": "Cần kiểm tra gì khi đổi hóa chất vệ sinh?",
+      "answer": "Đối chiếu thành phần, nồng độ, nhiệt độ, thời gian tiếp xúc và tần suất vệ sinh với hồ sơ vật liệu đã được duyệt.",
       "section": "Dự án",
       "visual": [
         "Mạng thoát nước",
         "Vị trí tiếp xúc",
         "Yêu cầu kiểm tra"
-      ]
+      ],
+      "sourceNote": "Phân tích ứng dụng kỹ thuật. Tài liệu nguồn dùng để đối chiếu bối cảnh, không xác nhận dự án cụ thể."
     },
     {
       "slug": "an-mon-khai-khoang",
@@ -665,7 +677,7 @@
       "body": "Bảng đầu vào cần ghi môi chất, nhiệt độ, áp suất hoặc chân không, điều kiện rửa và tải trọng tại mối nối. Xem xét vị trí dẫn ống qua tường hoặc thiết bị và khả năng tiếp cận khi bảo trì.",
       "conclusion": "Yêu cầu hồ sơ lắp đặt và phương pháp thử theo thiết kế. Ghi cấu tạo nối, trình tự kiểm tra, vị trí giá đỡ và điều kiện bàn giao trước khi vận hành.",
       "notes": "Ngay khi bố trí tuyến ống, nên xác định chỗ có thể tháo kiểm tra. Khả năng tiếp cận thường ảnh hưởng cách lập biên bản bảo trì.",
-      "focus": "ống FRP dẫn hóa chất",
+      "focus": "chống ăn mòn thiết bị FRP Việt Nam",
       "sections": [
         {
           "heading": "Kiểm tra điều kiện ở co, bích và giá đỡ",
@@ -704,7 +716,7 @@
       "notes": "Khi dùng ca này để so sánh, hãy ghi rõ dải nhiệt, thành phần axit và nền. Một bể có nhiệt độ cao hơn hoặc có thêm hóa chất cần bộ dữ liệu riêng. Hồ sơ ca ứng dụng không nêu thời gian vận hành đến hiện tại.",
       "reference": "https://www.altapm.com/markets/corrosion-resistant-frp/coatings-and-linings/",
       "sourceNote": "ALTA, CASE HISTORY Acid Washing Basins, trang 1.",
-      "focus": "bọc FRP bể rửa axit Elazığ",
+      "focus": "chống ăn mòn bể xi mạ",
       "sections": [
         {
           "heading": "Hiểu đúng giá trị của ca Elazığ",
@@ -713,6 +725,10 @@
         {
           "heading": "Đưa các điểm thường bị bỏ qua vào bản vẽ",
           "text": "Bổ sung chi tiết mép bể, vị trí giá treo, góc và cổ ống. Yêu cầu nhà thầu chỉ rõ cách nối lớp bọc liên tục qua các vùng này. Trong biên bản, ghi ảnh và tiêu chí theo vị trí thay vì một nhận xét cho toàn bộ bể."
+        },
+        {
+          "heading": "Khi áp dụng cho bể xi mạ",
+          "text": "Tách hồ sơ theo công đoạn và dung dịch. Với mỗi bể, lập bảng tiếp xúc ở đáy, thành, vùng bắn tóe và phụ kiện, ghi cả hóa chất vệ sinh. Đối chiếu bảng hãng cho từng môi trường trước khi chỉ định lớp bọc chống ăn mòn bể xi mạ."
         }
       ],
       "checks": [
@@ -750,6 +766,10 @@
         {
           "heading": "Thiết kế đề bài thử theo chu kỳ",
           "text": "Thống nhất điều kiện đại diện và điều kiện cần xem riêng, ghi rõ thứ tự tiếp xúc. Việc chọn một mẫu thuận tiện không trả lời được mọi chu kỳ. Báo cáo cần nêu những tình huống chưa được xác nhận."
+        },
+        {
+          "heading": "Chống ăn mòn xe bồn chở hóa chất",
+          "text": "Hồ sơ xe bồn cần đối chiếu hàng chở, dung dịch rửa, tồn dư giữa các chuyến và tải cơ học do vận chuyển. Xác nhận yêu cầu áp dụng cho thiết bị vận chuyển và thiết kế được phê duyệt trước khi xem xét cấu tạo lót FRP. Các điều kiện của bồn tĩnh chỉ là dữ liệu đối chiếu."
         }
       ],
       "checks": [
@@ -778,7 +798,7 @@
       "body": "Phân biệt axit dòng cấp, chất lỏng trong bồn và pha hơi hoặc dịch ngưng tụ. Xem riêng cổ ống, mối hàn, mặt bích và chuyển tiếp giữa các vật liệu.",
       "conclusion": "Báo cáo tư vấn nên ghi cấp vật liệu, dòng bảng hãng, giới hạn áp dụng và phần cần xác nhận thêm. Khi xét kết cấu hai lớp, yêu cầu phê duyệt cả mối nối và phương pháp nghiệm thu.",
       "notes": "Trong yêu cầu báo giá, ghi riêng mức bình thường và mức bất thường. Người duyệt vật liệu cần biết mỗi mức kéo dài bao lâu và xảy ra ở đâu.",
-      "focus": "lớp lót bồn axit sulfuric đậm đặc",
+      "focus": "tư vấn bọc phủ chống ăn mòn bể hóa chất",
       "sections": [
         {
           "heading": "Xác nhận điều kiện tiếp xúc tại bồn",
@@ -1025,7 +1045,12 @@
         "Khoanh vùng lỗi",
         "Xử lý nền và mép",
         "Kiểm tra lại"
-      ]
+      ],
+      "gallery": {
+        "url": "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING",
+        "credit": "Belzona · KHIA 393",
+        "caption": "Ảnh bồn axit sulfuric đã qua sử dụng và cận cảnh nền FRP lộ sợi tại nhà máy lọc dầu ở Bắc Texas."
+      }
     },
     {
       "slug": "frp-trong-nha-may-hoa-chat",
@@ -1037,7 +1062,7 @@
       "body": "Đưa thành phần, dải nhiệt độ, vận hành bình thường và bất thường, chu kỳ rửa và tuổi thọ mục tiêu vào hồ sơ. Xác định vùng tiếp xúc và tải trọng theo từng bộ phận.",
       "conclusion": "Yêu cầu nhà thầu trình bảng đối chiếu tài liệu hãng với từng điều kiện đã nêu. Mọi giả định cần được đánh dấu để tư vấn và chủ đầu tư xác nhận trước khi sản xuất.",
       "notes": "Bảng đặc tả nên phân biệt dữ liệu do chủ đầu tư cung cấp và giả định của nhà thầu. Giả định cần được xác nhận trước khi duyệt sản xuất.",
-      "focus": "đặc tả bồn FRP cho nhà máy hóa chất",
+      "focus": "giải pháp chống ăn mòn Composite FRP",
       "sections": [
         {
           "heading": "Tổ chức dữ liệu thành bộ điều kiện thiết kế",
@@ -1111,7 +1136,7 @@
       "body": "Đưa bản đồ hạng mục, trạng thái nền, điều kiện hóa chất, phạm vi sửa, yêu cầu thử mẫu và mốc nghiệm thu vào hồ sơ. Tách hạng mục bắt buộc khỏi phần tùy chọn cần đơn giá riêng.",
       "conclusion": "Khi đánh giá hồ sơ, hỏi nhà thầu về phương pháp truy xuất vật liệu, hồ sơ nhà sản xuất và bản vẽ chi tiết. Tránh dùng tên dự án tham khảo như bằng chứng về cấu tạo đã thi công.",
       "notes": "Yêu cầu nhà thầu khai rõ các phần loại trừ trong báo giá. Những phần như sửa nền, thử mẫu và nghiệm thu có thể làm hai báo giá khác phạm vi.",
-      "focus": "hồ sơ mời thầu bọc FRP bể nước thải",
+      "focus": "đội thi công Composite FRP chống ăn mòn",
       "sections": [
         {
           "heading": "Đặt các nhà thầu trên cùng đầu bài",
@@ -1148,7 +1173,7 @@
       "body": "Bàn giao bản vẽ, lô vật liệu, bản đồ điểm đo, vùng sửa, kết quả thử mẫu và kiểm tra hiện trường. Ghi rõ yêu cầu vệ sinh, điều kiện vận hành và cách ghi nhận sự cố.",
       "conclusion": "Lập lịch khảo sát dựa trên mức độ rủi ro của từng vùng. Sau mỗi lần kiểm tra, so với hồ sơ ban đầu và cập nhật kế hoạch bảo trì dựa trên hiện trạng.",
       "notes": "Chuẩn hóa tên vị trí ngay trong hồ sơ hoàn công. Người vận hành và nhà thầu bảo trì sẽ dùng cùng tên khi báo lỗi hoặc mở yêu cầu sửa chữa.",
-      "focus": "hồ sơ bàn giao và bảo trì lớp bọc FRP",
+      "focus": "tư vấn chống ăn mòn FRP Việt Nam",
       "sections": [
         {
           "heading": "Chuẩn hóa tài liệu cho người vận hành",
