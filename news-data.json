@@ -410,11 +410,11 @@
     },
     {
       "slug": "thu-ngam-lop-phu",
-      "title": "Thử ngâm lớp phủ công nghiệp theo mục tiêu dự án",
-      "en": "Immersion testing for industrial protective linings",
+      "title": "Mẫu FRP chỉ phồng ở mép sau thử ngâm: nên đọc kết quả thế nào?",
+      "en": "How to interpret edge blistering on an immersed FRP coupon",
       "keywords": "ASTM D6943, coating immersion test",
-      "source": "immersion",
-      "lead": "Phép thử ngâm hữu ích khi mẫu đại diện đúng nền, cấu tạo và môi trường làm việc dự kiến.",
+      "source": "astm-c581",
+      "lead": "Hai mẫu cùng một mẻ nhựa, nhưng mẫu ngâm xuất hiện bọng ở mép cắt còn mặt phủ vẫn phẳng. Chi tiết nhỏ này có thể thay đổi cách đọc cả biên bản thử.",
       "body": "Trước khi gửi mẫu, thống nhất thành phần dung dịch, nồng độ, nhiệt độ, thời gian, cách lấy mẫu và tiêu chí đọc kết quả. Nếu công trình có pha hơi hoặc vận hành luân phiên, cần nêu rõ trong đề bài thử.",
       "conclusion": "Biên bản phải đủ thông tin để truy xuất mẫu, mẫu đối chứng và ảnh. Tách kết quả thử mẫu khỏi nghiệm thu toàn công trình và thời hạn bảo hành.",
       "notes": "Việc thử nên trả lời một câu hỏi đã thống nhất, chẳng hạn hệ có thay đổi bề mặt trong điều kiện xác định hay không. Kết quả sẽ dễ dùng hơn khi câu hỏi được ghi trước.",
@@ -435,7 +435,7 @@
         "Kết luận và giới hạn áp dụng"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Viết đề bài thử trước khi chuẩn bị mẫu và đọc kết quả theo tiêu chí đã ký. Bài phân tích thử ngâm lớp phủ công nghiệp ASTM D6943 kèm checklist hồ sơ dự án.",
+      "seoDescription": "Cách đọc hiện tượng phồng mép trong thử ngâm lớp phủ FRP, đối chiếu mẫu lưu và ghi kết luận đúng phạm vi phép thử.",
       "question": "Thử mẫu đạt có đủ để nghiệm thu công trình không?",
       "answer": "Phép thử mẫu trả lời về cấu tạo đại diện dưới điều kiện đã thử. Công trình vẫn cần kiểm tra nền, thi công, độ liên tục hoặc độ kín theo phạm vi đã duyệt. Tách hai bộ biên bản để không bỏ sót trách nhiệm hiện trường.",
       "section": "Kiểm tra",
@@ -443,6 +443,30 @@
         "Chuẩn bị mẫu",
         "Thử ngâm",
         "Đọc kết quả"
+      ],
+      "enSummary": "A worked example shows how to document edge-only blistering, compare an immersed coupon with a retained control, and distinguish a screening observation from a service-life conclusion.",
+      "story": [
+        {
+          "paragraphs": [
+            "Hãy hình dung phòng thử gửi hai ảnh chụp ở ngày thứ bảy. Mẫu lưu vẫn giữ bề mặt ban đầu. Mẫu ngâm có hai bọng nhỏ sát cạnh, còn vùng giữa chưa thấy biến đổi bằng mắt. Đây là tình huống giả định. Câu đầu trong biên bản nên mô tả đúng vị trí và thời điểm quan sát, chẳng hạn “ngày 7, hai bọng sát mép cắt”. Cụm “mẫu bị phồng” bỏ mất dữ kiện quan trọng nhất để đọc kết quả."
+          ]
+        },
+        {
+          "figure": "immersion-edge"
+        },
+        {
+          "heading": "Lần theo đường tiếp xúc trước khi quy lỗi cho nhựa",
+          "paragraphs": [
+            "Đặt ảnh ngày đầu cạnh ảnh ngày thứ bảy, cùng chiều mẫu và có thước tỷ lệ. Xem lại hồ sơ chế tạo để biết mép cắt có được bảo vệ như đã thỏa thuận hay không. Nếu mép là chi tiết cần đánh giá vì công trình có mép kết thúc hoặc cổ xuyên thành, ghi nhận riêng hiện tượng tại mép. Nếu mục tiêu là đánh giá mặt phủ và mép có sai lệch so với kế hoạch thử, ghi sai lệch vào biên bản rồi thống nhất có cần làm lại mẫu hay không. Không thể xác định nguyên nhân chỉ từ hai bọng trong ảnh.",
+            "Mẫu lưu giúp nhận ra dấu vết đã có từ lúc chế tạo. Ví dụ, nếu ảnh ngày đầu của cả hai mẫu đã có dấu ở cùng kiểu vị trí sát đường cắt, nhóm thử cần kiểm tra hồ sơ gia công mẫu trước khi gán dấu vết cho môi trường ngâm. Nếu dấu chỉ xuất hiện sau ngâm, ghi đó là biến đổi quan sát được và giữ nguyên vị trí để theo dõi ở lần đánh giá tiếp theo."
+          ]
+        },
+        {
+          "heading": "Một câu kết luận có thể đưa vào biên bản",
+          "paragraphs": [
+            "“Tại ngày 7, quan sát thấy hai bọng sát mép cắt của mẫu ngâm. Chưa ghi nhận bọng ở vùng giữa trong ảnh quan sát. Cần đối chiếu cấu tạo mép mẫu và tiêu chí đã duyệt trước khi kết luận đạt.” Cách viết này giúp bên thi công, tư vấn và phòng thử xử lý cùng một dữ kiện. ASTM C581 là tài liệu tham chiếu cho đánh giá kháng hóa chất của laminate sợi thủy tinh trong môi trường lỏng. Phép thử sàng lọc 7 ngày của dự án cần ghi theo đúng kế hoạch đã duyệt và kết quả chỉ áp dụng cho mẫu, điều kiện và thời gian đã thử."
+          ]
+        }
       ]
     },
     {
