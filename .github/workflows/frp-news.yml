@@ -99,6 +99,10 @@ jobs:
               "astm-c581": [
                 "ASTM C581 – đánh giá kháng hóa chất của laminate",
                 "https://store.astm.org/c0581-26.html"
+              ],
+              "belzona-393": [
+                "Belzona KHIA 393 – ảnh và hồ sơ bồn FRP tại Bắc Texas",
+                "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING"
               ]
             },
             "posts": [
@@ -938,34 +942,41 @@ jobs:
               },
               {
                 "slug": "frp-trong-nha-may-hoa-chat",
-                "title": "Chuyển yêu cầu vận hành thành đặc tả bồn FRP",
-                "en": "Turning chemical plant duty into FRP vessel specifications",
+                "title": "Bồn FRP chứa axit có thể hỏng ở đâu khi chế độ vận hành thay đổi?",
+                "en": "What to verify before changing service in an FRP acid tank",
                 "keywords": "chemical processing FRP, corrosion specification",
-                "source": "chemical",
-                "lead": "Mô tả vận hành cần đủ chi tiết để nhà thiết kế và hãng vật liệu cùng kiểm tra phạm vi làm việc.",
-                "body": "Đưa thành phần, dải nhiệt độ, vận hành bình thường và bất thường, chu kỳ rửa và tuổi thọ mục tiêu vào hồ sơ. Xác định vùng tiếp xúc và tải trọng theo từng bộ phận.",
-                "conclusion": "Yêu cầu nhà thầu trình bảng đối chiếu tài liệu hãng với từng điều kiện đã nêu. Mọi giả định cần được đánh dấu để tư vấn và chủ đầu tư xác nhận trước khi sản xuất.",
-                "notes": "Bảng đặc tả nên phân biệt dữ liệu do chủ đầu tư cung cấp và giả định của nhà thầu. Giả định cần được xác nhận trước khi duyệt sản xuất.",
+                "source": "belzona-393",
+                "lead": "Một hồ sơ của Belzona ghi nhận lớp sợi đầu tiên lộ ra trên khoảng một nửa bề mặt bên trong bồn FRP chứa axit sulfuric đã qua sử dụng. Từ ca này, có thể thấy những câu hỏi đáng đặt ra trước khi chọn nhựa, đánh giá bồn cũ hoặc đổi nguồn hóa chất.",
                 "focus": "giải pháp chống ăn mòn Composite FRP",
-                "sections": [
+                "seoDescription": "Từ ca lộ sợi trong bồn FRP chứa axit sulfuric, tìm hiểu cách đối chiếu vùng tiếp xúc, chế độ vệ sinh và giới hạn thiết kế trước khi thay đổi vận hành.",
+                "section": "Ứng dụng",
+                "enSummary": "A published refinery case documented exposed glass reinforcement in a spent sulfuric acid tank. This article uses that observation to explain how an operating change can alter the evidence needed to review a corrosion barrier. The source does not establish a universal material limit.",
+                "gallery": {
+                  "url": "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING",
+                  "credit": "Belzona · KHIA 393",
+                  "caption": "Ảnh hiện trường của nhà cung cấp gồm toàn cảnh bồn và cận cảnh nền FRP."
+                },
+                "story": [
                   {
-                    "heading": "Tổ chức dữ liệu thành bộ điều kiện thiết kế",
-                    "text": "Nêu hóa chất và nồng độ tại từng vùng, chế độ bình thường và bất thường, giới hạn nhiệt và chu kỳ vệ sinh. Xác định dữ liệu nào chủ đầu tư đã cung cấp và điều nào còn phải xác nhận."
+                    "paragraphs": [
+                      "Ca hư hỏng xảy ra tại một nhà máy lọc dầu ở Bắc Texas. Hồ sơ của Belzona mô tả các vùng mất gelcoat và lớp sợi gia cường đầu tiên lộ trên khoảng 50% bề mặt trong. Con số đó là tỷ lệ diện tích theo mô tả của nguồn. Hồ sơ công khai không cho đủ nồng độ, nhiệt độ và cấu tạo ban đầu để suy ra giới hạn làm việc của một mã nhựa cụ thể."
+                    ]
                   },
                   {
-                    "heading": "Đánh giá chào giá bằng cùng một biểu mẫu",
-                    "text": "Yêu cầu các nhà thầu khai mã nhựa, phần cấu tạo sử dụng, dòng bảng hãng và hồ sơ thử. Ghi các giả định của từng bên thành cột riêng. Bảng so sánh nên cho thấy nơi còn thiếu dữ liệu."
+                    "heading": "Một dòng “bồn chứa axit” bỏ sót những gì?",
+                    "paragraphs": [
+                      "Giả sử nhà máy dự định dùng lại bồn cũ cho một dòng axit có nguồn cấp khác. Tên hóa chất trên hồ sơ có thể vẫn giống, nhưng dữ liệu cần đối chiếu là thành phần và dải nồng độ thực tế, nhiệt độ khi nạp, thời gian lưu, tồn dư từ mẻ trước và chế độ vệ sinh. Một thông số trung bình trong ca sản xuất có thể bỏ qua đợt tiếp xúc ngắn lúc chuyển mẻ.",
+                      "Hãy đưa bản vẽ bồn ra cùng nhật ký vận hành. Đáy bồn có thể còn giữ dung dịch sau xả. Thành bồn có một dải mực chất lỏng thay đổi. Cổ nạp, mặt dưới nắp và khoảng không phía trên cần xem xét riêng nếu có bắn tóe hoặc ngưng tụ. Cách đánh dấu theo vị trí giúp người khảo sát biết cần chụp ở đâu và giúp hãng nhựa biết điều kiện nào cần xác nhận."
+                    ]
+                  },
+                  {
+                    "heading": "Ảnh lộ sợi giúp khoanh vùng hư hỏng",
+                    "paragraphs": [
+                      "Khi khảo sát bồn cũ, ghi ảnh có vị trí, thước tỷ lệ và ranh giới giữa vùng nhìn còn nguyên với vùng lộ sợi. Đối chiếu với mực vận hành, vị trí cấp liệu và lịch sử sửa chữa. Nếu dấu hiệu chỉ tập trung quanh cổ nạp, câu hỏi điều tra khác với tình huống dấu hiệu trải rộng dưới mực chất lỏng. Một ảnh cận cảnh cho thấy tình trạng bề mặt tại điểm chụp. Mức độ hư hỏng bên dưới cần được đánh giá theo kế hoạch khảo sát của dự án.",
+                      "Trước khi đổi điều kiện vận hành, hãy yêu cầu đơn vị thiết kế xác định vùng nào còn trong phạm vi hồ sơ cũ, vùng nào cần hãng xác nhận lại và vùng nào cần khảo sát thêm. Khi hỏi về DERAKANE hoặc SWANCOR, gửi kèm mã nhựa hiện hữu nếu truy xuất được, bản vẽ cấu tạo lớp tiếp xúc và dữ liệu của từng chế độ. Chỉ tên thương hiệu sẽ để lại phần quan trọng nhất của bài toán chưa có câu trả lời."
+                    ]
                   }
-                ],
-                "checks": [
-                  "Bảng điều kiện thiết kế",
-                  "Ma trận đối chiếu hãng",
-                  "Danh sách giả định cần duyệt"
-                ],
-                "seoDescription": "Tổ chức dữ liệu thành bộ điều kiện thiết kế và đánh giá chào giá bằng cùng một biểu mẫu. Bài phân tích đặc tả bồn FRP cho nhà máy hóa chất kèm checklist hồ sơ dự án.",
-                "question": "Một bảng đối chiếu vật liệu tốt phải cho thấy gì?",
-                "answer": "Mỗi dòng nối một điều kiện thực tế với mã nhựa, cấu tạo và tài liệu nguồn. Chỗ chưa có dữ liệu ghi rõ người cung cấp và thời điểm cần xác nhận. Nhờ vậy khi so sánh hồ sơ có thể nhìn ngay khác biệt về phạm vi.",
-                "section": "Ứng dụng"
+                ]
               },
               {
                 "slug": "phu-pham-khi-va-ngung-tu",
@@ -1139,7 +1150,7 @@ jobs:
             if(src&&alt)return '<figure class="field-photo"><a href="'+esc(url)+'"><img src="'+esc(src)+'" alt="'+esc(alt)+'" decoding="async"></a><figcaption>'+esc(caption)+' <a href="'+esc(url)+'">'+esc(credit)+'</a></figcaption></figure>';
             return '<aside class="field-gallery"><a href="'+esc(url)+'">Xem ảnh hiện trường ↗</a><p>'+esc(caption)+'</p><small>'+esc(credit)+'</small></aside>';
           }
-          const readtime=p=>Math.max(1,Math.ceil([p.lead,p.body,p.notes,p.conclusion,p.answer,...(p.sections??[]).map(x=>x.text)].join(' ').trim().split(/\s+/).length/180));
+          const readtime=p=>Math.max(1,Math.ceil([p.lead,p.body,p.notes,p.conclusion,p.answer,...(p.story??[]).flatMap(x=>x.paragraphs),...(p.sections??[]).map(x=>x.text)].join(' ').trim().split(/\s+/).length/180));
           const details=p=>'<div class="meta"><span>'+esc(category(p))+'</span><span>'+readtime(p)+' phút đọc</span>'+(p.date&&Number.isFinite(Date.parse(p.date))?'<time datetime="'+esc(p.date)+'">'+esc(datefmt.format(new Date(p.date)))+'</time>':'')+'</div>';
           const subsection=(id,title,content)=>'<section id="'+id+'"><h2>'+esc(title)+'</h2>'+content+'</section>';
           const para=x=>'<p>'+esc(x)+'</p>';
@@ -1151,14 +1162,19 @@ jobs:
            const structured='<script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</scr'+'ipt>';
            const social='<meta property="og:type" content="article"><meta property="og:title" content="'+esc(p.title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(canonical)+'">';
            const related=ordered.filter(x=>x.slug!==p.slug&&category(x)===category(p)).slice(0,3);
-           const contents=[['boi-canh','Bối cảnh kỹ thuật',para(p.body)],...(p.sections??[]).map((x,i)=>['phan-tich-'+i,x.heading,para(x.text)]),['kiem-tra','Điểm cần kiểm tra',para(p.notes)],['ap-dung','Áp dụng vào dự án',para(p.conclusion)]];
+           const paragraphs=t=>String(t??'').trim().split(/\n+/).filter(Boolean).map(para).join('');
+           const contents=p.story?p.story.map((x,i)=>['phan-tich-'+i,x.heading??'',x.paragraphs.map(para).join('')]):[
+             ['mo-bai','',paragraphs(p.body)],
+             ...(p.sections??[]).map((x,i)=>['phan-tich-'+i,x.heading,paragraphs(x.text)]),
+             ['nhan-xet','',paragraphs(p.notes)+paragraphs(p.conclusion)]
+           ].filter(x=>x[2]);
            if(p.inspection?.length)contents.push(['moc-nghiem-thu','Bảng mốc nghiệm thu đưa vào hồ sơ','<div class="table-scroll"><table><thead><tr><th>Mốc</th><th>Kiểm tra</th><th>Bằng chứng bàn giao</th></tr></thead><tbody>'+p.inspection.map(row=>'<tr>'+row.map(cell=>'<td>'+esc(cell)+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>']);
-           if(p.checks?.length)contents.push(['checklist','Checklist hồ sơ dự án','<ul class="checklist">'+p.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>']);
-           if(p.question&&p.answer)contents.push(['hoi-dap','Hỏi đáp kỹ thuật','<h3>'+esc(p.question)+'</h3>'+para(p.answer)]);
+           if(p.inspection?.length&&p.checks?.length)contents.push(['checklist','Checklist hồ sơ dự án','<ul class="checklist">'+p.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>']);
+           if(p.inspection?.length&&p.question&&p.answer)contents.push(['hoi-dap','Hỏi đáp kỹ thuật','<h3>'+esc(p.question)+'</h3>'+para(p.answer)]);
            const sources='<ul><li><a href="'+esc(url)+'">'+esc(source)+'</a></li>'+(p.sourceNote?'<li>'+esc(p.sourceNote)+'</li>':'')+(p.reference?'<li><a href="'+esc(p.reference)+'">Nguồn bổ sung</a></li>':'')+'</ul>';
            contents.push(['nguon','Nguồn đối chiếu',sources]);
            const toc='<aside class="toc" aria-label="Mục lục"><h2>Trong bài viết</h2><ul>'+contents.map(([id,title])=>'<li><a href="#'+id+'">'+esc(title)+'</a></li>').join('')+'</ul></aside>';
-           const body='<main class="shell article"><nav class="crumb" aria-label="Đường dẫn"><a href="/tin-tuc/">Tin tức kỹ thuật</a><span>›</span><span>'+esc(category(p))+'</span></nav><article><header class="article-head">'+details(p)+'<h1>'+esc(p.title)+'</h1><p class="lede">'+esc(p.lead)+'</p>'+gallery(p)+'</header><div class="article-grid"><div class="prose">'+contents.map(x=>subsection(...x)).join('')+'<aside class="english" lang="en"><h2>'+esc(p.en)+'</h2>'+para(p.keywords)+(p.enSummary?para(p.enSummary):'')+'</aside></div>'+toc+'</div></article>'+(related.length?'<section class="related"><h2>Đọc tiếp</h2><ul>'+related.map(x=>'<li><a href="'+link(x)+'">'+esc(x.title)+' <span aria-hidden="true">↗</span></a></li>').join('')+'</ul></section>':'')+'</main>';
+           const body='<main class="shell article"><nav class="crumb" aria-label="Đường dẫn"><a href="/tin-tuc/">Tin tức kỹ thuật</a><span>›</span><span>'+esc(category(p))+'</span></nav><article><header class="article-head">'+details(p)+'<h1>'+esc(p.title)+'</h1><p class="lede">'+esc(p.lead)+'</p>'+gallery(p)+'</header><div class="editorial-article"><div class="prose">'+contents.map(x=>x[1]?subsection(...x):x[2]).join('')+'<aside class="english" lang="en"><h2>'+esc(p.en)+'</h2>'+para(p.keywords)+(p.enSummary?para(p.enSummary):'')+'</aside></div></div></article>'+(related.length?'<section class="related"><h2>Đọc tiếp</h2><ul>'+related.map(x=>'<li><a href="'+link(x)+'">'+esc(x.title)+' <span aria-hidden="true">↗</span></a></li>').join('')+'</ul></section>':'')+'</main>';
            await fs.writeFile('tin-tuc/'+p.slug+'.html',page(p.title,desc,canonical,body,structured+social));
           }
           const featured=ordered[0];
@@ -1182,7 +1198,7 @@ jobs:
           const allowed=u=>{try{const x=new URL(u);return x.protocol==='https:'&&domains.some(d=>x.hostname===d||x.hostname.endsWith('.'+d));}catch{return false;}};
           const keys=['slug','title','en','keywords','source','lead','body','notes','conclusion','enSummary','reference','focus','seoDescription','question','answer'];
           const schema={type:'object',properties:Object.fromEntries(keys.map(k=>[k,k==='source'?{type:'string',enum:Object.keys(data.sources)}:{type:'string'}])),required:keys,additionalProperties:false};
-          const input='Write one original Vietnamese trade-journal article exclusively on corrosion protection with fiberglass-reinforced polymer (FRP/GRP) or a documented failure of an FRP corrosion barrier of 500–750 words with an English title, natural English search terms and a 100-word English abstract. Provide focus as one natural Vietnamese search phrase, seoDescription as a distinct factual summary, and question/answer as a specific field question and answer that add information. Integrate focus naturally into the title or article, with no repetitive keyword blocks. Research a concrete project or technical document specifically involving FRP corrosion protection. Choose one topic: chemical tank or plating bath linings, wastewater FRP linings, chemical floors, vinyl ester grades or glass flake in FRP protective systems, FRP workmanship or inspection, or corrosion in chemical tankers where the source specifically supports FRP. Reject generic water infrastructure, unrelated composites, and unspecified materials. The Vietnamese title or lead must explicitly name FRP and state the corrosion topic. Name the actual equipment, service conditions reported, what to inspect, and which missing information changes the decision. Use Vietnam and international sources when relevant. Use the web search tool. Prefer a named source and clearly distinguish reported facts and editorial application. Never invent events, quotes, tests, supplier involvement, product approvals, project photos, or measured results. Avoid unsupported service limits, chemical handling instructions, or engineering specifications. Reference must be a URL actually cited by your web search. Choose source for topic illustration only. Return strict JSON; slug ASCII lowercase hyphen. Exclude previous topics: '+data.posts.map(x=>x.title).join(' | ')+'. Source keys: '+Object.keys(data.sources).join(', ');
+          const input='Write one original Vietnamese trade-journal article exclusively on corrosion protection with fiberglass-reinforced polymer (FRP/GRP) or a documented failure of an FRP corrosion barrier of 500–750 words with an English title, natural English search terms and a 100-word English abstract. Write in a natural editorial voice. Open with a specific observed event, measured finding, or a clearly identified technical decision. Use body, notes and conclusion as consecutive prose in the same story, each with new information and paragraph breaks. Explain at least one concrete observation, its plausible implication, and what the available evidence leaves unresolved. Use a hypothetical example only if labeled. Do not write generic checklist prose or repeat the opening. Provide focus as one natural Vietnamese search phrase and seoDescription as a distinct factual summary. Supply a specific field question and answer as supplementary metadata. Integrate focus naturally into the title or article, with no repetitive keyword blocks. Research a concrete project or technical document specifically involving FRP corrosion protection. Choose one topic: chemical tank or plating bath linings, wastewater FRP linings, chemical floors, vinyl ester grades or glass flake in FRP protective systems, FRP workmanship or inspection, or corrosion in chemical tankers where the source specifically supports FRP. Reject generic water infrastructure, unrelated composites, and unspecified materials. The Vietnamese title or lead must explicitly name FRP and state the corrosion topic. Name the actual equipment, service conditions reported, what to inspect, and which missing information changes the decision. Use Vietnam and international sources when relevant. Use the web search tool. Prefer a named source and clearly distinguish reported facts and editorial application. Never invent events, quotes, tests, supplier involvement, product approvals, project photos, or measured results. Avoid unsupported service limits, chemical handling instructions, or engineering specifications. Reference must be a URL actually cited by your web search. Choose source for topic illustration only. Return strict JSON; slug ASCII lowercase hyphen. Exclude previous topics: '+data.posts.map(x=>x.title).join(' | ')+'. Source keys: '+Object.keys(data.sources).join(', ');
           const res=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:'Bearer '+process.env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.OPENAI_NEWS_MODEL||'gpt-5-mini',input,tools:[{type:'web_search',filters:{allowed_domains:domains}}],tool_choice:'required',include:['web_search_call.action.sources'],text:{format:{type:'json_schema',name:'frp_article',strict:true,schema}}}),signal:AbortSignal.timeout(180000)});
           if(!res.ok)throw new Error('Research request failed: HTTP '+res.status);
           const result=await res.json();
@@ -1210,6 +1226,8 @@ jobs:
           .featured{grid-template-columns:minmax(0,1fr);max-width:none}.featured h2{max-width:30ch}.field-gallery{padding:1rem 1.3rem;border:1px solid #b5cbd5;border-left:4px solid #147b8b;border-radius:.6rem;background:#edf5f7;margin:1.5rem 0 0}.field-gallery a{font-weight:800;color:#105266}.field-gallery p{margin:.4rem 0;font-size:1rem}.field-gallery small{color:#395967}.card-content{padding:1.25rem 1.4rem}.card h2{font-size:clamp(1.12rem,1.8vw,1.45rem);line-height:1.23}.card h2 a{text-decoration:none}.card h2 a:hover{text-decoration:underline}.card p{line-height:1.55}
           
           .field-photo{margin:1.7rem 0 0}.field-photo img{display:block;width:100%;max-height:480px;object-fit:contain;background:#e4edf1;border-radius:14px}.field-photo figcaption{padding:.75rem 0;font-size:.92rem;color:#395967}.table-scroll{overflow:auto}.table-scroll table{border-collapse:collapse;min-width:36rem;width:100%}.table-scroll :is(th,td){padding:.8rem;text-align:left;vertical-align:top;border-bottom:1px solid #b5cbd5}.table-scroll th{background:#edf5f7}
+          
+          .editorial-article{max-width:76ch;margin-inline:auto}.editorial-article .prose>p{margin:0 0 1.15em}.editorial-article .prose>section{margin-block:1.9em}
           FRP_END
       - name: Research and generate
         if: github.event_name == 'schedule' || inputs.generate_article == true
