@@ -35,6 +35,7 @@
 .matrix-mobile-menu{display:none;color:#183550;padding:.4rem 1rem}.matrix-mobile-menu nav{display:grid;gap:.5rem;padding:.5rem 0}.matrix-mobile-menu a{color:#144c88}@media(max-width:1023px){.matrix-mobile-menu{display:block}}
 </style>
 <link rel="canonical" href="https://giaiphapcompositefrp.com/">
+<style>.matrix h2,.matrix h3,.matrix h4,.tech h1,.tech h2{line-height:1.5}.matrix-row small{display:block;margin-top:.5rem;line-height:1.6}.matrix-row input[type=file]{min-width:0}#matrix-result details{margin:1rem 0}#matrix-result summary{cursor:pointer;font-weight:800}</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -110,7 +111,7 @@
 <fieldset class="matrix-row"><label><span data-matrix-copy="3">Hóa chất chính (H1)</span><input name="chemical0" list="chemicals" placeholder="H₂SO₄" required></label><label><span data-matrix-copy="7">Nồng độ (% khối lượng)</span><input name="conc0" type="number" min="0.0001" max="100" step="any" required></label><label><span data-matrix-copy="8">Nhiệt độ (°C)</span><input name="temp0" type="number" min="-273.15" step="any" required></label></fieldset>
 <fieldset class="matrix-row"><label><span data-matrix-copy="4">Hóa chất phối hợp (H2)</span><input name="chemical1" list="chemicals" placeholder="HCl" ></label><label><span data-matrix-copy="7">Nồng độ (% khối lượng)</span><input name="conc1" type="number" min="0.0001" max="100" step="any" ></label><label><span data-matrix-copy="8">Nhiệt độ (°C)</span><input name="temp1" type="number" min="-273.15" step="any" ></label></fieldset>
 <fieldset class="matrix-row"><label><span data-matrix-copy="5">Hóa chất phối hợp (H3)</span><input name="chemical2" list="chemicals" placeholder="HNO₃" ></label><label><span data-matrix-copy="7">Nồng độ (% khối lượng)</span><input name="conc2" type="number" min="0.0001" max="100" step="any" ></label><label><span data-matrix-copy="8">Nhiệt độ (°C)</span><input name="temp2" type="number" min="-273.15" step="any" ></label></fieldset>
-<fieldset class="matrix-row"><label><span data-matrix-copy="6">Biến thể / Phụ phẩm sinh ra</span><input name="chemical3" list="chemicals" placeholder="Tên hoặc công thức" data-matrix-placeholder="20" ></label><label><span data-matrix-copy="7">Nồng độ (% khối lượng)</span><input name="conc3" type="number" min="0.0001" max="100" step="any" ></label><label><span data-matrix-copy="8">Nhiệt độ (°C)</span><input name="temp3" type="number" min="-273.15" step="any" ></label></fieldset>
+<fieldset class="matrix-row"><label><span data-matrix-copy="6">Biến thể / Phụ phẩm sinh ra</span><input name="chemical3" list="chemicals" placeholder="Tên hoặc công thức" data-matrix-placeholder="20" ><small data-word4="10">Gợi ý: nhập phụ phẩm đã xác định từ SDS hoặc dữ liệu quy trình. Nếu chưa rõ, ghi tên môi trường để chuyển thẩm định.</small></label><label><span data-matrix-copy="7">Nồng độ (% khối lượng)</span><input name="conc3" type="number" min="0.0001" max="100" step="any" ></label><label><span data-matrix-copy="8">Nhiệt độ (°C)</span><input name="temp3" type="number" min="-273.15" step="any" ></label></fieldset>
 <datalist id="chemicals"><option value="H₂SO₄"></option><option value="NaOH"></option><option value="HNO₃"></option><option value="HCl"></option></datalist>
 <label class="matrix-check"><input name="basis" type="checkbox"> <span data-matrix-copy="9">Tôi xác nhận đây là dung dịch nước, số liệu tính theo % khối lượng và đã khai báo thành phần, phụ phẩm liên quan.</span></label>
 <button class="matrix-button"><span data-matrix-copy="10">Tra cứu vật liệu &amp; phương án kết cấu</span></button>
@@ -145,8 +146,8 @@
                         </p>
                     </div>
                     <div class="bg-blue-950/40 p-4 rounded-xl border border-blue-500/20 text-xs text-blue-200">
-                        <strong class="text-white" data-i18n="derakane_rec">Ứng dụng khuyên dùng:</strong> Nhà máy hóa chất cơ bản, lọc hóa dầu, tháp hấp thụ khí acid nồng độ cao.
-                    </div>
+                        <strong class="text-white" data-i18n="derakane_rec">Ứng dụng khuyên dùng:</strong> <span data-word4="0">Bể xử lý nước thải công nghiệp, mương thoát nước nhà xưởng, bồn chứa nước muối, nhà máy hóa chất, lọc hóa dầu và tháp hấp thụ khí axit. Chọn mã nhựa theo điều kiện vận hành.</span>
+</div>
                 </div>
 
                 <!-- SWANCOR - KINH TẾ -->
@@ -167,8 +168,8 @@
                         </p>
                     </div>
                     <div class="bg-emerald-950/40 p-4 rounded-xl border border-emerald-500/20 text-xs text-emerald-200">
-                        <strong class="text-white" data-i18n="swancor_rec">Ứng dụng khuyên dùng:</strong> Bể xử lý nước thải KCN, mương thoát nước nhà xưởng, bồn chứa nước muối.
-                    </div>
+                        <strong class="text-white" data-i18n="swancor_rec">Ứng dụng khuyên dùng:</strong> <span data-word4="1">Bể xử lý nước thải công nghiệp, mương thoát nước nhà xưởng và bồn chứa nước muối. Chọn mã nhựa theo điều kiện vận hành.</span>
+</div>
                 </div>
             </div>
         </div>
@@ -186,17 +187,17 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block font-bold text-slate-200 mb-2" data-i18n="f_name_lbl">Họ tên / Đơn vị *</label>
-                            <input type="text" id="f-name" required placeholder="Nhập tên công ty hoặc cá nhân" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                            <input type="text" id="f-name" required data-word4-placeholder="2" placeholder="Tên công ty hoặc cá nhân" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                         <div>
                             <label class="block font-bold text-slate-200 mb-2" data-i18n="f_phone_lbl">Số điện thoại / Zalo *</label>
-                            <input type="tel" id="f-phone" required placeholder="Số Zalo liên hệ trực tiếp" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                            <input type="tel" id="f-phone" required data-word4-placeholder="3" placeholder="Số điện thoại liên hệ" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block font-bold text-slate-200 mb-2" data-i18n="f_chem_lbl">Hóa chất tiếp xúc & Nồng độ</label>
-                            <input type="text" id="f-chem" placeholder="Ví dụ: H2SO4 50%, HCl 20%..." class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
+                            <input type="text" id="f-chem" data-word4-placeholder="4" placeholder="Ví dụ H₂SO₄ 50%, HCl 20%" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                         <div>
                             <label class="block font-bold text-slate-200 mb-2" data-i18n="f_pkg_lbl">Phương án / Gói mong muốn</label>
@@ -209,10 +210,10 @@
                     </div>
                     <div>
                         <label class="block font-bold text-slate-200 mb-2" data-i18n="f_desc_lbl">Yêu cầu chi tiết / Diện tích thi công / Mô tả</label>
-                        <textarea id="f-desc" rows="4" placeholder="Nhập diện tích (m²), thời gian thi công dự kiến..." class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                        <textarea id="f-desc" rows="4" data-word4-placeholder="5" placeholder="Diện tích (m²), thời gian thi công dự kiến" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold"></textarea>
                     </div>
                     <!-- TẢI BẢN VẼ & HÌNH ẢNH -->
-                    <p id="manual-attachment"></p>
+                    <fieldset class="matrix-row"><label><span data-word4="6">Chọn bản vẽ</span><input type="file" id="quote-drawings" multiple accept=".pdf,.dwg,.dxf"></label><label><span data-word4="7">Chọn hình ảnh</span><input type="file" id="quote-photos" multiple accept="image/*"></label></fieldset><p id="manual-attachment" data-word4="8">Các tệp chọn tại đây chỉ dùng để lập danh sách hồ sơ. Sau khi mở email, hãy tự đính kèm các tệp rồi gửi.</p>
 <button type="submit" class="w-full bg-brand-gold hover:bg-amber-500 text-navy-950 font-black py-4 rounded-xl text-sm shadow-lg transition tracking-wide uppercase" data-i18n="f_submit">MỞ EMAIL ĐỂ GỬI YÊU CẦU</button>
                 </form>
             </div>
@@ -435,7 +436,7 @@
             const desc = document.getElementById('f-desc').value;
 
             const mailSubject = encodeURIComponent("Yêu cầu báo giá FRP từ " + name);
-            const mailBody = encodeURIComponent("Họ tên: " + name + "\nSố điện thoại/Zalo: " + phone + "\nHóa chất: " + chem + "\nGói yêu cầu: " + pkg + "\nNội dung: " + desc);
+            const mailBody = encodeURIComponent("Họ tên: " + name + "\nSố điện thoại/Zalo: " + phone + "\nHóa chất: " + chem + "\nGói yêu cầu: " + pkg + "\nNội dung: " + desc + '\nHồ sơ dự kiến đính kèm / Planned attachments: ' + [...document.getElementById('quote-drawings').files, ...document.getElementById('quote-photos').files].map(file => file.name).join(', '));
             
             window.location.href = `mailto:giaiphapcompositefrp@gmail.com?subject=${mailSubject}&body=${mailBody}`;
         }
@@ -498,8 +499,10 @@ function advise(input, basisConfirmed) {
   };
 }
 const methods = [["01 · Lăn nhựa trực tiếp trên Tissue","Chuẩn bị nền, xử lý khuyết tật, xác nhận primer và lớp trét tương thích. Mẫu bể tham chiếu dùng 2 Mat 300 + 1 C-Tissue 30 g/m², lăn đuổi khí và hoàn thiện lớp giàu nhựa. Cấu tạo và chiều dày phải chốt theo môi trường và nền thực tế."],["02 · Laminate và lớp phủ vinylester vảy thủy tinh","Trên laminate đã duyệt, kiểm soát độ phủ, chiều dày và lỗ kim từng lớp. Có thể dùng hai màu để nhận diện vùng thiếu phủ. Xác nhận tương thích toàn hệ và quy trình xử lý lớp có wax trước khi phủ chồng."],["03 · Hệ DERAKANE 411 phủ mỏng không cốt sợi","Chỉ xem xét khi nhà cung cấp xác nhận hệ phủ, nền, hóa chất, độ dày và dưỡng hộ. Dữ liệu laminate không dùng để phê duyệt màng phủ mỏng. Kiểm tra mép, góc, cổ ống, độ bám và tính liên tục."],["04 · Lót PVDF, vỏ FRP chịu lực","Xác nhận cấp tấm PVDF, mối hàn và cấu tạo liên kết, kiểm tra tính kín, khả năng thấm, chênh giãn nở, tải trọng và phụ kiện tiếp xúc. Dùng hệ FRP và khung hoặc gân theo thiết kế đã thẩm định."]];
-const itp = [["Trước thi công","Chốt SDS/CAS, nồng độ tối thiểu–điển hình–cực đại, pha tiếp xúc, nhiệt độ đỉnh, chu kỳ, cấu tạo và giới hạn chấp nhận. Ghi nhận lô vật tư, điều kiện nền và dưỡng hộ."],["Mẫu và thử ngâm","Đề xuất 3 mẫu đại diện mỗi điều kiện và mẫu đối chứng, cùng cấu tạo, chiều dày và dưỡng hộ. Dùng điều kiện đại diện đã thống nhất. Thực hiện tại đơn vị đủ năng lực, ghi mốc D0, D1, D3, D5 và D7. Tham chiếu ASTM C581 đúng phạm vi khi phù hợp."],["Đánh giá","Ghi mã mẫu và ảnh, nồng độ, nhiệt độ, người chứng kiến. Theo dõi rỗ/lỗ kim mới, phồng, nứt, mềm, nhớt, phấn hóa, lộ sợi, bong và rò. Độ bám, độ cứng và chiều dày theo giới hạn đã duyệt. Dấu hiệu bất thường cần điều tra và thống nhất trách nhiệm thử lại."],["Nghiệm thu công trình","Nghiệm thu nền, từng lớp, khuyết tật và sửa chữa, độ đóng rắn và độ kín theo thiết kế. Chốt riêng phương pháp kiểm tra mối hàn và độ kín đối với PVDF. Mẫu ngâm và nghiệm thu toàn bộ công trình là hai bước độc lập."],["Bảo hành","Thời hạn, phạm vi, giới hạn vận hành, lịch bảo trì và trách nhiệm theo hợp đồng. Kết quả ngâm 7 ngày chỉ là sàng lọc trong điều kiện thử. Mốc kiểm tra tham khảo 3, 6, 12, 18, 24 tháng."]];
+const itp = [["01 · Chuẩn bị mẫu","Thống nhất điều kiện và tiêu chí đạt trước khi thử. Chuẩn bị đề xuất 3 mẫu mỗi điều kiện và mẫu đối chứng cùng nền, lớp lót, chiều dày, cấu tạo và dưỡng hộ. Ghi mã lô, mã mẫu, ảnh ban đầu, bảo vệ cạnh và mặt sau theo thiết kế mẫu."],["02 · Điều kiện thử","Đơn vị đủ năng lực thực hiện. Ghi thành phần, nồng độ theo khối lượng, nhiệt độ dung dịch và chu kỳ theo hồ sơ vận hành đã được duyệt. Nếu có hỗn hợp hoặc biến động, thống nhất môi trường đại diện và các điều kiện bổ sung trước thử."],["03 · Nhật ký D0, D1, D3, D5 và D7","Mỗi mốc ghi thời gian, mã mẫu/ảnh, nồng độ, nhiệt độ và người chứng kiến. Đối chiếu mẫu ngâm với mẫu đối chứng. Theo dõi rỗ/lỗ kim mới, phồng, nứt, mềm/nhớt, phấn hóa, lộ sợi, bong tách và dấu hiệu rò. Đo độ dày/độ cứng nếu quy trình yêu cầu."],["04 · Kết luận và xử lý sai lệch","So với tiêu chí đã ký duyệt. Khi có dấu hiệu suy giảm, giữ mẫu, đối chiếu hồ sơ đóng rắn và điều kiện thử, lập biên bản và thống nhất sửa chữa hoặc thử lại. Thử ngâm 7 ngày dùng để sàng lọc theo hợp đồng."],["05 · Nghiệm thu hiện trường","Nghiệm thu nền, từng lớp, chiều dày, độ đóng rắn, sửa khuyết tật và độ kín theo thiết kế. Hệ PVDF có kế hoạch kiểm tra mối hàn và độ kín riêng. Bảo hành theo hợp đồng và giới hạn vận hành đã thống nhất."]];
 const copy = {"vi":["Bảng tra ma trận kháng hóa chất","Nhập thành phần, nồng độ và nhiệt độ tiếp xúc cao nhất.","Xem bảng tra chi tiết quốc tế","Hóa chất chính (H1)","Hóa chất phối hợp (H2)","Hóa chất phối hợp (H3)","Biến thể / Phụ phẩm sinh ra","Nồng độ (% khối lượng)","Nhiệt độ (°C)","Tôi xác nhận đây là dung dịch nước, số liệu tính theo % khối lượng và đã khai báo thành phần, phụ phẩm liên quan.","Tra cứu vật liệu & phương án kết cấu","Cần thẩm định kỹ thuật","Kết quả sơ tuyển","Giới hạn bảng hãng","In / Lưu PDF tham khảo","Tin tức","Hạng mục","Sàn dự án mở","Danh mục","Tên hoặc công thức"],"en":["Chemical resistance matrix","Enter the components, concentrations and highest exposure temperatures.","View international reference tables","Primary chemical (H1)","Additional chemical (H2)","Additional chemical (H3)","Reaction products / by-products","Concentration (wt%)","Temperature (°C)","I confirm that the medium is aqueous, concentrations are by weight, and relevant components and by-products are included.","Find materials and lining options","Engineering review required","Screening results","Manufacturer table limit","Print / Save reference PDF","News","Applications","Open Project Board","Menu","Name or formula"],"zh":["耐化学腐蚀选材表","请输入组分、浓度和最高接触温度。","查看国际参考表","主要化学品 (H1)","其他化学品 (H2)","其他化学品 (H3)","反应产物／副产物","浓度（质量百分比）","温度 (°C)","我确认介质为水溶液，浓度按质量计，并已填写相关组分和副产物。","查询材料和衬里方案","需要工程审核","初步筛选结果","厂家表列限值","打印／保存参考 PDF","新闻","应用领域","公开项目平台","菜单","名称或化学式"],"ja":["耐薬品性マトリックス","成分、濃度、最高接触温度を入力してください。","国際参考表を見る","主薬品 (H1)","混合薬品 (H2)","混合薬品 (H3)","反応生成物／副生成物","濃度（質量％）","温度 (°C)","水溶液であり、濃度は質量基準で、関係する成分と副生成物を記載したことを確認します。","材料・ライニング案を検索","技術確認が必要","一次選定結果","メーカー表の上限","参考 PDF を印刷・保存","ニュース","用途","公開プロジェクト","メニュー","名称または化学式"],"ko":["내화학성 매트릭스","성분, 농도 및 최고 접촉 온도를 입력하세요.","국제 참고표 보기","주 화학물질 (H1)","혼합 화학물질 (H2)","혼합 화학물질 (H3)","반응 생성물 / 부산물","농도 (중량 %)","온도 (°C)","수용액이며 농도는 중량 기준이고 관련 성분과 부산물을 모두 입력했음을 확인합니다.","재료 및 라이닝 방안 검색","기술 검토 필요","예비 선정 결과","제조사 표의 한계","참고 PDF 인쇄 / 저장","뉴스","적용 분야","공개 프로젝트","메뉴","이름 또는 화학식"]};
+const word4 = {"vi":["Bể xử lý nước thải công nghiệp, mương thoát nước nhà xưởng, bồn chứa nước muối, nhà máy hóa chất, lọc hóa dầu và tháp hấp thụ khí axit. Chọn mã nhựa theo điều kiện vận hành.","Bể xử lý nước thải công nghiệp, mương thoát nước nhà xưởng và bồn chứa nước muối. Chọn mã nhựa theo điều kiện vận hành.","Tên công ty hoặc cá nhân","Số điện thoại liên hệ","Ví dụ H₂SO₄ 50%, HCl 20%","Diện tích (m²), thời gian thi công dự kiến","Chọn bản vẽ","Chọn hình ảnh","Các tệp chọn tại đây chỉ dùng để lập danh sách hồ sơ. Sau khi mở email, hãy tự đính kèm các tệp rồi gửi.","Tải báo cáo PDF","Gợi ý: nhập phụ phẩm đã xác định từ SDS hoặc dữ liệu quy trình. Nếu chưa rõ, ghi tên môi trường để chuyển thẩm định.","Nghiệm thu và thử ngâm 7 ngày"],"en":["Industrial wastewater tanks, factory drains, brine tanks, chemical plants, petrochemical facilities and acid-gas scrubbers. Select the resin grade for the operating conditions.","Industrial wastewater tanks, factory drains and brine tanks. Select the resin grade for the operating conditions.","Company or contact name","Contact phone number","Example: H₂SO₄ 50%, HCl 20%","Area (m²), planned installation date","Choose drawings","Choose photos","Selected files are listed for reference. Attach the actual files in your email app before sending.","Save PDF report","Enter known by-products from the SDS or process data. If uncertain, describe the medium for engineering review.","Acceptance and seven-day immersion test"],"zh":["工业废水池、工厂排水沟、盐水罐、化工厂、石化设施和酸性气体洗涤塔。请按工况选择树脂牌号。","工业废水池、工厂排水沟和盐水罐。请按工况选择树脂牌号。","公司或联系人姓名","联系电话","例如 H₂SO₄ 50%、HCl 20%","面积（m²）、预计施工日期","选择图纸","选择照片","所选文件只用于列出文件名。请在邮件应用中手动附加文件后发送。","保存 PDF 报告","请填写安全数据表或工艺资料中确认的副产物。如不确定，请描述介质以便技术审核。","验收和七天浸泡试验"],"ja":["工業排水槽、工場排水溝、塩水槽、化学工場、石油化学設備、酸性ガス洗浄塔。運転条件に応じて樹脂グレードを選定します。","工業排水槽、工場排水溝、塩水槽。運転条件に応じて樹脂グレードを選定します。","会社名または連絡先氏名","連絡先電話番号","例：H₂SO₄ 50%、HCl 20%","面積（m²）、施工予定日","図面を選択","写真を選択","選択したファイルは一覧表示のみです。メールアプリでファイルを添付して送信してください。","PDF 報告書を保存","SDS または工程データで確認した副生成物を入力してください。不明な場合は技術確認のため媒体を記載してください。","受入検査と7日間の浸漬試験"],"ko":["산업 폐수조, 공장 배수로, 염수조, 화학 공장, 석유화학 설비 및 산성 가스 세정탑. 운전 조건에 맞는 수지 등급을 선정합니다.","산업 폐수조, 공장 배수로 및 염수조. 운전 조건에 맞는 수지 등급을 선정합니다.","회사 또는 담당자 이름","연락처 전화번호","예: H₂SO₄ 50%, HCl 20%","면적(m²), 시공 예정일","도면 선택","사진 선택","선택한 파일은 목록에만 표시됩니다. 이메일 앱에서 파일을 직접 첨부하여 보내세요.","PDF 보고서 저장","SDS 또는 공정 자료에서 확인한 부산물을 입력하세요. 불확실한 경우 기술 검토를 위해 매질을 설명하세요.","인수 검사와 7일 침지 시험"]};
+const extra = () => word4[document.documentElement.lang] ?? word4.vi;
 const currentCopy = () => copy[document.documentElement.lang] ?? copy.vi;
 const form = document.getElementById('matrix-form');
 const result = document.getElementById('matrix-result');
@@ -549,6 +552,7 @@ if (form) {
     const selectedMethods = decision.status === 'resin'
       ? methods.slice(0,decision.options.some(option => option.grade === 'DERAKANE 411') ? 3 : 2)
       : decision.status === 'liner' ? methods.slice(3) : [];
+    const testWasOpen = result.querySelector('details')?.open ?? false;
     result.replaceChildren();
     result.hidden = false;
     add(result,'h3',currentCopy()[decision.status === 'review' ? 11 : 12]);
@@ -556,7 +560,11 @@ if (form) {
     const list = add(result,'ul','');
     for (const option of decision.options ?? []) add(list,'li',option.grade + ' · ' + currentCopy()[13] + ' ' + option.limit + '°C');
     for (const [title,description] of selectedMethods) {add(result,'h4',title); add(result,'p',description);}
-    const pdf = add(result,'button',currentCopy()[14]);
+    const testing = add(result,'details','');
+    testing.open = testWasOpen;
+    add(testing,'summary',extra()[11]);
+    for (const [title,description] of itp) { add(testing,'h4',title); add(testing,'p',description); }
+    const pdf = add(result,'button',extra()[9]);
     pdf.type = 'button';
     pdf.className = 'matrix-button';
     pdf.addEventListener('click',() => report(input,decision,selectedMethods));
@@ -570,7 +578,9 @@ function updateMatrixLanguage(){
   const strings = currentCopy();
   for (const el of document.querySelectorAll('[data-matrix-copy]')) el.textContent = strings[Number(el.dataset.matrixCopy)];
   for (const el of document.querySelectorAll('[data-matrix-placeholder]')) el.placeholder = strings[Number(el.dataset.matrixPlaceholder)];
-  const note = document.getElementById('manual-attachment');
+  for (const el of document.querySelectorAll('[data-word4]')) el.textContent = extra()[Number(el.dataset.word4)];
+  for (const el of document.querySelectorAll('[data-word4-placeholder]')) el.placeholder = extra()[Number(el.dataset.word4Placeholder)];
+  const note = null;
   if(note) note.textContent = ({vi:'Sau khi mở email, hãy đính kèm ảnh và bản vẽ rồi bấm gửi.',en:'Attach photos and drawings in your email app before sending.',zh:'请在邮件应用中添加照片和图纸后发送。',ja:'メールアプリで写真と図面を添付してから送信してください。',ko:'이메일 앱에서 사진과 도면을 첨부한 후 보내세요.'})[document.documentElement.lang];
 }
 document.addEventListener('frp-language', updateMatrixLanguage);
