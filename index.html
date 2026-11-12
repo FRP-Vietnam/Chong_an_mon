@@ -772,27 +772,29 @@ function renderWorkflow(root){
   }
   add(figure,'figcaption','Trình tự kiểm soát từ khảo sát đến bàn giao.');
 }
-function renderSectionDiagram(parent,plan){
+function renderSectionDiagram(parent,plan,japanese=false){
   const profiles={
     '01':['Nền đã xử lý','Primer + lớp trám','Mat + C-Tissue','Lớp giàu nhựa'],
     '02':['Nền đã xử lý','Primer + lớp trám','Laminate','Vảy thủy tinh · trắng','Vảy thủy tinh · xám','Lớp hoàn thiện'],
     '03':['Nền đã xử lý','Primer + lớp trám','Vảy thủy tinh · trắng','Vảy thủy tinh · xám','Lớp hoàn thiện'],
     '04':['Vỏ FRP chịu lực','Liên kết theo thiết kế','Lớp lót PVDF']
   };
-  const layers=profiles[plan.title.slice(0,2)];if(!layers)return;
+  const profile=plan.title.slice(0,2);
+  const labels={'01':['処理済み下地','下塗り・充填材','マット・表面ベール','樹脂リッチ層'],'02':['処理済み下地','下塗り・充填材','積層材','ガラスフレーク（白）','ガラスフレーク（灰）','仕上げ層'],'03':['処理済み下地','下塗り・充填材','ガラスフレーク（白）','ガラスフレーク（灰）','仕上げ層'],'04':['FRP 外殻','設計に基づく接合部','PVDF ライニング']};
+  const layers=(japanese?labels:profiles)[profile];if(!layers)return;
   const figure=add(parent,'figure','');figure.className='frp-figure';
   const ns='http://www.w3.org/2000/svg';
   const draw=(parent,tag,attrs,value)=>{const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(value)e.textContent=value;parent.append(e);return e;};
-  const svg=draw(figure,'svg',{viewBox:'0 0 560 '+(36+layers.length*32),role:'img','aria-label':'Mặt cắt minh họa các lớp từ bề mặt tiếp xúc về nền'});
+  const svg=draw(figure,'svg',{viewBox:'0 0 560 '+(36+layers.length*32),role:'img','aria-label':japanese?'接液面から下地までの模式断面':'Mặt cắt minh họa các lớp từ bề mặt tiếp xúc về nền'});
   const colors=['#95a9b6','#b7d2df','#74afc4','#d1e9ef','#86a9bf','#edf6f8'];
-  draw(svg,'text',{x:14,y:20,fill:'#183c54','font-size':15,'font-weight':700},'Mặt tiếp xúc');
+  draw(svg,'text',{x:14,y:20,fill:'#183c54','font-size':15,'font-weight':700},japanese?'接液面':'Mặt tiếp xúc');
   [...layers].reverse().forEach((label,i)=>{
     const y=30+i*32;
     draw(svg,'rect',{x:14,y,width:218,height:27,rx:4,fill:colors[layers.length-1-i]});
     draw(svg,'path',{d:'M232 '+(y+13)+' H255',stroke:'#637f91','stroke-width':1.5});
     draw(svg,'text',{x:265,y:y+19,fill:'#173b53','font-size':16},label);
   });
-  add(figure,'figcaption','Sơ đồ mặt cắt minh họa. Chiều dày và chi tiết liên kết theo bản vẽ được duyệt.');
+  add(figure,'figcaption',japanese?'模式断面。膜厚と接合部は承認図に従ってください。':'Sơ đồ mặt cắt minh họa. Chiều dày và chi tiết liên kết theo bản vẽ được duyệt.');
 }
 function renderLayerSchedule(parent, plan, candidate) {
   const code=candidate?.grade;
@@ -830,13 +832,85 @@ function renderAcceptanceTable(root){
     for(let i=0;i<5;i++)add(row,'td','—');
   }
 }
+function renderJapaneseReport(root,input,decision,plans,basis) {
+  root.replaceChildren();
+  root.lang='ja';
+  add(root,'div','COMPOSITE FRP SOLUTIONS VIETNAM').className='frp-brand';
+  add(root,'h1','耐食材料の選定報告書');
+  const lead=decision.options?.[0];
+  const summary=add(root,'section','');summary.className='frp-summary';
+  add(summary,'h2',lead?'一次候補：'+lead.grade:decision.status==='liner'?'検討案：PVDF ライニング':'使用条件の確認が必要です');
+  add(summary,'p','本書は技術検討用です。材料仕様と検査基準は承認済みの設計図書で確定してください。');
+  add(root,'h2','入力条件');
+  const roleNames=['主薬品 (H1)','混合薬品 (H2)','混合薬品 (H3)','副生成物'];
+  for(const x of input)add(root,'p',roleNames[x.role]+' · '+(x.name||'薬品名未入力')+' · '+(Number.isFinite(x.c)?x.c+'%':'濃度未入力')+' · '+(Number.isFinite(x.t)?x.t+'°C':'温度未入力'));
+  add(root,'h2','01 · 選定結果');
+  if(lead)add(root,'p','メーカー表の条件に基づく FRP 積層材の一次候補です。適用条件と注記を確認してください。');
+  else if(decision.status==='liner')add(root,'p','薬液に接する PVDF のグレードと継手、および FRP 外殻の設計を個別に確認してください。');
+  else add(root,'p','入力条件と照合済みのメーカー表から、この用途の樹脂グレードを選定できませんでした。');
+  if(!basis)add(root,'p','水溶液かどうかと濃度の基準を確認してください。蒸気・ガスの場合は凝縮液の条件も必要です。');
+  for(const x of input){
+    const label=roleNames[x.role]+' · '+x.name;
+    if(!x.key)add(root,'p',label+'：薬品名、化学式または CAS 番号を確認してください。');
+    if(!Number.isFinite(x.c)||x.c<=0||x.c>100)add(root,'p',label+'：質量濃度を確認してください。');
+    if(!Number.isFinite(x.t))add(root,'p',label+'：最高接触温度を入力してください。');
+  }
+  const acid=input.find(x=>x.key==='h2so4'),hf=input.find(x=>x.key==='hf');
+  if(acid&&hf&&hf.role===3)add(root,'p','HF が同じ液相にあるか、ガス・蒸気または凝縮液にあるかを確認してください。');
+  if(acid&&hf&&acid.c+hf.c>100)add(root,'p','同じ液相の質量濃度なら合計が 100% を超えます。供給液と実際の接液条件を区別してください。');
+  if(acid&&hf&&input.length===2&&Number.isFinite(acid.t)&&Number.isFinite(hf.t)&&acid.t!==hf.t)add(root,'p','同じ混合液の接触面における最高温度を入力してください。');
+  if(input.length>1&&!lead)add(root,'p','実際の混合液の組成・相・最高温度・運転サイクルと SDS をそろえ、メーカーに確認してください。単独薬品の表を混合液に適用することはできません。');
+  add(root,'h2','02 · 樹脂グレード');
+  for(const [i,x] of (decision.options??[]).entries())add(root,'p',(i===0?'一次候補：':'代替候補：')+x.grade+' · '+x.limit+'°C（積層材の表値）');
+  if(!lead)add(root,'p',decision.status==='liner'?'接液面には PVDF を検討し、FRP 外殻の樹脂は構造設計とメーカー確認で選定します。':'現時点で提示できるプロジェクト用の樹脂グレードはありません。');
+  if(acid&&hf&&!lead){
+    add(root,'h3','メーカー表の比較条件');
+    for(const row of acidMixRows)add(root,'p',row.label+' · '+grades.map((g,i)=>g+' '+row.limits[i]+'°C').join(' / '));
+    add(root,'p','ALTA 53ページ、SWANCOR 44ページ。上記は比較用であり、今回の条件に適用できることを示すものではありません。');
+  }
+  add(root,'h2','03 · 施工案');
+  if(!plans.length)add(root,'p','以下は排水処理槽の参考構成です。今回の用途への適用は、接液材料と構成を承認した後に判断します。');
+  const variants=[
+    ['01 · ビニルエステル積層・表面ベール仕上げ','下地の脆弱部・ひび割れ・空隙を処理し、承認済みプライマーと充填材を施工します。参考構成は Mat 300 g/m² 2層と C-Tissue 30 g/m² 1層です。各層を脱泡し、樹脂リッチ層で仕上げます。'],
+    ['02 · 積層材とガラスフレーク塗膜','承認済み積層材の上に白色・灰色のガラスフレーク層と仕上げ層を施工します。膜厚、塗り残し、ピンホールを確認します。'],
+    ['03 · DERAKANE 411 の薄膜塗装','薬品、下地、構成、膜厚についてメーカー確認を得た場合に限り検討します。承認済み下塗り、白色・灰色のフレーク層、仕上げ層の順に施工し、密着性・硬化・連続性を確認します。'],
+    ['04 · PVDF ライニングと FRP 外殻','PVDF グレード、溶接継手、取付方法、フランジ・貫通部を承認図で確認し、溶接部とライニングの漏れを検査します。']
+  ];
+  const selected=plans.length?plans.map(x=>Number(x.title.slice(0,2))-1):[0,1,2];
+  for(const i of selected){const v=variants[i];if(!v)continue;const card=add(root,'section','');card.className='frp-plan';add(card,'h3',v[0]);renderSectionDiagram(card,{title:v[0]},true);add(card,'p',v[1]);}
+  add(root,'p','隅部、目地、ノズル、貫通部は図面に記載し、ライニングの連続性と漏れを検査します。');
+  add(root,'h2','04 · 検査・浸漬試験');
+  for(const [title,detail] of [
+    ['施工前','下地、湿度、露点、粗さ、材料ロット、樹脂、プライマー、積層構成、最小膜厚と合否基準を承認します。'],
+    ['施工中','下塗り、充填、各積層・塗膜、継手を確認し、位置、膜厚、写真と補修結果を記録します。'],
+    ['試験片','実施工と同じ下地、構成、膜厚、硬化条件とし、各条件で試験片3点と対照片を用意する案を検討します。'],
+    ['D0・D1・D3・D5・D7','濃度、温度、試験片番号、写真、立会者を記録し、膨れ、ひび割れ、ピンホール、繊維露出、剥離などを対照片と比較します。'],
+    ['引渡し','承認済み基準で判定し、不適合は補修・再検査します。現場の漏れ検査は別途実施します。7日間の試験は契約に基づくスクリーニングです。'],
+    ['保守','保証条件、運転範囲と点検時期を契約・設計図書で定めます。']
+  ]){add(root,'h3',title);add(root,'p',detail);}
+  const table=add(add(root,'div',''),'table','');table.parentNode.className='frp-table-wrap';
+  const header=add(add(table,'thead',''),'tr','');for(const v of ['検査項目','D0','D1','D3','D5','D7'])add(header,'th',v);
+  const tbody=add(table,'tbody','');for(const v of ['濃度・温度','試験片・写真','外観・劣化','膜厚・硬度・密着性（規定時）','立会者']){const row=add(tbody,'tr','');add(row,'th',v);for(let i=0;i<5;i++)add(row,'td','—');}
+  add(root,'h2','参照資料');
+  for(const key of new Set([...decision.refs,'w'])){const [title,url]=sources[key];const link=add(add(root,'p',''),'a',key==='w'?'FRP 排水処理槽技術資料':title+(key==='d'&&decision.page?' · '+decision.page+'ページ':''));link.href=key==='w'?'#/thong-so-ky-thuat':url;}
+}
+function updateReportActions(japanese){
+  const action=document.querySelector('.report-actions');
+  if(!action)return;
+  action.querySelector('a').textContent=japanese?'入力条件を修正':'Quay lại chỉnh thông số';
+  document.getElementById('report-download').textContent=japanese?'HTML をダウンロード':'Tải báo cáo HTML';
+  document.getElementById('report-print').textContent=japanese?'印刷 / PDF 保存':'In / Lưu PDF';
+}
 function renderReportPage() {
   const root=document.getElementById('report-page');
   if(!root)return;
+  const japanese=document.documentElement.lang==='ja';
+  updateReportActions(japanese);
   let payload;
   try {payload=JSON.parse(decodeURIComponent(location.hash.slice('#/ket-qua-tra-cuu/'.length)));}catch {}
   if(!Array.isArray(payload?.input)||!payload.input.length) {
-    add(root,'p','Hãy mở bảng tra và nhập điều kiện tiếp xúc để lập báo cáo.');
+    if(japanese)root.querySelector('h1').textContent='耐食材料の選定報告書';
+    add(root,'p',japanese?'耐薬品性マトリックスで接触条件を入力してください。':'Hãy mở bảng tra và nhập điều kiện tiếp xúc để lập báo cáo.');
     return;
   }
   const input=payload.input.slice(0,4).filter(x=>x&&Number.isInteger(x.role)&&x.role>=0&&x.role<4).map(x=>({role:x.role,name:typeof x.name==='string'?x.name.slice(0,250):'',c:Number.isFinite(x.c)?x.c:NaN,t:Number.isFinite(x.t)?x.t:NaN}));
@@ -892,19 +966,20 @@ function renderReportPage() {
     const link=add(add(root,'p',''),'a',title+(key==='d'&&decision.page?', tr. '+decision.page:''));
     link.href=url==='thong-so-ky-thuat.html'?'#/thong-so-ky-thuat':url;
   }
+  if(japanese)renderJapaneseReport(root,input,decision,options,payload.basis===true);
   document.getElementById('report-print').hidden=false;
   document.getElementById('report-print').addEventListener('click',()=>window.print());
   document.getElementById('report-download').hidden=false;
   document.getElementById('report-download').addEventListener('click',()=>{
     const doc=document.createElement('html');
-    doc.lang='vi';
+    doc.lang=japanese?'ja':'vi';
     const head=document.createElement('head');
     const meta=document.createElement('meta');meta.charset='UTF-8';head.append(meta);
     const viewport=document.createElement('meta');viewport.name='viewport';viewport.content='width=device-width,initial-scale=1';head.append(viewport);
-    add(head,'title','FRP · Báo cáo tra cứu');
+    add(head,'title',japanese?'FRP · 耐食材料の選定報告書':'FRP · Báo cáo tra cứu');
     add(head,'style',document.getElementById('frp-report-style').textContent);
     const body=document.createElement('body');body.className='frp-export';
-    const print=add(body,'button','In / Lưu PDF');print.className='frp-print-button';print.type='button';print.setAttribute('onclick','window.print()');
+    const print=add(body,'button',japanese?'印刷 / PDF 保存':'In / Lưu PDF');print.className='frp-print-button';print.type='button';print.setAttribute('onclick','window.print()');
     const saved=root.cloneNode(true);
     for(const a of saved.querySelectorAll('a')) if(!/^[a-z]+:/i.test(a.getAttribute('href'))) a.href=new URL(a.getAttribute('href'),location.href).href;
     body.append(saved);doc.append(head,body);
@@ -964,14 +1039,16 @@ function openEmbeddedPage() {
   }
   subpage.append(template.content.cloneNode(true));
   const title=subpage.querySelector('h1');
-  document.title=(title?.textContent||defaultTitle)+' | FRP Network';
   if(page==='ket-qua-tra-cuu')renderReportPage();
+  const displayedTitle=subpage.querySelector('h1');
+  document.title=(displayedTitle?.textContent||defaultTitle)+' | FRP Network';
   if(page==='ma-tran')activateAltaIndex();
   window.scrollTo(0,0);
   title?.setAttribute('tabindex','-1');
   title?.focus({preventScroll:true});
 }
 window.addEventListener('hashchange',openEmbeddedPage);
+document.addEventListener('frp-language',()=>{if(!location.hash.startsWith('#/ket-qua-tra-cuu/'))return;const y=window.scrollY;openEmbeddedPage();window.scrollTo(0,y);});
 openEmbeddedPage();
 
 </script>
