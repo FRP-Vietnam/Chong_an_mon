@@ -103,6 +103,18 @@ jobs:
               "belzona-393": [
                 "Belzona KHIA 393 – ảnh và hồ sơ bồn FRP tại Bắc Texas",
                 "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING"
+              ],
+              "swancor-2025-guide": [
+                "SWANCOR Chemical Corrosion Guide, bản 18/11/2025",
+                "https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf"
+              ],
+              "defelsko-pa9": [
+                "DeFelsko – phương pháp đo chiều dày lớp phủ theo nền",
+                "https://www.defelsko.com/resource/international-standards"
+              ],
+              "defelsko-dpm": [
+                "DeFelsko – hướng dẫn ghi nhiệt độ bề mặt và điểm sương",
+                "https://dl.defelsko.com/pdf/manuals/DPM-FullGuide-v3.4.pdf"
               ]
             },
             "posts": [
@@ -139,34 +151,36 @@ jobs:
               },
               {
                 "slug": "swancor-doc-bang",
-                "title": "Đọc bảng SWANCOR cho bể công nghiệp",
-                "en": "How to read the SWANCOR corrosion guide",
+                "title": "Đọc bảng SWANCOR 901 và 907: một dòng dữ liệu trả lời được gì?",
+                "en": "How to read SWANCOR 901 and 907 corrosion resistance data",
                 "keywords": "SWANCOR vinyl ester, corrosion resistance chart",
-                "source": "sw",
-                "lead": "Cùng một hóa chất có thể có nhiều dòng trong bảng vì nồng độ, trạng thái hoặc điều kiện tiếp xúc khác nhau.",
-                "body": "Đọc cả tên chất, khoảng nồng độ, cột mã nhựa, đơn vị nhiệt độ và chú thích. Những dòng dành cho hỗn hợp phải khớp thành phần thực tế. Khi một ô ghi NR, LS hoặc để trống, lưu nguyên trạng trong hồ sơ so sánh.",
-                "conclusion": "Bảng so sánh kỹ thuật cần có cột ghi nguồn của từng mã, nhiệt độ vận hành và khoảng trống dữ liệu. Đề nghị hãng xác nhận bằng văn bản khi chọn ngoài phạm vi đã công bố.",
-                "notes": "Nếu nhà thầu chỉ gửi ảnh chụp một ô, yêu cầu thêm tên cột, tên dòng và chú thích. Đây là cách đơn giản để phát hiện nhầm phiên bản hoặc nhầm mã.",
+                "source": "swancor-2025-guide",
+                "lead": "Lấy dòng axit sulfurơ 10% trong bảng SWANCOR để xem cách đọc hai cột nhựa, xử lý ký hiệu và đặt câu hỏi khi điều kiện vận hành thay đổi.",
                 "focus": "nhựa SWANCOR vinyl ester 901 và 907",
-                "sections": [
+                "seoDescription": "Lấy dòng axit sulfurơ 10% trong bảng SWANCOR để xem cách đọc hai cột nhựa, xử lý ký hiệu và đặt câu hỏi khi điều kiện vận hành thay đổi.",
+                "section": "Vật liệu",
+                "enSummary": "A worked example explains how to read resin columns, temperature notation and limited-service entries before requesting a project-specific review.",
+                "story": [
                   {
-                    "heading": "Đọc dữ liệu theo đúng cột mã nhựa",
-                    "text": "Bắt đầu từ tên hóa chất và nồng độ thực tế. Kiểm tra dòng dành cho dung dịch đơn, hỗn hợp, hơi hoặc điều kiện đặc biệt. Sau đó mới đối chiếu đúng cột của mã đang chào. Đừng dùng dữ liệu của 901 thay cho 907 chỉ vì cùng hãng."
+                    "heading": "",
+                    "paragraphs": [
+                      "Một câu hỏi thường gặp khi xét hồ sơ là “907 có chịu tốt hơn 901 không?”. Câu trả lời phải gắn với môi trường cụ thể. Mở bảng SWANCOR bản 18/11/2025, tìm dòng Sulfurous Acid (axit sulfurơ, H₂SO₃) tại nồng độ 10%. Hai cột SWANCOR 901 và 907 đều ghi 50/120. Tiêu đề cột ghi °C/°F, nên đọc đây là cặp giá trị nhiệt độ theo hai đơn vị mà hãng in trong bảng. Ở đúng dòng này, bảng không cho thấy 907 có giới hạn nhiệt độ khuyến nghị cao hơn 901."
+                    ]
                   },
                   {
-                    "heading": "Dùng bảng so sánh có thể truy xuất",
-                    "text": "Tạo một hàng cho mỗi tình huống tiếp xúc và ghi nguyên văn trạng thái NR, LS hoặc ô trống nếu có. Việc này giúp tư vấn phân biệt giới hạn có số liệu với trường hợp phải hỏi lại. Với dịch vụ luân phiên, gửi kèm chu kỳ làm sạch và dư lượng có thể tồn tại."
+                    "heading": "Nếu bồn chạy 45°C rồi có lúc lên 55°C",
+                    "paragraphs": [
+                      "Giả sử hồ sơ vận hành ghi 45°C trong ca sản xuất, nhưng nhật ký cho thấy có đợt 55°C. So với cột °C, 45°C nằm dưới 50°C ở dòng đã tra, còn 55°C vượt giá trị đó. Việc cần làm là ghi rõ đợt 55°C xảy ra bao lâu, tần suất và dung dịch thực tế trong bồn lúc ấy, rồi gửi hãng xác nhận phạm vi. Nếu 55°C thuộc một chu kỳ vệ sinh với hóa chất khác, ghi riêng thành một chế độ tiếp xúc để đối chiếu. Đây là ví dụ đọc bảng, không phải chỉ định nhựa cho công trình."
+                    ]
+                  },
+                  {
+                    "heading": "NR, LS và dấu gạch có ý nghĩa khác nhau",
+                    "paragraphs": [
+                      "Trong chú giải của SWANCOR, NR là không khuyến nghị ở bất kỳ nhiệt độ nào. LS là sử dụng có giới hạn. Hãng nêu khoảng thời gian từ ít nhất 3 ngày đến 1 năm, ở nhiệt độ tối đa ghi theo cặp 40°C/100°F. Đọc LS như một giới hạn cần làm rõ với hãng, nhất là khi bồn cần vận hành liên tục nhiều năm. Ô gạch hoặc ô trống không cho bạn một giới hạn nhiệt độ để dùng trong hồ sơ. Hãy giữ nguyên trạng thái của ô và hỏi hãng nếu cần đánh giá mã đó.",
+                      "Khi gửi câu hỏi, chụp cả tên hóa chất, nồng độ, đầu cột và chú thích. Một ảnh chỉ có số 50/120 không cho biết người tra đã chọn đúng chất, đúng nồng độ hay đúng mã nhựa."
+                    ]
                   }
-                ],
-                "checks": [
-                  "Phiên bản bảng hãng",
-                  "Mã nhựa và cột tra",
-                  "Phạm vi nồng độ, nhiệt độ và chú thích"
-                ],
-                "seoDescription": "Đọc dữ liệu theo đúng cột mã nhựa và dùng bảng so sánh có thể truy xuất. Bài phân tích bảng kháng hóa chất SWANCOR kèm checklist hồ sơ dự án.",
-                "question": "Một mã có ô LS được xử lý thế nào trong bảng chào giá?",
-                "answer": "Giữ nguyên ký hiệu và yêu cầu nhà cung cấp giải thích phạm vi dịch vụ theo tài liệu. Không quy đổi LS thành một nhiệt độ phục vụ liên tục. Khi dữ liệu giữa hai phiên bản khác nhau, ghi phiên bản dùng để thiết kế và xin xác nhận cho đúng điều kiện.",
-                "section": "Vật liệu"
+                ]
               },
               {
                 "slug": "pvdf-frp-hai-lop",
@@ -817,65 +831,68 @@ jobs:
               },
               {
                 "slug": "diem-suong",
-                "title": "Ghi điểm sương và điều kiện nền khi thi công lớp phủ",
-                "en": "Dew point and substrate records for coating works",
+                "title": "Điểm sương giữa ca bọc FRP: vì sao cần đo lại ngay tại đáy bể?",
+                "en": "Dew-point checks during an FRP lining shift",
                 "keywords": "dew point coating inspection, substrate moisture",
-                "source": "ampp",
-                "lead": "Điều kiện môi trường thay đổi theo thời điểm và vị trí. Biên bản thi công phải phản ánh điều kiện tại khu vực thực hiện.",
-                "body": "Đo và ghi theo quy trình đã duyệt, tập trung vào vùng dễ đọng ẩm hoặc bị che khuất. Đối chiếu số đo với yêu cầu của hệ và quyết định dừng hoặc tiếp tục theo tiêu chí thống nhất.",
-                "conclusion": "Lưu thời gian, vị trí, thiết bị và kết quả kiểm tra lại trước khi phủ. Khi có sai lệch, ghi rõ vùng ảnh hưởng để việc điều tra sau này có căn cứ.",
-                "notes": "Đặt điểm đo theo từng khu vực làm việc thay vì một điểm thuận tiện. Ghi người đo và thời điểm để đối chiếu với nhật ký phủ.",
+                "source": "defelsko-dpm",
+                "lead": "Cùng một bể, số đo ở cửa và ở đáy có thể dẫn đến hai quyết định thi công khác nhau. Ví dụ dưới đây cho thấy cách ghi nhận phần đã bọc khi điều kiện thay đổi.",
                 "focus": "điểm sương khi thi công lớp phủ",
-                "sections": [
+                "seoDescription": "Cùng một bể, số đo ở cửa và ở đáy có thể dẫn đến hai quyết định thi công khác nhau. Ví dụ dưới đây cho thấy cách ghi nhận phần đã bọc khi điều kiện thay đổi.",
+                "section": "Thi công",
+                "enSummary": "An illustrative log compares surface temperature and dew point at the access and floor, then shows how to document the affected area.",
+                "story": [
                   {
-                    "heading": "Đo tại nơi thực sự thi công",
-                    "text": "Bề mặt sát cửa, đáy bể và vùng thiếu thông gió có thể khác nhau. Ghi điều kiện tại vị trí làm việc và đối chiếu với hồ sơ hệ phủ. Tần suất và tiêu chí lấy từ quy trình đã duyệt."
+                    "heading": "",
+                    "paragraphs": [
+                      "Giả sử quy trình của một hệ phủ yêu cầu nhiệt độ bề mặt cao hơn điểm sương ít nhất 3°C. Lúc 9 giờ, tại đáy bể, bề mặt 29°C và điểm sương 24°C, chênh 5°C. Đến 11 giờ, đo ngay tại vùng đang làm thấy bề mặt 27°C và điểm sương 25°C, chênh 2°C. Trong cùng thời điểm, ở cửa bể vẫn đo được chênh 4°C. Nếu chỉ dùng số tại cửa, đội thi công có thể bỏ qua việc vùng đáy không đạt điều kiện giả định của hệ phủ."
+                    ]
                   },
                   {
-                    "heading": "Xử lý khi điều kiện thay đổi giữa ca",
-                    "text": "Khoanh vùng đã phủ và vùng chưa phủ. Ghi giờ phát hiện, lý do dừng và kết quả đo lại trước khi làm tiếp. Biên bản rõ ràng giúp tư vấn xác định vùng nào cần kiểm tra thêm."
+                    "heading": "Khoanh vùng thi công theo thời điểm",
+                    "paragraphs": [
+                      "Theo tiêu chí trong ví dụ, tạm dừng phủ tại vùng đáy và ghi thời điểm đo. Đánh dấu phần đã bọc từ lần đo đạt gần nhất, kèm mã khu vực, giờ thi công và công đoạn đang thực hiện. Số đo 11 giờ xác nhận điều kiện tại thời điểm đó. Nó chưa cho biết chính xác điều kiện bắt đầu thay đổi từ lúc nào. Dùng nhật ký và vị trí làm việc để xác định vùng cần được tư vấn đánh giá thêm."
+                    ]
+                  },
+                  {
+                    "heading": "Dòng nhật ký cần ghi gì?",
+                    "paragraphs": [
+                      "Một dòng ghi có thể là “11:00, đáy bể khu B, bề mặt 27°C, điểm sương 25°C, chênh 2°C. Dừng phủ khu B và đánh dấu phần đã thực hiện từ lần đo 9:00”. Khi điều kiện phục hồi, ghi số đo tại chính khu B. Việc cho phủ tiếp và đánh giá lớp vừa thi công căn cứ vào hồ sơ hệ phủ và yêu cầu dự án. Với nền bê tông, ghi riêng kết quả kiểm tra ẩm nền nếu quy trình yêu cầu."
+                    ]
                   }
-                ],
-                "checks": [
-                  "Vị trí đo và thiết bị",
-                  "Nhật ký điều kiện",
-                  "Quyết định dừng hoặc thi công lại"
-                ],
-                "seoDescription": "Đo tại nơi thực sự thi công và xử lý khi điều kiện thay đổi giữa ca. Bài phân tích điểm sương khi thi công lớp phủ kèm checklist hồ sơ dự án.",
-                "question": "Nếu điều kiện ẩm thay đổi sau khi đo đầu ca thì làm gì?",
-                "answer": "Ghi lại thời điểm và khu vực chịu ảnh hưởng, đối chiếu tiêu chí trong quy trình, rồi đo lại trước khi tiếp tục. Nhật ký phải đủ để tư vấn xác định phần bề mặt đã thi công trước và sau thay đổi.",
-                "section": "Thi công"
+                ]
               },
               {
                 "slug": "do-day-lop-phu",
-                "title": "Lập bản đồ chiều dày lớp phủ chống ăn mòn",
-                "en": "Mapping protective lining thickness",
+                "title": "Chiều dày trung bình đạt, vì sao vùng chân tường vẫn phải đo lại?",
+                "en": "Why an acceptable average can hide a thin FRP lining area",
                 "keywords": "lining thickness survey, coating inspection",
-                "source": "coatings",
-                "lead": "Một số đo trung bình có thể bỏ qua vùng mỏng ở góc, cạnh hoặc mối nối. Phương án đo cần dựa trên hình học và rủi ro.",
-                "body": "Chọn phương pháp phù hợp với nền và cấu tạo. Xác định vị trí lấy số đo, tần suất, mốc kiểm tra trước và sau sửa. Phân biệt chiều dày một lớp với tổng chiều dày của hệ.",
-                "conclusion": "Biên bản phải cho phép truy lại vị trí số đo. Nếu kết quả thiếu hoặc vượt giới hạn, mô tả hành động và ghi kết quả kiểm tra lại trước khi bàn giao.",
-                "notes": "Chọn cùng hệ tọa độ cho bản đồ đo chiều dày và bản đồ sửa chữa. Cách này làm rõ vùng nào được đo lại sau khắc phục.",
+                "source": "defelsko-pa9",
+                "lead": "Ví dụ một khu vực có số đo trung bình 2,95 mm nhưng điểm sát chân tường chỉ 2,4 mm. Quyết định nghiệm thu phụ thuộc vào tiêu chí theo vùng và độ tin cậy của số đo.",
                 "focus": "đo chiều dày lớp phủ chống ăn mòn",
-                "sections": [
+                "seoDescription": "Ví dụ một khu vực có số đo trung bình 2,95 mm nhưng điểm sát chân tường chỉ 2,4 mm. Quyết định nghiệm thu phụ thuộc vào tiêu chí theo vùng và độ tin cậy của số đo.",
+                "section": "Kiểm tra",
+                "enSummary": "An illustrative set of readings shows how to retain the identity of a thin spot, investigate measurement reliability and document the repair check.",
+                "story": [
                   {
-                    "heading": "Xây dựng bản đồ điểm đo trước khi phủ",
-                    "text": "Dùng sơ đồ thống nhất cho góc, cạnh, mối nối và mặt phẳng. Mỗi vùng có vị trí đo, phương pháp và tiêu chí riêng theo đặc tả. Xác định số đo áp dụng cho một lớp hay cho toàn hệ."
+                    "heading": "",
+                    "paragraphs": [
+                      "Giả sử hồ sơ đã duyệt yêu cầu tối thiểu 2,8 mm tại từng vị trí kiểm tra của một vùng bọc. Bốn kết quả là 3,2 mm ở A1, 3,1 mm ở A2, 3,1 mm ở A3 và 2,4 mm ở A4. Trung bình đạt 2,95 mm, nhưng riêng A4 thấp hơn mức tối thiểu giả định 0,4 mm. Nếu chỉ đưa số trung bình vào biên bản, tư vấn sẽ mất dấu điểm cần xử lý. Các con số này dùng để minh họa cách đọc kết quả."
+                    ]
                   },
                   {
-                    "heading": "Đo lại sau sửa tại đúng vị trí",
-                    "text": "Liên kết số đo với ảnh và mã vùng sửa. Báo cáo nên cho thấy kết quả trước và sau sửa để tránh kết luận dựa vào trung bình toàn bề mặt. Giữ bản đồ làm cơ sở bảo trì."
+                    "heading": "Đánh dấu A4 trước khi quyết định sửa",
+                    "paragraphs": [
+                      "Giả sử A4 nằm sát góc lượn chân tường, còn ba điểm kia ở mặt phẳng. Đánh dấu vị trí trên bản vẽ và chụp ảnh có mốc cố định. Kiểm tra lại thiết bị, cách đặt đầu dò và tính phù hợp của phương pháp với góc lượn, nền và cấu tạo lớp bọc. Thiết bị siêu âm dùng cho một số lớp phủ trên nền xi măng có phạm vi áp dụng riêng. Với laminate FRP nhiều lớp, cần xác nhận phương pháp có thể đo đúng chiều dày cần nghiệm thu.",
+                      "Nếu số thấp lặp lại bằng phương pháp đã được chấp thuận, đo các vị trí lân cận để xác định vùng ảnh hưởng. Nếu phép đo tại góc không đáng tin cậy, ghi là chưa xác nhận được chiều dày tại A4 và thống nhất cách kiểm tra bổ sung. Giữ riêng hai trạng thái này trong biên bản."
+                    ]
+                  },
+                  {
+                    "heading": "Phiếu sửa phải giúp tìm lại đúng chỗ",
+                    "paragraphs": [
+                      "Dùng cùng mã A4 cho ảnh trước sửa, phiếu xử lý và số đo kiểm tra lại. Nếu sửa lan qua vùng kế bên, ghi phạm vi mới và kiểm tra cả phần chuyển tiếp theo kế hoạch đã duyệt. Khi đóng phiếu, người nghiệm thu cần nhìn được số ban đầu, phạm vi đã sửa, kết quả kiểm tra lại và người xác nhận."
+                    ]
                   }
-                ],
-                "checks": [
-                  "Sơ đồ vị trí đo",
-                  "Hồ sơ thiết bị",
-                  "Kết quả sau sửa"
-                ],
-                "seoDescription": "Xây dựng bản đồ điểm đo trước khi phủ và đo lại sau sửa tại đúng vị trí. Bài phân tích đo chiều dày lớp phủ chống ăn mòn kèm checklist hồ sơ dự án.",
-                "question": "Một số đo thấp có nên gộp vào trung bình toàn bể?",
-                "answer": "Đánh giá theo tiêu chí đã duyệt và vị trí thực tế. Một vùng cục bộ có thể cần kiểm tra hoặc sửa dù giá trị trung bình đạt. Biên bản nên giữ số đo ban đầu và sau sửa để truy xuất.",
-                "section": "Kiểm tra"
+                ]
               },
               {
                 "slug": "mau-doi-chung",
@@ -1085,34 +1102,35 @@ jobs:
               },
               {
                 "slug": "ban-giao-va-bao-tri",
-                "title": "Hồ sơ bàn giao và bảo trì lớp bọc chống ăn mòn",
-                "en": "Handover and maintenance records for corrosion linings",
+                "title": "Bàn giao lớp bọc FRP: một ảnh hiện trường phải giúp tìm lại được điểm sửa",
+                "en": "FRP lining handover records that support later inspection",
                 "keywords": "FRP lining maintenance, as-built inspection",
                 "source": "water",
-                "lead": "Hồ sơ hoàn công phải đủ để người vận hành hiểu lớp bọc được thiết kế cho điều kiện nào và kiểm tra ở đâu.",
-                "body": "Bàn giao bản vẽ, lô vật liệu, bản đồ điểm đo, vùng sửa, kết quả thử mẫu và kiểm tra hiện trường. Ghi rõ yêu cầu vệ sinh, điều kiện vận hành và cách ghi nhận sự cố.",
-                "conclusion": "Lập lịch khảo sát dựa trên mức độ rủi ro của từng vùng. Sau mỗi lần kiểm tra, so với hồ sơ ban đầu và cập nhật kế hoạch bảo trì dựa trên hiện trạng.",
-                "notes": "Chuẩn hóa tên vị trí ngay trong hồ sơ hoàn công. Người vận hành và nhà thầu bảo trì sẽ dùng cùng tên khi báo lỗi hoặc mở yêu cầu sửa chữa.",
+                "lead": "Giả sử người vận hành phát hiện lớp bọc đổi màu gần cổ ống. Giá trị của hồ sơ bàn giao nằm ở việc có thể đối chiếu đúng vị trí với ảnh ban đầu, lịch sử sửa và điều kiện tiếp xúc.",
                 "focus": "tư vấn chống ăn mòn FRP Việt Nam",
-                "sections": [
+                "seoDescription": "Giả sử người vận hành phát hiện lớp bọc đổi màu gần cổ ống. Giá trị của hồ sơ bàn giao nằm ở việc có thể đối chiếu đúng vị trí với ảnh ban đầu, lịch sử sửa và điều kiện tiếp xúc.",
+                "section": "Kiểm tra",
+                "enSummary": "A hypothetical nozzle-area observation illustrates why a shared location code and baseline photo matter in lining maintenance.",
+                "story": [
                   {
-                    "heading": "Chuẩn hóa tài liệu cho người vận hành",
-                    "text": "Bàn giao bản vẽ, mã lô, bản đồ vùng sửa và ảnh tại điểm kiểm tra. Ghi điều kiện sử dụng mà hệ được thiết kế cho. Dùng cùng tên vị trí trong bản vẽ, biên bản và kế hoạch bảo trì."
+                    "heading": "",
+                    "paragraphs": [
+                      "Ba tháng sau bàn giao, người vận hành gửi ảnh một vùng đổi màu cạnh cổ ống hồi. Trong ví dụ giả định này, ảnh chụp cận cảnh không cho biết dấu nằm ở phía trên hay dưới cổ ống, cũng không thấy mốc kích thước. Nếu hồ sơ hoàn công chỉ có ảnh toàn bể, người kiểm tra khó xác định khu vực đó từng được sửa hay chưa."
+                    ]
                   },
                   {
-                    "heading": "Tạo mốc so sánh cho các kỳ kiểm tra",
-                    "text": "Bảo trì theo vùng rủi ro và theo hồ sơ dự án. Mỗi lần kiểm tra nên ghi hiện trạng, thay đổi vận hành và kết quả tại cùng điểm. Giao người chịu trách nhiệm cập nhật khi đổi hóa chất hoặc quy trình vệ sinh."
+                    "heading": "Đặt cùng một mã vị trí trên bản vẽ và ảnh",
+                    "paragraphs": [
+                      "Gọi cổ ống hồi là N03 trên bản vẽ. Ảnh bàn giao có một ảnh rộng để định hướng và một ảnh cận có thước, ghi phía quan sát và ngày chụp. Nếu có điểm sửa bên dưới cổ ống, phiếu sửa ghi N03 và vị trí tương đối với một mốc cố định. Khi xuất hiện dấu mới, chụp lại theo cùng chiều, rồi đặt hai ảnh cạnh nhau. Cách này giúp phân biệt dấu đã có khi bàn giao với thay đổi quan sát được sau vận hành."
+                    ]
+                  },
+                  {
+                    "heading": "Ghi nhận trước khi kết luận nguyên nhân",
+                    "paragraphs": [
+                      "Khi thấy thay đổi, đối chiếu thời điểm phát hiện với lần vệ sinh gần nhất, các thay đổi dung dịch và lịch sử sửa ở N03. Màu sắc trong ảnh có thể thay đổi theo ánh sáng và tình trạng bề mặt, nên ghi thêm phạm vi và các dấu hiệu quan sát được như phồng, nứt hoặc lộ sợi nếu có. Người đánh giá dùng hồ sơ để quyết định kiểm tra gì tiếp theo và ghi rõ dữ kiện còn thiếu."
+                    ]
                   }
-                ],
-                "checks": [
-                  "Bản vẽ hoàn công",
-                  "Bản đồ điểm kiểm tra",
-                  "Lịch bảo trì và nhật ký vận hành"
-                ],
-                "seoDescription": "Chuẩn hóa tài liệu cho người vận hành và tạo mốc so sánh cho các kỳ kiểm tra. Bài phân tích hồ sơ bàn giao và bảo trì lớp bọc FRP kèm checklist hồ sơ dự án.",
-                "question": "Hồ sơ bàn giao cần làm sao để dùng được khi sự cố?",
-                "answer": "Chuẩn hóa mã thiết bị và vùng, ghép với ảnh, lô vật tư và biên bản sửa. Khi báo lỗi, người vận hành ghi cùng mã và điều kiện xuất hiện. Nhờ đó đội bảo trì tìm được hồ sơ gốc trước khi chọn cách xử lý.",
-                "section": "Kiểm tra"
+                ]
               }
             ]
           }
