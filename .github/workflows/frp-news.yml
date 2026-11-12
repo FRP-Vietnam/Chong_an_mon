@@ -1,5 +1,8 @@
 name: FRP technical news
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/frp-news.yml']
   schedule:
     - cron: '0 23 * * *'
   workflow_dispatch:
@@ -124,7 +127,13 @@ jobs:
                 "alt": "Thiết bị công nghiệp trong chuyên mục FRP chống ăn mòn của ALTA",
                 "seoDescription": "Lập bảng điều kiện theo từng vùng tiếp xúc và đừng chốt mã trước khi đọc chú thích. Bài phân tích chọn nhựa DERAKANE cho bồn FRP kèm checklist hồ sơ dự án.",
                 "question": "Khi nhà cung cấp đề xuất mã khác, đối chiếu gì trước?",
-                "answer": "Yêu cầu một bảng ba cột gồm điều kiện dự án, điều kiện trong tài liệu hãng và phần cần xác nhận. Nếu câu trả lời chỉ nêu tên nhựa, chưa thể biết giới hạn đó áp dụng cho vùng ngập, vùng hơi hay một cấu tạo lớp cản khác."
+                "answer": "Yêu cầu một bảng ba cột gồm điều kiện dự án, điều kiện trong tài liệu hãng và phần cần xác nhận. Nếu câu trả lời chỉ nêu tên nhựa, chưa thể biết giới hạn đó áp dụng cho vùng ngập, vùng hơi hay một cấu tạo lớp cản khác.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Vùng tiếp xúc",
+                  "Dòng bảng hãng",
+                  "Duyệt cấu tạo"
+                ]
               },
               {
                 "slug": "swancor-doc-bang",
@@ -155,7 +164,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Đọc dữ liệu theo đúng cột mã nhựa và dùng bảng so sánh có thể truy xuất. Bài phân tích bảng kháng hóa chất SWANCOR kèm checklist hồ sơ dự án.",
                 "question": "Một mã có ô LS được xử lý thế nào trong bảng chào giá?",
-                "answer": "Giữ nguyên ký hiệu và yêu cầu nhà cung cấp giải thích phạm vi dịch vụ theo tài liệu. Không quy đổi LS thành một nhiệt độ phục vụ liên tục. Khi dữ liệu giữa hai phiên bản khác nhau, ghi phiên bản dùng để thiết kế và xin xác nhận cho đúng điều kiện."
+                "answer": "Giữ nguyên ký hiệu và yêu cầu nhà cung cấp giải thích phạm vi dịch vụ theo tài liệu. Không quy đổi LS thành một nhiệt độ phục vụ liên tục. Khi dữ liệu giữa hai phiên bản khác nhau, ghi phiên bản dùng để thiết kế và xin xác nhận cho đúng điều kiện.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Tên hóa chất",
+                  "Cột mã nhựa",
+                  "Chú thích hãng"
+                ]
               },
               {
                 "slug": "pvdf-frp-hai-lop",
@@ -186,7 +201,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Tách lớp lót khỏi phần chịu lực và đặt điểm kiểm tra tại giao diện. Bài phân tích bồn FRP lót PVDF kèm checklist hồ sơ dự án.",
                 "question": "Điểm nào cần nghiệm thu trước khi vỏ FRP che khuất lớp lót?",
-                "answer": "Kiểm tra những mối nối và chi tiết sẽ mất khả năng tiếp cận, kèm bản đồ mã vị trí. Hồ sơ cần liên kết được ảnh, lô vật liệu và biên bản từng vùng. Nếu kế hoạch kiểm tra yêu cầu thử kín riêng, bố trí mốc đó trước khi che khuất."
+                "answer": "Kiểm tra những mối nối và chi tiết sẽ mất khả năng tiếp cận, kèm bản đồ mã vị trí. Hồ sơ cần liên kết được ảnh, lô vật liệu và biên bản từng vùng. Nếu kế hoạch kiểm tra yêu cầu thử kín riêng, bố trí mốc đó trước khi che khuất.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Lớp lót PVDF",
+                  "Liên kết",
+                  "Vỏ FRP"
+                ]
               },
               {
                 "slug": "thap-fgd-frp",
@@ -217,7 +238,13 @@ jobs:
                 "alt": "Thiết bị nhà máy điện minh họa lĩnh vực khử lưu huỳnh và xử lý khí thải",
                 "seoDescription": "Xác định các vùng khô, ướt và chuyển tiếp và đọc ca quốc tế theo cấu hình thiết bị. Bài phân tích FRP trong hệ khử lưu huỳnh khí thải kèm checklist hồ sơ dự án.",
                 "question": "Ca FGD quốc tế có dùng để chọn trực tiếp vật liệu cho ống khí khác được không?",
-                "answer": "Dùng ca ứng dụng để nhận diện vùng cần khảo sát. Đối chiếu riêng cơ chế ngưng tụ, hạt mài và thời gian chịu nhiệt của thiết bị mới. Một ca chỉ ghi nhận tên hệ hoặc tuổi đời thiết bị chưa đủ để chuyển sang chỉ định."
+                "answer": "Dùng ca ứng dụng để nhận diện vùng cần khảo sát. Đối chiếu riêng cơ chế ngưng tụ, hạt mài và thời gian chịu nhiệt của thiết bị mới. Một ca chỉ ghi nhận tên hệ hoặc tuổi đời thiết bị chưa đủ để chuyển sang chỉ định.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Vùng khí nóng",
+                  "Vùng ngưng tụ",
+                  "Vùng ướt"
+                ]
               },
               {
                 "slug": "bon-be-xu-ly-nuoc",
@@ -248,7 +275,13 @@ jobs:
                 "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
                 "seoDescription": "Đọc sơ đồ công nghệ trước khi chọn hệ bọc và biến dữ liệu vận hành thành yêu cầu nghiệm thu. Bài phân tích bọc FRP bể xử lý nước công nghiệp kèm checklist hồ sơ dự án.",
                 "question": "Khi đổi hóa chất châm, phải cập nhật gì?",
-                "answer": "Cập nhật tên hóa chất và nồng độ ngay tại vùng châm, kể cả chế độ pha và tẩy rửa. So sánh với điều kiện đã duyệt của lớp bọc và phụ kiện. Ghi ngày thay đổi để đối chiếu nếu sau đó xuất hiện bất thường."
+                "answer": "Cập nhật tên hóa chất và nồng độ ngay tại vùng châm, kể cả chế độ pha và tẩy rửa. So sánh với điều kiện đã duyệt của lớp bọc và phụ kiện. Ghi ngày thay đổi để đối chiếu nếu sau đó xuất hiện bất thường.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Bể điều hòa",
+                  "Vùng châm hóa chất",
+                  "Bể xử lý cuối"
+                ]
               },
               {
                 "slug": "glass-flake-lining",
@@ -279,7 +312,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "So sánh hệ phủ trên cùng một nền và chuyển độ phủ thành dữ liệu kiểm tra. Bài phân tích lớp phủ vinylester vảy thủy tinh kèm checklist hồ sơ dự án.",
                 "question": "Làm sao so sánh hai báo giá cùng ghi glass flake?",
-                "answer": "Đặt các cấu tạo cạnh nhau theo lớp lót, lớp cản và hoàn thiện. Đối chiếu chiều dày, cách xử lý nền, kiểm tra lỗ kim và phạm vi sửa. Một báo giá thiếu các mục này có thể đang chào phạm vi công việc khác."
+                "answer": "Đặt các cấu tạo cạnh nhau theo lớp lót, lớp cản và hoàn thiện. Đối chiếu chiều dày, cách xử lý nền, kiểm tra lỗ kim và phạm vi sửa. Một báo giá thiếu các mục này có thể đang chào phạm vi công việc khác.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Lớp lót",
+                  "Lớp vảy",
+                  "Lớp hoàn thiện"
+                ]
               },
               {
                 "slug": "lop-giau-nhua",
@@ -310,7 +349,13 @@ jobs:
                 "alt": "Thiết bị công nghiệp trong chuyên mục FRP chống ăn mòn của ALTA",
                 "seoDescription": "Nhìn mặt cắt từ phía hóa chất và nghiệm thu đúng lúc lớp còn quan sát được. Bài phân tích lớp giàu nhựa chống ăn mòn FRP kèm checklist hồ sơ dự án.",
                 "question": "Tissue và lớp chịu lực có cùng vai trò không?",
-                "answer": "Trên bản vẽ, xác định tissue nằm trong phần cản hóa chất, sau đó kiểm tra phần gia cường và chịu lực theo thiết kế. Khi khảo sát thấy lộ sợi, ghi vị trí, mức độ và lớp nào bị ảnh hưởng trước khi chốt sửa."
+                "answer": "Trên bản vẽ, xác định tissue nằm trong phần cản hóa chất, sau đó kiểm tra phần gia cường và chịu lực theo thiết kế. Khi khảo sát thấy lộ sợi, ghi vị trí, mức độ và lớp nào bị ảnh hưởng trước khi chốt sửa.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Mặt tiếp xúc",
+                  "Lớp cản",
+                  "Lớp chịu lực"
+                ]
               },
               {
                 "slug": "xu-ly-nen-be-tong",
@@ -341,7 +386,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Chia nền theo hiện trạng thực tế và chốt tiêu chí nghiệm thu nền trước khi phủ. Bài phân tích chuẩn bị nền bê tông trước khi bọc FRP kèm checklist hồ sơ dự án.",
                 "question": "Có thể nghiệm thu nền cũ và nền sửa bằng một nhận xét chung không?",
-                "answer": "Nên chia vùng để ghi riêng vật liệu nền, phương pháp xử lý và kết quả kiểm tra. Một biên bản chung có thể bỏ sót vùng ẩm hoặc lớp sửa chưa đủ điều kiện phủ. Tại góc và cổ ống, bố trí ảnh và mã vị trí."
+                "answer": "Nên chia vùng để ghi riêng vật liệu nền, phương pháp xử lý và kết quả kiểm tra. Một biên bản chung có thể bỏ sót vùng ẩm hoặc lớp sửa chưa đủ điều kiện phủ. Tại góc và cổ ống, bố trí ảnh và mã vị trí.",
+                "section": "Thi công",
+                "visual": [
+                  "Khảo sát nền",
+                  "Tạo nhám",
+                  "Nghiệm thu nền"
+                ]
               },
               {
                 "slug": "lop-lot-be-tong-thep",
@@ -372,7 +423,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Duyệt primer theo nền và lớp kế tiếp và theo dõi thời điểm phủ chồng. Bài phân tích primer cho lớp bọc FRP bê tông và thép kèm checklist hồ sơ dự án.",
                 "question": "Nếu đổi primer giữa chừng thì cập nhật hồ sơ ra sao?",
-                "answer": "Xác định vùng đã dùng vật liệu cũ và vùng dự kiến đổi. Xin duyệt tương thích với nền và lớp kế tiếp, rồi ghi mã lô và thời điểm chuyển đổi. Kiểm tra cả đường nối giữa hai vùng theo hồ sơ được duyệt."
+                "answer": "Xác định vùng đã dùng vật liệu cũ và vùng dự kiến đổi. Xin duyệt tương thích với nền và lớp kế tiếp, rồi ghi mã lô và thời điểm chuyển đổi. Kiểm tra cả đường nối giữa hai vùng theo hồ sơ được duyệt.",
+                "section": "Thi công",
+                "visual": [
+                  "Xác định nền",
+                  "Chọn lớp lót",
+                  "Duyệt phủ chồng"
+                ]
               },
               {
                 "slug": "thu-ngam-lop-phu",
@@ -403,7 +460,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Viết đề bài thử trước khi chuẩn bị mẫu và đọc kết quả theo tiêu chí đã ký. Bài phân tích thử ngâm lớp phủ công nghiệp ASTM D6943 kèm checklist hồ sơ dự án.",
                 "question": "Thử mẫu đạt có đủ để nghiệm thu công trình không?",
-                "answer": "Phép thử mẫu trả lời về cấu tạo đại diện dưới điều kiện đã thử. Công trình vẫn cần kiểm tra nền, thi công, độ liên tục hoặc độ kín theo phạm vi đã duyệt. Tách hai bộ biên bản để không bỏ sót trách nhiệm hiện trường."
+                "answer": "Phép thử mẫu trả lời về cấu tạo đại diện dưới điều kiện đã thử. Công trình vẫn cần kiểm tra nền, thi công, độ liên tục hoặc độ kín theo phạm vi đã duyệt. Tách hai bộ biên bản để không bỏ sót trách nhiệm hiện trường.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Chuẩn bị mẫu",
+                  "Thử ngâm",
+                  "Đọc kết quả"
+                ]
               },
               {
                 "slug": "kiem-tra-lo-kim",
@@ -434,7 +497,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Xác định đúng phạm vi của phương pháp và tổ chức kiểm tra theo bản đồ vị trí. Bài phân tích kiểm tra lỗ kim lớp phủ trên nền thép kèm checklist hồ sơ dự án.",
                 "question": "Khi phát hiện một điểm gián đoạn, cần ghi gì?",
-                "answer": "Ghi mã vùng, phương pháp phát hiện, ảnh và phạm vi sửa. Sau sửa, lập mục kiểm tra lại liên kết với đúng mã đó. Nếu nhiều lỗi tập trung tại một dạng hình học, báo tư vấn để đánh giá cả những vị trí tương tự."
+                "answer": "Ghi mã vùng, phương pháp phát hiện, ảnh và phạm vi sửa. Sau sửa, lập mục kiểm tra lại liên kết với đúng mã đó. Nếu nhiều lỗi tập trung tại một dạng hình học, báo tư vấn để đánh giá cả những vị trí tương tự.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Khoanh vùng",
+                  "Kiểm tra gián đoạn",
+                  "Kiểm lại sau sửa"
+                ]
               },
               {
                 "slug": "nghiem-thu-theo-lop",
@@ -465,7 +534,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Lập kế hoạch theo các điểm dừng và bàn giao theo khu vực thay vì chỉ theo ngày. Bài phân tích nghiệm thu từng lớp bọc FRP kèm checklist hồ sơ dự án.",
                 "question": "Ai xác nhận chuyển sang lớp tiếp theo?",
-                "answer": "Quy định trước người chứng kiến, người ký và người có thẩm quyền giải phóng điểm dừng. Nếu đội thi công muốn chuyển bước ngoài giờ, phải có cơ chế bàn giao và ký duyệt đã thống nhất trong kế hoạch kiểm tra."
+                "answer": "Quy định trước người chứng kiến, người ký và người có thẩm quyền giải phóng điểm dừng. Nếu đội thi công muốn chuyển bước ngoài giờ, phải có cơ chế bàn giao và ký duyệt đã thống nhất trong kế hoạch kiểm tra.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Nền và primer",
+                  "Gia cường",
+                  "Lớp cản và bàn giao"
+                ]
               },
               {
                 "slug": "danh-gia-do-ben",
@@ -497,7 +572,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Đọc mốc kiểm tra trong hồ sơ ca ứng dụng và dùng ca tham chiếu để thiết kế kế hoạch theo dõi. Bài phân tích đánh giá độ bền lớp phủ DERAKANE tại Chuquicamata kèm checklist hồ sơ dự án.",
                 "question": "Có thể trích ca Chuquicamata để cam kết số năm bảo hành không?",
-                "answer": "Ca ghi được tình trạng tại mốc kiểm tra đã công bố. Bảo hành của dự án mới cần dựa vào cấu tạo, môi trường, phạm vi hợp đồng và kế hoạch vận hành của chính dự án đó. Trong hồ sơ, ghi riêng mốc lịch sử và điều kiện bảo hành."
+                "answer": "Ca ghi được tình trạng tại mốc kiểm tra đã công bố. Bảo hành của dự án mới cần dựa vào cấu tạo, môi trường, phạm vi hợp đồng và kế hoạch vận hành của chính dự án đó. Trong hồ sơ, ghi riêng mốc lịch sử và điều kiện bảo hành.",
+                "section": "Dự án",
+                "visual": [
+                  "Ghi nhận thi công",
+                  "Mốc kiểm tra cuối",
+                  "Giới hạn kết luận"
+                ]
               },
               {
                 "slug": "nhieu-loc-thi-nghe",
@@ -528,7 +609,13 @@ jobs:
                 "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
                 "seoDescription": "Phân biệt tài liệu dự án và đặc tả vật liệu và câu hỏi dành cho tư vấn và đơn vị vận hành. Bài phân tích hồ sơ nước thải Nhiêu Lộc – Thị Nghè kèm checklist hồ sơ dự án.",
                 "question": "Tài liệu Nhiêu Lộc – Thị Nghè có thể dùng thế nào trong hồ sơ thầu?",
-                "answer": "Dùng để mô tả bối cảnh hạ tầng và nhận diện giao diện công trình. Đặc tả lớp bọc phải dựa trên tài liệu mời thầu, bản vẽ và dữ liệu vận hành tương ứng. Ghi tên tài liệu và phạm vi sử dụng để người đọc kiểm chứng."
+                "answer": "Dùng để mô tả bối cảnh hạ tầng và nhận diện giao diện công trình. Đặc tả lớp bọc phải dựa trên tài liệu mời thầu, bản vẽ và dữ liệu vận hành tương ứng. Ghi tên tài liệu và phạm vi sử dụng để người đọc kiểm chứng.",
+                "section": "Dự án",
+                "visual": [
+                  "Tuyến thu gom",
+                  "Hạng mục xử lý",
+                  "Hồ sơ vật liệu"
+                ]
               },
               {
                 "slug": "da-nang-thoat-nuoc",
@@ -559,7 +646,13 @@ jobs:
                 "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
                 "seoDescription": "Đọc phạm vi đầu tư theo từng công trình và bổ sung điều kiện tiếp cận vào yêu cầu thầu. Bài phân tích hồ sơ thoát nước và xử lý nước thải Đà Nẵng kèm checklist hồ sơ dự án.",
                 "question": "Đơn vị thiết kế cần gì ngoài báo cáo dự án Đà Nẵng?",
-                "answer": "Cần bản vẽ hạng mục, điều kiện cô lập khi thi công, hiện trạng nền và môi trường tiếp xúc. Những dữ liệu này giúp xây dựng phương pháp khảo sát và nghiệm thu khả thi tại vị trí thực tế."
+                "answer": "Cần bản vẽ hạng mục, điều kiện cô lập khi thi công, hiện trạng nền và môi trường tiếp xúc. Những dữ liệu này giúp xây dựng phương pháp khảo sát và nghiệm thu khả thi tại vị trí thực tế.",
+                "section": "Dự án",
+                "visual": [
+                  "Mạng thoát nước",
+                  "Vị trí tiếp xúc",
+                  "Yêu cầu kiểm tra"
+                ]
               },
               {
                 "slug": "an-mon-khai-khoang",
@@ -590,7 +683,13 @@ jobs:
                 "alt": "Thiết bị công nghiệp trong chuyên mục FRP chống ăn mòn của ALTA",
                 "seoDescription": "Phân biệt mài mòn với tác động hóa chất và theo dõi tại vị trí lặp lại. Bài phân tích FRP chống ăn mòn trong khai khoáng kèm checklist hồ sơ dự án.",
                 "question": "Đánh giá mòn bằng ảnh có đủ không?",
-                "answer": "Ảnh hỗ trợ xác định vị trí và xu hướng. Cần chọn phép đo phù hợp với cấu tạo và ghi phương pháp để lần sau đo lại tương đương. Nếu môi trường dòng thay đổi, ghi cùng hồ sơ đo để tránh quy nguyên nhân sai."
+                "answer": "Ảnh hỗ trợ xác định vị trí và xu hướng. Cần chọn phép đo phù hợp với cấu tạo và ghi phương pháp để lần sau đo lại tương đương. Nếu môi trường dòng thay đổi, ghi cùng hồ sơ đo để tránh quy nguyên nhân sai.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Vùng dòng va đập",
+                  "Vùng đọng bùn",
+                  "Điểm đo lặp lại"
+                ]
               },
               {
                 "slug": "ong-frp-dan-hoa-chat",
@@ -621,7 +720,13 @@ jobs:
                 "alt": "Thiết bị công nghiệp trong chuyên mục FRP chống ăn mòn của ALTA",
                 "seoDescription": "Kiểm tra điều kiện ở co, bích và giá đỡ và chốt phạm vi thử trước lắp đặt. Bài phân tích ống FRP dẫn hóa chất kèm checklist hồ sơ dự án.",
                 "question": "Khi nào cần tách nghiệm thu đoạn ống và mối nối?",
-                "answer": "Ghi rõ phần đã kiểm ở xưởng và phần chỉ hình thành khi lắp tại công trường. Dùng mã đoạn ống và mã mối nối liên kết hai bộ hồ sơ, nhất là tại điểm xuyên thành hoặc đấu vào thiết bị."
+                "answer": "Ghi rõ phần đã kiểm ở xưởng và phần chỉ hình thành khi lắp tại công trường. Dùng mã đoạn ống và mã mối nối liên kết hai bộ hồ sơ, nhất là tại điểm xuyên thành hoặc đấu vào thiết bị.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Điều kiện dòng",
+                  "Giá đỡ và mối nối",
+                  "Thử trước vận hành"
+                ]
               },
               {
                 "slug": "bon-rua-axit",
@@ -654,7 +759,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Hiểu đúng giá trị của ca Elazığ và đưa các điểm thường bị bỏ qua vào bản vẽ. Bài phân tích bọc FRP bể rửa axit Elazığ kèm checklist hồ sơ dự án.",
                 "question": "So sánh ca Elazığ với bể rửa hiện nay bắt đầu từ đâu?",
-                "answer": "Đặt hai điều kiện cạnh nhau theo nền, hóa chất, nhiệt độ và tải cơ học. Ca lịch sử cung cấp cấu tạo từng dùng. Các thay đổi về pha, tạp chất hoặc nhiệt độ cần được nhà cung cấp xem xét theo hồ sơ mới."
+                "answer": "Đặt hai điều kiện cạnh nhau theo nền, hóa chất, nhiệt độ và tải cơ học. Ca lịch sử cung cấp cấu tạo từng dùng. Các thay đổi về pha, tạp chất hoặc nhiệt độ cần được nhà cung cấp xem xét theo hồ sơ mới.",
+                "section": "Dự án",
+                "visual": [
+                  "Nền bê tông",
+                  "Bọc mat và nhựa",
+                  "Đối chiếu ca Elazığ"
+                ]
               },
               {
                 "slug": "hoa-chat-luan-phien",
@@ -685,7 +796,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Lập lịch tiếp xúc theo từng mẻ và thiết kế đề bài thử theo chu kỳ. Bài phân tích bồn FRP chứa luân phiên hóa chất kèm checklist hồ sơ dự án.",
                 "question": "Nếu không biết còn bao nhiêu dư lượng sau vệ sinh thì sao?",
-                "answer": "Ghi đó là dữ liệu chưa xác nhận và hỏi đơn vị vận hành về phương pháp xả, rửa và kiểm soát dư lượng. Khi đánh giá tính tương thích, không dùng kết quả của từng chất đơn lẻ để thay cho điều kiện chuyển mẻ."
+                "answer": "Ghi đó là dữ liệu chưa xác nhận và hỏi đơn vị vận hành về phương pháp xả, rửa và kiểm soát dư lượng. Khi đánh giá tính tương thích, không dùng kết quả của từng chất đơn lẻ để thay cho điều kiện chuyển mẻ.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Mẻ trước",
+                  "Rửa và chuyển mẻ",
+                  "Mẻ sau"
+                ]
               },
               {
                 "slug": "axit-sulfuric-dam-dac",
@@ -716,7 +833,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Xác nhận điều kiện tiếp xúc tại bồn và kiểm tra hệ lót như một cụm chi tiết. Bài phân tích lớp lót bồn axit sulfuric đậm đặc kèm checklist hồ sơ dự án.",
                 "question": "Cần ghi gì khi nhà cung cấp đưa bảng PVDF?",
-                "answer": "Ghi tên cấp vật liệu, dòng nồng độ và nhiệt độ, cùng điều kiện tiếp xúc. Sau đó yêu cầu xác nhận riêng mối hàn, chi tiết nối và cấu tạo vỏ. Bảng vật liệu chỉ là một phần của hồ sơ hệ lót."
+                "answer": "Ghi tên cấp vật liệu, dòng nồng độ và nhiệt độ, cùng điều kiện tiếp xúc. Sau đó yêu cầu xác nhận riêng mối hàn, chi tiết nối và cấu tạo vỏ. Bảng vật liệu chỉ là một phần của hồ sơ hệ lót.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Dòng cấp axit",
+                  "Mặt tiếp xúc",
+                  "Cổ ống và mối hàn"
+                ]
               },
               {
                 "slug": "ket-cau-chiu-luc-va-lop-can",
@@ -747,7 +870,13 @@ jobs:
                 "alt": "Thiết bị công nghiệp trong chuyên mục FRP chống ăn mòn của ALTA",
                 "seoDescription": "Phân công hai nhóm yêu cầu và bàn giao bản vẽ theo vị trí. Bài phân tích kết cấu FRP và lớp cản hóa chất kèm checklist hồ sơ dự án.",
                 "question": "Ai xác nhận phần chịu lực và phần tiếp xúc?",
-                "answer": "Phân vai ngay trong tài liệu trình duyệt. Bên chịu trách nhiệm thiết kế kết cấu xác nhận tải và liên kết, còn đặc tả vật liệu phải có căn cứ môi trường. Bản vẽ hợp nhất giúp nhận diện giao diện thuộc trách nhiệm chung."
+                "answer": "Phân vai ngay trong tài liệu trình duyệt. Bên chịu trách nhiệm thiết kế kết cấu xác nhận tải và liên kết, còn đặc tả vật liệu phải có căn cứ môi trường. Bản vẽ hợp nhất giúp nhận diện giao diện thuộc trách nhiệm chung.",
+                "section": "Vật liệu",
+                "visual": [
+                  "Lớp cản",
+                  "Kết cấu chịu lực",
+                  "Giao diện liên kết"
+                ]
               },
               {
                 "slug": "cua-so-phu-chong",
@@ -778,7 +907,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Kiểm soát công việc theo khu vực và lập đường truy xuất khi có sai lệch. Bài phân tích cửa sổ phủ chồng lớp bọc FRP kèm checklist hồ sơ dự án.",
                 "question": "Nhật ký phủ chồng có nên ghi theo ca hay theo vùng?",
-                "answer": "Dùng mã vùng để ghi giờ bắt đầu, giờ phủ tiếp và trạng thái kiểm tra. Trong cùng một ca, các vùng có thể hoàn tất khác giờ. Khi bàn giao, đội sau cần biết khu vực nào còn trong thời gian cho phép và khu vực nào cần xử lý."
+                "answer": "Dùng mã vùng để ghi giờ bắt đầu, giờ phủ tiếp và trạng thái kiểm tra. Trong cùng một ca, các vùng có thể hoàn tất khác giờ. Khi bàn giao, đội sau cần biết khu vực nào còn trong thời gian cho phép và khu vực nào cần xử lý.",
+                "section": "Thi công",
+                "visual": [
+                  "Giờ phủ lớp trước",
+                  "Kiểm tra bề mặt",
+                  "Phủ lớp tiếp theo"
+                ]
               },
               {
                 "slug": "diem-suong",
@@ -809,7 +944,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Đo tại nơi thực sự thi công và xử lý khi điều kiện thay đổi giữa ca. Bài phân tích điểm sương khi thi công lớp phủ kèm checklist hồ sơ dự án.",
                 "question": "Nếu điều kiện ẩm thay đổi sau khi đo đầu ca thì làm gì?",
-                "answer": "Ghi lại thời điểm và khu vực chịu ảnh hưởng, đối chiếu tiêu chí trong quy trình, rồi đo lại trước khi tiếp tục. Nhật ký phải đủ để tư vấn xác định phần bề mặt đã thi công trước và sau thay đổi."
+                "answer": "Ghi lại thời điểm và khu vực chịu ảnh hưởng, đối chiếu tiêu chí trong quy trình, rồi đo lại trước khi tiếp tục. Nhật ký phải đủ để tư vấn xác định phần bề mặt đã thi công trước và sau thay đổi.",
+                "section": "Thi công",
+                "visual": [
+                  "Điều kiện môi trường",
+                  "Đo tại nền",
+                  "Quyết định thi công"
+                ]
               },
               {
                 "slug": "do-day-lop-phu",
@@ -840,7 +981,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Xây dựng bản đồ điểm đo trước khi phủ và đo lại sau sửa tại đúng vị trí. Bài phân tích đo chiều dày lớp phủ chống ăn mòn kèm checklist hồ sơ dự án.",
                 "question": "Một số đo thấp có nên gộp vào trung bình toàn bể?",
-                "answer": "Đánh giá theo tiêu chí đã duyệt và vị trí thực tế. Một vùng cục bộ có thể cần kiểm tra hoặc sửa dù giá trị trung bình đạt. Biên bản nên giữ số đo ban đầu và sau sửa để truy xuất."
+                "answer": "Đánh giá theo tiêu chí đã duyệt và vị trí thực tế. Một vùng cục bộ có thể cần kiểm tra hoặc sửa dù giá trị trung bình đạt. Biên bản nên giữ số đo ban đầu và sau sửa để truy xuất.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Chọn điểm đo",
+                  "Ghi số đo",
+                  "Đo lại sau sửa"
+                ]
               },
               {
                 "slug": "mau-doi-chung",
@@ -871,7 +1018,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Chế tạo mẫu ngâm và mẫu đối chứng cùng điều kiện và so sánh theo cùng mốc thời gian. Bài phân tích mẫu đối chứng thử ngâm lớp bọc kèm checklist hồ sơ dự án.",
                 "question": "Mẫu đối chứng bị đổi màu thì có thể kết luận do dung dịch thử không?",
-                "answer": "Đối chiếu ảnh ban đầu, chế độ lưu mẫu và lô vật liệu. Khi mẫu đối chứng cũng có biến đổi, phải làm rõ yếu tố chế tạo hoặc lưu giữ trước khi quy kết. Báo cáo nêu cả quan sát và phần chưa xác định."
+                "answer": "Đối chiếu ảnh ban đầu, chế độ lưu mẫu và lô vật liệu. Khi mẫu đối chứng cũng có biến đổi, phải làm rõ yếu tố chế tạo hoặc lưu giữ trước khi quy kết. Báo cáo nêu cả quan sát và phần chưa xác định.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Mẫu cùng cấu tạo",
+                  "Mẫu ngâm và đối chứng",
+                  "So sánh biến đổi"
+                ]
               },
               {
                 "slug": "sua-lop-boc-cu",
@@ -902,7 +1055,13 @@ jobs:
                 "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
                 "seoDescription": "Tách khảo sát nguyên nhân khỏi công tác sửa và nghiệm thu lại tại mép chuyển tiếp. Bài phân tích sửa chữa lớp bọc FRP cũ kèm checklist hồ sơ dự án.",
                 "question": "Trước khi phủ lên mép lớp bọc cũ, cần xác nhận gì?",
-                "answer": "Xác nhận lớp cũ còn bám chắc, nền bên dưới phù hợp và phương án xử lý mép được duyệt. Đánh dấu vùng nối trên sơ đồ, chụp ảnh trước khi che và kiểm tra lại sau khi hoàn thành."
+                "answer": "Xác nhận lớp cũ còn bám chắc, nền bên dưới phù hợp và phương án xử lý mép được duyệt. Đánh dấu vùng nối trên sơ đồ, chụp ảnh trước khi che và kiểm tra lại sau khi hoàn thành.",
+                "section": "Thi công",
+                "visual": [
+                  "Khoanh vùng lỗi",
+                  "Xử lý nền và mép",
+                  "Kiểm tra lại"
+                ]
               },
               {
                 "slug": "frp-trong-nha-may-hoa-chat",
@@ -933,7 +1092,13 @@ jobs:
                 "alt": "Cụm thiết bị nhà máy hóa chất minh họa ứng dụng vật liệu chống ăn mòn",
                 "seoDescription": "Tổ chức dữ liệu thành bộ điều kiện thiết kế và đánh giá chào giá bằng cùng một biểu mẫu. Bài phân tích đặc tả bồn FRP cho nhà máy hóa chất kèm checklist hồ sơ dự án.",
                 "question": "Một bảng đối chiếu vật liệu tốt phải cho thấy gì?",
-                "answer": "Mỗi dòng nối một điều kiện thực tế với mã nhựa, cấu tạo và tài liệu nguồn. Chỗ chưa có dữ liệu ghi rõ người cung cấp và thời điểm cần xác nhận. Nhờ vậy khi so sánh hồ sơ có thể nhìn ngay khác biệt về phạm vi."
+                "answer": "Mỗi dòng nối một điều kiện thực tế với mã nhựa, cấu tạo và tài liệu nguồn. Chỗ chưa có dữ liệu ghi rõ người cung cấp và thời điểm cần xác nhận. Nhờ vậy khi so sánh hồ sơ có thể nhìn ngay khác biệt về phạm vi.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Điều kiện vận hành",
+                  "Đặc tả hệ FRP",
+                  "Hồ sơ phê duyệt"
+                ]
               },
               {
                 "slug": "phu-pham-khi-va-ngung-tu",
@@ -964,7 +1129,13 @@ jobs:
                 "alt": "Thiết bị nhà máy điện minh họa lĩnh vực khử lưu huỳnh và xử lý khí thải",
                 "seoDescription": "Tìm nơi hình thành dịch ngưng và ghi riêng vận hành bất thường. Bài phân tích dịch ngưng trong ống và thiết bị FRP kèm checklist hồ sơ dự án.",
                 "question": "Nếu chỉ có thành phần khí thì đã đủ để tra lớp bọc chưa?",
-                "answer": "Xem khả năng hình thành dịch ngưng tại bề mặt. Nếu có, cần thông tin về cả dịch ngưng và thời gian tiếp xúc. Tách điều kiện vận hành thường xuyên khỏi lúc khởi động hoặc dừng thiết bị."
+                "answer": "Xem khả năng hình thành dịch ngưng tại bề mặt. Nếu có, cần thông tin về cả dịch ngưng và thời gian tiếp xúc. Tách điều kiện vận hành thường xuyên khỏi lúc khởi động hoặc dừng thiết bị.",
+                "section": "Ứng dụng",
+                "visual": [
+                  "Thành phần khí",
+                  "Điểm hình thành dịch ngưng",
+                  "Mặt tiếp xúc"
+                ]
               },
               {
                 "slug": "ho-so-moi-thau-frp",
@@ -995,7 +1166,13 @@ jobs:
                 "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
                 "seoDescription": "Đặt các nhà thầu trên cùng đầu bài và so sánh hồ sơ kỹ thuật trước so giá. Bài phân tích hồ sơ mời thầu bọc FRP bể nước thải kèm checklist hồ sơ dự án.",
                 "question": "Hai hồ sơ bọc FRP chênh giá thì nên hỏi gì?",
-                "answer": "Đối chiếu diện tích, phần xử lý nền, cấu tạo, kiểm tra và hồ sơ bàn giao. Yêu cầu mỗi bên nêu phần loại trừ và điều kiện tính phát sinh. Sau khi cân bằng phạm vi, mới so đơn giá."
+                "answer": "Đối chiếu diện tích, phần xử lý nền, cấu tạo, kiểm tra và hồ sơ bàn giao. Yêu cầu mỗi bên nêu phần loại trừ và điều kiện tính phát sinh. Sau khi cân bằng phạm vi, mới so đơn giá.",
+                "section": "Dự án",
+                "visual": [
+                  "Phạm vi công việc",
+                  "Yêu cầu kỹ thuật",
+                  "Tiêu chí nghiệm thu"
+                ]
               },
               {
                 "slug": "ban-giao-va-bao-tri",
@@ -1026,7 +1203,13 @@ jobs:
                 "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
                 "seoDescription": "Chuẩn hóa tài liệu cho người vận hành và tạo mốc so sánh cho các kỳ kiểm tra. Bài phân tích hồ sơ bàn giao và bảo trì lớp bọc FRP kèm checklist hồ sơ dự án.",
                 "question": "Hồ sơ bàn giao cần làm sao để dùng được khi sự cố?",
-                "answer": "Chuẩn hóa mã thiết bị và vùng, ghép với ảnh, lô vật tư và biên bản sửa. Khi báo lỗi, người vận hành ghi cùng mã và điều kiện xuất hiện. Nhờ đó đội bảo trì tìm được hồ sơ gốc trước khi chọn cách xử lý."
+                "answer": "Chuẩn hóa mã thiết bị và vùng, ghép với ảnh, lô vật tư và biên bản sửa. Khi báo lỗi, người vận hành ghi cùng mã và điều kiện xuất hiện. Nhờ đó đội bảo trì tìm được hồ sơ gốc trước khi chọn cách xử lý.",
+                "section": "Kiểm tra",
+                "visual": [
+                  "Hồ sơ hoàn công",
+                  "Mốc bàn giao",
+                  "Kiểm tra định kỳ"
+                ]
               }
             ]
           }
@@ -1045,44 +1228,58 @@ jobs:
           import fs from 'node:fs/promises';
           const data=JSON.parse(await fs.readFile(new URL('news-data.json',import.meta.url),'utf8'));
           const base='https://giaiphapcompositefrp.com';
-          const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
-          const validSlug=s=>/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s);
-          const asset='https://www.altapm.com/wp-content/uploads/2025/03/';
-          const mediaKey=/^(corrision-header-large|water-treatment-header|chem-process-header|coatings-header|power-gen-header)$/;
-          const page=(title,desc,url,body,extra='')=>'<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+esc(url)+'"><link rel="stylesheet" href="/tin-tuc/news.css">'+extra+'</head><body><header><nav><a href="/">FRP Việt Nam</a><a href="/tin-tuc/">Tin tức kỹ thuật</a></nav></header><main>'+body+'</main><footer><a href="/">Giải Pháp Composite FRP Việt Nam</a></footer></body></html>';
+          const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+          const link=p=>'/tin-tuc/'+p.slug+'.html';
+          const categories=['Vật liệu','Thi công','Kiểm tra','Ứng dụng','Dự án'];
+          const category=p=>categories.includes(p.section)?p.section:'Ứng dụng';
+          const theme=p=>categories.indexOf(category(p));
           const datefmt=new Intl.DateTimeFormat('vi-VN',{dateStyle:'long',timeZone:'Asia/Ho_Chi_Minh'});
-          const posts=[...data.posts].reverse();
-          const found=new Set();
-          for(const p of posts){
-           if(!validSlug(p.slug)||found.has(p.slug)||!data.sources[p.source])throw new Error('Invalid or duplicate article: '+p.slug);
-           found.add(p.slug);
-           if(![p.title,p.en,p.lead,p.body,p.conclusion,p.notes].every(x=>typeof x==='string'&&x.trim()))throw new Error('Missing content: '+p.slug);
+          const ordered=[...data.posts].reverse();
+          const seen=new Set();
+          for(const post of ordered){
+            if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(post.slug)||seen.has(post.slug)||!data.sources[post.source])throw Error('Invalid article: '+post.slug);
+            seen.add(post.slug);
           }
+          const mast='<header class="mast"><div class="shell bar"><a class="brand" href="/"><img src="/logo.png" alt="Composite FRP Solutions Vietnam Network" width="140" height="54"></a><nav aria-label="Điều hướng"><a href="/">Trang chủ</a><a href="/tin-tuc/" aria-current="page">Tin tức kỹ thuật</a></nav></div></header>';
+          const footer='<footer><div class="shell"><a href="/">Giải Pháp Composite FRP Việt Nam</a><span>Vật liệu, thi công và kiểm tra chống ăn mòn</span></div></footer>';
+          function page(title,desc,url,body,extra=''){
+            return '<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+'</title><meta name="description" content="'+esc(desc)+'"><link rel="canonical" href="'+esc(url)+'"><link rel="stylesheet" href="/tin-tuc/news.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">'+extra+'</head><body>'+mast+body+footer+'</body></html>';
+          }
+          function visual(p,compact=false){
+            const labels=Array.isArray(p.visual)&&p.visual.length===3?p.visual:null;
+            if(!labels)return '';
+            return '<figure class="visual theme-'+theme(p)+(compact?' mini':'')+'"><div class="visual-grid"><ol>'+labels.map((label,i)=>'<li><span aria-hidden="true">0'+(i+1)+'</span><strong>'+esc(label)+'</strong></li>').join('')+'</ol></div>'+(!compact?'<figcaption>Sơ đồ biên tập minh họa các nội dung kiểm tra trong bài.</figcaption>':'')+'</figure>';
+          }
+          const readtime=p=>Math.max(1,Math.ceil([p.lead,p.body,p.notes,p.conclusion,p.answer,...(p.sections??[]).map(x=>x.text)].join(' ').trim().split(/\s+/).length/180));
+          const details=p=>'<div class="meta"><span>'+esc(category(p))+'</span><span>'+readtime(p)+' phút đọc</span>'+(p.date&&Number.isFinite(Date.parse(p.date))?'<time datetime="'+esc(p.date)+'">'+esc(datefmt.format(new Date(p.date)))+'</time>':'')+'</div>';
+          const subsection=(id,title,content)=>'<section id="'+id+'"><h2>'+esc(title)+'</h2>'+content+'</section>';
+          const para=x=>'<p>'+esc(x)+'</p>';
           await fs.mkdir('tin-tuc',{recursive:true});
-          for(const p of posts){
-           const [source,url,photo]=data.sources[p.source];
-           if(!mediaKey.test(photo))throw new Error('Unknown image');
-           const image=asset+photo+'.jpg';
-           const canonical=base+'/tin-tuc/'+p.slug+'.html';
-           const schema={'@context':'https://schema.org','@type':'Article',headline:p.title,description:p.lead,inLanguage:'vi',image:[image],mainEntityOfPage:canonical,author:{'@type':'Organization',name:'Giải Pháp Composite FRP Việt Nam',url:base},...(p.date?{datePublished:p.date}:{})};
-           const desc=p.seoDescription||p.lead;
-           schema.description=desc;
-           const tag='<script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</scr'+'ipt>';
-           const related=posts.filter(x=>x.slug!==p.slug&&x.source===p.source).slice(0,3);
-          
-           const topics=Array.isArray(p.sections)?p.sections.map(s=>'<h2>'+esc(s.heading)+'</h2><p>'+esc(s.text)+'</p>').join(''):'';
-           const checks=Array.isArray(p.checks)?'<h2>Checklist đưa vào hồ sơ dự án</h2><ul>'+p.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'';
-           const qna=p.question&&p.answer?'<h2>Câu hỏi của tư vấn và nhà thầu</h2><h3>'+esc(p.question)+'</h3><p>'+esc(p.answer)+'</p>':'';
-           const social='<meta property="og:type" content="article"><meta property="og:title" content="'+esc(p.title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(canonical)+'"><meta property="og:image" content="'+esc(image)+'">';
-           const caption=p.focus?'Ảnh minh họa lĩnh vực công nghiệp. Chủ đề bài viết: '+p.focus+'.':'Ảnh minh họa lĩnh vực ứng dụng FRP.';
-           const body='<article><p class="eyebrow">Kỹ thuật chống ăn mòn</p><h1>'+esc(p.title)+'</h1><p class="lede">'+esc(p.lead)+'</p>'+(p.date?'<time datetime="'+esc(p.date)+'">'+esc(datefmt.format(new Date(p.date)))+'</time>':'')+'<figure><img src="'+esc(image)+'" alt="'+esc(p.alt||'Ảnh minh họa ứng dụng FRP trong công nghiệp')+'" decoding="async"><figcaption>'+esc(caption)+' Nguồn ảnh: <a href="'+esc(image)+'">ALTA Performance Materials</a>.</figcaption></figure><h2>Bối cảnh kỹ thuật</h2><p>'+esc(p.body)+'</p>'+topics+'<h2>Điểm cần kiểm tra trong hồ sơ</h2><p>'+esc(p.notes)+'</p><h2>Áp dụng vào dự án</h2><p>'+esc(p.conclusion)+'</p>'+checks+qna+'<aside lang="en"><h2>'+esc(p.en)+'</h2><p>'+esc(p.keywords)+'</p>'+(p.enSummary?'<p>'+esc(p.enSummary)+'</p>':'')+'</aside><h2>Nguồn đối chiếu</h2><ul><li><a href="'+esc(url)+'">'+esc(source)+'</a></li>'+(p.sourceNote?'<li>'+esc(p.sourceNote)+'</li>':'')+(p.reference?'<li><a href="'+esc(p.reference)+'">Nguồn bổ sung</a></li>':'')+'</ul>'+(related.length?'<h2>Bài liên quan</h2><ul>'+related.map(x=>'<li><a href="/tin-tuc/'+x.slug+'.html">'+esc(x.title)+'</a></li>').join('')+'</ul>':'')+'</article>';
-           await fs.writeFile('tin-tuc/'+p.slug+'.html',page(p.title,desc,canonical,body,tag+social));
+          for(const p of ordered){
+           const [source,url]=data.sources[p.source];
+           const canonical=base+link(p),desc=p.seoDescription||p.lead;
+           const schema={'@context':'https://schema.org','@type':'Article',headline:p.title,description:desc,inLanguage:'vi',mainEntityOfPage:canonical,author:{'@type':'Organization',name:'Giải Pháp Composite FRP Việt Nam',url:base},...(p.date?{datePublished:p.date}:{})};
+           const structured='<script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</scr'+'ipt>';
+           const social='<meta property="og:type" content="article"><meta property="og:title" content="'+esc(p.title)+'"><meta property="og:description" content="'+esc(desc)+'"><meta property="og:url" content="'+esc(canonical)+'">';
+           const related=ordered.filter(x=>x.slug!==p.slug&&category(x)===category(p)).slice(0,3);
+           const contents=[['boi-canh','Bối cảnh kỹ thuật',para(p.body)],...(p.sections??[]).map((x,i)=>['phan-tich-'+i,x.heading,para(x.text)]),['kiem-tra','Điểm cần kiểm tra',para(p.notes)],['ap-dung','Áp dụng vào dự án',para(p.conclusion)]];
+           if(p.checks?.length)contents.push(['checklist','Checklist hồ sơ dự án','<ul class="checklist">'+p.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>']);
+           if(p.question&&p.answer)contents.push(['hoi-dap','Hỏi đáp kỹ thuật','<h3>'+esc(p.question)+'</h3>'+para(p.answer)]);
+           const sources='<ul><li><a href="'+esc(url)+'">'+esc(source)+'</a></li>'+(p.sourceNote?'<li>'+esc(p.sourceNote)+'</li>':'')+(p.reference?'<li><a href="'+esc(p.reference)+'">Nguồn bổ sung</a></li>':'')+'</ul>';
+           contents.push(['nguon','Nguồn đối chiếu',sources]);
+           const toc='<aside class="toc" aria-label="Mục lục"><h2>Trong bài viết</h2><ul>'+contents.map(([id,title])=>'<li><a href="#'+id+'">'+esc(title)+'</a></li>').join('')+'</ul></aside>';
+           const body='<main class="shell article"><nav class="crumb" aria-label="Đường dẫn"><a href="/tin-tuc/">Tin tức kỹ thuật</a><span>›</span><span>'+esc(category(p))+'</span></nav><article><header class="article-head">'+details(p)+'<h1>'+esc(p.title)+'</h1><p class="lede">'+esc(p.lead)+'</p>'+visual(p)+'</header><div class="article-grid"><div class="prose">'+contents.map(x=>subsection(...x)).join('')+'<aside class="english" lang="en"><h2>'+esc(p.en)+'</h2>'+para(p.keywords)+(p.enSummary?para(p.enSummary):'')+'</aside></div>'+toc+'</div></article>'+(related.length?'<section class="related"><h2>Đọc tiếp</h2><ul>'+related.map(x=>'<li><a href="'+link(x)+'">'+esc(x.title)+' <span aria-hidden="true">↗</span></a></li>').join('')+'</ul></section>':'')+'</main>';
+           await fs.writeFile('tin-tuc/'+p.slug+'.html',page(p.title,desc,canonical,body,structured+social));
           }
-          const cards=posts.map(p=>'<li><article><h2><a href="/tin-tuc/'+p.slug+'.html">'+esc(p.title)+'</a></h2><p>'+esc(p.lead)+'</p><p lang="en">'+esc(p.en)+'</p></article></li>').join('');
-          await fs.writeFile('tin-tuc/index.html',page('Tin tức kỹ thuật FRP và chống ăn mòn','Vật liệu FRP, thi công lớp bọc, kiểm tra chất lượng và hồ sơ công trình tại Việt Nam và quốc tế.',base+'/tin-tuc/','<h1>Tin tức kỹ thuật FRP</h1><ul class="cards">'+cards+'</ul>'));
-          const urls=[base+'/',base+'/tin-tuc/',...posts.map(p=>base+'/tin-tuc/'+p.slug+'.html')];
+          const featured=ordered.find(p=>p.slug==='ban-giao-va-bao-tri')||ordered[0];
+          const cards=ordered.filter(p=>p!==featured).map(p=>'<li class="card"><article>'+visual(p,true)+'<div class="card-content">'+details(p)+'<h2><a href="'+link(p)+'">'+esc(p.title)+'</a></h2><p>'+esc(p.lead)+'</p><a class="more" href="'+link(p)+'" aria-label="'+esc('Đọc bài: '+p.title)+'">Đọc bài <span aria-hidden="true">↗</span></a></div></article></li>').join('');
+          const groups=categories.map(c=>'<li><a href="#chuyen-muc-'+categories.indexOf(c)+'">'+esc(c)+'</a></li>').join('');
+          const sectionLinks=categories.map((c,i)=>'<section class="topic-index" id="chuyen-muc-'+i+'"><h3>'+esc(c)+'</h3><ul>'+ordered.filter(p=>category(p)===c).map(p=>'<li><a href="'+link(p)+'">'+esc(p.title)+'</a></li>').join('')+'</ul></section>').join('');
+          const listing='<main class="shell listing"><div class="intro"><h1>Tin tức kỹ thuật FRP</h1><p>Vật liệu, thi công, kiểm tra chất lượng và hồ sơ công trình chống ăn mòn.</p></div><nav aria-label="Chuyên mục"><ul class="topics">'+groups+'</ul></nav><section class="featured"><div>'+details(featured)+'<h2><a href="'+link(featured)+'">'+esc(featured.title)+'</a></h2><p>'+esc(featured.lead)+'</p><a class="more" href="'+link(featured)+'">Đọc bài <span aria-hidden="true">↗</span></a></div>'+visual(featured,true)+'</section><h2 class="section-title">Bài viết kỹ thuật</h2><ul class="cards">'+cards+'</ul><h2 class="section-title">Tìm theo chuyên mục</h2><div class="topic-grid">'+sectionLinks+'</div></main>';
+          await fs.writeFile('tin-tuc/index.html',page('Tin tức kỹ thuật FRP và chống ăn mòn','Vật liệu FRP, thi công lớp bọc, kiểm tra chất lượng và hồ sơ công trình tại Việt Nam và quốc tế.',base+'/tin-tuc/',listing));
+          const urls=[base+'/',base+'/tin-tuc/',...ordered.map(p=>base+link(p))];
           await fs.writeFile('sitemap-tin-tuc.xml','<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>'<url><loc>'+esc(u)+'</loc></url>').join('')+'</urlset>');
-          console.log(posts.length+' articles rendered');
+          console.log(ordered.length+' articles rendered');
           FRP_END
           cat > daily-news.mjs <<'FRP_END'
           import fs from 'node:fs/promises';
@@ -1116,7 +1313,7 @@ jobs:
           console.log('New article ready: '+post.slug);
           FRP_END
           cat > tin-tuc/news.css <<'FRP_END'
-          *{box-sizing:border-box}body{margin:0;background:#f1f5f7;color:#153047;font:17px/1.68 system-ui,sans-serif}header,footer{background:#0b2438;color:#fff;padding:1rem 4vw}nav{display:flex;gap:2rem;flex-wrap:wrap}header a,footer a{color:white}main{max-width:1020px;margin:auto;padding:clamp(1rem,5vw,3.5rem)}main>article{background:white;padding:clamp(1rem,4vw,3rem);border-radius:1.1rem}h1,h2{line-height:1.18}h1{font-size:clamp(2rem,5vw,3.55rem);letter-spacing:-.045em;margin:.3em 0}h2{font-size:1.3rem;margin:1.65em 0 .35em}a{color:#126285;text-underline-offset:.2em}.lede{font-size:1.22rem;color:#39586b}.eyebrow,figcaption,aside{color:#48677c}.eyebrow{font-weight:700}figure{margin:1.6rem 0}img{display:block;width:100%;aspect-ratio:3/1;object-fit:cover;border-radius:.65rem}figcaption{font-size:.85rem;margin-top:.5rem}aside{background:#edf5fa;padding:.8rem 1rem;border-left:3px solid #1788a2}aside h2{margin-top:0}.cards{padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1rem}.cards li{background:white;border-radius:.75rem;padding:1rem}.cards h2{margin:.35rem 0}.cards p[lang=en]{font-size:.9rem;color:#48677c}
+          *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8f8;color:#122c3e;font:16px/1.7 'DM Sans',system-ui,sans-serif}.shell{width:min(1160px,calc(100% - 40px));margin:auto}.mast{background:#fff;border-bottom:1px solid #dbe4e8}.bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}.brand img{display:block;width:140px;height:54px;object-fit:contain}.bar nav{display:flex;gap:clamp(.7rem,3vw,2.1rem);font-weight:650;font-size:.88rem}.bar a,footer a{color:inherit;text-decoration:none}.bar [aria-current]{color:#00695e}.intro{margin:clamp(2rem,5vw,4.3rem) 0 1.35rem}.intro p,.lede{color:#3b5868}.intro p{font-size:1.12rem}.intro h1,.article h1{font-size:clamp(2.05rem,5vw,3.8rem);line-height:1.14;letter-spacing:-.035em;margin:0}.topics{display:flex;flex-wrap:wrap;gap:.55rem;padding:0;margin:0 0 1.8rem;list-style:none}.topics a{display:block;border:1px solid #cbdadf;border-radius:30px;padding:.35rem .78rem;background:white;text-decoration:none;font-size:.88rem}.featured{display:grid;grid-template-columns:1fr 1fr;background:#102e3d;color:#fff;border-radius:16px;overflow:hidden;align-items:stretch}.featured>div{padding:clamp(1rem,4vw,2.5rem)}.featured h2{font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.29;margin:.6rem 0}.featured a{color:inherit}.featured p{color:#d7e5ea}.featured .meta{color:#c9e2e6}.featured .visual{border-radius:0;align-self:stretch}.featured .visual-grid{min-height:100%;display:grid;place-items:center}.section-title{margin:2.45rem 0 1rem;font-size:1.6rem}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem;padding:0;list-style:none}.card{background:white;border:1px solid #dce5e8;border-radius:12px;overflow:hidden}.card-content{padding:1.1rem}.card h2{margin:.55rem 0;font-size:1.08rem;line-height:1.42}.card p{font-size:.91rem;color:#405d6e;margin:.5rem 0 1rem}.card a,.featured h2 a{text-decoration:none}.meta{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;font-size:.78rem;font-weight:700;color:#286467}.meta span+span:before,.meta time:before{content:'·';margin-right:.65rem;color:inherit}.more{font-size:.86rem;font-weight:750}.more span{margin-left:.3rem}a{color:#075f69;text-underline-offset:.18em}a:hover{text-decoration:underline}.visual{--deep:#164957;--mid:#0a5c60;--line:#8fe2d0;color:#fff;margin:0;overflow:hidden;border-radius:12px;background:var(--deep)}.theme-1{--deep:#263b57;--mid:#314f72;--line:#b8d8fb}.theme-2{--deep:#24454a;--mid:#2a6057;--line:#b0edc6}.theme-3{--deep:#203957;--mid:#2a5279;--line:#abd7ff}.theme-4{--deep:#4e3e36;--mid:#684d3d;--line:#f9d0a0}.visual-grid{background:radial-gradient(circle at 90% 15%,var(--mid),transparent 52%),repeating-linear-gradient(0deg,transparent,transparent 19px,#ffffff14 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,#ffffff14 20px);padding:clamp(.8rem,3vw,1.7rem)}.visual ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;width:100%}.visual li{display:flex;flex-direction:column;gap:.25rem;min-width:0;border-top:2px solid var(--line);background:#071d2f80;padding:.6rem .55rem;font-size:clamp(.75rem,1.6vw,1rem);line-height:1.35;overflow-wrap:anywhere}.visual li span{font-size:.74rem;letter-spacing:.08em;color:var(--line)}.visual figcaption{padding:.65rem 1rem;font-size:.8rem;color:#e7f1f2}.card .visual{border-radius:0}.card .visual li{font-size:.73rem}.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1rem;margin-bottom:3rem}.topic-index{background:white;border:1px solid #dce5e8;padding:.8rem 1rem;border-radius:.6rem;scroll-margin-top:1rem}.topic-index h3{margin:.3rem 0}.topic-index ul{padding-left:1.2rem;font-size:.88rem}.article{max-width:1040px}.crumb{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0;font-size:.86rem}.article-head{max-width:900px}.article h1{margin:.65rem 0}.lede{font-size:clamp(1rem,2vw,1.28rem);margin:0 0 1.4rem}.article-head .visual-grid{padding:clamp(1rem,5vw,2.6rem)}.article-grid{display:grid;grid-template-columns:minmax(0,690px) minmax(160px,1fr);gap:2rem;margin:2rem 0}.prose{min-width:0}.prose section{scroll-margin-top:1rem}.prose h2{font-size:1.33rem;line-height:1.35;margin:1.65rem 0 .55rem}.prose section:first-child h2{margin-top:0}.prose p{margin:.4rem 0 1rem}.toc{align-self:start;border:1px solid #dbe5e8;border-radius:.7rem;background:white;padding:.9rem;font-size:.84rem}.toc h2{font-size:1rem;margin:0}.toc ul{margin:.4rem 0;padding-left:1.15rem}.toc li{margin:.25rem 0}.checklist,.english{background:#eaf4f3;border-left:3px solid #2a7c78;padding:1rem 1rem 1rem 1.6rem}.english h2{margin-top:0;font-size:1rem}.related{border-top:1px solid #dbe5e8;margin:2rem 0 3rem}.related ul{padding-left:1.2rem}footer{padding:1.25rem 0;background:#102e3d;color:#eaf5f5}footer .shell{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}:focus-visible{outline:2px solid #0a8190;outline-offset:3px}@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.article-grid{gap:1.25rem}}@media(max-width:620px){.shell{width:calc(100% - 28px)}.bar{min-height:60px}.brand img{width:105px;height:44px}.bar nav{font-size:.75rem}.featured,.cards,.article-grid{grid-template-columns:1fr}.article-grid .toc{grid-row:1}.intro h1,.article h1{letter-spacing:-.02em}.featured .visual-grid{min-height:auto}}
           FRP_END
       - name: Research and generate
         if: github.event_name == 'schedule' || inputs.generate_article == true
