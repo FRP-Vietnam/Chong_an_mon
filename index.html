@@ -38,6 +38,7 @@
 <style>.matrix h2,.matrix h3,.matrix h4,.tech h1,.tech h2{line-height:1.5}.matrix-row small{display:block;margin-top:.5rem;line-height:1.6}.matrix-row input[type=file]{min-width:0}#matrix-result details{margin:1rem 0}#matrix-result summary{cursor:pointer;font-weight:800}</style>
 <style>.embedded-hidden,#embedded-page[hidden]{display:none!important}#embedded-page{background:#071e3c;color:#f8fafc;flex:1}#embedded-page h1{font-size:2rem;font-weight:750}#embedded-page h2{font-size:1.35rem;font-weight:700}#embedded-page h3{font-weight:650}#embedded-page p,#embedded-page nav{margin:.7rem 0}#embedded-page ul{padding-left:1.5rem;list-style:disc}#embedded-page input{color:#111827}.report-actions{display:flex;gap:1rem;flex-wrap:wrap}.report-actions button{padding:.65rem;background:#ffc56a;color:#17263d;border-radius:.5rem}.report-actions [hidden]{display:none}@media print{body>#embedded-page:not([hidden]){display:block!important;background:white!important;color:black!important}.report-actions{display:none!important}#embedded-page a{color:black}}</style>
 <style>#report-page ol{padding-left:1.7rem;list-style:decimal}#report-page li{margin:.4rem 0}#report-page h3{margin-top:1rem}</style>
+<style>.frp-summary,.frp-plan{border:1px solid #426486;border-radius:.9rem;padding:1.1rem;margin:1rem 0;background:#102b48}.frp-summary{border-left:5px solid #ffc56a}.frp-summary h2,.frp-plan h3{margin:0}.frp-layer{display:grid;grid-template-columns:minmax(110px,1fr) 3fr;gap:.7rem;padding:.5rem 0;border-top:1px solid #426486}.frp-plan h4{margin-top:.8rem;font-weight:700}.frp-table-wrap{overflow:auto}.frp-proposal table th,.frp-proposal table td{text-align:left}.frp-proposal summary{cursor:pointer} @media print{.frp-summary,.frp-plan{background:white!important;border-color:#aaa;color:black}.frp-layer{border-color:#aaa}.frp-proposal h2,.frp-proposal h3{break-after:avoid}.frp-proposal tr{break-inside:avoid}}</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -697,6 +698,43 @@ if (form) {
     location.hash='/ket-qua-tra-cuu/'+encodeURIComponent(JSON.stringify(payload));
   });
 }
+
+function renderLayerSchedule(parent, plan, candidate) {
+  const code=candidate?.grade;
+  const selected=code||'Vinylester đã được duyệt';
+  const primer=code==='DERAKANE 411'?'DERAKANE 8084 hoặc primer được hãng duyệt':code==='SWANCOR 901'?'SWANCOR CP99/984C hoặc primer được hãng duyệt':'Primer tương thích được hãng duyệt';
+  const layers=plan.title.startsWith('01')?[
+    ['Nền','Tạo nhám theo yêu cầu hệ phủ. Xử lý nền yếu, nứt, lỗ rỗ và thấm ngược trước khi bọc.'],
+    ['Lót và trám',primer+' → trám bằng hệ '+selected+' tương thích.'],
+    ['Gia cường',selected+' · cấu tạo mẫu 2 lớp Mat 300 g/m² + 1 lớp C-Tissue 30 g/m². Lăn đuổi khí theo từng lớp.'],
+    ['Hoàn thiện','Lăn lớp giàu nhựa bằng '+selected+'. Phụ gia hỗ trợ đóng rắn bề mặt theo hệ duyệt.']
+  ]:plan.title.startsWith('02')?[
+    ['Nền, lót, laminate',primer+' → trám → laminate như phương án 01 đã duyệt.'],
+    ['Lớp cản thứ nhất','Lớp phủ vinylester vảy thủy tinh màu trắng, theo cấu hình hệ phủ đã duyệt.'],
+    ['Lớp cản thứ hai','Lớp phủ vinylester vảy thủy tinh màu xám, dùng màu tương phản để nhận diện vùng thiếu phủ.'],
+    ['Hoàn thiện','Lớp trong tương thích. Đo chiều dày và kiểm tra lỗ kim theo kế hoạch kiểm tra.']
+  ]:plan.title.startsWith('03')?[
+    ['Nền và primer','Nền đã nghiệm thu → DERAKANE 8084 hoặc primer được hãng chấp thuận → lớp trám tương thích.'],
+    ['Lớp cản','Hệ phủ DERAKANE 411 đã xác nhận → lớp vảy màu trắng → lớp vảy màu xám.'],
+    ['Hoàn thiện','Lớp trong theo hệ đã duyệt. Kiểm tra chiều dày, độ bám, đóng rắn và độ liên tục.']
+  ]:null;
+  if(!layers)return;
+  for(const [label,value] of layers){
+    const row=add(parent,'div','');row.className='frp-layer';
+    add(row,'strong',label);add(row,'span',value);
+  }
+}
+function renderAcceptanceTable(root){
+  const wrap=add(root,'div','');wrap.className='frp-table-wrap';
+  const table=add(wrap,'table','');
+  const head=add(add(table,'thead',''),'tr','');
+  for(const col of ['Chỉ tiêu','D0','D1','D3','D5','D7'])add(head,'th',col);
+  const body=add(table,'tbody','');
+  for(const label of ['Nồng độ và nhiệt độ','Mã mẫu và ảnh','Phồng, nứt, rỗ, lộ sợi hoặc bong','Chiều dày, độ cứng hoặc độ bám nếu quy định','Người chứng kiến']){
+    const row=add(body,'tr','');add(row,'th',label);
+    for(let i=0;i<5;i++)add(row,'td','—');
+  }
+}
 function renderReportPage() {
   const root=document.getElementById('report-page');
   if(!root)return;
@@ -710,7 +748,13 @@ function renderReportPage() {
   input.forEach(x=>{x.key=keyOf(x.name);});
   const decision=analyzeCase(input,payload.basis===true);
   const options=buildProposal(decision);
-  add(root,'p','Tài liệu tham khảo để trao đổi kỹ thuật. Xác nhận hệ vật liệu và điều kiện vận hành trước khi chỉ định.');
+  root.classList.add('frp-proposal');
+  const summary=add(root,'section','');summary.className='frp-summary';
+  const lead=decision.options?.[0];
+  add(summary,'h2',lead?'Đề xuất sơ tuyển · '+lead.grade:decision.status==='liner'?'Đề xuất khảo sát · lớp lót PVDF':'Hồ sơ thiết kế · cần xác nhận điều kiện');
+  add(summary,'p',lead?'Dùng làm cơ sở trình duyệt phương án laminate. Xác nhận nền, chú thích hãng và toàn bộ cấu tạo trước khi chỉ định.':decision.message);
+  add(summary,'p','Tài liệu tham khảo kỹ thuật · chỉ định và nghiệm thu theo hồ sơ đã duyệt.');
+
   add(root,'h2','Điều kiện đã nhập');
   for(const x of input) add(root,'p',roles[x.role]+' · '+(x.name||'Chưa nhập hóa chất')+' · '+(Number.isFinite(x.c)?x.c+'%':'Chưa nhập nồng độ')+' · '+(Number.isFinite(x.t)?x.t+'°C':'Chưa nhập nhiệt độ'));
 
@@ -722,17 +766,26 @@ function renderReportPage() {
   const candidates=decision.options??[];
   for(const [i,x] of candidates.entries())add(root,'p',(i===0?'Ưu tiên sơ tuyển: ':'Ứng viên thay thế: ')+x.grade+' · '+x.limit+'°C theo bảng cho laminate, cần đối chiếu chú thích và điều kiện thực tế.');
   if(!candidates.length)add(root,'p',decision.status==='liner'?'Xem xét cấp PVDF làm lớp tiếp xúc. Nhựa cho vỏ FRP chọn theo tính toán kết cấu và xác nhận của hãng.':'Chưa đủ căn cứ để đề xuất mã. Cần bổ sung các điều kiện nêu trên hoặc xác nhận hệ phù hợp từ hãng.');
-  showManufacturerComparison(root,input,decision);
+  const evidence=add(root,'details','');
+  add(evidence,'summary','Căn cứ kỹ thuật và giới hạn tra cứu');
+  showManufacturerComparison(evidence,input,decision);
   add(root,'h2','03 · Phương án thi công');
   if(!options.length)add(root,'p','Ba cấu tạo dưới đây là phương án mẫu cho bể nước thải theo hồ sơ FRP, trang 3–5. Chúng đang chờ xác nhận vật liệu cho điều kiện vừa nhập. Mã nêu trong cấu tạo là mã của hồ sơ mẫu.');
   const displayedPlans=options.length?options:buildProposal({status:'resin',options:[{grade:'DERAKANE 411'},{grade:'SWANCOR 901'}]});
   for(const plan of displayedPlans){
-    add(root,'h3',plan.title);
-    add(root,'p',options.length?plan.scope:'Cấu tạo mẫu · chờ đối chiếu mã nhựa và hệ phủ với điều kiện thực tế.');
-    const list=add(root,'ol','');
+    const card=add(root,'section','');card.className='frp-plan';
+    add(card,'h3',plan.title);
+    add(card,'p',options.length?plan.scope:'Cấu tạo mẫu · chờ đối chiếu mã nhựa và hệ phủ với điều kiện thực tế.');
+    renderLayerSchedule(card,plan,decision.options?.[0]);
+    add(card,'h4','Trình tự và điểm kiểm soát');
+    const list=add(card,'ol','');
     for(const step of plan.steps)add(list,'li',step);
   }
+  add(root,'h3','Chi tiết cần thể hiện trên bản vẽ');
+  add(root,'p','Chỉ rõ góc, khe, cổ ống và vị trí xuyên thành. Với bể bê tông có đoạn ống FRP đặt sẵn, nối lớp bọc liên tục vào đoạn ống và kiểm tra kín tại mối nối. Xác nhận chi tiết liên kết và chuyển vị trước khi thi công.');
   appendAcceptance(root,decision);
+  add(root,'h3','Biểu mẫu ghi kết quả thử ngâm');
+  renderAcceptanceTable(root);
   add(root,'h2','Nguồn đối chiếu');
   for(const key of new Set([...decision.refs,'w'])){
     const [title,url]=sources[key];
@@ -748,7 +801,7 @@ function renderReportPage() {
     const head=document.createElement('head');
     const meta=document.createElement('meta');meta.charset='UTF-8';head.append(meta);
     add(head,'title','FRP · Báo cáo tra cứu');
-    add(head,'style','body{max-width:880px;margin:32px auto;padding:0 20px;font:16px/1.6 system-ui} h2{margin-top:1.5em}');
+    add(head,'style','body{max-width:880px;margin:32px auto;padding:0 20px;font:16px/1.6 system-ui} h2{margin-top:1.5em} table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:.35rem;border:1px solid #aaa} .frp-plan,.frp-summary{border:1px solid #aaa;padding:1rem;margin:1rem 0} .frp-layer{padding:.3rem 0} .frp-layer strong{margin-right:.6rem}');
     const body=document.createElement('body');
     const saved=root.cloneNode(true);
     for(const a of saved.querySelectorAll('a')) if(!/^[a-z]+:/i.test(a.getAttribute('href'))) a.href=new URL(a.getAttribute('href'),location.href).href;
