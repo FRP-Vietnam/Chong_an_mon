@@ -37,6 +37,7 @@
 <link rel="canonical" href="https://giaiphapcompositefrp.com/">
 <style>.matrix h2,.matrix h3,.matrix h4,.tech h1,.tech h2{line-height:1.5}.matrix-row small{display:block;margin-top:.5rem;line-height:1.6}.matrix-row input[type=file]{min-width:0}#matrix-result details{margin:1rem 0}#matrix-result summary{cursor:pointer;font-weight:800}</style>
 <style>.embedded-hidden,#embedded-page[hidden]{display:none!important}#embedded-page{background:#071e3c;color:#f8fafc;flex:1}#embedded-page h1{font-size:2rem;font-weight:750}#embedded-page h2{font-size:1.35rem;font-weight:700}#embedded-page h3{font-weight:650}#embedded-page p,#embedded-page nav{margin:.7rem 0}#embedded-page ul{padding-left:1.5rem;list-style:disc}#embedded-page input{color:#111827}.report-actions{display:flex;gap:1rem;flex-wrap:wrap}.report-actions button{padding:.65rem;background:#ffc56a;color:#17263d;border-radius:.5rem}.report-actions [hidden]{display:none}@media print{body>#embedded-page:not([hidden]){display:block!important;background:white!important;color:black!important}.report-actions{display:none!important}#embedded-page a{color:black}}</style>
+<style>#report-page ol{padding-left:1.7rem;list-style:decimal}#report-page li{margin:.4rem 0}#report-page h3{margin-top:1rem}</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -590,10 +591,50 @@ function analyzeCase(input, basis) {
   if (issues.length) return {status:'review',refs:[],issues,message:'Hoàn thiện các dữ liệu dưới đây để tra đúng điều kiện.'};
   return {...advise(input,basis),issues,notes:input.length>1?['Đối chiếu thành phần tại bề mặt tiếp xúc. Dữ liệu của từng hóa chất riêng lẻ không xác nhận hỗn hợp.']:[]};
 }
-function methodsFor(decision) {
-  return decision.status === 'resin' ? methods.slice(0,decision.options.some(option => option.grade === 'DERAKANE 411') ? 3 : 2) : decision.status === 'liner' ? methods.slice(3) : [];
-}
 
+function buildProposal(decision) {
+  if (decision.status === 'liner') return [{
+    title:'Phương án khảo sát · lớp lót PVDF và vỏ FRP',
+    scope:'Cần hãng xác nhận cấp PVDF, điều kiện tiếp xúc, mối hàn và tính tương thích của toàn hệ trước khi chỉ định.',
+    steps:['Chốt tải trọng, kết cấu đỡ, kiểu neo hoặc liên kết, bích và cổ ống theo bản vẽ duyệt.','Chế tạo và kiểm tra mối hàn, vùng nối và các chi tiết xuyên thành theo quy trình đã duyệt.','Kiểm tra độ kín lớp lót và nghiệm thu vỏ FRP chịu lực theo thiết kế.']
+  }];
+  if (decision.status !== 'resin' || !decision.options?.length) return [];
+  const grades = decision.options.map(x=>x.grade).join(' / ');
+  const primer = decision.options.some(x=>x.grade==='DERAKANE 411') || decision.options.some(x=>x.grade==='SWANCOR 901')
+    ? 'Với hệ 411 có thể trình duyệt DERAKANE 8084; với hệ 901 có thể trình duyệt SWANCOR CP99/984C. Duyệt lại tính tương thích với nền, môi trường và mã nhựa đã chọn.'
+    : 'Đề nghị hãng xác nhận primer và hệ trám phù hợp cho đúng mã đã chọn.';
+  const plans = [{
+    title:'01 · Laminate vinylester, hoàn thiện trực tiếp trên tissue',
+    scope:'Ứng viên nhựa cho laminate theo bảng hãng: '+grades+'. Chọn một hệ cho toàn bộ cấu tạo và trình duyệt chi tiết.',
+    steps:['Khảo sát nền, loại bỏ lớp yếu, xử lý nứt và khuyết tật. Chốt độ ẩm, độ nhám và điều kiện bề mặt theo hệ duyệt.',primer,'Thi công lớp trám tương thích, dán lớp Mat và tissue, lăn đuổi khí từng lớp. Hồ sơ bể tham chiếu nêu 2 Mat 300 và 1 C-Tissue 30 g/m². Chiều dày và số lớp phải được duyệt theo từng hạng mục.','Hoàn thiện lớp giàu nhựa. Kiểm tra tính liên tục, lộ sợi, bọt khí, mép nối, góc và cổ ống trước khi bàn giao.']
+  },{
+    title:'02 · Laminate vinylester kèm lớp phủ vảy thủy tinh',
+    scope:'Các mã '+grades+' là ứng viên cho laminate. Chỉ áp dụng lớp phủ vảy sau khi xác nhận riêng hệ phủ, cấu tạo và độ dày theo môi trường.',
+    steps:['Chuẩn bị nền, lót, trám và tạo laminate theo phương án 01 đã được duyệt.','Thi công từng lớp phủ vảy theo quy trình của hệ được duyệt. Kiểm soát phủ chồng, mốc thời gian giữa lớp và xử lý bề mặt có wax trước khi phủ tiếp.','Kiểm tra độ dày, vùng thiếu phủ, bọt khí và lỗ kim theo phương pháp thích hợp với hệ đã duyệt.']
+  }];
+  if(decision.options.some(x=>x.grade==='DERAKANE 411')){
+    plans.push({
+      title:'03 · DERAKANE 411 phủ mỏng không cốt sợi',
+      scope:'Phương án khảo sát theo hồ sơ mẫu. Chỉ đưa vào hồ sơ thi công nếu nhà cung cấp xác nhận hệ phủ mỏng cho đúng nền và điều kiện tiếp xúc.',
+      steps:['Chuẩn bị và nghiệm thu nền. Duyệt primer, lớp trám, cấu tạo và chiều dày màng với nhà cung cấp.','Thi công các lớp theo quy trình đã duyệt, kiểm soát chiều dày, khoảng thời gian phủ chồng và dưỡng hộ.','Kiểm tra độ bám, độ liên tục, mép, góc và cổ ống. Chốt kế hoạch kiểm tra và bảo trì theo hồ sơ công trình.']
+    });
+  }
+  return plans;
+}
+function appendAcceptance(root, decision) {
+  add(root,'h2','04 · Quy trình nghiệm thu và thử ngâm');
+  add(root,'p','Nguồn: hồ sơ FRP – Bể xử lý nước thải 2026, trang 6–7. Chốt tiêu chí và người chứng kiến trong kế hoạch kiểm tra trước khi thi công.');
+  const steps=[
+    ['Trước khi phủ','Ký biên bản nền, độ ẩm, điểm sương, độ nhám, xử lý khuyết tật và lô vật tư. Duyệt mã nhựa, primer, lớp trám, cấu tạo và chiều dày tối thiểu.'],
+    ['Trong thi công','Nghiệm thu primer, lớp trám, từng lớp sợi hoặc lớp phủ và các điểm chuyển tiếp. Ghi ngày giờ, mã lô, vị trí, chiều dày và ảnh. Lập biên bản vị trí sửa và kiểm tra lại sau sửa.'],
+    ['Mẫu và điều kiện thử','Đề xuất 3 mẫu cho mỗi điều kiện và mẫu đối chứng. Mẫu đúng nền, lớp lót, cấu tạo, chiều dày và dưỡng hộ thực tế. Đơn vị đủ năng lực thực hiện theo môi trường đại diện và điều kiện đã thống nhất.'],
+    ['Theo dõi D0, D1, D3, D5, D7','Ghi nồng độ, nhiệt độ, mã mẫu, ảnh và người chứng kiến. So sánh với đối chứng, kiểm tra rỗ/lỗ kim, phồng, nứt, mềm/nhớt, phấn hóa, lộ sợi và bong tách. Ghi độ dày, độ cứng hoặc độ bám nếu kế hoạch yêu cầu.'],
+    ['Quyết định đạt và bàn giao','So sánh từng chỉ tiêu với giới hạn đã ký. Lập biên bản sai lệch, sửa chữa và thử lại khi cần. Nghiệm thu độ kín hiện trường riêng theo thiết kế. Thử ngâm 7 ngày chỉ dùng sàng lọc theo hợp đồng.'],
+    ['Bảo hành và bảo trì','Ghi phạm vi, thời hạn, điều kiện vận hành và trách nhiệm bảo hành trong hợp đồng. Hồ sơ mẫu đề xuất các mốc kiểm tra 3, 6, 12, 18 và 24 tháng, điều chỉnh theo công trình.']
+  ];
+  if(decision.status==='liner')steps.splice(2,0,['Lớp lót PVDF','Duyệt quy trình và hồ sơ mối hàn, lập sơ đồ mối nối. Nghiệm thu mối hàn, độ kín và các điểm xuyên thành theo thiết kế lớp lót.']);
+  for(const [title,detail] of steps){add(root,'h3',title);add(root,'p',detail);}
+}
 const form = document.getElementById('matrix-form');
 const result = document.getElementById('matrix-result');
 const add = (parent, tag, value) => {
@@ -636,20 +677,28 @@ function renderReportPage() {
   const input=payload.input.slice(0,4).filter(x=>x&&Number.isInteger(x.role)&&x.role>=0&&x.role<4).map(x=>({role:x.role,name:typeof x.name==='string'?x.name.slice(0,250):'',c:Number.isFinite(x.c)?x.c:NaN,t:Number.isFinite(x.t)?x.t:NaN}));
   input.forEach(x=>{x.key=keyOf(x.name);});
   const decision=analyzeCase(input,payload.basis===true);
-  const options=methodsFor(decision);
+  const options=buildProposal(decision);
   add(root,'p','Tài liệu tham khảo để trao đổi kỹ thuật. Xác nhận hệ vật liệu và điều kiện vận hành trước khi chỉ định.');
   add(root,'h2','Điều kiện đã nhập');
   for(const x of input) add(root,'p',roles[x.role]+' · '+(x.name||'Chưa nhập hóa chất')+' · '+(Number.isFinite(x.c)?x.c+'%':'Chưa nhập nồng độ')+' · '+(Number.isFinite(x.t)?x.t+'°C':'Chưa nhập nhiệt độ'));
-  add(root,'h2','Kết luận sơ tuyển');
+
+  add(root,'h2','01 · Kết luận sơ tuyển');
   add(root,'p',decision.message);
   for(const x of decision.issues??[]) add(root,'p','• '+x);
   for(const x of decision.notes??[]) add(root,'p',x);
-  for(const x of decision.options??[]) add(root,'p',x.grade+' · giới hạn bảng '+x.limit+'°C');
-  add(root,'h2','Phương án thi công');
-  if(!options.length) add(root,'p','Chốt vật liệu tiếp xúc trước khi lập cấu tạo. Chuẩn bị SDS, mô tả nền, điều kiện đỉnh, sơ đồ dòng và vị trí nối để thẩm định.');
-  for(const [title,detail] of options){add(root,'h3',title);add(root,'p',detail);}
-  add(root,'h2','Nghiệm thu và thử ngâm');
-  for(const [title,detail] of itp){add(root,'h3',title);add(root,'p',detail);}
+  add(root,'h2','02 · Mã nhựa đề xuất');
+  const candidates=decision.options??[];
+  for(const [i,x] of candidates.entries())add(root,'p',(i===0?'Ưu tiên sơ tuyển: ':'Ứng viên thay thế: ')+x.grade+' · '+x.limit+'°C theo bảng cho laminate, cần đối chiếu chú thích và điều kiện thực tế.');
+  if(!candidates.length)add(root,'p',decision.status==='liner'?'Xem xét cấp PVDF làm lớp tiếp xúc. Nhựa cho vỏ FRP chọn theo tính toán kết cấu và xác nhận của hãng.':'Chưa đủ căn cứ để đề xuất mã. Cần bổ sung các điều kiện nêu trên hoặc xác nhận hệ phù hợp từ hãng.');
+  add(root,'h2','03 · Phương án thi công');
+  if(!options.length)add(root,'p','Các cấu tạo mẫu nằm trong mục Thông số kỹ thuật. Chốt vật liệu tiếp xúc trước khi đưa cấu tạo vào phương án dự án.');
+  for(const plan of options){
+    add(root,'h3',plan.title);
+    add(root,'p',plan.scope);
+    const list=add(root,'ol','');
+    for(const step of plan.steps)add(list,'li',step);
+  }
+  appendAcceptance(root,decision);
   add(root,'h2','Nguồn đối chiếu');
   for(const key of new Set([...decision.refs,'w'])){
     const [title,url]=sources[key];
