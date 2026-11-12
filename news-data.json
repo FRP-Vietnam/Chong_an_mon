@@ -121,6 +121,13 @@
         "Vùng tiếp xúc",
         "Dòng bảng hãng",
         "Duyệt cấu tạo"
+      ],
+      "visualNote": [
+        "Điều kiện vận hành",
+        "Hóa chất · nồng độ · nhiệt độ",
+        "Dòng trong bảng hãng",
+        "Mã DERAKANE · chú thích · phạm vi",
+        "Ba dữ kiện vận hành cần khớp dòng tra trước khi so mã nhựa."
       ]
     },
     {
@@ -180,6 +187,13 @@
             "Khi gửi câu hỏi, chụp cả tên hóa chất, nồng độ, đầu cột và chú thích. Một ảnh chỉ có số 50/120 không cho biết người tra đã chọn đúng chất, đúng nồng độ hay đúng mã nhựa."
           ]
         }
+      ],
+      "visualNote": [
+        "SWANCOR 901",
+        "50/120 °C/°F",
+        "SWANCOR 907",
+        "50/120 °C/°F",
+        "Trích hai ô cùng dòng axit sulfurơ 10% theo bảng SWANCOR 18/11/2025."
       ]
     },
     {
@@ -217,6 +231,13 @@
         "Lớp lót PVDF",
         "Liên kết",
         "Vỏ FRP"
+      ],
+      "visualNote": [
+        "Lớp tiếp xúc",
+        "PVDF",
+        "Phần kết cấu",
+        "FRP",
+        "Mặt cắt nguyên lý của hệ hai vật liệu. Vị trí liên kết và cấu tạo cụ thể theo thiết kế."
       ]
     },
     {
@@ -254,6 +275,13 @@
         "Vùng khí nóng",
         "Vùng ngưng tụ",
         "Vùng ướt"
+      ],
+      "visualNote": [
+        "Vùng khí",
+        "Nhiệt độ và thành phần khí",
+        "Vùng ướt",
+        "Giọt bắn và dịch ngưng",
+        "Hai môi trường cần xác nhận riêng khi mô tả điều kiện của tháp FGD."
       ]
     },
     {
@@ -291,6 +319,13 @@
         "Bể điều hòa",
         "Vùng châm hóa chất",
         "Bể xử lý cuối"
+      ],
+      "visualNote": [
+        "Dưới mực nước",
+        "Ngâm liên tục",
+        "Trên mực nước",
+        "Bắn tóe và ngưng tụ",
+        "Mặt cắt bể được khảo sát theo từng vùng tiếp xúc."
       ]
     },
     {
@@ -328,6 +363,13 @@
         "Lớp lót",
         "Lớp vảy",
         "Lớp hoàn thiện"
+      ],
+      "visualNote": [
+        "Trong lớp phủ",
+        "Vảy thủy tinh nằm trong nền nhựa",
+        "Tại mép nối",
+        "Kiểm tra tính liên tục của lớp phủ",
+        "Hai chi tiết khác nhau khi đánh giá hệ vinyl ester vảy thủy tinh."
       ]
     },
     {
@@ -365,6 +407,13 @@
         "Mặt tiếp xúc",
         "Lớp cản",
         "Lớp chịu lực"
+      ],
+      "visualNote": [
+        "Mặt tiếp xúc",
+        "Lớp giàu nhựa và veil nếu được thiết kế",
+        "Phía sau",
+        "Các lớp gia cường theo cấu tạo",
+        "Sơ đồ vị trí tương đối của lớp cản và phần gia cường."
       ]
     },
     {
@@ -428,6 +477,13 @@
             "Hồ sơ SGI Composites có ảnh quá trình lót FRP trong bể chứa nước sạch. Ảnh theo từng giai đoạn giúp hình dung cách đối chiếu vị trí trước và sau khi che phủ. Khi áp dụng cho bể nước thải, ảnh của công trình phải gắn với bản vẽ, kết quả kiểm tra nền và tiêu chí của hệ đã chọn."
           ]
         }
+      ],
+      "visualNote": [
+        "Mặt phẳng",
+        "Kiểm tra nền theo khu vực",
+        "Chân tường B04",
+        "Vệt ẩm tái xuất hiện",
+        "Ví dụ giả định cho thấy cách đánh dấu vùng cần tìm nguồn ẩm."
       ]
     },
     {
@@ -465,6 +521,13 @@
         "Xác định nền",
         "Chọn lớp lót",
         "Duyệt phủ chồng"
+      ],
+      "visualNote": [
+        "Nền bê tông",
+        "Kiểm tra độ chắc và tình trạng ẩm",
+        "Nền thép",
+        "Kiểm tra hiện trạng và biên dạng bề mặt",
+        "Thông tin bàn giao nền thay đổi theo vật liệu nền và quy trình duyệt."
       ]
     },
     {
@@ -526,6 +589,13 @@
             "“Tại ngày 7, quan sát thấy hai bọng sát mép cắt của mẫu ngâm. Chưa ghi nhận bọng ở vùng giữa trong ảnh quan sát. Cần đối chiếu cấu tạo mép mẫu và tiêu chí đã duyệt trước khi kết luận đạt.” Cách viết này giúp bên thi công, tư vấn và phòng thử xử lý cùng một dữ kiện. ASTM C581 là tài liệu tham chiếu cho đánh giá kháng hóa chất của laminate sợi thủy tinh trong môi trường lỏng. Phép thử sàng lọc 7 ngày của dự án cần ghi theo đúng kế hoạch đã duyệt và kết quả chỉ áp dụng cho mẫu, điều kiện và thời gian đã thử."
           ]
         }
+      ],
+      "visualNote": [
+        "Mẫu lưu",
+        "Ảnh ban đầu để đối chiếu",
+        "Mẫu ngâm",
+        "Ghi thời điểm và vị trí bọng",
+        "Đối chiếu theo cùng chiều mẫu và mốc ảnh."
       ]
     },
     {
@@ -584,6 +654,13 @@
             "“H01, cổ N02, phía dưới theo hướng nhìn từ trong bể. Ảnh 12 chỉ vị trí, ảnh 13 ghi chi tiết. Đã khoanh vùng, xử lý theo quy trình duyệt, kiểm tra lại sau khi lớp sửa đủ điều kiện. Kết quả và chữ ký xác nhận lưu cùng phiếu.” Nếu phần sửa kéo sang vùng bên cạnh, bổ sung phạm vi kiểm tra theo kế hoạch. Ghi riêng thử kín nếu hợp đồng yêu cầu. Phép kiểm tra độ liên tục chỉ cung cấp kết quả trong phạm vi phương pháp đã thực hiện."
           ]
         }
+      ],
+      "visualNote": [
+        "Cổ ống N02",
+        "Ảnh rộng để định vị",
+        "Điểm H01",
+        "Ảnh gần và kết quả kiểm tra lại",
+        "Minh họa cách nối tín hiệu, ảnh và phiếu sửa."
       ]
     },
     {
@@ -642,6 +719,13 @@
             "Trong kế hoạch kiểm tra, ghi rõ điểm nào phải chờ xác nhận và ai được quyền cho làm tiếp. Ví dụ, N02 cần tư vấn chứng kiến trước lớp kế tiếp. Nếu đội thi công đã che khuất, ghi sai lệch và thống nhất cách xác minh bổ sung trước khi nghiệm thu điểm đó. Ảnh có thời gian và vị trí giúp truy xuất, còn việc chấp nhận phải theo điều khoản đã thống nhất."
           ]
         }
+      ],
+      "visualNote": [
+        "Trước khi che",
+        "K01 · N02 · M03",
+        "Sau khi xác nhận",
+        "Ảnh và chữ ký theo mốc",
+        "Ví dụ ba vị trí chứng kiến trước khi dán lớp tiếp theo."
       ]
     },
     {
@@ -685,7 +769,14 @@
         "url": "https://khia.belzona.com/pdf/download/8082",
         "credit": "Belzona · KHIA 8082",
         "caption": "Ảnh lớp bọc sợi thủy tinh bị hư hỏng ở đáy bồn sản xuất phân bón tại Bồ Đào Nha."
-      }
+      },
+      "visualNote": [
+        "Quan sát ngày đầu",
+        "Ảnh và trạng thái ban đầu",
+        "Quan sát sau tiếp xúc",
+        "Vị trí và thời điểm biến đổi",
+        "Cặp hồ sơ để theo dõi độ bền trong phạm vi điều kiện thử."
+      ]
     },
     {
       "slug": "nhieu-loc-thi-nghe",
@@ -723,7 +814,14 @@
         "Hạng mục xử lý",
         "Hồ sơ vật liệu"
       ],
-      "sourceNote": "Phân tích ứng dụng FRP cho bể công nghiệp. Hồ sơ nguồn cung cấp bối cảnh ngành nước."
+      "sourceNote": "Phân tích ứng dụng FRP cho bể công nghiệp. Hồ sơ nguồn cung cấp bối cảnh ngành nước.",
+      "visualNote": [
+        "Thân bể",
+        "Vùng ngâm và dao động mực",
+        "Cổ ống và chân thành",
+        "Các điểm chuyển tiếp cần kiểm tra",
+        "Ví dụ phân vùng khi lập hồ sơ bọc bể xử lý nước thải."
+      ]
     },
     {
       "slug": "da-nang-thoat-nuoc",
@@ -761,7 +859,14 @@
         "Vị trí tiếp xúc",
         "Yêu cầu kiểm tra"
       ],
-      "sourceNote": "Phân tích ứng dụng kỹ thuật. Tài liệu nguồn dùng để đối chiếu bối cảnh, không xác nhận dự án cụ thể."
+      "sourceNote": "Phân tích ứng dụng kỹ thuật. Tài liệu nguồn dùng để đối chiếu bối cảnh, không xác nhận dự án cụ thể.",
+      "visualNote": [
+        "Sàn quanh điểm tràn",
+        "Đường chảy và vùng đọng",
+        "Mép hố thu",
+        "Chi tiết kết thúc lớp bọc",
+        "Sơ đồ khảo sát sàn hóa chất theo tuyến thu gom."
+      ]
     },
     {
       "slug": "an-mon-khai-khoang",
@@ -798,6 +903,13 @@
         "Vùng dòng va đập",
         "Vùng đọng bùn",
         "Điểm đo lặp lại"
+      ],
+      "visualNote": [
+        "Mặt tiếp xúc dòng bùn",
+        "Hóa chất và hạt rắn",
+        "Góc đổi hướng",
+        "Điểm cần theo dõi mài mòn",
+        "Hai nhóm dữ liệu cần ghi khi khảo sát FRP trong khai khoáng."
       ]
     },
     {
@@ -835,6 +947,13 @@
         "Điều kiện dòng",
         "Giá đỡ và mối nối",
         "Thử trước vận hành"
+      ],
+      "visualNote": [
+        "Thân ống",
+        "Điều kiện tiếp xúc bên trong",
+        "Mặt bích",
+        "Gioăng, liên kết và tải tại mối nối",
+        "Một tuyến ống cần kiểm tra cả thân ống và từng điểm nối."
       ]
     },
     {
@@ -878,6 +997,13 @@
         "Nền bê tông",
         "Bọc mat và nhựa",
         "Đối chiếu ca Elazığ"
+      ],
+      "visualNote": [
+        "Vùng dưới mực axit",
+        "Tiếp xúc trực tiếp",
+        "Mé trên bể",
+        "Bắn tóe và chế độ rửa",
+        "Hai vùng cần được mô tả khi khảo sát bồn rửa axit hoặc bể xi mạ."
       ]
     },
     {
@@ -919,6 +1045,13 @@
         "Mẻ trước",
         "Rửa và chuyển mẻ",
         "Mẻ sau"
+      ],
+      "visualNote": [
+        "Sau khi xả",
+        "Dung dịch còn trong điểm trũng",
+        "Khi nạp mẻ mới",
+        "Tiếp xúc với dung dịch mới và tồn dư",
+        "Ghi theo trình tự vận hành để nhận diện điều kiện luân phiên."
       ]
     },
     {
@@ -956,6 +1089,13 @@
         "Dòng cấp axit",
         "Mặt tiếp xúc",
         "Cổ ống và mối hàn"
+      ],
+      "visualNote": [
+        "Hồ sơ cấp liệu",
+        "Nồng độ khi nạp và nhiệt độ",
+        "Điều kiện trong bồn",
+        "Chế độ vận hành và các tình huống bất thường",
+        "Các dữ kiện cần xác nhận trước khi xét lớp lót cho axit đậm đặc."
       ]
     },
     {
@@ -993,6 +1133,13 @@
         "Lớp cản",
         "Kết cấu chịu lực",
         "Giao diện liên kết"
+      ],
+      "visualNote": [
+        "Lớp cản",
+        "Tiếp xúc hóa chất",
+        "Phần chịu lực",
+        "Tải, gối đỡ và liên kết",
+        "Sơ đồ nguyên lý phân biệt hai chức năng của laminate."
       ]
     },
     {
@@ -1030,6 +1177,13 @@
         "Giờ phủ lớp trước",
         "Kiểm tra bề mặt",
         "Phủ lớp tiếp theo"
+      ],
+      "visualNote": [
+        "Lớp trước",
+        "Ghi giờ hoàn tất và tình trạng bề mặt",
+        "Lớp sau",
+        "Đối chiếu thời gian phủ lại theo hồ sơ hệ",
+        "Hai mốc cần truy xuất khi công việc kéo dài qua ca."
       ]
     },
     {
@@ -1088,6 +1242,13 @@
             "Một dòng ghi có thể là “11:00, đáy bể khu B, bề mặt 27°C, điểm sương 25°C, chênh 2°C. Dừng phủ khu B và đánh dấu phần đã thực hiện từ lần đo 9:00”. Khi điều kiện phục hồi, ghi số đo tại chính khu B. Việc cho phủ tiếp và đánh giá lớp vừa thi công căn cứ vào hồ sơ hệ phủ và yêu cầu dự án. Với nền bê tông, ghi riêng kết quả kiểm tra ẩm nền nếu quy trình yêu cầu."
           ]
         }
+      ],
+      "visualNote": [
+        "09:00 · đáy bể",
+        "Chênh điểm sương 5°C",
+        "11:00 · đáy bể",
+        "Chênh điểm sương 2°C",
+        "Số giả định trong bài, dùng để minh họa một vùng thay đổi điều kiện giữa ca."
       ]
     },
     {
@@ -1147,6 +1308,13 @@
             "Dùng cùng mã A4 cho ảnh trước sửa, phiếu xử lý và số đo kiểm tra lại. Nếu sửa lan qua vùng kế bên, ghi phạm vi mới và kiểm tra cả phần chuyển tiếp theo kế hoạch đã duyệt. Khi đóng phiếu, người nghiệm thu cần nhìn được số ban đầu, phạm vi đã sửa, kết quả kiểm tra lại và người xác nhận."
           ]
         }
+      ],
+      "visualNote": [
+        "Trung bình bốn điểm",
+        "2,95 mm",
+        "Điểm A4",
+        "2,4 mm ở chân tường",
+        "Số đo giả định. A4 cần xem riêng theo tiêu chí nghiệm thu của ví dụ."
       ]
     },
     {
@@ -1205,6 +1373,13 @@
             "“Ngày 7, quan sát đổi màu ở A và B. Chỉ A ghi nhận bọng sát mép tại điểm A-E1. Chưa xác định nguyên nhân đổi màu. Chờ đối chiếu ảnh ngày 0, điều kiện lưu mẫu và cấu tạo mép theo phương án thử.” Câu này giữ lại dữ kiện để so ở lần đọc sau. Khi kết luận đạt hay không, áp dụng tiêu chí đã duyệt và ghi phạm vi của phép thử."
           ]
         }
+      ],
+      "visualNote": [
+        "Mẫu lưu B",
+        "Có đổi màu",
+        "Mẫu ngâm A",
+        "Có đổi màu và có bọng sát mép",
+        "Tình huống giả định. Màu và bọng phải được ghi thành hai quan sát riêng."
       ]
     },
     {
@@ -1268,6 +1443,13 @@
             "Belzona có công bố hồ sơ một bồn FRP chứa axit sulfuric đã qua sử dụng, kèm ảnh nền FRP lộ sợi. Có thể dùng ảnh nguồn để tập nhận diện và ghi mô tả bề mặt. Cấu tạo sửa của công trình khác cần dựa vào nền, môi trường tiếp xúc và phạm vi đã được xác nhận riêng. Khi mời giá, tách phần khảo sát và phần sửa phát sinh theo vùng để có cơ sở xử lý nếu diện tích thực tế lớn hơn phần nhìn thấy ban đầu."
           ]
         }
+      ],
+      "visualNote": [
+        "Bong quanh cổ xả",
+        "Kiểm tra chi tiết chuyển tiếp",
+        "Bong cùng cao độ",
+        "Đối chiếu dải mực chất lỏng",
+        "Hai hướng khảo sát, chưa phải kết luận nguyên nhân."
       ]
     },
     {
@@ -1332,6 +1514,13 @@
             "Trước khi đổi điều kiện vận hành, hãy yêu cầu đơn vị thiết kế xác định vùng nào còn trong phạm vi hồ sơ cũ, vùng nào cần hãng xác nhận lại và vùng nào cần khảo sát thêm. Khi hỏi về DERAKANE hoặc SWANCOR, gửi kèm mã nhựa hiện hữu nếu truy xuất được, bản vẽ cấu tạo lớp tiếp xúc và dữ liệu của từng chế độ. Chỉ tên thương hiệu sẽ để lại phần quan trọng nhất của bài toán chưa có câu trả lời."
           ]
         }
+      ],
+      "visualNote": [
+        "Ca Belzona KHIA 393",
+        "Lộ lớp sợi đầu tiên trên khoảng 50% bề mặt trong",
+        "Dữ liệu còn thiếu",
+        "Nồng độ, nhiệt độ và cấu tạo ban đầu",
+        "Tóm tắt dữ kiện công khai của ca Bắc Texas và phần cần xác minh trước khi suy rộng."
       ]
     },
     {
@@ -1369,6 +1558,13 @@
         "Thành phần khí",
         "Điểm hình thành dịch ngưng",
         "Mặt tiếp xúc"
+      ],
+      "visualNote": [
+        "Trong pha khí",
+        "Thành phần và nhiệt độ khí",
+        "Ở bề mặt lạnh",
+        "Dịch ngưng tại vị trí tiếp xúc",
+        "Phân biệt dữ liệu khí với điều kiện của dịch thực sự chạm bề mặt."
       ]
     },
     {
@@ -1445,6 +1641,13 @@
           "Thử kín và kết quả mẫu ngâm nếu có yêu cầu",
           "Biên bản thử riêng, phạm vi áp dụng và chữ ký chứng kiến"
         ]
+      ],
+      "visualNote": [
+        "Gói A quy đổi",
+        "73 triệu đồng",
+        "Gói B quy đổi",
+        "65 triệu đồng",
+        "Giá giả định sau khi đưa hai báo giá về cùng phạm vi sửa nền, cổ ống và kiểm tra."
       ]
     },
     {
@@ -1503,6 +1706,13 @@
             "Khi thấy thay đổi, đối chiếu thời điểm phát hiện với lần vệ sinh gần nhất, các thay đổi dung dịch và lịch sử sửa ở N03. Màu sắc trong ảnh có thể thay đổi theo ánh sáng và tình trạng bề mặt, nên ghi thêm phạm vi và các dấu hiệu quan sát được như phồng, nứt hoặc lộ sợi nếu có. Người đánh giá dùng hồ sơ để quyết định kiểm tra gì tiếp theo và ghi rõ dữ kiện còn thiếu."
           ]
         }
+      ],
+      "visualNote": [
+        "Ảnh bàn giao N03",
+        "Ảnh rộng, ảnh gần và mốc kích thước",
+        "Ảnh khi vận hành",
+        "Cùng hướng chụp và mã N03",
+        "Minh họa bộ ảnh để tìm lại vị trí đổi màu cạnh cổ ống."
       ]
     }
   ]
