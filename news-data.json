@@ -59,6 +59,10 @@
       "World Bank · Da Nang Sustainable City Development Project",
       "https://documents1.worldbank.org/curated/en/112921644260666901/pdf/Vietnam-Da-Nang-Sustainable-City-Development-Project.pdf",
       "water-treatment-header"
+    ],
+    "astm-c581": [
+      "ASTM C581 – đánh giá kháng hóa chất của laminate",
+      "https://store.astm.org/c0581-26.html"
     ]
   },
   "posts": [
@@ -1128,39 +1132,78 @@
     },
     {
       "slug": "ho-so-moi-thau-frp",
-      "title": "Hồ sơ mời thầu bọc FRP cho công trình nước thải Việt Nam",
-      "en": "Tender documentation for FRP wastewater linings in Vietnam",
+      "title": "Mời thầu bọc phủ Composite FRP cho bể xử lý nước thải: cách so giá và nghiệm thu",
+      "en": "Tendering FRP corrosion linings for wastewater tanks",
       "keywords": "FRP lining tender, Vietnam wastewater specification",
-      "source": "hcm",
-      "lead": "Một hồ sơ tốt giúp các nhà thầu báo giá trên cùng điều kiện và giúp chủ đầu tư so sánh cấu tạo thực tế.",
-      "body": "Đưa bản đồ hạng mục, trạng thái nền, điều kiện hóa chất, phạm vi sửa, yêu cầu thử mẫu và mốc nghiệm thu vào hồ sơ. Tách hạng mục bắt buộc khỏi phần tùy chọn cần đơn giá riêng.",
-      "conclusion": "Khi đánh giá hồ sơ, hỏi nhà thầu về phương pháp truy xuất vật liệu, hồ sơ nhà sản xuất và bản vẽ chi tiết. Tránh dùng tên dự án tham khảo như bằng chứng về cấu tạo đã thi công.",
-      "notes": "Yêu cầu nhà thầu khai rõ các phần loại trừ trong báo giá. Những phần như sửa nền, thử mẫu và nghiệm thu có thể làm hai báo giá khác phạm vi.",
+      "source": "astm-c581",
+      "lead": "Hai báo giá cùng ghi “bọc FRP 3 lớp” vẫn có thể chênh hàng chục triệu đồng vì khác phạm vi sửa nền, cổ ống và kiểm tra. Bài này có ví dụ tính lại giá và mẫu bảng nghiệm thu để chủ đầu tư và tư vấn dùng khi làm rõ hồ sơ.",
+      "body": "Khi mời đội thi công bọc phủ Composite FRP, hãy phát hành cùng một bản vẽ và bảng điều kiện vận hành cho tất cả nhà thầu. Trên bản vẽ, đánh số đáy, thành, vùng dao động mực nước, mặt dưới nắp và từng cổ ống. Bảng vận hành ghi thành phần nước thải đã biết, hóa chất vệ sinh, nhiệt độ cao nhất và thời gian tiếp xúc theo vùng. Nếu dữ liệu chưa có, ghi ai cung cấp và khi nào chốt. Nhà thầu dùng cùng một bộ dữ liệu sẽ phải giải thích rõ vì sao chọn cấu tạo khác nhau.",
+      "conclusion": "Trước khi chốt giá, ký bảng phạm vi và kế hoạch kiểm tra kèm bản vẽ. Hồ sơ bàn giao cần có bản đồ điểm sửa, kết quả kiểm tra lại, mã lô nhựa, giới hạn vận hành và điều kiện bảo hành. Nếu bể thay đổi nguồn nước thải hoặc hóa chất vệ sinh, dùng bộ hồ sơ này để đối chiếu trước khi đổi chế độ vận hành.",
+      "notes": "Mẫu thử ngâm phải có mã lô và hồ sơ cấu tạo tương ứng với phương án chào. Thỏa thuận trước đơn vị thực hiện, mẫu đối chứng, môi trường thử, các mốc quan sát và điều kiện đạt. Với kế hoạch sàng lọc 7 ngày của dự án, ghi tình trạng ban đầu và các dấu hiệu phồng, nứt, bong hoặc lộ sợi theo từng mốc. ASTM C581 cung cấp phương pháp đánh giá nhựa nhiệt rắn trong laminate gia cường sợi thủy tinh làm việc với chất lỏng. Một phép ngâm sàng lọc 7 ngày chỉ có giá trị trong phạm vi đã thỏa thuận.",
       "focus": "đội thi công Composite FRP chống ăn mòn",
       "sections": [
         {
-          "heading": "Đặt các nhà thầu trên cùng đầu bài",
-          "text": "Nêu hiện trạng nền, phạm vi sửa, khu vực tiếp xúc và yêu cầu kiểm tra. Tách phần bắt buộc khỏi tùy chọn để so sánh đơn giá. Yêu cầu báo rõ phần không bao gồm như thử mẫu hoặc xử lý nền bất thường."
+          "heading": "Quy đổi hai báo giá về cùng một phạm vi",
+          "text": "Giả sử bể có 100 m² bề mặt, 12 m² nền cần sửa cục bộ và 4 cổ ống. Gói A chào 480.000 đồng/m² cho phần bọc, cộng 14 triệu đồng sửa nền, 6 triệu đồng cho cổ ống và 5 triệu đồng cho mẫu và hồ sơ kiểm tra. Tổng quy đổi là 73 triệu đồng. Gói B chào 650.000 đồng/m² cho cả bốn hạng mục, tổng 65 triệu đồng. Đây là số giả định trước thuế để minh họa cách quy đổi, không phải báo giá thị trường. Chênh lệch đổi chiều từ 17 triệu đồng nếu chỉ so đơn giá bọc sang 8 triệu đồng nếu so cùng phạm vi. Bước tiếp theo là đối chiếu chất lượng cấu tạo và nội dung kiểm tra của hai gói."
         },
         {
-          "heading": "So sánh hồ sơ kỹ thuật trước so giá",
-          "text": "Đối chiếu bản vẽ cấu tạo, vị trí xuyên thành, cách kiểm tra độ kín và hồ sơ vật liệu. Đặt tiêu chí cho cả giai đoạn thi công và bàn giao. Ca tham chiếu chỉ dùng khi nêu rõ hạng mục và điều kiện."
+          "heading": "Buộc hồ sơ làm rõ lớp nào tiếp xúc với nước thải",
+          "text": "Yêu cầu nhà thầu nộp mặt cắt và bảng vật liệu riêng cho từng phương án. Bảng ghi mã nhựa từng lớp, loại gia cường, chiều dày thiết kế, lớp bề mặt tiếp xúc, yêu cầu đóng rắn và chi tiết xử lý tại chân tường, cổ ống và mép kết thúc. Khi đề xuất DERAKANE hoặc SWANCOR, hồ sơ cần ghi đúng mã và chỉ rõ dòng trong hướng dẫn hãng ứng với môi trường thực tế. Nếu điều kiện là hỗn hợp hoặc vượt phạm vi công bố, lập mục cần xác nhận riêng. Quyết định thay mã cần được duyệt lại cùng điều kiện vận hành và cấu tạo đề xuất."
+        },
+        {
+          "heading": "Chọn phương án theo nền và khả năng thi công",
+          "text": "Với nền đã được xác nhận ổn định, phương án bọc FRP liên kết trực tiếp cần hồ sơ sửa nền, xử lý khe và bằng chứng kiểm tra tại những vị trí dễ bị che khuất. Khi khảo sát thấy nền có vấn đề về ẩm, thấm ngược hoặc chuyển vị, cần tìm nguyên nhân trước và yêu cầu thiết kế chi tiết xử lý phù hợp. Nếu phải cân nhắc lớp lót độc lập hoặc hệ hai lớp, so sánh thêm chi tiết neo, mối nối, kiểm tra độ kín và khả năng sửa chữa khi bể đã vận hành."
+        },
+        {
+          "heading": "Đọc ảnh hiện trường để biết nhà thầu đã ghi nhận gì",
+          "text": "Hồ sơ SGI Composites tại Chelsea cho thấy ảnh bể bê tông chứa nước sau khi hoàn thành lớp lót FRP. Khi dùng dự án tham chiếu trong hồ sơ thầu bể nước thải, yêu cầu ảnh có chú thích từng giai đoạn và đối chiếu vị trí chụp với bản vẽ. Ảnh hoàn thiện của bể chứa nước giúp tham khảo hình thức lớp lót. Khả năng kháng nước thải phải được xác định theo điều kiện và cấu tạo của dự án đang xét."
         }
       ],
       "checks": [
-        "Bảng phạm vi và loại trừ",
-        "Ma trận yêu cầu kỹ thuật",
-        "Tiêu chí nghiệm thu"
+        "Phát hành cùng một bản vẽ, bảng tiếp xúc và bảng khối lượng cho tất cả nhà thầu.",
+        "Yêu cầu nhà thầu ghi riêng giá sửa nền, xử lý cổ ống, mẫu thử và kiểm tra.",
+        "Ghi rõ người ký xác nhận ở từng mốc và cách xử lý khi kết quả sai lệch."
       ],
       "alt": "Công trình xử lý nước minh họa môi trường ứng dụng vật liệu FRP",
-      "seoDescription": "Đặt các nhà thầu trên cùng đầu bài và so sánh hồ sơ kỹ thuật trước so giá. Bài phân tích hồ sơ mời thầu bọc FRP bể nước thải kèm checklist hồ sơ dự án.",
-      "question": "Hai hồ sơ bọc FRP chênh giá thì nên hỏi gì?",
-      "answer": "Đối chiếu diện tích, phần xử lý nền, cấu tạo, kiểm tra và hồ sơ bàn giao. Yêu cầu mỗi bên nêu phần loại trừ và điều kiện tính phát sinh. Sau khi cân bằng phạm vi, mới so đơn giá.",
-      "section": "Dự án",
+      "seoDescription": "Mẫu so giá bọc phủ Composite FRP bể xử lý nước thải, kèm cách làm rõ mã nhựa, khối lượng sửa nền và bảng nghiệm thu.",
+      "question": "Bể thử kín bằng nước đạt rồi có thể bỏ thử mẫu kháng hóa chất không?",
+      "answer": "Hai phép kiểm tra trả lời hai câu hỏi khác nhau. Thử kín kiểm tra sự rò rỉ theo quy trình đã duyệt. Thử mẫu đánh giá sự thay đổi của vật liệu trong môi trường thử. Nếu thiết kế yêu cầu cả hai, cần nộp kết quả riêng cho từng phép.",
+      "section": "Thi công",
       "visual": [
         "Phạm vi công việc",
         "Yêu cầu kỹ thuật",
         "Tiêu chí nghiệm thu"
+      ],
+      "enSummary": "A comparable wastewater tank lining tender identifies the service conditions, substrate repairs, laminate build-up, penetrations and inspection obligations. The worked example converts two different bids to the same scope before comparing their technical merits. The inspection plan separates substrate acceptance, work before concealment, final watertightness and chemical compatibility screening.",
+      "sourceNote": "Ví dụ dự toán là giả định biên tập. Hồ sơ ảnh SGI là công trình bể chứa nước tại Anh.",
+      "gallery": {
+        "url": "https://www.sgicomposites.co.uk/about/case-studies/grp-lining-for-concrete-water-storage-tanks/",
+        "src": "https://www.sgicomposites.co.uk/content/uploads/2025/02/concrete-water-5.jpg",
+        "alt": "Lớp lót composite FRP hoàn thiện bên trong bể bê tông chứa nước tại Chelsea, London",
+        "credit": "SGI Composites",
+        "caption": "Lớp lót FRP hoàn thiện tại bể bê tông chứa nước ở Chelsea, London. Ảnh tham khảo về hiện trường thi công."
+      },
+      "inspection": [
+        [
+          "Trước khi bọc",
+          "Nền, khe, vị trí thấm và cổ ống",
+          "Biên bản chấp thuận nền, ảnh định vị và phần sửa đã xử lý"
+        ],
+        [
+          "Trước khi che khuất",
+          "Chi tiết chân tường, xuyên ống, mép lớp bọc",
+          "Ảnh có mã vị trí và đối chiếu bản vẽ đã duyệt"
+        ],
+        [
+          "Sau đóng rắn",
+          "Bề mặt, điểm sửa và phép đo theo hồ sơ",
+          "Sơ đồ vị trí kiểm tra, kết quả và biên bản kiểm tra lại"
+        ],
+        [
+          "Trước bàn giao",
+          "Thử kín và kết quả mẫu ngâm nếu có yêu cầu",
+          "Biên bản thử riêng, phạm vi áp dụng và chữ ký chứng kiến"
+        ]
       ]
     },
     {
