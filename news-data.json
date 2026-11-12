@@ -79,6 +79,10 @@
     "defelsko-dpm": [
       "DeFelsko – hướng dẫn ghi nhiệt độ bề mặt và điểm sương",
       "https://dl.defelsko.com/pdf/manuals/DPM-FullGuide-v3.4.pdf"
+    ],
+    "defelsko-holidays": [
+      "DeFelsko – phạm vi phương pháp kiểm tra lỗ kim lớp phủ",
+      "https://www.defelsko.com/resources/how-to-locate-pinholes-holidays-in-protective-coatings"
     ]
   },
   "posts": [
@@ -365,11 +369,11 @@
     },
     {
       "slug": "xu-ly-nen-be-tong",
-      "title": "Chuẩn bị nền bê tông trước khi bọc FRP",
-      "en": "Concrete preparation for FRP linings",
+      "title": "Nền bể bê tông còn ẩm: chốt việc gì trước khi cho đội bọc FRP vào ca?",
+      "en": "What to document when moisture reappears before FRP lining",
       "keywords": "concrete surface preparation, FRP lining adhesion",
       "source": "ampp",
-      "lead": "Chất lượng nền quyết định khả năng bám của hệ phủ. Cần đánh giá riêng bê tông cũ, vị trí sửa chữa và vùng có thấm ngược.",
+      "lead": "Ví dụ một vệt ẩm xuất hiện lại sau chuẩn bị nền. Một biên bản hữu ích phải ghi vùng nào đã được chấp thuận, vùng nào cần tìm nguyên nhân và ảnh đối chiếu ở đâu.",
       "body": "Khảo sát lỗ rỗ, bề mặt yếu, vật liệu cũ và khe nứt. Chọn biện pháp tạo nhám phù hợp với hệ đã duyệt; các vị trí góc, mép và sau cổ ống cần kế hoạch tiếp cận cụ thể.",
       "conclusion": "Lập biên bản nền trước khi che phủ, có bản đồ vùng sửa, hình ảnh và số đo theo yêu cầu của hệ. Chỉ chuyển sang lớp lót sau khi các sai lệch về nền đã được xử lý.",
       "notes": "Với bể đang hoạt động, lập riêng danh sách nền cũ, nền sửa và vị trí không thể tiếp cận trước khi dừng bể. Dùng danh sách đó để dự trù thời gian khảo sát.",
@@ -390,7 +394,7 @@
         "Biên bản nghiệm thu nền"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Chia nền theo hiện trạng thực tế và chốt tiêu chí nghiệm thu nền trước khi phủ. Bài phân tích chuẩn bị nền bê tông trước khi bọc FRP kèm checklist hồ sơ dự án.",
+      "seoDescription": "Ví dụ một vệt ẩm xuất hiện lại sau chuẩn bị nền. Một biên bản hữu ích phải ghi vùng nào đã được chấp thuận, vùng nào cần tìm nguyên nhân và ảnh đối chiếu ở đâu.",
       "question": "Có thể nghiệm thu nền cũ và nền sửa bằng một nhận xét chung không?",
       "answer": "Nên chia vùng để ghi riêng vật liệu nền, phương pháp xử lý và kết quả kiểm tra. Một biên bản chung có thể bỏ sót vùng ẩm hoặc lớp sửa chưa đủ điều kiện phủ. Tại góc và cổ ống, bố trí ảnh và mã vị trí.",
       "section": "Thi công",
@@ -403,7 +407,28 @@
         "url": "https://www.sgicomposites.co.uk/about/case-studies/hospital-potable-water-storage-tank-refurbishment/",
         "credit": "SGI Composites",
         "caption": "Ảnh thi công lớp bọc FRP tại đáy bể nước sạch bệnh viện. Tham khảo cách ghi nhận các giai đoạn thi công."
-      }
+      },
+      "enSummary": "An example distinguishes a local preparation issue from recurring moisture that needs investigation before release.",
+      "story": [
+        {
+          "heading": "",
+          "paragraphs": [
+            "Giả sử bể vừa được chuẩn bị nền. Sáng hôm sau, vùng mặt phẳng khô theo quan sát nhưng một vệt ẩm xuất hiện lại tại giao đáy và vách. Nếu chỉ chụp một ảnh toàn bể rồi ký “đã vệ sinh nền”, người phụ trách ca không có căn cứ để quyết định có được bọc qua giao tuyến này hay không. Khoanh vùng vệt ẩm và ghi thời điểm, tình trạng ngay sau chuẩn bị nền và thời điểm nó tái xuất hiện."
+          ]
+        },
+        {
+          "heading": "Ghi kết quả theo vùng trước khi chốt lịch thi công",
+          "paragraphs": [
+            "Đặt mã B04 cho giao tuyến có vệt ẩm. Đối chiếu với mạch ngừng, khe, cổ ống gần nhất và các lần kiểm tra trước. Sử dụng phương pháp và tiêu chí ẩm nền quy định cho hệ vật liệu đã duyệt. Nếu kết quả ở B04 khác vùng còn lại, ghi riêng trạng thái chấp thuận từng vùng. Với vệt ẩm tái diễn, giao người phụ trách xác minh nguồn trước khi phát hành chấp thuận cho B04."
+          ]
+        },
+        {
+          "heading": "Công trình tham chiếu giúp đọc ảnh trước và sau",
+          "paragraphs": [
+            "Hồ sơ SGI Composites có ảnh quá trình lót FRP trong bể chứa nước sạch. Ảnh theo từng giai đoạn giúp hình dung cách đối chiếu vị trí trước và sau khi che phủ. Khi áp dụng cho bể nước thải, ảnh của công trình phải gắn với bản vẽ, kết quả kiểm tra nền và tiêu chí của hệ đã chọn."
+          ]
+        }
+      ]
     },
     {
       "slug": "lop-lot-be-tong-thep",
@@ -505,11 +530,11 @@
     },
     {
       "slug": "kiem-tra-lo-kim",
-      "title": "Kiểm tra lỗ kim trên lớp phủ nền kim loại",
-      "en": "Holiday testing on coated steel substrates",
+      "title": "Kiểm tra lỗ kim lớp bọc FRP: từ một tín hiệu đến phiếu sửa có thể nghiệm thu",
+      "en": "Holiday detection and repair records for FRP linings",
       "keywords": "ASTM D5162, holiday detection, tank lining",
-      "source": "holiday",
-      "lead": "Lỗ kim hoặc điểm gián đoạn có thể khó thấy bằng mắt. Phương pháp kiểm tra phải tương thích với hệ phủ và nền.",
+      "source": "defelsko-holidays",
+      "lead": "Máy báo tại một điểm cạnh cổ ống. Người giám sát cần biết điểm đó nằm ở đâu, phương pháp kiểm tra có phù hợp và sau khi sửa ai xác nhận lại.",
       "body": "ASTM D5162 có phạm vi lớp phủ bảo vệ không dẫn điện trên nền kim loại. Trước khi áp dụng, xác định nền, hệ phủ, chiều dày, thiết bị và quy trình dự án. Các nền khác cần đánh giá phương pháp riêng.",
       "conclusion": "Đánh dấu khuyết tật lên bản đồ vị trí, ghi phương pháp phát hiện và kết quả kiểm tra lại sau sửa. Hồ sơ nghiệm thu cần liên kết được ảnh, vùng sửa và người chứng kiến.",
       "notes": "Trước khi bàn giao, kiểm tra rằng mọi điểm đánh dấu trong biên bản đã có kết quả xử lý. Các ảnh rời không cho biết khuyết tật đã được sửa hay chưa.",
@@ -530,7 +555,7 @@
         "Biên bản kiểm tra lại sau sửa"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Xác định đúng phạm vi của phương pháp và tổ chức kiểm tra theo bản đồ vị trí. Bài phân tích kiểm tra lỗ kim lớp phủ trên nền thép kèm checklist hồ sơ dự án.",
+      "seoDescription": "Máy báo tại một điểm cạnh cổ ống. Người giám sát cần biết điểm đó nằm ở đâu, phương pháp kiểm tra có phù hợp và sau khi sửa ai xác nhận lại.",
       "question": "Khi phát hiện một điểm gián đoạn, cần ghi gì?",
       "answer": "Ghi mã vùng, phương pháp phát hiện, ảnh và phạm vi sửa. Sau sửa, lập mục kiểm tra lại liên kết với đúng mã đó. Nếu nhiều lỗi tập trung tại một dạng hình học, báo tư vấn để đánh giá cả những vị trí tương tự.",
       "section": "Kiểm tra",
@@ -538,15 +563,36 @@
         "Khoanh vùng",
         "Kiểm tra gián đoạn",
         "Kiểm lại sau sửa"
+      ],
+      "enSummary": "A worked example follows an indication near a nozzle from verification through repair and reinspection.",
+      "story": [
+        {
+          "heading": "",
+          "paragraphs": [
+            "Giả sử đang nghiệm thu lớp bọc FRP trong bể hóa chất. Điểm chỉ thị đầu tiên xuất hiện gần cổ ống N02, tại mép chuyển tiếp từ thành bể sang cổ ống. Nếu biên bản chỉ ghi “đã thử lỗ kim, phát hiện một điểm”, đội sửa phải đoán vị trí và người nghiệm thu khó biết điểm nào đã được kiểm tra lại. Dùng ảnh rộng để thấy N02, ảnh gần có mốc và ký hiệu H01 trên bản vẽ."
+          ]
+        },
+        {
+          "heading": "Khi máy báo tại mép lớp bọc",
+          "paragraphs": [
+            "Trước khi kết luận, kiểm tra phương pháp đã được duyệt, nền, cấu tạo lớp bọc và điều kiện bề mặt. Thiết bị kiểm tra độ liên tục có phạm vi sử dụng khác nhau. Nền thép và nền bê tông cũng có thể cần bố trí kiểm tra khác nhau. Nếu thiết bị báo ở nơi chủ định để lộ vật dẫn tại mép kết thúc, ghi vị trí và đối chiếu chi tiết bản vẽ trước khi ghi nhận khuyết tật. Nếu báo lặp lại ngay trong vùng cần lớp bọc liên tục theo thiết kế, mở phiếu xử lý."
+          ]
+        },
+        {
+          "heading": "Một dòng phiếu sửa có thể dùng",
+          "paragraphs": [
+            "“H01, cổ N02, phía dưới theo hướng nhìn từ trong bể. Ảnh 12 chỉ vị trí, ảnh 13 ghi chi tiết. Đã khoanh vùng, xử lý theo quy trình duyệt, kiểm tra lại sau khi lớp sửa đủ điều kiện. Kết quả và chữ ký xác nhận lưu cùng phiếu.” Nếu phần sửa kéo sang vùng bên cạnh, bổ sung phạm vi kiểm tra theo kế hoạch. Ghi riêng thử kín nếu hợp đồng yêu cầu. Phép kiểm tra độ liên tục chỉ cung cấp kết quả trong phạm vi phương pháp đã thực hiện."
+          ]
+        }
       ]
     },
     {
       "slug": "nghiem-thu-theo-lop",
-      "title": "Nghiệm thu FRP trước khi che khuất từng lớp",
-      "en": "Inspection hold points for FRP lining installation",
+      "title": "Ba điểm phải chụp trước khi lớp bọc FRP che kín bề mặt",
+      "en": "Inspection hold points before FRP lining details are concealed",
       "keywords": "FRP inspection test plan, coating QA QC",
       "source": "coatings",
-      "lead": "Bản nghiệm thu cuối cùng khó chứng minh những công việc đã bị lớp sau che khuất. Kế hoạch kiểm tra cần đặt điểm dừng theo trình tự thi công.",
+      "lead": "Một lớp phủ hoàn thiện có thể che mất cách xử lý khe, cổ ống và mép nối. Đặt điểm chứng kiến vào đúng thời điểm để hồ sơ nghiệm thu còn kiểm chứng được.",
       "body": "Nên lập ma trận gồm nền, lót, lớp trám, gia cường, lớp cản hóa chất và hoàn thiện. Ở mỗi mốc, thống nhất tài liệu đối chiếu, phạm vi kiểm, người ký và cách xử lý vùng chưa đạt.",
       "conclusion": "Nhật ký lô vật liệu và ảnh theo vị trí giúp truy xuất. Khi chuyển ca, bàn giao cả thời gian phủ chồng, vùng còn chờ nghiệm thu và những chỗ phải kiểm tra lại.",
       "notes": "Đặt điểm dừng ở nơi có nguy cơ phải bóc lớp sau để kiểm tra. Thống nhất từ đầu ai được giải phóng điểm dừng và ghi ở biểu mẫu nào.",
@@ -567,7 +613,7 @@
         "Ảnh và biên bản từng điểm dừng"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Lập kế hoạch theo các điểm dừng và bàn giao theo khu vực thay vì chỉ theo ngày. Bài phân tích nghiệm thu từng lớp bọc FRP kèm checklist hồ sơ dự án.",
+      "seoDescription": "Một lớp phủ hoàn thiện có thể che mất cách xử lý khe, cổ ống và mép nối. Đặt điểm chứng kiến vào đúng thời điểm để hồ sơ nghiệm thu còn kiểm chứng được.",
       "question": "Ai xác nhận chuyển sang lớp tiếp theo?",
       "answer": "Quy định trước người chứng kiến, người ký và người có thẩm quyền giải phóng điểm dừng. Nếu đội thi công muốn chuyển bước ngoài giờ, phải có cơ chế bàn giao và ký duyệt đã thống nhất trong kế hoạch kiểm tra.",
       "section": "Kiểm tra",
@@ -575,6 +621,27 @@
         "Nền và primer",
         "Gia cường",
         "Lớp cản và bàn giao"
+      ],
+      "enSummary": "A three-detail example shows what to photograph and record before later layers hide the work.",
+      "story": [
+        {
+          "heading": "",
+          "paragraphs": [
+            "Giả sử bể có một khe thi công, một cổ ống xuyên thành và một đoạn nối giữa hai ca bọc. Đội thi công muốn bàn giao ảnh cuối ngày sau khi phủ hoàn thiện. Khi xem ảnh, tư vấn thấy bề mặt đã kín nhưng không thể đối chiếu chi tiết từng vị trí với bản vẽ duyệt. Ba chi tiết này cần được đưa vào lịch kiểm tra theo lúc chúng còn nhìn thấy được."
+          ]
+        },
+        {
+          "heading": "Khe, cổ ống và mép nối cần ba ảnh khác nhau",
+          "paragraphs": [
+            "Với khe, chụp ảnh rộng định vị và ảnh gần ghi tình trạng nền cùng chi tiết đã xử lý trước khi bọc. Với cổ ống, chụp phần chuyển tiếp và mép kết thúc theo hướng đã đánh dấu trên bản vẽ. Với mép nối hai ca, ghi thời điểm, phạm vi ca trước và phần nối tiếp. Có thể dùng các mã K01, N02 và M03 để nối ảnh với biên bản, bản vẽ và lô vật liệu."
+          ]
+        },
+        {
+          "heading": "Ai xác nhận trước khi che khuất?",
+          "paragraphs": [
+            "Trong kế hoạch kiểm tra, ghi rõ điểm nào phải chờ xác nhận và ai được quyền cho làm tiếp. Ví dụ, N02 cần tư vấn chứng kiến trước lớp kế tiếp. Nếu đội thi công đã che khuất, ghi sai lệch và thống nhất cách xác minh bổ sung trước khi nghiệm thu điểm đó. Ảnh có thời gian và vị trí giúp truy xuất, còn việc chấp nhận phải theo điều khoản đã thống nhất."
+          ]
+        }
       ]
     },
     {
@@ -1084,11 +1151,11 @@
     },
     {
       "slug": "mau-doi-chung",
-      "title": "Vai trò mẫu đối chứng trong thử ngâm lớp bọc",
-      "en": "Control coupons in lining immersion tests",
+      "title": "Thử ngâm FRP: khi mẫu lưu và mẫu ngâm cùng đổi màu",
+      "en": "What a retained control can reveal in FRP immersion screening",
       "keywords": "immersion test control coupons, coating durability",
-      "source": "immersion",
-      "lead": "Mẫu đối chứng giúp phân biệt thay đổi do tiếp xúc hóa chất với thay đổi do trạng thái ban đầu của mẫu.",
+      "source": "astm-c581",
+      "lead": "Hai mẫu đều đổi màu ở ngày 7. So ảnh ban đầu và hồ sơ mẫu giúp tránh quy mọi thay đổi cho dung dịch thử.",
       "body": "Chuẩn bị mẫu ngâm và đối chứng cùng lô, nền, cấu tạo và dưỡng hộ. Ghi kích thước, vị trí nhận dạng và tình trạng trước thử. Thống nhất cách đánh giá với phòng thử nghiệm.",
       "conclusion": "Báo cáo nên ghép ảnh theo mã mẫu và mốc thời gian. Nếu hiện tượng xảy ra cả trên đối chứng, điều tra chất lượng chế tạo mẫu hoặc điều kiện lưu mẫu trước khi quy kết cho hóa chất.",
       "notes": "Biên bản ảnh nên có mã mẫu ngay từ trước khi ngâm. Nếu thiếu mã, rất khó xác nhận ảnh sau thử thuộc đúng mẫu đã chuẩn bị.",
@@ -1109,7 +1176,7 @@
         "Biên bản điều kiện thử"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Chế tạo mẫu ngâm và mẫu đối chứng cùng điều kiện và so sánh theo cùng mốc thời gian. Bài phân tích mẫu đối chứng thử ngâm lớp bọc kèm checklist hồ sơ dự án.",
+      "seoDescription": "Hai mẫu đều đổi màu ở ngày 7. So ảnh ban đầu và hồ sơ mẫu giúp tránh quy mọi thay đổi cho dung dịch thử.",
       "question": "Mẫu đối chứng bị đổi màu thì có thể kết luận do dung dịch thử không?",
       "answer": "Đối chiếu ảnh ban đầu, chế độ lưu mẫu và lô vật liệu. Khi mẫu đối chứng cũng có biến đổi, phải làm rõ yếu tố chế tạo hoặc lưu giữ trước khi quy kết. Báo cáo nêu cả quan sát và phần chưa xác định.",
       "section": "Kiểm tra",
@@ -1117,15 +1184,36 @@
         "Mẫu cùng cấu tạo",
         "Mẫu ngâm và đối chứng",
         "So sánh biến đổi"
+      ],
+      "enSummary": "An illustrative result shows how baseline images and retained controls help interpret color change in immersion screening.",
+      "story": [
+        {
+          "heading": "",
+          "paragraphs": [
+            "Trong một ví dụ giả định, mẫu ngâm A và mẫu lưu B cùng lấy từ một tấm laminate. Ở ngày 7, ảnh cho thấy cả hai đều vàng hơn ảnh ngày đầu, nhưng chỉ mẫu A có bọng nhỏ sát mép cắt. Nếu ghi “dung dịch làm đổi màu và phồng mẫu”, biên bản đã gán cùng nguyên nhân cho hai quan sát có bằng chứng khác nhau."
+          ]
+        },
+        {
+          "heading": "Đọc từng dấu hiệu trên cặp mẫu",
+          "paragraphs": [
+            "Đặt ảnh hai mẫu cạnh nhau ở cùng điều kiện chiếu sáng và góc chụp. Kiểm tra mã mẫu, mặt quan sát, cách lưu mẫu B và ảnh ban đầu. Nếu chênh màu vẫn thấy ở cả hai, ghi hiện tượng ở cả hai mẫu và giữ nguyên câu hỏi về nguyên nhân. Với bọng chỉ thấy trên A, ghi ngày phát hiện, số lượng và vị trí, rồi đối chiếu hồ sơ bảo vệ mép cắt. Nếu mặt bọc thực tế có mép chuyển tiếp, trao đổi với tư vấn về mục tiêu của phép thử trước khi kết luận."
+          ]
+        },
+        {
+          "heading": "Ví dụ ghi vào biên bản",
+          "paragraphs": [
+            "“Ngày 7, quan sát đổi màu ở A và B. Chỉ A ghi nhận bọng sát mép tại điểm A-E1. Chưa xác định nguyên nhân đổi màu. Chờ đối chiếu ảnh ngày 0, điều kiện lưu mẫu và cấu tạo mép theo phương án thử.” Câu này giữ lại dữ kiện để so ở lần đọc sau. Khi kết luận đạt hay không, áp dụng tiêu chí đã duyệt và ghi phạm vi của phép thử."
+          ]
+        }
       ]
     },
     {
       "slug": "sua-lop-boc-cu",
-      "title": "Khảo sát trước khi sửa lớp bọc FRP cũ",
-      "en": "Surveying existing FRP linings before repair",
+      "title": "Lớp bọc FRP cũ bị bong: sửa một mảng hay mở rộng khảo sát?",
+      "en": "How to define the survey boundary for damaged FRP linings",
       "keywords": "FRP lining repair, corrosion inspection",
-      "source": "coatings",
-      "lead": "Phồng, bong hoặc lộ sợi có thể có nhiều nguyên nhân. Cần khoanh vùng hư hỏng trước khi thiết kế sửa.",
+      "source": "belzona-393",
+      "lead": "Hai vùng bong cùng kích thước có thể cần hai cách khảo sát. Vị trí lặp lại, lịch sử sửa và tình trạng nền quyết định cần kiểm tra tiếp ở đâu.",
       "body": "Xem hồ sơ vật liệu và chu kỳ vận hành, đánh dấu vùng lỗi, xác định phần lớp bọc còn bám chắc và tình trạng nền. Đánh giá các mép sửa và điểm chuyển tiếp với vật liệu cũ.",
       "conclusion": "Sau sửa, kiểm tra lại theo phạm vi được duyệt và cập nhật bản đồ vị trí. Hồ sơ bảo trì nên ghi nguyên nhân đã xác nhận, phần chưa rõ và mốc theo dõi tiếp theo.",
       "notes": "Mỗi vị trí sửa nên có ảnh trước, trong và sau khi đóng hồ sơ. Đánh dấu các vùng cần theo dõi tiếp ở đợt kiểm tra kế tiếp.",
@@ -1146,7 +1234,7 @@
         "Hồ sơ kiểm tra lại"
       ],
       "alt": "Khu vực công nghiệp minh họa ứng dụng lớp phủ và lớp lót bảo vệ",
-      "seoDescription": "Tách khảo sát nguyên nhân khỏi công tác sửa và nghiệm thu lại tại mép chuyển tiếp. Bài phân tích sửa chữa lớp bọc FRP cũ kèm checklist hồ sơ dự án.",
+      "seoDescription": "Hai vùng bong cùng kích thước có thể cần hai cách khảo sát. Vị trí lặp lại, lịch sử sửa và tình trạng nền quyết định cần kiểm tra tiếp ở đâu.",
       "question": "Trước khi phủ lên mép lớp bọc cũ, cần xác nhận gì?",
       "answer": "Xác nhận lớp cũ còn bám chắc, nền bên dưới phù hợp và phương án xử lý mép được duyệt. Đánh dấu vùng nối trên sơ đồ, chụp ảnh trước khi che và kiểm tra lại sau khi hoàn thành.",
       "section": "Thi công",
@@ -1159,7 +1247,28 @@
         "url": "https://khia.belzona.com/khia/BELZONA_RENEWS_DAMAGED_LINING",
         "credit": "Belzona · KHIA 393",
         "caption": "Ảnh bồn axit sulfuric đã qua sử dụng và cận cảnh nền FRP lộ sợi tại nhà máy lọc dầu ở Bắc Texas."
-      }
+      },
+      "enSummary": "Two hypothetical damage patterns are contrasted with a published tank case to explain how to extend a lining survey.",
+      "story": [
+        {
+          "heading": "",
+          "paragraphs": [
+            "Giả sử khi khảo sát bể, đội bảo trì phát hiện một mảng bong gần cổ xả và hai mảng khác ở cùng cao độ trên hai vách đối diện. Nếu lập dự toán chỉ theo tổng diện tích bong nhìn thấy, có thể bỏ qua một dải tiếp xúc chung hoặc bỏ sót vấn đề ở nền. Vẽ vị trí từng mảng lên mặt cắt bể rồi đối chiếu nhật ký vận hành trước khi chốt phạm vi."
+          ]
+        },
+        {
+          "heading": "Hai hướng khảo sát từ hai kiểu phân bố",
+          "paragraphs": [
+            "Nếu dấu tập trung quanh cổ xả, đối chiếu hình học chỗ chuyển tiếp, các lần sửa trước và hiện trạng quanh cổ. Nếu nhiều mảng nằm cùng cao độ, so dải hư hỏng với mực chất lỏng và vùng dao động của bể. Trong cả hai trường hợp, kiểm tra thêm một vùng lân cận chưa thấy bong để có điểm đối chiếu. Đây là cách đặt câu hỏi khảo sát, vì vị trí hư hỏng tự nó chưa xác nhận nguyên nhân."
+          ]
+        },
+        {
+          "heading": "Hồ sơ thực tế dùng để đối chiếu điều gì?",
+          "paragraphs": [
+            "Belzona có công bố hồ sơ một bồn FRP chứa axit sulfuric đã qua sử dụng, kèm ảnh nền FRP lộ sợi. Có thể dùng ảnh nguồn để tập nhận diện và ghi mô tả bề mặt. Cấu tạo sửa của công trình khác cần dựa vào nền, môi trường tiếp xúc và phạm vi đã được xác nhận riêng. Khi mời giá, tách phần khảo sát và phần sửa phát sinh theo vùng để có cơ sở xử lý nếu diện tích thực tế lớn hơn phần nhìn thấy ban đầu."
+          ]
+        }
+      ]
     },
     {
       "slug": "frp-trong-nha-may-hoa-chat",
