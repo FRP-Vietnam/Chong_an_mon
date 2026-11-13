@@ -137,6 +137,27 @@
 @media(max-width:680px){.derakane-cards{grid-template-columns:minmax(0,1fr)}}
 </style>
 <style id="resin-crosscheck-style">.resin-crosscheck{margin-top:1rem;padding:.75rem .9rem;background:#0b2038;border-left:3px solid #6ab4d7;border-radius:0 8px 8px 0}.resin-crosscheck h5{font-size:.9rem;font-weight:700;color:#a4e5ff;margin:0}.resin-crosscheck p{font-size:.94rem;margin:.3rem 0 0}</style>
+<style id="consult-form-style">
+.consult-section{padding:clamp(2rem,6vw,5rem) 1rem;background:#0b2342;color:#eff6ff;scroll-margin-top:7rem}
+.consult-panel{max-width:960px;margin:auto;border:1px solid #365577;border-radius:20px;background:#102d50;padding:clamp(1rem,4vw,2.5rem)}
+.consult-heading{text-align:center;margin-bottom:1.6rem}
+.consult-heading h2{font-size:clamp(1.55rem,4vw,2.35rem);font-weight:800;line-height:1.2;text-wrap:balance;margin:0 0 .55rem}
+.consult-heading p,.consult-hint,.consult-panel label span{color:#c0d2e6}
+.consult-panel fieldset{min-width:0;margin:0 0 1.25rem;padding:.85rem 1rem 1rem;border:1px solid #3d5d7f;border-radius:12px}
+.consult-panel legend{padding:0 .4rem;font-size:1.08rem;font-weight:750}
+.consult-contact,.consult-chem-row{display:grid;gap:.65rem;grid-template-columns:repeat(3,minmax(0,1fr))}
+.consult-chem-row{grid-template-columns:minmax(0,1.45fr) repeat(2,minmax(0,1fr));margin-top:.6rem}
+.consult-panel label{display:block;min-width:0;font-size:.875rem;font-weight:650}
+.consult-panel input,.consult-panel select,.consult-panel textarea{display:block;width:100%;box-sizing:border-box;margin:.3rem 0 0;border:1px solid #557397;border-radius:8px;background:#0a213d;color:#fff;padding:.6rem .7rem;min-height:44px;font-size:1rem}
+.consult-panel fieldset>label+label{margin-top:.7rem}
+.consult-panel :is(input,select,textarea,button,a):focus-visible{outline:2px solid #8fe2ff;outline-offset:2px}
+.consult-hint,#consult-status{font-size:.88rem;margin:.35rem 0 .7rem}
+.consult-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.consult-actions :is(button,a){display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.65rem 1rem;border-radius:8px;font-weight:750;text-decoration:none}
+.consult-actions button{background:#f6b84c;color:#0a213d}.consult-actions a{border:1px solid #6b9bc7;color:#e6f4ff}
+#consult-copy-fallback[hidden]{display:none}
+@media(max-width:640px){.consult-contact{grid-template-columns:1fr}.consult-chem-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:.6rem;background:#0c2543;border-radius:8px}.consult-chem-row label:first-child{grid-column:1/-1}.consult-actions :is(button,a){flex:1 1 100%}}
+</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -277,49 +298,48 @@
     </section>
 
     <!-- FORM GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ (CÓ TẢI BẢN VẼ & HÌNH ẢNH) -->
-    <section id="quote-form" class="py-20 bg-navy-900 border-t border-white/10">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-brand-gold/40 shadow-2xl">
-                <div class="text-center mb-10">
-                    <h2 class="text-2xl sm:text-3xl font-black text-white mb-3" data-i18n="form_title">GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ TRỰC TUYẾN</h2>
-                    <p class="text-xs sm:text-sm text-slate-300" data-i18n="form_desc">Điền thông tin chi tiết hạng mục của bạn để nhận phương án kỹ thuật và báo giá nhanh chóng.</p>
-                </div>
-                <form onsubmit="handleFormSubmit(event)" class="space-y-5 text-xs sm:text-sm">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block font-bold text-slate-200 mb-2" data-i18n="f_name_lbl">Họ tên / Đơn vị *</label>
-                            <input type="text" id="f-name" required data-word4-placeholder="2" placeholder="Tên công ty hoặc cá nhân" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                        <div>
-                            <label class="block font-bold text-slate-200 mb-2" data-i18n="f_phone_lbl">Số điện thoại / Zalo *</label>
-                            <input type="tel" id="f-phone" required data-word4-placeholder="3" placeholder="Số điện thoại liên hệ" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div>
-                            <label class="block font-bold text-slate-200 mb-2" data-i18n="f_chem_lbl">Hóa chất tiếp xúc & Nồng độ</label>
-                            <input type="text" id="f-chem" data-word4-placeholder="4" placeholder="Ví dụ H₂SO₄ 50%, HCl 20%" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
-                        </div>
-                        <div>
-                            <label class="block font-bold text-slate-200 mb-2" data-i18n="f_pkg_lbl">Phương án / Gói mong muốn</label>
-                            <select id="f-package" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold">
-                                <option value="Gói Ngân Sách (12-18 tháng)">Gói Ngân Sách (12-18 tháng)</option>
-                                <option value="Gói Tiêu Chuẩn (5 năm)">Gói Tiêu Chuẩn (5 năm)</option>
-                                <option value="Gói Cao Cấp (10 năm)">Gói Cao Cấp (10 năm)</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block font-bold text-slate-200 mb-2" data-i18n="f_desc_lbl">Yêu cầu chi tiết / Diện tích thi công / Mô tả</label>
-                        <textarea id="f-desc" rows="4" data-word4-placeholder="5" placeholder="Diện tích (m²), thời gian thi công dự kiến" class="w-full bg-navy-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-gold"></textarea>
-                    </div>
-                    <!-- TẢI BẢN VẼ & HÌNH ẢNH -->
-                    <fieldset class="matrix-row"><div class="quote-upload"><label for="quote-drawings" data-word4="6">Chọn bản vẽ</label><div class="quote-file-control"><input type="file" aria-describedby="quote-drawings-status" id="quote-drawings" multiple accept=".pdf,.dwg,.dxf"><label for="quote-drawings" class="quote-file-button" data-quote-pick>Chọn tệp</label><span id="quote-drawings-status" class="quote-file-status" aria-live="polite">Chưa chọn tệp</span></div></div><div class="quote-upload"><label for="quote-photos" data-word4="7">Chọn hình ảnh</label><div class="quote-file-control"><input type="file" aria-describedby="quote-photos-status" id="quote-photos" multiple accept="image/*"><label for="quote-photos" class="quote-file-button" data-quote-pick>Chọn tệp</label><span id="quote-photos-status" class="quote-file-status" aria-live="polite">Chưa chọn tệp</span></div></div></fieldset><p id="manual-attachment" data-word4="8">Các tệp chọn tại đây chỉ dùng để lập danh sách hồ sơ. Sau khi mở email, hãy tự đính kèm các tệp rồi gửi.</p>
-<button type="submit" class="w-full bg-brand-gold hover:bg-amber-500 text-navy-950 font-black py-4 rounded-xl text-sm shadow-lg transition tracking-wide uppercase" data-i18n="f_submit">MỞ EMAIL ĐỂ GỬI YÊU CẦU</button>
-                </form>
-            </div>
+    <section id="quote-form" class="consult-section">
+  <div class="consult-panel">
+    <div class="consult-heading">
+      <h2>Yêu cầu tư vấn &amp; báo giá</h2>
+      <p>Cho chúng tôi biết hạng mục và điều kiện vận hành để tư vấn phương án phù hợp.</p>
+    </div>
+    <form id="consult-request" onsubmit="handleFormSubmit(event)" lang="vi">
+      <fieldset><legend>Thông tin liên hệ</legend>
+        <div class="consult-contact">
+          <label>Họ tên / Đơn vị *<input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Tên cá nhân hoặc công ty" maxlength="150"></label>
+          <label>Điện thoại / Zalo *<input id="f-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Số điện thoại liên hệ" maxlength="30"></label>
+          <label>Email <span>(tùy chọn)</span><input name="email" type="email" autocomplete="email" placeholder="ten@congty.vn" maxlength="200"></label>
         </div>
-    </section>
+      </fieldset>
+      <fieldset><legend>Hóa chất tiếp xúc</legend>
+        <p class="consult-hint">Điền các dòng phù hợp. Nếu chưa rõ nồng độ hoặc nhiệt độ, có thể để trống.</p>
+        <div class="consult-chem-row" role="group" aria-label="Hóa chất chính"><label>Hóa chất chính<input name="chem0" list="chemicals" placeholder="H₂SO₄" maxlength="100"></label><label>Nồng độ (% khối lượng)<input name="conc0" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Ví dụ 50"></label><label>Nhiệt độ (°C)<input name="temp0" type="number" step="any" inputmode="decimal" placeholder="Ví dụ 40"></label></div>
+<div class="consult-chem-row" role="group" aria-label="Hóa chất phối hợp 1"><label>Hóa chất phối hợp 1<input name="chem1" list="chemicals" placeholder="HCl" maxlength="100"></label><label>Nồng độ (% khối lượng)<input name="conc1" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Ví dụ 50"></label><label>Nhiệt độ (°C)<input name="temp1" type="number" step="any" inputmode="decimal" placeholder="Ví dụ 40"></label></div>
+<div class="consult-chem-row" role="group" aria-label="Hóa chất phối hợp 2"><label>Hóa chất phối hợp 2<input name="chem2" list="chemicals" placeholder="HNO₃" maxlength="100"></label><label>Nồng độ (% khối lượng)<input name="conc2" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Ví dụ 50"></label><label>Nhiệt độ (°C)<input name="temp2" type="number" step="any" inputmode="decimal" placeholder="Ví dụ 40"></label></div>
+<div class="consult-chem-row" role="group" aria-label="Biến thể / Phụ phẩm"><label>Biến thể / Phụ phẩm<input name="chem3" list="chemicals" placeholder="Tên hoặc công thức" maxlength="100"></label><label>Nồng độ (% khối lượng)<input name="conc3" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Ví dụ 50"></label><label>Nhiệt độ (°C)<input name="temp3" type="number" step="any" inputmode="decimal" placeholder="Ví dụ 40"></label></div>
+      </fieldset>
+      <fieldset><legend>Thông tin công trình</legend>
+        <label>Phương án mong muốn <span>(tùy chọn)</span>
+          <select name="package">
+            <option value="">Cần tư vấn lựa chọn</option>
+            <option>Gói ngân sách (12–18 tháng)</option>
+            <option>Gói tiêu chuẩn (5 năm)</option>
+            <option>Gói cao cấp (10 năm)</option>
+          </select>
+        </label>
+        <label>Mô tả hạng mục<textarea name="description" rows="4" maxlength="3000" placeholder="Loại công trình, diện tích (m²), tình trạng nền và thời gian dự kiến"></textarea></label>
+      </fieldset>
+      <p class="consult-hint">Sao chép nội dung rồi mở Zalo để dán và gửi. Anh/chị có thể đính kèm bản vẽ và ảnh trong cuộc trò chuyện.</p>
+      <div class="consult-actions">
+        <button type="submit">Sao chép yêu cầu</button>
+        <a href="https://zalo.me/0906952142" target="_blank" rel="noopener noreferrer">Mở Zalo · 0906 952 142</a>
+      </div>
+      <p id="consult-status" role="status" hidden></p>
+      <textarea id="consult-copy-fallback" aria-label="Nội dung yêu cầu để sao chép" rows="8" readonly hidden></textarea>
+    </form>
+  </div>
+</section>
 
     <!-- FOOTER -->
     <section id="hang-muc-frp" class="hm"><h2>Hạng mục chống ăn mòn FRP</h2><p class="hm-lead">Từ bể nước thải đến thiết bị hóa chất. Xem từng ứng dụng để chọn thông tin phù hợp với công trình.</p><div class="hm-grid"><a class="hm-card" href="#/be-xu-ly-nuoc-thai"><img class="hm-image" src="/be-nuoc-thai.jpg" alt="Minh họa Bể xử lý nước thải" width="836" height="470" loading="lazy" decoding="async"><div><h3>Bể xử lý nước thải</h3><p>Lớp bọc bể bê tông, ngăn xử lý, cổ ống và vùng trên mặt nước.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/be-axit-dam-dac"><img class="hm-image" src="/be-axit.jpg" alt="Minh họa Bể axit đậm đặc và hỗn hợp" width="836" height="470" loading="lazy" decoding="async"><div><h3>Bể axit đậm đặc và hỗn hợp</h3><p>Xác định vật liệu tiếp xúc và cấu tạo lót theo đúng tổ hợp hóa chất.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/be-xi-ma"><img class="hm-image" src="/be-xi-ma.jpg" alt="Minh họa Bể xi mạ và tẩy rửa kim loại" width="836" height="470" loading="lazy" decoding="async"><div><h3>Bể xi mạ và tẩy rửa kim loại</h3><p>Bể công nghệ, đường hồi và hệ thu gom hơi tại dây chuyền xử lý bề mặt.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/chong-chay"><img class="hm-image" src="/chong-chay.jpg" alt="Minh họa Chống ăn mòn và yêu cầu chống cháy" width="836" height="470" loading="lazy" decoding="async"><div><h3>Chống ăn mòn và yêu cầu chống cháy</h3><p>Đối chiếu khả năng kháng hóa chất và dữ liệu thử cháy của hệ vật liệu.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/nhiet-do-cao"><img class="hm-image" src="/nhiet-do-cao.jpg" alt="Minh họa Chống ăn mòn nhiệt độ cao" width="836" height="470" loading="lazy" decoding="async"><div><h3>Chống ăn mòn nhiệt độ cao</h3><p>Xét đồng thời môi trường hóa chất, nhiệt độ đỉnh và chu kỳ vận hành.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/dau-khi"><img class="hm-image" src="/dau-khi.jpg" alt="Minh họa Dầu khí, nhiên liệu và nước khai thác" width="836" height="470" loading="lazy" decoding="async"><div><h3>Dầu khí, nhiên liệu và nước khai thác</h3><p>Bồn, tuyến ống và thiết bị có nhiều pha tiếp xúc.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/dung-moi"><img class="hm-image" src="/dung-moi.jpg" alt="Minh họa Dung môi hữu cơ công nghiệp" width="836" height="470" loading="lazy" decoding="async"><div><h3>Dung môi hữu cơ công nghiệp</h3><p>Bồn chứa, khu chiết rót và lớp bọc khu vực thu gom tràn.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/nhiet-dien"><img class="hm-image" src="/nhiet-dien.jpg" alt="Minh họa Nhiệt điện và khử lưu huỳnh" width="836" height="470" loading="lazy" decoding="async"><div><h3>Nhiệt điện và khử lưu huỳnh</h3><p>Tháp FGD, đường ống, ống dẫn khí và hệ xử lý dịch thải.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/phan-bon"><img class="hm-image" src="/phan-bon.jpg" alt="Minh họa Phân bón và hóa chất công nghiệp" width="836" height="470" loading="lazy" decoding="async"><div><h3>Phân bón và hóa chất công nghiệp</h3><p>Thiết bị chứa, vận chuyển và xử lý khí trong dây chuyền hóa chất.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/thuy-san"><img class="hm-image" src="/thuy-san.jpg" alt="Minh họa Thủy sản, nước mắm và nước muối" width="836" height="470" loading="lazy" decoding="async"><div><h3>Thủy sản, nước mắm và nước muối</h3><p>Bể nuôi, bể chứa và hệ đường ống trong môi trường nước muối.</p><span>Xem hạng mục ↗</span></div></a><a class="hm-card" href="#/san-xuat-bon-be"><img class="hm-image" src="/san-xuat-bon.jpg" alt="Minh họa Sản xuất bồn bể FRP" width="836" height="470" loading="lazy" decoding="async"><div><h3>Sản xuất bồn bể FRP</h3><p>Thiết kế, chế tạo và kiểm tra bồn theo môi trường sử dụng.</p><span>Xem hạng mục ↗</span></div></a>
@@ -530,19 +550,45 @@
             document.dispatchEvent(new Event('frp-language'));
         }
 
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('f-name').value;
-            const phone = document.getElementById('f-phone').value;
-            const chem = document.getElementById('f-chem').value;
-            const pkg = document.getElementById('f-package').value;
-            const desc = document.getElementById('f-desc').value;
-
-            const mailSubject = encodeURIComponent("Yêu cầu báo giá FRP từ " + name);
-            const mailBody = encodeURIComponent("Họ tên: " + name + "\nSố điện thoại/Zalo: " + phone + "\nHóa chất: " + chem + "\nGói yêu cầu: " + pkg + "\nNội dung: " + desc + '\nHồ sơ dự kiến đính kèm / Planned attachments: ' + [...document.getElementById('quote-drawings').files, ...document.getElementById('quote-photos').files].map(file => file.name).join(', '));
-            
-            window.location.href = `mailto:giaiphapcompositefrp@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-        }
+        async function handleFormSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const values = new FormData(form);
+  const get = name => String(values.get(name) ?? '').trim();
+  for (const key of ['name', 'phone']) {
+    if (!get(key)) {
+      const field = form.elements.namedItem(key);
+      field.value = '';
+      field.reportValidity();
+      return;
+    }
+  }
+  const lines = ['Yêu cầu tư vấn & báo giá FRP', 'Họ tên / Đơn vị: ' + get('name'), 'Điện thoại / Zalo: ' + get('phone')];
+  if (get('email')) lines.push('Email: ' + get('email'));
+  const labels = ['Hóa chất chính', 'Hóa chất phối hợp 1', 'Hóa chất phối hợp 2', 'Biến thể / Phụ phẩm'];
+  labels.forEach((label, i) => {
+    const [name, concentration, temperature] = ['chem', 'conc', 'temp'].map(key => get(key + i));
+    if (name || concentration || temperature) {
+      lines.push(label + ': ' + [name || 'Chưa rõ tên', concentration && concentration + '% khối lượng', temperature && temperature + ' °C'].filter(Boolean).join(' · '));
+    }
+  });
+  if (get('package')) lines.push('Phương án mong muốn: ' + get('package'));
+  if (get('description')) lines.push('Mô tả hạng mục: ' + get('description'));
+  const request = lines.join('\n');
+  const status = form.querySelector('#consult-status');
+  const fallback = form.querySelector('#consult-copy-fallback');
+  status.hidden = false;
+  fallback.hidden = true;
+  try {
+    await navigator.clipboard.writeText(request);
+    status.textContent = 'Đã sao chép. Mở Zalo, dán nội dung rồi bấm gửi.';
+  } catch {
+    status.textContent = 'Hãy sao chép nội dung bên dưới, rồi mở Zalo để gửi.';
+    fallback.value = request;
+    fallback.hidden = false;
+    fallback.select();
+  }
+}
 
         window.addEventListener('DOMContentLoaded', () => {
             let savedLang;
@@ -1170,7 +1216,7 @@ updateQuoteLocale();
 function updateMatrixLanguage(){
   const strings = currentCopy();
   for (const el of document.querySelectorAll('[data-matrix-copy]')) el.textContent = strings[Number(el.dataset.matrixCopy)];
-  for (const el of document.querySelectorAll('[data-matrix-placeholder]')) el.placeholder = strings[Number(el.dataset.matrixPlaceholder)];
+  for (const el of document.querySelectorAll('[data-matrix-placeholder]')) el.placeholder = strings[Number(el.dataset.matrixPlaceholder)] ?? el.getAttribute("placeholder") ?? "";
   for (const el of document.querySelectorAll('[data-word4]')) el.textContent = extra()[Number(el.dataset.word4)];
   for (const el of document.querySelectorAll('[data-word4-placeholder]')) el.placeholder = extra()[Number(el.dataset.word4Placeholder)];
   const note = null;
