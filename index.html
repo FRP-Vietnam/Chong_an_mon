@@ -110,6 +110,12 @@
   #chemical-quick-reference .quick-chemical-table thead{top:var(--quick-header-offset,81px)}
 }
 </style>
+<style id="quick-acid-notes-style">
+#chemical-quick-reference .quick-acid-notes{grid-column:1/-1}
+#chemical-quick-reference .quick-acid-notes dt{margin-top:1rem}
+#chemical-quick-reference .quick-acid-notes dd{margin:.25rem 0 1rem}
+#chemical-quick-reference .quick-grade-notes a{overflow-wrap:anywhere}
+</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -583,20 +589,52 @@
   </div>
   <p><strong>Ký hiệu:</strong> NR = hãng không khuyến nghị; LS = phục vụ giới hạn theo chú thích hãng; — = ô trống hoặc không có giá trị trong dòng đang trích; All = ký hiệu của hãng, xem định nghĩa và điều kiện của từng bảng.</p>
   <div class="quick-grade-notes">
-    <section><h3>Nhựa chuyên dụng cho nhiệt độ cao</h3>
-      <p><strong>SWANCOR 977 / 977S:</strong> Tài liệu hãng công bố mã <strong>977-S</strong> thuộc nhóm epoxy vinyl ester novolac chịu nhiệt cao. Nếu hồ sơ ghi mã 977, xác nhận mã thương mại và TDS với nhà cung cấp.</p>
-      <p><strong>DERAKANE MOMENTUM 470-300:</strong> Nhựa epoxy vinyl ester novolac để đối chiếu theo ứng dụng. Khi chọn mã, tra đúng hóa chất, nồng độ, nhiệt độ, pha tiếp xúc và cấu tạo laminate. HDT trong TDS là nhiệt độ biến dạng khi thử dưới tải, không dùng làm giới hạn vận hành.</p>
-      <p><a href="https://www.swancor.com.cn/fd2/show-561.html">SWANCOR · Dòng novolac chịu nhiệt</a> · <a href="https://romar-voss.nl/downloads/tds/tds-derakane-momentum-470-300-resin-2021-06-01.pdf">ALTA · TDS 470-300</a></p>
+    <section>
+      <h3>Nhựa chuyên dụng cho nhiệt độ cao</h3>
+      <p><strong>DERAKANE MOMENTUM 470-300:</strong> TDS của ALTA công bố HDT <strong>150 °C</strong> trên mẫu nhựa đóng rắn hoàn toàn. Hướng dẫn kháng hóa chất của Ashland ghi dòng <strong>DERAKANE 470</strong> ở <strong>205 °C với khí thải khô</strong> (xem chú thích 16) và <strong>100 °C với khí thải ướt</strong>. Đây là hai điều kiện riêng trong bảng hãng.</p>
+      <p><strong>SWANCOR 977:</strong> Chưa xác minh được TDS chính hãng cho mã 977 không có hậu tố. Cần xác nhận mã đầy đủ trước khi ghi nhiệt độ hoặc ghép mã DERAKANE.</p>
+      <p><strong>SWANCOR 977-S:</strong> SWANCOR công bố HDT <strong>205–210 °C</strong> theo ISO 75 trên mẫu nhựa hậu đóng rắn theo quy trình thử của hãng, và nêu ứng dụng <strong>220 °C trong khí thải khô</strong>. DERAKANE 470 là dòng novolac để đối chiếu theo ứng dụng, với mốc khí thải khô công bố là 205 °C. Chưa xác minh được mã DERAKANE thay trực tiếp 977-S ở 220 °C.</p>
+      <p>HDT là chỉ số thử biến dạng dưới tải. Chọn nhiệt độ vận hành theo hóa chất, nồng độ, pha tiếp xúc, ngưng tụ và cấu tạo thiết bị đã được hãng xác nhận.</p>
+      <p><a href="https://romar-voss.nl/downloads/tds/tds-derakane-momentum-470-300-resin-2021-06-01.pdf">TDS ALTA 470-300</a> · <a href="https://wagnerenterprise.com/wp-content/uploads/2015/03/Ashland-Derakane-Chemical-Resistance-Compatibility-Chart.pdf">Bảng Ashland DERAKANE</a> · <a href="https://www.swancor.com.cn/uploads/files/P-FR-V-21.06%E9%A3%8E%E6%9C%BA%E7%94%A8%E4%B9%99%E7%83%AF%E5%9F%BA%E9%85%AF%E6%A0%91%E8%84%82%E7%B3%BB%E5%88%97.pdf">SWANCOR · Tài liệu 977-S</a></p>
     </section>
-    <section><h3>Nhựa chậm cháy và tiêu chuẩn thử</h3>
-      <p><strong>ASTM E84</strong> đo chỉ số lan truyền ngọn lửa (FSI) và chỉ số phát triển khói (SDI) trên bề mặt mẫu trong phép thử đường hầm.</p>
+    <section>
+      <h3>Nhựa chậm cháy và kết quả khi dùng phụ gia</h3>
       <ul>
-        <li><strong>DERAKANE 510A-40:</strong> TDS ALTA công bố laminate đạt FSI &lt; 25 theo ASTM E84 khi không dùng phụ gia.</li>
-        <li><strong>SWANCOR 905-2 và 905C:</strong> Sổ tay hãng công bố mức lan truyền lửa Class 1 theo ASTM E84 khi phối hợp SWANCOR 1601.</li>
-        <li><strong>DERAKANE 510C / 510N và SWANCOR 905-N:</strong> Kiểm tra báo cáo thử của từng mã và cấu hình laminate trước khi dùng kết quả cho hồ sơ.</li>
+        <li><strong>DERAKANE 510A-40:</strong> ALTA công bố laminate đạt <strong>FSI &lt; 25 theo ASTM E84</strong> khi không dùng phụ gia. NYACOL cũng ghi mẫu mang tên <strong>510A</strong> với <strong>2% APE1540</strong> đạt mức lan lửa <strong>Class I</strong>.</li>
+        <li><strong>DERAKANE 510C-350 và 510N:</strong> Trong bảng thử đường hầm của NYACOL, cả hai mã đạt mức lan lửa <strong>Class II với 2,5% APE1540</strong> và <strong>Class I với 3,75% APE1540</strong>. Các tỷ lệ trong bảng chỉ lượng chế phẩm thử, là hệ phân tán chứa 40% antimon pentoxit theo khối lượng.</li>
+        <li><strong>SWANCOR 905-2 và 905C:</strong> Sổ tay hãng ghi mức lan lửa Class 1 theo ASTM E84 khi phối hợp SWANCOR 1601.</li>
       </ul>
-      <p><strong>Tiêu chuẩn khác:</strong> ASTM D2863 đo chỉ số oxy giới hạn (LOI). UL 94 đánh giá khả năng cháy trên mẫu nhựa nhỏ theo cấu hình và chiều dày thử. Mỗi phép thử cần báo cáo riêng. Khi nghiệm thu, đối chiếu cả FSI và SDI nếu hồ sơ yêu cầu, cùng chiều dày, lớp sợi, phụ gia và cấu tạo mẫu thử.</p>
-      <p><a href="https://romar-voss.nl/downloads/tds/tds-derakane-510-a-40-resin.pdf">ALTA · TDS 510A-40</a> · <a href="https://www.sw-regener.com/file/output/1129/Vinyl-Ester-Resins%E6%89%8B%E5%86%8A.pdf">SWANCOR · Sổ tay nhựa vinyl ester</a> · <a href="https://store.astm.org/standards/e84/">ASTM E84</a> · <a href="https://store.astm.org/standards/d2863">ASTM D2863</a> · <a href="https://www.ul.com/services/combustion-fire-tests-plastics">UL · UL 94</a></p>
+      <p>Đây là dữ liệu trên mẫu thử. Khi nghiệm thu, yêu cầu báo cáo ASTM E84 của đúng cấu tạo laminate, chiều dày và phụ gia, có cả FSI (lan truyền lửa) và SDI (phát triển khói) nếu hồ sơ yêu cầu. ASTM D2863 đo chỉ số oxy giới hạn và UL 94 đánh giá mẫu nhựa nhỏ, mỗi phép thử có báo cáo riêng.</p>
+      <p><a href="https://romar-voss.nl/downloads/tds/tds-derakane-510-a-40-resin.pdf">TDS ALTA 510A-40</a> · <a href="https://www.nyacol.com/wp-content/uploads/2015/04/APE1540-AB40-Data-Sheet-20120723.pdf">NYACOL · Dữ liệu ASTM E84</a> · <a href="https://www.sw-regener.com/file/output/1129/Vinyl-Ester-Resins%E6%89%8B%E5%86%8A.pdf">Sổ tay SWANCOR</a> · <a href="https://store.astm.org/standards/e84/">ASTM E84</a> · <a href="https://store.astm.org/standards/d2863">ASTM D2863</a> · <a href="https://www.ul.com/services/combustion-fire-tests-plastics">UL 94</a></p>
+    </section>
+    <section class="quick-acid-notes quick-special-applications" aria-labelledby="quick-special-title">
+  <h3 id="quick-special-title">Chọn nhựa cho hạng mục đặc biệt</h3>
+  <p>Đối chiếu theo điều kiện tiếp xúc và cấu tạo thực tế của thiết bị.</p>
+  <dl>
+    <dt><strong>Ống gió, ống khói và lớp ngoài FRP cần chậm cháy</strong></dt>
+    <dd><strong>DERAKANE 510A-40:</strong> ALTA công bố laminate đạt FSI &lt; 25 theo ASTM E84 khi không bổ sung phụ gia. <strong>SWANCOR 905-2 và 905C:</strong> hãng công bố mức lan lửa Class 1 khi phối hợp SWANCOR 1601. Ưu điểm đã có tài liệu của 510A-40 là kết quả thử trên cấu hình không bổ sung phụ gia. Hồ sơ nghiệm thu cần báo cáo của đúng cấu tạo laminate. <a href="https://romar-voss.nl/downloads/tds/tds-derakane-510-a-40-resin.pdf">TDS ALTA 510A-40</a> · <a href="https://www.sw-regener.com/file/output/1130/Vinyl-Ester-Resins%E6%89%8B%E5%86%8A.pdf">Sổ tay SWANCOR</a></dd>
+    <dt><strong>Bồn NaOCl có yêu cầu chậm cháy</strong></dt>
+    <dd><strong>DERAKANE 510A:</strong> bảng Ashland ghi 50 °C ở pH &gt; 11 và 18–21% clo hoạt tính. Cùng dòng bảng ghi <strong>510C: 45 °C</strong>. <strong>SWANCOR 905-2:</strong> hãng ghi 40 °C cho dung dịch kiềm ổn định ở pH &gt; 11, dải 18–25% theo bảng SWANCOR. Trong phần dải trùng nhau, 510A có mốc công bố cao hơn 10 °C. Đối chiếu cách biểu thị nồng độ và chú thích của cả hai bảng trước khi chọn. <a href="https://wagnerenterprise.com/wp-content/uploads/2015/03/Ashland-Derakane-Chemical-Resistance-Compatibility-Chart.pdf">Bảng Ashland DERAKANE</a> · <a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">Bảng SWANCOR</a></dd>
+    <dt><strong>Ống khói và đường ống khí thải nóng</strong></dt>
+    <dd><strong>DERAKANE 470:</strong> bảng Ashland nêu 205 °C cho khí thải khô và 100 °C cho khí thải ướt, theo điều kiện và chú thích của bảng. <strong>SWANCOR 977-S:</strong> tài liệu hãng nêu 220 °C cho khí thải khô. Mốc khí khô công bố của 977-S cao hơn 15 °C. Khi có ngưng tụ, cần đối chiếu thành phần và nhiệt độ của pha lỏng. <a href="https://wagnerenterprise.com/wp-content/uploads/2015/03/Ashland-Derakane-Chemical-Resistance-Compatibility-Chart.pdf">Bảng Ashland DERAKANE</a> · <a href="https://www.swancor.com.cn/uploads/files/P-FR-V-21.06%E9%A3%8E%E6%9C%BA%E7%94%A8%E4%B9%99%E7%83%AF%E5%9F%BA%E9%85%AF%E6%A0%91%E8%84%82%E7%B3%BB%E5%88%97.pdf">Tài liệu SWANCOR 977-S</a></dd>
+    <dt><strong>Bọc lót và sửa chữa bồn thép, bể bê tông</strong></dt>
+    <dd><strong>DERAKANE 8084:</strong> TDS chỉ rõ vai trò primer bám dính cho thép và bê tông trước khi bọc lót chống ăn mòn. <strong>SWANCOR 984:</strong> một mã primer được hãng nêu trong hướng dẫn. Điểm mạnh của 8084 là có quy trình bọc lót và kiểm tra miếng thử được mô tả. Muốn xếp hạng độ bám, cần thử kéo bám trên cùng nền và cùng cấu tạo. <a href="https://romar-voss.nl/downloads/tds/tds_derakane-8084.pdf">TDS DERAKANE 8084</a> · <a href="https://polymerinnovationblog.com/wp-content/uploads/2025/03/Ineos-Derekane-Fabrication-Guide.pdf">Hướng dẫn bọc lót DERAKANE</a> · <a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">Hướng dẫn SWANCOR</a></dd>
+    <dt><strong>Bồn axit đậm đặc</strong></dt>
+    <dd><strong>DERAKANE 470</strong> và <strong>SWANCOR 907, 977-S</strong> cùng được ghi 80 °C cho H₂SO₄ 71–75% và 50 °C cho HCl 37%, theo chú thích từng bảng. Với H₂SO₄ 98% ngâm liên tục, xem phần “Axit đậm đặc và phương án khi vượt ngưỡng vinyl ester” bên dưới. <a href="https://wagnerenterprise.com/wp-content/uploads/2015/03/Ashland-Derakane-Chemical-Resistance-Compatibility-Chart.pdf">Bảng Ashland DERAKANE</a> · <a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">Bảng SWANCOR</a></dd>
+  </dl>
+</section>
+    <section class="quick-acid-notes">
+      <h3>Axit đậm đặc và phương án khi vượt ngưỡng vinyl ester</h3>
+      <dl>
+        <dt><strong>H₂SO₄ 98% · Axit sulfuric</strong></dt>
+        <dd>Bảng DERAKANE xếp H₂SO₄ trên 80% là <strong>NR</strong> cho 411 và <strong>LS</strong> cho 470. Với bồn ngâm liên tục, có thể đưa cấu tạo <strong>lót PVDF, vỏ FRP chịu lực</strong> vào bước thẩm định. Bảng Arkema ở dải <strong>94–98%</strong> ghi <strong>50 °C cho Kynar homopolymer</strong> và <strong>65 °C cho Kynar copolymer 2850/2800</strong>. Các mốc này áp dụng cho vật liệu trong bảng. Khi vượt giới hạn của cấp PVDF được chọn, yêu cầu nhà chế tạo đánh giá thiết bị lót fluoropolymer phù hợp, như PTFE/PFA.</dd>
+        <dt><strong>HNO₃ 70% · Axit nitric</strong></dt>
+        <dd>Bảng Ashland ghi <strong>411: NR</strong>, <strong>470: LS</strong>. Đối chiếu hệ lót PVDF với bảng Arkema cho dung dịch <strong>11–70%</strong>: <strong>50 °C</strong> cho homopolymer và <strong>65 °C</strong> cho copolymer 2850/2800. Axit nitric bốc khói có dòng riêng, bảng này ghi <strong>NR</strong> cho cả ba nhóm Kynar nêu trên.</dd>
+        <dt><strong>HCl 37% · Axit clohydric</strong></dt>
+        <dd>Bảng Ashland ghi <strong>411: 40 °C</strong> và <strong>470: 50 °C</strong>, kèm chú thích về cấu tạo laminate. Nếu nhiệt độ thiết kế cao hơn giới hạn của mã được chọn, đưa hệ lót PVDF hoặc PTFE/PFA vào bước đánh giá theo điều kiện thực tế.</dd>
+      </dl>
+      <p><strong>NR</strong> là không khuyến nghị, <strong>LS</strong> là phục vụ giới hạn theo hướng dẫn hãng. Trước khi chốt cấu tạo, xác nhận nồng độ, nhiệt độ liên tục và đỉnh, pha hơi hoặc ngưng tụ, áp suất hoặc chân không, cùng vật liệu lót, mối nối, mặt bích và gioăng với nhà chế tạo.</p>
+      <p><a href="https://wagnerenterprise.com/wp-content/uploads/2015/03/Ashland-Derakane-Chemical-Resistance-Compatibility-Chart.pdf">Bảng kháng hóa chất DERAKANE</a> · <a href="https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf">Arkema · Bảng kháng hóa chất Kynar PVDF</a> · <a href="https://www.crp-us.com/about-us/">CRP · Thiết bị lót PTFE/PFA</a></p>
     </section>
   </div>
   <p><a href="https://www.altapm.com/products/epoxy-vinyl-ester-resins/derakane/">DERAKANE · Trang hãng</a> · <a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">SWANCOR · Chemical Corrosion Guide 2025</a>. Số trang trong bảng tính theo thứ tự trang PDF.</p>
