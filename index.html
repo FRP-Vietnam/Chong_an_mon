@@ -157,18 +157,17 @@
 .consult-actions button{background:#f6b84c;color:#0a213d}.consult-actions button:disabled{background:#29425f;color:#d3e3f3;cursor:not-allowed}.consult-actions button.consult-secondary{background:transparent;border:1px solid #6b9bc7;color:#e6f4ff}
 .consult-attachments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.consult-attachments label{min-width:0}.consult-attachments small{color:#bbd0e7}.consult-attachments input{width:100%;min-width:0;text-overflow:ellipsis}.consult-attachments input::file-selector-button{font:inherit;border:1px solid #6b9bc7;border-radius:6px;background:#163858;color:#fff;padding:.4rem .65rem;margin-inline-end:.5rem}
 @media(max-width:640px){.consult-attachments{grid-template-columns:1fr}}.consult-actions a{border:1px solid #6b9bc7;color:#e6f4ff}
-.consult-direct{margin-top:.2rem}
-.consult-zalo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem 1rem;align-items:center;padding:1rem;border:1px solid #3d6389;border-radius:12px;background:#0b2747}
-.consult-zalo-intro{display:flex;gap:.75rem;align-items:center;min-width:0}
-.consult-zalo-icon{box-sizing:content-box;flex:none;padding:.45rem;border-radius:10px;background:#183b64;color:#b1d8ff}
-.consult-zalo-intro strong{display:block;font-size:1rem;color:#f1f7ff}
-.consult-zalo-intro p{margin:.15rem 0 0;color:#bbd0e7;font-size:.9rem;line-height:1.45}
-.consult-zalo .consult-zalo-actions a{gap:.4rem;background:#1559b0;border-color:#548bd2;color:#fff}
-.consult-zalo .consult-zalo-actions a:hover{background:#1966c8}
-.consult-zalo .consult-zalo-actions button:hover{background:#183b64}
-.consult-zalo-actions :is(button,a):focus-visible{outline:2px solid #a8d3ff;outline-offset:3px}
-.consult-zalo > :is(p,textarea){grid-column:1/-1;margin:0}
-@media(max-width:800px){.consult-zalo{grid-template-columns:1fr}}
+#consult-request [hidden]{display:none}
+.consult-zalo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem 1.2rem;align-items:center;padding:1rem 1.15rem;border:1px solid #41668d;border-radius:12px;background:#0b2747}
+.consult-zalo-intro strong{display:block;font-size:1.03rem;color:#f1f7ff}
+.consult-zalo-intro p,.consult-zalo-next p{margin:.2rem 0 0;color:#c9dced;font-size:.92rem;line-height:1.5}
+.consult-zalo .consult-actions a{gap:.45rem;background:#1559b0;border-color:#548bd2;color:#fff}
+.consult-zalo .consult-actions a:hover{background:#1966c8}
+.consult-zalo .consult-actions button:hover{background:#ffca6a}
+.consult-zalo .consult-actions :is(button,a):focus-visible{outline:2px solid #a8d3ff;outline-offset:3px}
+.consult-zalo-next{grid-column:1/-1;display:grid;gap:.75rem;padding-top:.8rem;border-top:1px solid #41668d}
+.consult-zalo-next textarea{width:100%;min-width:0}
+@media(max-width:640px){.consult-zalo{grid-template-columns:1fr;padding:.9rem}}
 #consult-copy-fallback[hidden]{display:none}
 @media(max-width:640px){.consult-contact{grid-template-columns:1fr}.consult-chem-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:.6rem;background:#0c2543;border-radius:8px}.consult-chem-row label:first-child{grid-column:1/-1}.consult-actions :is(button,a){flex:1 1 100%}}
 </style>
@@ -345,26 +344,27 @@
         </label>
         <label>Mô tả hạng mục<textarea name="description" rows="4" maxlength="3000" placeholder="Loại công trình, diện tích (m²), tình trạng nền và thời gian dự kiến"></textarea></label>
       </fieldset>
-      <fieldset><legend>Tệp đính kèm <span>(tùy chọn)</span></legend>
+      <fieldset hidden><legend>Tệp đính kèm <span>(tùy chọn)</span></legend>
         <div class="consult-attachments">
           <label>Bản vẽ<input name="drawing" type="file" accept=".pdf,.dwg,.dxf"><small>PDF, DWG, DXF</small></label>
           <label>Ảnh hiện trường<input name="photo" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.heif"><small>JPG, PNG, WebP, HEIC</small></label>
         </div>
       </fieldset>
-      <div class="consult-actions consult-direct">
-        <button type="button" disabled title="Gửi trực tiếp chưa được kích hoạt">Gửi yêu cầu</button>
-      </div>
       <div class="consult-zalo" role="group" aria-labelledby="consult-zalo-title">
         <div class="consult-zalo-intro">
-          <svg class="consult-zalo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l1.6-3.1A7.5 7.5 0 1 1 20 11.5Z"/><path d="M9 11.5h7M9 14.5h4"/></svg>
-          <div><strong id="consult-zalo-title">Gửi qua Zalo</strong><p>Sao chép nội dung, rồi dán và đính kèm tệp trong Zalo.</p></div>
+          <strong id="consult-zalo-title">Gửi hồ sơ qua Zalo</strong>
+          <p>Sao chép thông tin đã điền để gửi cùng bản vẽ hoặc ảnh hiện trường.</p>
         </div>
-        <div class="consult-actions consult-zalo-actions">
-          <button type="submit" class="consult-secondary">Sao chép yêu cầu</button>
-          <a href="https://zalo.me/0906952142" target="_blank" rel="noopener noreferrer" aria-label="Mở Zalo, số 0906 952 142">Mở Zalo <span aria-hidden="true">↗</span></a>
+        <div class="consult-actions">
+          <button type="submit">Sao chép nội dung</button>
         </div>
-        <p id="consult-status" role="status" hidden></p>
-        <textarea id="consult-copy-fallback" aria-label="Nội dung yêu cầu để sao chép" rows="8" readonly hidden></textarea>
+        <div id="consult-zalo-next" class="consult-zalo-next" hidden>
+          <p id="consult-status" role="status"></p>
+          <textarea id="consult-copy-fallback" aria-label="Nội dung yêu cầu để sao chép" rows="8" readonly hidden></textarea>
+          <div class="consult-actions">
+            <a href="https://zalo.me/0906952142" target="_blank" rel="noopener noreferrer">Mở Zalo để gửi <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
       </div>
     </form>
   </div>
@@ -602,17 +602,20 @@
   if (get('package')) lines.push('Phương án mong muốn: ' + get('package'));
   if (get('description')) lines.push('Mô tả hạng mục: ' + get('description'));
   const request = lines.join('\n');
+  const nextStep = form.querySelector('#consult-zalo-next');
   const status = form.querySelector('#consult-status');
   const fallback = form.querySelector('#consult-copy-fallback');
-  status.hidden = false;
   fallback.hidden = true;
   try {
     await navigator.clipboard.writeText(request);
-    status.textContent = 'Đã sao chép. Mở Zalo, dán nội dung rồi bấm gửi.';
+    nextStep.hidden = false;
+    status.textContent = 'Đã sao chép. Mở Zalo, dán nội dung, đính kèm tệp nếu có và bấm gửi.';
   } catch {
-    status.textContent = 'Hãy sao chép nội dung bên dưới, rồi mở Zalo để gửi.';
+    nextStep.hidden = false;
+    status.textContent = 'Sao chép nội dung bên dưới. Sau đó mở Zalo, dán nội dung và đính kèm tệp nếu có.';
     fallback.value = request;
     fallback.hidden = false;
+    fallback.focus();
     fallback.select();
   }
 }
