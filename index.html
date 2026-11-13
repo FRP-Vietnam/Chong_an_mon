@@ -100,6 +100,16 @@
 @media(max-width:760px){.hm-detail-top{grid-template-columns:minmax(0,1fr);gap:18px;padding-bottom:22px;margin-bottom:22px}.hm-detail nav{margin-bottom:15px}.hm-detail .hm-content section{margin-top:24px}.hm-detail .hm-hero{border-radius:12px}}
 @media(max-width:420px){.hm-buttons a{width:100%;justify-content:center}.hm-detail .hm-doc iframe{height:360px}}
 </style>
+<style id="quick-matrix-sticky">
+#chemical-quick-reference .quick-chemical-table{border-collapse:separate;border-spacing:0}
+#chemical-quick-reference .quick-chemical-table thead{position:sticky;top:0;z-index:2}
+#chemical-quick-reference .quick-chemical-table thead th{background:#143a60;color:#f4f8fb}
+#chemical-quick-reference .quick-table-scroll{max-height:65vh;max-height:65dvh}
+@media(min-width:960px){
+  #chemical-quick-reference .quick-table-scroll{overflow:visible;max-height:none}
+  #chemical-quick-reference .quick-chemical-table thead{top:var(--quick-header-offset,81px)}
+}
+</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -573,8 +583,21 @@
   </div>
   <p><strong>Ký hiệu:</strong> NR = hãng không khuyến nghị; LS = phục vụ giới hạn theo chú thích hãng; — = ô trống hoặc không có giá trị trong dòng đang trích; All = ký hiệu của hãng, xem định nghĩa và điều kiện của từng bảng.</p>
   <div class="quick-grade-notes">
-    <section><h3>Chịu nhiệt cao</h3><p><strong>DERAKANE 470</strong> và <strong>SWANCOR 907</strong> là các dòng novolac dùng để xem xét cho điều kiện nhiệt và hóa chất khắt khe. Tra đúng chất và nồng độ. Ví dụ, ở một số dòng kiềm, mã 470 hoặc 907 có giới hạn thấp hơn 411 hoặc 901.</p></section>
-    <section><h3>Yêu cầu chậm cháy</h3><p><strong>DERAKANE 510A/C hoặc 510N</strong> và <strong>SWANCOR 905</strong> là các dòng để xem xét khi có yêu cầu chậm cháy. Đối chiếu dữ liệu kháng hóa chất của chính mã đó và báo cáo thử cháy của cấu tạo laminate cụ thể.</p></section>
+    <section><h3>Nhựa chuyên dụng cho nhiệt độ cao</h3>
+      <p><strong>SWANCOR 977 / 977S:</strong> Tài liệu hãng công bố mã <strong>977-S</strong> thuộc nhóm epoxy vinyl ester novolac chịu nhiệt cao. Nếu hồ sơ ghi mã 977, xác nhận mã thương mại và TDS với nhà cung cấp.</p>
+      <p><strong>DERAKANE MOMENTUM 470-300:</strong> Nhựa epoxy vinyl ester novolac để đối chiếu theo ứng dụng. Khi chọn mã, tra đúng hóa chất, nồng độ, nhiệt độ, pha tiếp xúc và cấu tạo laminate. HDT trong TDS là nhiệt độ biến dạng khi thử dưới tải, không dùng làm giới hạn vận hành.</p>
+      <p><a href="https://www.swancor.com.cn/fd2/show-561.html">SWANCOR · Dòng novolac chịu nhiệt</a> · <a href="https://romar-voss.nl/downloads/tds/tds-derakane-momentum-470-300-resin-2021-06-01.pdf">ALTA · TDS 470-300</a></p>
+    </section>
+    <section><h3>Nhựa chậm cháy và tiêu chuẩn thử</h3>
+      <p><strong>ASTM E84</strong> đo chỉ số lan truyền ngọn lửa (FSI) và chỉ số phát triển khói (SDI) trên bề mặt mẫu trong phép thử đường hầm.</p>
+      <ul>
+        <li><strong>DERAKANE 510A-40:</strong> TDS ALTA công bố laminate đạt FSI &lt; 25 theo ASTM E84 khi không dùng phụ gia.</li>
+        <li><strong>SWANCOR 905-2 và 905C:</strong> Sổ tay hãng công bố mức lan truyền lửa Class 1 theo ASTM E84 khi phối hợp SWANCOR 1601.</li>
+        <li><strong>DERAKANE 510C / 510N và SWANCOR 905-N:</strong> Kiểm tra báo cáo thử của từng mã và cấu hình laminate trước khi dùng kết quả cho hồ sơ.</li>
+      </ul>
+      <p><strong>Tiêu chuẩn khác:</strong> ASTM D2863 đo chỉ số oxy giới hạn (LOI). UL 94 đánh giá khả năng cháy trên mẫu nhựa nhỏ theo cấu hình và chiều dày thử. Mỗi phép thử cần báo cáo riêng. Khi nghiệm thu, đối chiếu cả FSI và SDI nếu hồ sơ yêu cầu, cùng chiều dày, lớp sợi, phụ gia và cấu tạo mẫu thử.</p>
+      <p><a href="https://romar-voss.nl/downloads/tds/tds-derakane-510-a-40-resin.pdf">ALTA · TDS 510A-40</a> · <a href="https://www.sw-regener.com/file/output/1129/Vinyl-Ester-Resins%E6%89%8B%E5%86%8A.pdf">SWANCOR · Sổ tay nhựa vinyl ester</a> · <a href="https://store.astm.org/standards/e84/">ASTM E84</a> · <a href="https://store.astm.org/standards/d2863">ASTM D2863</a> · <a href="https://www.ul.com/services/combustion-fire-tests-plastics">UL · UL 94</a></p>
+    </section>
   </div>
   <p><a href="https://www.altapm.com/products/epoxy-vinyl-ester-resins/derakane/">DERAKANE · Trang hãng</a> · <a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">SWANCOR · Chemical Corrosion Guide 2025</a>. Số trang trong bảng tính theo thứ tự trang PDF.</p>
 </section><h2>Tài liệu hãng</h2><ul><li><a href="https://www.altapm.com/products/epoxy-vinyl-ester-resins/derakane/">ALTA DERAKANE Specialist Guide 2025</a> · Đối chiếu bản Specialist Guide 2025 đã cung cấp.</li><li><a href="https://www.sw-regener.com/file/output/1133/SWANCOR-Chemical-Corrosion-Guide-20251118.pdf">SWANCOR Chemical Corrosion Guide 2025</a></li><li><a href="https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf">Arkema Kynar Chemical Resistance Chart</a></li><li><a href="#/thong-so-ky-thuat">FRP Network – Bể xử lý nước thải 2026, tr. 3–7</a></li></ul><section id="alta-index"><h2>Chỉ mục ALTA theo trang</h2><p>Tìm tên tiếng Anh để mở đúng trang bảng hãng. Chỉ mục gồm dòng trích tự động, dùng để tìm nguồn. Kết quả sơ tuyển chỉ dùng các hàng đã đối chiếu riêng.</p><label>Tên hóa chất <input id="alta-query" type="search" placeholder="Ví dụ Sulfuric Acid"></label><p id="alta-count" role="status"></p><ul id="alta-results"></ul></section></main></template>
@@ -1118,6 +1141,14 @@ field.addEventListener('input', () => {
 const subpage = document.getElementById('embedded-page');
 const homeSections = [...document.body.children].filter(node => !['SCRIPT','STYLE','TEMPLATE','NOSCRIPT','HEADER'].includes(node.tagName) && node !== subpage);
 const defaultTitle = document.title;
+
+const quickSiteHeader=document.querySelector('body > header');
+if(quickSiteHeader){
+  const setQuickHeaderOffset=()=>document.documentElement.style.setProperty('--quick-header-offset',Math.ceil(quickSiteHeader.getBoundingClientRect().height)+'px');
+  setQuickHeaderOffset();
+  if(typeof ResizeObserver==='function')new ResizeObserver(setQuickHeaderOffset).observe(quickSiteHeader);
+  else window.addEventListener('resize',setQuickHeaderOffset);
+}
 
 function bindQuickChemicalReference(root) {
   const field=root.querySelector('#quick-chemical-search');
