@@ -158,16 +158,15 @@
 .consult-attachments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.consult-attachments label{min-width:0}.consult-attachments small{color:#bbd0e7}.consult-attachments input{width:100%;min-width:0;text-overflow:ellipsis}.consult-attachments input::file-selector-button{font:inherit;border:1px solid #6b9bc7;border-radius:6px;background:#163858;color:#fff;padding:.4rem .65rem;margin-inline-end:.5rem}
 @media(max-width:640px){.consult-attachments{grid-template-columns:1fr}}.consult-actions a{border:1px solid #6b9bc7;color:#e6f4ff}
 #consult-request [hidden]{display:none}
-.consult-zalo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem 1.2rem;align-items:center;padding:1rem 1.15rem;border:1px solid #41668d;border-radius:12px;background:#0b2747}
-.consult-zalo-intro strong{display:block;font-size:1.03rem;color:#f1f7ff}
-.consult-zalo-intro p,.consult-zalo-next p{margin:.2rem 0 0;color:#c9dced;font-size:.92rem;line-height:1.5}
+.consult-zalo{display:grid;gap:.7rem}.consult-primary button{width:100%;min-height:56px;gap:.55rem;font-size:1.15rem}.consult-zalo-help{text-align:center;margin:0;color:#bbd0e7;font-size:.9rem;line-height:1.5}
+.consult-zalo-next p{margin:.2rem 0 0;color:#c9dced;font-size:.92rem;line-height:1.5}
 .consult-zalo .consult-actions a{gap:.45rem;background:#1559b0;border-color:#548bd2;color:#fff}
 .consult-zalo .consult-actions a:hover{background:#1966c8}
 .consult-zalo .consult-actions button:hover{background:#ffca6a}
 .consult-zalo .consult-actions :is(button,a):focus-visible{outline:2px solid #a8d3ff;outline-offset:3px}
 .consult-zalo-next{grid-column:1/-1;display:grid;gap:.75rem;padding-top:.8rem;border-top:1px solid #41668d}
 .consult-zalo-next textarea{width:100%;min-width:0}
-@media(max-width:640px){.consult-zalo{grid-template-columns:1fr;padding:.9rem}}
+
 #consult-copy-fallback[hidden]{display:none}
 @media(max-width:640px){.consult-contact{grid-template-columns:1fr}.consult-chem-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:.6rem;background:#0c2543;border-radius:8px}.consult-chem-row label:first-child{grid-column:1/-1}.consult-actions :is(button,a){flex:1 1 100%}}
 </style>
@@ -351,13 +350,10 @@
         </div>
       </fieldset>
       <div class="consult-zalo" role="group" aria-labelledby="consult-zalo-title">
-        <div class="consult-zalo-intro">
-          <strong id="consult-zalo-title">Gửi hồ sơ qua Zalo</strong>
-          <p>Sao chép thông tin đã điền để gửi cùng bản vẽ hoặc ảnh hiện trường.</p>
+        <div class="consult-actions consult-primary">
+          <button type="submit">Gửi yêu cầu qua Zalo <span aria-hidden="true">↗</span></button>
         </div>
-        <div class="consult-actions">
-          <button type="submit">Sao chép nội dung</button>
-        </div>
+        <p id="consult-zalo-title" class="consult-zalo-help">Nội dung được sao chép để anh/chị dán vào Zalo. Có thể đính kèm bản vẽ hoặc ảnh trong cuộc trò chuyện.</p>
         <div id="consult-zalo-next" class="consult-zalo-next" hidden>
           <p id="consult-status" role="status"></p>
           <textarea id="consult-copy-fallback" aria-label="Nội dung yêu cầu để sao chép" rows="8" readonly hidden></textarea>
@@ -609,7 +605,8 @@
   try {
     await navigator.clipboard.writeText(request);
     nextStep.hidden = false;
-    status.textContent = 'Đã sao chép. Mở Zalo, dán nội dung, đính kèm tệp nếu có và bấm gửi.';
+    status.textContent = 'Đã sao chép. Dán nội dung vào Zalo rồi bấm gửi. Nếu Zalo chưa mở, bấm nút bên dưới.';
+    window.open(form.querySelector('#consult-zalo-next a').href, '_blank', 'noopener,noreferrer');
   } catch {
     nextStep.hidden = false;
     status.textContent = 'Sao chép nội dung bên dưới. Sau đó mở Zalo, dán nội dung và đính kèm tệp nếu có.';
