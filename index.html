@@ -154,6 +154,7 @@
 .consult-hint,#consult-status{font-size:.88rem;margin:.35rem 0 .7rem}
 .consult-attachments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
 .consult-attachments label{min-width:0;padding:.8rem;border:1px solid #416386;border-radius:10px;background:#0b2543}
+.consult-files .consult-file-link{display:block;margin-top:.85rem}
 .consult-attachments small{color:#bbd0e7;font-size:.8rem;font-weight:500}
 .consult-attachments input[type=file]{width:100%;min-width:0;padding:.4rem;font-size:.88rem}
 .consult-attachments input::file-selector-button{font:inherit;border:1px solid #6b9bc7;border-radius:6px;background:#163858;color:#fff;padding:.4rem .65rem;margin-inline-end:.5rem;cursor:pointer}
@@ -349,10 +350,12 @@
           <label>Đính kèm bản vẽ<input name="drawing" type="file" accept=".pdf,.dwg,.dxf"><small>PDF, DWG, DXF</small></label>
           <label>Đính kèm hình ảnh<input name="photo" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.heif"><small>JPG, PNG, WebP, HEIC</small></label>
         </div>
+        <label class="consult-file-link">Liên kết tải hồ sơ <span>(tùy chọn)</span><input name="document_link" type="url" pattern="https://.+" maxlength="1000" placeholder="https://" aria-describedby="consult-link-help"></label>
+        <p id="consult-link-help" class="consult-hint">Hồ sơ lớn có thể gửi bằng liên kết Google Drive hoặc OneDrive. Hãy cấp quyền tải cho hộp thư tư vấn.</p>
       </fieldset>
       <div class="consult-submit">
         <button class="consult-send" type="submit">Gửi yêu cầu</button>
-        <p class="consult-hint">Tổng dung lượng tệp tối đa 10 MB. FormSubmit chuyển yêu cầu và tệp đến hộp thư tư vấn.</p>
+        <p class="consult-hint">Tối đa 10 MB sau khi nén. Tệp lớn được nén ZIP tự động, giữ nguyên chất lượng.</p>
         <div class="consult-secondary-row">
           <button type="button" id="consult-copy">Sao chép nội dung</button>
           <a href="https://zalo.me/0906952142" target="_blank" rel="noopener noreferrer">Gửi trực tiếp qua Zalo <span aria-hidden="true">↗</span></a>
@@ -589,6 +592,7 @@
   });
   if (get('package')) lines.push('Phương án mong muốn: ' + get('package'));
   if (get('description')) lines.push('Mô tả hạng mục: ' + get('description'));
+  if (get('document_link')) lines.push('Liên kết tải hồ sơ: ' + get('document_link'));
   const request = lines.join('\n');
   const status = form.querySelector('#consult-status');
   const fallback = form.querySelector('#consult-copy-fallback');
@@ -618,26 +622,136 @@
             return form.reportValidity();
         }
 
+
+        async function zipConsultFiles(files) {
+            const crcTable = Uint32Array.from({length: 256}, (_, byte) => {
+                for (let bit = 0; bit < 8; bit++) byte = (byte >>> 1) ^ ((byte & 1) ? 0xedb88320 : 0);
+                return byte;
+            });
+            const body = [];
+            const directory = [];
+            const names = new Set();
+            let offset = 0;
+            for (const file of files) {
+                if (file.size > 0xffffffff) throw new Error('File exceeds ZIP32 limit');
+                const originalName = file.name.replace(/[\\/:*?"<>|\u0000-\u001f]/g, '_');
+                let name = originalName;
+                for (let index = 2; names.has(name.toLowerCase()); index++) name = index + '-' + originalName;
+                names.add(name.toLowerCase());
+                const nameBytes = new TextEncoder().encode(name);
+                let crc = 0xffffffff;
+                const checksum = new TransformStream({
+                    transform(chunk, controller) {
+                        for (const byte of chunk) crc = (crc >>> 8) ^ crcTable[(crc ^ byte) & 255];
+                        controller.enqueue(chunk);
+                    }
+                });
+                const stream = file.stream().pipeThrough(checksum).pipeThrough(new CompressionStream('deflate-raw'));
+                const compressed = await new Response(stream).blob();
+                const data = compressed.size < file.size ? compressed : file;
+                const method = data === compressed ? 8 : 0;
+
+                // ZIP stores each file header followed by its data, then a central directory.
+                const local = new DataView(new ArrayBuffer(30));
+                local.setUint32(0, 0x04034b50, true);
+                local.setUint16(4, 20, true);
+                local.setUint16(6, 0x0800, true); // UTF-8 filenames
+                local.setUint16(8, method, true);
+                local.setUint16(12, 33, true); // 1980-01-01
+                local.setUint32(14, (crc ^ 0xffffffff) >>> 0, true);
+                local.setUint32(18, data.size, true);
+                local.setUint32(22, file.size, true);
+                local.setUint16(26, nameBytes.length, true);
+                const central = new DataView(new ArrayBuffer(46));
+                central.setUint32(0, 0x02014b50, true);
+                central.setUint16(4, 20, true);
+                new Uint8Array(central.buffer).set(new Uint8Array(local.buffer, 4, 26), 6);
+                central.setUint32(42, offset, true);
+                body.push(local.buffer, nameBytes, data);
+                directory.push(central.buffer, nameBytes);
+                offset += local.byteLength + nameBytes.length + data.size;
+            }
+            const end = new DataView(new ArrayBuffer(22));
+            end.setUint32(0, 0x06054b50, true);
+            end.setUint16(8, files.length, true);
+            end.setUint16(10, files.length, true);
+            end.setUint32(12, directory.reduce((size, part) => size + part.byteLength, 0), true);
+            end.setUint32(16, offset, true);
+            return new File([...body, ...directory, end.buffer], 'ho-so-frp.zip', {type: 'application/zip'});
+        }
+
         function setupConsultDelivery(form) {
             const status = form.querySelector('#consult-status');
             const copyButton = form.querySelector('#consult-copy');
             copyButton.addEventListener('click', () => copyConsultRequest(form));
-            form.addEventListener('submit', event => {
-                if (!validateConsultContact(form)) {
+
+            const fileInputs = Array.from(form.querySelectorAll('input[type="file"]'));
+            const sendButton = form.querySelector('.consult-send');
+            const limit = 10000000;
+            let archive = null;
+            let compressing = false;
+
+            function showStatus(vi, en) {
+                status.hidden = false;
+                status.textContent = form.lang === 'vi' ? vi : en;
+            }
+
+            form.addEventListener('formdata', ({formData}) => {
+                if (!archive) return;
+                for (const input of fileInputs) formData.delete(input.name);
+                formData.set('attachment', archive);
+            });
+
+            form.addEventListener('submit', async event => {
+                if (compressing || !validateConsultContact(form)) {
                     event.preventDefault();
                     return;
                 }
-                const files = Array.from(form.querySelectorAll('input[type="file"]')).flatMap(input => Array.from(input.files));
-                if (files.reduce((total, file) => total + file.size, 0) > 10000000) {
-                    event.preventDefault();
-                    status.hidden = false;
-                    status.textContent = form.lang === 'vi' ? 'Tổng dung lượng tệp vượt 10 MB. Hãy chọn tệp nhỏ hơn rồi gửi lại.' :
-                        'Attachments exceed 10 MB in total. Choose smaller files and try again.';
-                    status.scrollIntoView({block:'nearest'});
+                if (archive) return;
+                for (const input of fileInputs) {
+                    const file = input.files[0];
+                    if (file && !input.accept.split(',').some(ext => file.name.toLowerCase().endsWith(ext))) {
+                        event.preventDefault();
+                        showStatus('Hãy chọn tệp đúng định dạng ghi dưới ô đính kèm.', 'Choose a file in one of the formats listed below the attachment field.');
+                        status.scrollIntoView({block: 'nearest'});
+                        return;
+                    }
+                }
+                const files = fileInputs.flatMap(input => Array.from(input.files));
+                if (files.reduce((total, file) => total + file.size, 0) <= limit) return;
+
+                event.preventDefault();
+                compressing = sendButton.disabled = true;
+                form.setAttribute('aria-busy', 'true');
+                showStatus('Đang nén hồ sơ, giữ nguyên chất lượng tệp…', 'Compressing attachments without changing file quality…');
+                try {
+                    const zipped = await zipConsultFiles(files);
+                    const current = fileInputs.flatMap(input => Array.from(input.files));
+                    if (current.length !== files.length || current.some((file, i) => file !== files[i])) {
+                        showStatus('Tệp đã thay đổi. Vui lòng bấm Gửi yêu cầu lần nữa.', 'Attachments changed. Please select Send request again.');
+                        return;
+                    }
+                    if (zipped.size <= limit) archive = zipped;
+                    else showStatus('Hồ sơ vẫn vượt 10 MB sau khi nén. Hãy bỏ chọn tệp và dán liên kết tải vào ô bên trên.', 'The archive still exceeds 10 MB. Remove the attachments and paste a download link in the field above.');
+                } catch {
+                    showStatus('Không thể nén hồ sơ trên thiết bị này. Hãy bỏ chọn tệp và dán liên kết tải vào ô bên trên.', 'This device could not compress the files. Remove the attachments and paste a download link in the field above.');
+                } finally {
+                    compressing = sendButton.disabled = false;
+                    form.removeAttribute('aria-busy');
+                }
+                if (!archive) {
+                    status.scrollIntoView({block: 'nearest'});
+                    return;
+                }
+                try {
+                    showStatus('Đang gửi hồ sơ ZIP…', 'Sending the ZIP archive…');
+                    form.requestSubmit(sendButton);
+                } finally {
+                    archive = null;
                 }
             });
-            for (const input of form.querySelectorAll('input[type="file"]')) {
-                input.addEventListener('change', () => { status.hidden = true; });
+            for (const input of fileInputs) {
+                input.addEventListener('change', () => { if (!compressing) status.hidden = true; });
             }
 
             const translations = new Map([
@@ -661,7 +775,9 @@
                 ['Loại công trình, diện tích (m²), tình trạng nền và thời gian dự kiến', 'Project type, area (m²), substrate condition and expected timing'],
                 ['Đính kèm hồ sơ', 'Attachments'], ['Đính kèm bản vẽ', 'Attach a drawing'], ['Đính kèm hình ảnh', 'Attach a photo'],
                 ['Gửi yêu cầu', 'Send request'], ['Sao chép nội dung', 'Copy request'], ['Gửi trực tiếp qua Zalo', 'Send via Zalo'],
-                ['Tổng dung lượng tệp tối đa 10 MB. FormSubmit chuyển yêu cầu và tệp đến hộp thư tư vấn.', 'Maximum 10 MB in total. FormSubmit delivers your request and files to our inbox.'],
+                ['Tối đa 10 MB sau khi nén. Tệp lớn được nén ZIP tự động, giữ nguyên chất lượng.', 'Maximum 10 MB after compression. Large attachments are compressed into a lossless ZIP.'],
+                ['Liên kết tải hồ sơ', 'Download link'],
+                ['Hồ sơ lớn có thể gửi bằng liên kết Google Drive hoặc OneDrive. Hãy cấp quyền tải cho hộp thư tư vấn.', 'For large files, paste a Google Drive or OneDrive link and give our inbox download access.'],
                 ['Nội dung yêu cầu để sao chép', 'Request text to copy']
             ]);
             const panel = form.closest('.consult-panel');
