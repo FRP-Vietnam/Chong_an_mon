@@ -314,7 +314,10 @@
       <h2>Yêu cầu tư vấn &amp; báo giá</h2>
       <p>Cho chúng tôi biết hạng mục và điều kiện vận hành để tư vấn phương án phù hợp.</p>
     </div>
-    <form id="consult-request" onsubmit="handleFormSubmit(event)" lang="vi">
+    <form id="consult-request" method="post" action="https://formsubmit.co/giaiphapcompositefrp@gmail.com" enctype="multipart/form-data" lang="vi">
+      <input type="hidden" name="_subject" value="Yêu cầu tư vấn FRP từ website">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
       <fieldset><legend>Thông tin liên hệ</legend>
         <div class="consult-contact">
           <label>Họ tên / Đơn vị *<input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Tên cá nhân hoặc công ty" maxlength="150"></label>
@@ -348,9 +351,10 @@
         </div>
       </fieldset>
       <div class="consult-submit">
-        <button class="consult-send" type="button" disabled title="Gửi trực tuyến chưa được kích hoạt">Gửi yêu cầu</button>
+        <button class="consult-send" type="submit">Gửi yêu cầu</button>
+        <p class="consult-hint">Tổng dung lượng tệp tối đa 10 MB. FormSubmit chuyển yêu cầu và tệp đến hộp thư tư vấn.</p>
         <div class="consult-secondary-row">
-          <button type="submit">Sao chép nội dung</button>
+          <button type="button" id="consult-copy">Sao chép nội dung</button>
           <a href="https://zalo.me/0906952142" target="_blank" rel="noopener noreferrer">Gửi trực tiếp qua Zalo <span aria-hidden="true">↗</span></a>
         </div>
         <p id="consult-status" role="status" hidden></p>
@@ -569,16 +573,10 @@
             document.dispatchEvent(new Event('frp-language'));
         }
 
-        async function handleFormSubmit(event) {
-  event.preventDefault();
-  const form = event.currentTarget;
+        async function copyConsultRequest(form) {
   const values = new FormData(form);
   const get = name => String(values.get(name) ?? '').trim();
-  const name = form.elements.namedItem('name');
-  const phone = form.elements.namedItem('phone');
-  name.value = get('name');
-  phone.setCustomValidity(get('phone') || get('email') ? '' : 'Vui lòng nhập số điện thoại hoặc email.');
-  if (!form.reportValidity()) return;
+  if (!validateConsultContact(form)) return;
   const lines = ['Yêu cầu tư vấn & báo giá FRP', 'Họ tên / Đơn vị: ' + get('name')];
   if (get('phone')) lines.push('Điện thoại / Zalo: ' + get('phone'));
   if (get('email')) lines.push('Email: ' + get('email'));
@@ -598,9 +596,9 @@
   fallback.hidden = true;
   try {
     await navigator.clipboard.writeText(request);
-    status.textContent = 'Đã sao chép nội dung. Nếu gửi qua Zalo, hãy dán nội dung và đính kèm tệp trong cuộc trò chuyện.';
+    status.textContent = form.lang === 'vi' ? 'Đã sao chép nội dung. Nếu gửi qua Zalo, hãy dán nội dung và đính kèm tệp trong cuộc trò chuyện.' : 'Copied. To send via Zalo, paste the text and attach your files in the chat.';
   } catch {
-    status.textContent = 'Sao chép nội dung trong ô bên dưới.';
+    status.textContent = form.lang === 'vi' ? 'Sao chép nội dung trong ô bên dưới.' : 'Copy the text below.';
     fallback.value = request;
     fallback.hidden = false;
     fallback.focus();
@@ -608,7 +606,94 @@
   }
 }
 
+
+        function validateConsultContact(form) {
+            const name = form.elements.namedItem('name');
+            const phone = form.elements.namedItem('phone');
+            const email = form.elements.namedItem('email');
+            name.value = name.value.trim();
+            phone.value = phone.value.trim();
+            phone.setCustomValidity(phone.value || email.value.trim() ? '' :
+                form.lang === 'vi' ? 'Vui lòng nhập số điện thoại hoặc email.' : 'Please enter a phone number or email address.');
+            return form.reportValidity();
+        }
+
+        function setupConsultDelivery(form) {
+            const status = form.querySelector('#consult-status');
+            const copyButton = form.querySelector('#consult-copy');
+            copyButton.addEventListener('click', () => copyConsultRequest(form));
+            form.addEventListener('submit', event => {
+                if (!validateConsultContact(form)) {
+                    event.preventDefault();
+                    return;
+                }
+                const files = Array.from(form.querySelectorAll('input[type="file"]')).flatMap(input => Array.from(input.files));
+                if (files.reduce((total, file) => total + file.size, 0) > 10000000) {
+                    event.preventDefault();
+                    status.hidden = false;
+                    status.textContent = form.lang === 'vi' ? 'Tổng dung lượng tệp vượt 10 MB. Hãy chọn tệp nhỏ hơn rồi gửi lại.' :
+                        'Attachments exceed 10 MB in total. Choose smaller files and try again.';
+                    status.scrollIntoView({block:'nearest'});
+                }
+            });
+            for (const input of form.querySelectorAll('input[type="file"]')) {
+                input.addEventListener('change', () => { status.hidden = true; });
+            }
+
+            const translations = new Map([
+                ['Yêu cầu tư vấn & báo giá', 'Request a consultation & quote'],
+                ['Cho chúng tôi biết hạng mục và điều kiện vận hành để tư vấn phương án phù hợp.', 'Tell us about your project and operating conditions.'],
+                ['Thông tin liên hệ', 'Contact details'], ['Họ tên / Đơn vị *', 'Name / Company *'],
+                ['Tên cá nhân hoặc công ty', 'Your name or company'], ['Điện thoại / Zalo', 'Phone / Zalo'],
+                ['Ví dụ +84 906 952 142', 'Include country code'], ['(tùy chọn)', '(optional)'],
+                ['ten@congty.vn', 'name@company.com'],
+                ['Điền số điện thoại hoặc email để chúng tôi phản hồi.', 'Enter a phone number or email address so we can reply.'],
+                ['Hóa chất tiếp xúc', 'Chemical exposure'],
+                ['Điền các dòng phù hợp. Nếu chưa rõ nồng độ hoặc nhiệt độ, có thể để trống.', 'Fill in the relevant rows. Leave unknown concentrations or temperatures blank.'],
+                ['Hóa chất chính', 'Primary chemical'], ['Hóa chất phối hợp 1', 'Additional chemical 1'],
+                ['Hóa chất phối hợp 2', 'Additional chemical 2'], ['Biến thể / Phụ phẩm', 'Variant / By-product'],
+                ['Nồng độ (% khối lượng)', 'Concentration (wt%)'], ['Nhiệt độ (°C)', 'Temperature (°C)'],
+                ['Ví dụ 50', 'e.g. 50'], ['Ví dụ 40', 'e.g. 40'], ['Tên hoặc công thức', 'Name or formula'],
+                ['Thông tin công trình', 'Project details'], ['Phương án mong muốn', 'Preferred option'],
+                ['Cần tư vấn lựa chọn', 'Please recommend an option'], ['Gói ngân sách (12–18 tháng)', 'Budget option (12–18 months)'],
+                ['Gói tiêu chuẩn (5 năm)', 'Standard option (5 years)'], ['Gói cao cấp (10 năm)', 'Premium option (10 years)'],
+                ['Mô tả hạng mục', 'Project description'],
+                ['Loại công trình, diện tích (m²), tình trạng nền và thời gian dự kiến', 'Project type, area (m²), substrate condition and expected timing'],
+                ['Đính kèm hồ sơ', 'Attachments'], ['Đính kèm bản vẽ', 'Attach a drawing'], ['Đính kèm hình ảnh', 'Attach a photo'],
+                ['Gửi yêu cầu', 'Send request'], ['Sao chép nội dung', 'Copy request'], ['Gửi trực tiếp qua Zalo', 'Send via Zalo'],
+                ['Tổng dung lượng tệp tối đa 10 MB. FormSubmit chuyển yêu cầu và tệp đến hộp thư tư vấn.', 'Maximum 10 MB in total. FormSubmit delivers your request and files to our inbox.'],
+                ['Nội dung yêu cầu để sao chép', 'Request text to copy']
+            ]);
+            const panel = form.closest('.consult-panel');
+            const localizedNodes = [];
+            const walker = document.createTreeWalker(panel, NodeFilter.SHOW_TEXT);
+            for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+                const original = node.nodeValue;
+                const key = original.trim();
+                if (translations.has(key)) localizedNodes.push([node, original, original.replace(key, translations.get(key))]);
+            }
+            const localizedAttrs = [];
+            for (const element of panel.querySelectorAll('[placeholder], [aria-label]')) {
+                for (const attr of ['placeholder', 'aria-label']) {
+                    const original = element.getAttribute(attr);
+                    if (translations.has(original)) localizedAttrs.push([element, attr, original, translations.get(original)]);
+                }
+            }
+            const updateLanguage = () => {
+                const vi = document.documentElement.lang === 'vi';
+                form.lang = panel.lang = vi ? 'vi' : 'en';
+                for (const [node, original, english] of localizedNodes) node.nodeValue = vi ? original : english;
+                for (const [element, attr, original, english] of localizedAttrs) element.setAttribute(attr, vi ? original : english);
+                form.elements.namedItem('phone').setCustomValidity('');
+                status.hidden = true;
+                form.querySelector('#consult-copy-fallback').hidden = true;
+            };
+            document.addEventListener('frp-language', updateLanguage);
+            updateLanguage();
+        }
+
         const consultContact = document.getElementById('consult-request');
+        setupConsultDelivery(consultContact);
         for (const key of ['phone', 'email']) {
             consultContact.elements.namedItem(key).addEventListener('input', () => consultContact.elements.namedItem('phone').setCustomValidity(''));
         }
