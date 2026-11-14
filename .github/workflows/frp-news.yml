@@ -1490,9 +1490,146 @@ jobs:
         run: node daily-news.mjs
       - name: Build static pages
         run: node build-news.mjs
+      - name: Prepare localized pages
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_NEWS_MODEL: ${{ vars.OPENAI_NEWS_MODEL }}
+          FRP_HOME_HTML: index.html
+        run: |
+          npm install --prefix "${RUNNER_TEMP}/frp-localize" --no-audit --no-fund parse5@7.3.0
+          cat > "${RUNNER_TEMP}/frp-localize/localize-news.mjs" <<'FRP_LOCALIZE'
+          
+          import fs from 'node:fs/promises';
+          import {createHash} from 'node:crypto';
+          import {parse} from 'parse5';
+          
+          const languages={vi:'Tiếng Việt',en:'English',ja:'日本語',ko:'한국어',zh:'简体中文'};
+          const site='https://giaiphapcompositefrp.com';
+          const directory='tin-tuc';
+          const cacheFile='news-translations.json';
+          const cache=JSON.parse(await fs.readFile(cacheFile,'utf8').catch(error=>{
+            if(error.code!=='ENOENT')throw error;
+            return '{}';
+          }));
+          const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+          const digest=text=>createHash('sha256').update(text).digest('hex');
+          const pages=[];
+          const siteHome=process.env.FRP_HOME_HTML;
+          const names=(await fs.readdir(directory)).filter(x=>x.endsWith('.html')).sort();
+          if(siteHome) names.unshift('::home');
+          for(const name of names){
+            const html=await fs.readFile(name==='::home'?siteHome:directory+'/'+name,'utf8');
+            const units=[];
+            function walk(node){
+              const attrs=Object.fromEntries((node.attrs??[]).map(x=>[x.name,x.value]));
+              if(['script','style','noscript'].includes(node.tagName)||attrs.lang==='en'||node.tagName==='select'&&attrs.id==='langSelect')return;
+              const location=node.sourceCodeLocation;
+              if(node.nodeName==='#text'&&location&&/\p{L}/u.test(node.value)){
+                const text=node.value.trim();
+                units.push({start:location.startOffset,end:location.endOffset,text,kind:'text'});
+              }
+              for(const [name,value] of Object.entries(attrs)){
+                const span=location?.attrs?.[name];
+                if(!span||!value||!(['aria-label','alt','placeholder','title'].includes(name)||name==='content'&&['description','og:title','og:description'].includes(attrs.name??attrs.property)))continue;
+                units.push({start:span.startOffset,end:span.endOffset,text:value,kind:name});
+              }
+              for(const child of node.childNodes??[])walk(child);
+              if(node.content)walk(node.content);
+            }
+            walk(parse(html,{sourceCodeLocationInfo:true}));
+            if(name==='::home'){
+              for(const match of html.matchAll(/(?:showStatus\(|consultLocalized\(form\.lang,\s*)'([^'\n]+)'\s*,\s*'[^'\n]+'/g))units.push({text:match[1]});
+            }
+            pages.push({name,html,units});
+          }
+          const texts=[...new Set(pages.flatMap(page=>page.units.map(unit=>unit.text)))];
+          const key=process.env.OPENAI_API_KEY;
+          async function translate(lang,texts){
+            const response=await fetch('https://api.openai.com/v1/responses',{
+              method:'POST',
+              headers:{Authorization:'Bearer '+key,'Content-Type':'application/json'},
+              body:JSON.stringify({
+                model:process.env.OPENAI_NEWS_MODEL||'gpt-5-mini',
+                input:JSON.stringify({language:languages[lang],strings:texts}),
+                instructions:'Translate each Vietnamese string to the requested language in the same order. Preserve all facts, qualifications, measurements, values, inequality signs, formulas, material grades, units and proper names. Do not summarize or add any claim. Leave strings already in the requested language unchanged.',
+                text:{format:{type:'json_schema',name:'translations',strict:true,schema:{
+                  type:'object',properties:{strings:{type:'array',items:{type:'string'}}},required:['strings'],additionalProperties:false
+                }}}
+              }),
+              signal:AbortSignal.timeout(90000)
+            });
+            if(!response.ok)throw Error('Translation HTTP '+response.status);
+            const result=await response.json();
+            const output=result.output?.flatMap(x=>x.content??[]).filter(x=>x.type==='output_text').map(x=>x.text).join('');
+            const values=JSON.parse(output??'').strings;
+            if(!Array.isArray(values)||values.length!==texts.length||values.some(x=>typeof x!=='string'||!x.trim()))throw Error('Incomplete translation');
+            return values;
+          }
+          await Promise.all(Object.keys(languages).filter(x=>x!=='vi').map(async lang=>{
+            const data=cache[lang]??={};
+            if(!key)return;
+            const missing=texts.filter(text=>!data[digest(text)]);
+            for(let i=0;i<missing.length;i+=32){
+              const batch=missing.slice(i,i+32);
+              try{
+                const values=await translate(lang,batch);
+                batch.forEach((text,index)=>{data[digest(text)]=values[index];});
+              }catch(error){
+                console.warn(lang+': '+error.message+'; remaining pages use their original Vietnamese until translations are available.');
+                break;
+              }
+            }
+          }));
+          await fs.writeFile(cacheFile,JSON.stringify(cache,null,2)+'\n');
+          
+          const pathFor=(name,lang)=>'/tin-tuc/'+(lang==='vi'?'':lang+'/')+(name==='index.html'?'':name);
+          const mobileCss='<style>.bar{flex-wrap:wrap;padding-block:.35rem}.news-languages{display:flex;gap:.45rem;flex-wrap:wrap;margin:.45rem 0 .85rem}.news-languages a{display:inline-flex;align-items:center;min-height:40px;padding:.25rem .65rem;border:1px solid #c4d2d7;border-radius:20px}.news-languages [aria-current]{background:#e6f4ef;color:#145b50;font-weight:700}.shell :is(h1,h2,p,li){overflow-wrap:anywhere}.article-head h1,.intro h1{line-height:1.32}@media(max-width:420px){.bar nav{flex-wrap:wrap}.news-languages a{font-size:.84rem}}</style>';
+          if(siteHome){
+            const home=pages.shift();
+            const source=[...new Set(home.units.map(unit=>unit.text))];
+            const mapping=Object.fromEntries(Object.keys(languages).filter(x=>x!=='vi').map(lang=>[lang,
+              Object.fromEntries(source.flatMap(text=>cache[lang]?.[digest(text)]?[[text,cache[lang][digest(text)]]]:[]))
+            ]));
+            await fs.writeFile('site-translations.js','window.frpSiteTranslations='+JSON.stringify(mapping)+';'+String.fromCharCode(10));
+          }
+          for(const page of pages){
+            const ready=Object.keys(languages).filter(lang=>lang==='vi'||page.units.every(unit=>cache[lang]?.[digest(unit.text)]));
+            const paths=Object.fromEntries(ready.map(lang=>[lang,pathFor(page.name,lang)]));
+            for(const lang of ready){
+              let html=page.html;
+              if(lang!=='vi'){
+                for(const unit of [...page.units].sort((a,b)=>b.start-a.start)){
+                  const value=escape(cache[lang][digest(unit.text)]);
+                  const original=html.slice(unit.start,unit.end);
+                  const translated=unit.kind==='text'?original.match(/^\s*/)[0]+value+original.match(/\s*$/)[0]:unit.kind+'="'+value+'"';
+                  html=html.slice(0,unit.start)+translated+html.slice(unit.end);
+                }
+                html=html.replace('<html lang="vi">','<html lang="'+lang+'">')
+                  .replace(/(<link rel="canonical" href=")[^"]+/,(_,prefix)=>prefix+site+paths[lang])
+                  .replace(/(<meta property="og:url" content=")[^"]+/,(_,prefix)=>prefix+site+paths[lang]);
+              }
+              html=html.replace(/href="(\/(?:tin-tuc\/[^"#]*)?)"/g,(_,href)=>{
+                if(href==='/')return 'href="/?lang='+lang+'"';
+                const target=pages.find(other=>pathFor(other.name,'vi')===href);
+                const available=target&&(lang==='vi'||target.units.every(unit=>cache[lang]?.[digest(unit.text)]));
+                return 'href="'+(available?pathFor(target.name,lang):href+'?lang='+lang)+'"';
+              });
+              const menu='<div class="shell"><div class="news-languages">'+ready.map(code=>'<a href="'+paths[code]+'" lang="'+code+'" hreflang="'+code+'"'+(code===lang?' aria-current="page"':'')+'>'+languages[code]+'</a>').join('')+'</div></div>';
+              const alternate=ready.map(code=>'<link rel="alternate" hreflang="'+code+'" href="'+site+paths[code]+'">').join('');
+              const routes=JSON.stringify(paths);
+              const sync='<script>(()=>{const routes='+routes+';const url=new URL(location.href);const requested=url.searchParams.get("lang");if(requested&&Object.hasOwn(routes,requested)&&location.pathname!==routes[requested]){location.replace(routes[requested]+location.hash);return;}try{if(!requested||Object.hasOwn(routes,requested))localStorage.setItem("frp_lang",document.documentElement.lang);}catch{}})();</scr'+'ipt>';
+              html=html.replace('</head>',mobileCss+alternate+sync+'</head>').replace('</header><main','</header>'+menu+'<main');
+              const output=lang==='vi'?directory:directory+'/'+lang;
+              await fs.mkdir(output,{recursive:true});
+              await fs.writeFile(output+'/'+page.name,html);
+            }
+          }
+          console.log('News localization complete for '+pages.length+' pages.');
+          FRP_LOCALIZE
+          node "${RUNNER_TEMP}/frp-localize/localize-news.mjs"
       - name: Save article history
         run: |
-          git add news-data.json
+          git add news-data.json news-translations.json
           if ! git diff --cached --quiet; then
             git -c user.name='FRP News' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish sourced FRP article'
             git push
@@ -1505,6 +1642,8 @@ jobs:
           rm -rf /tmp/frp-site/.github
           rm -f /tmp/frp-site/{news-data.json,daily-news.mjs,build-news.mjs,HUONG-DAN-TIN-TUC.md}
           cp -R tin-tuc /tmp/frp-site/
+          cp site-translations.js /tmp/frp-site/
+          rm -f /tmp/frp-site/news-translations.json
           cp sitemap-tin-tuc.xml /tmp/frp-site/
           cat > /tmp/frp-news-nav.cjs <<'FRP_END'
           const fs=require('node:fs');const base='/tmp/frp-site/';
