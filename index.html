@@ -11,7 +11,7 @@
     <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
-        tailwind.config = {
+        if (window.tailwind) window.tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -169,6 +169,29 @@
 @media(max-width:640px){.consult-attachments,.consult-contact{grid-template-columns:1fr}.consult-chem-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:.6rem;background:#0c2543;border-radius:8px}.consult-chem-row label:first-child{grid-column:1/-1}}
 </style>
 <style>html:lang(vi) #frp-hero-title{line-height:1.45}</style>
+<style id="frp-responsive">
+body > header img{display:block;width:auto;height:48px;max-width:min(36vw,220px);object-fit:contain}
+body > header select{max-width:42vw;min-height:32px}
+body > header > div:first-child > div:first-child{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+body > header > div:first-child > div:first-child > div{min-width:0}
+.matrix-mobile-menu nav a{display:block;padding:.55rem .15rem}
+.matrix-mobile-menu[open] nav{max-height:52vh;overflow:auto;overscroll-behavior:contain}
+.consult-panel :is(input,select,textarea){min-width:0}
+#embedded-page :is(h1,h2,p,li){overflow-wrap:anywhere}
+@media(min-width:640px){body > header img{height:56px}}
+@media(max-width:1023px){
+body > header > div:first-child > div:first-child{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+body > header > div:first-child > div:first-child > nav{display:none}
+}
+@media(max-width:640px){
+body > header > div:first-child{padding-inline:1rem}
+body > header a[href="#quote-form"]:not(.matrix-mobile-menu a){display:none}
+body > header img{height:42px}
+#frp-hero-title{font-size:clamp(1.6rem,6.2vw,2.3rem);overflow-wrap:anywhere}
+section:has(> div > #frp-hero-title){padding-block:3.25rem}
+}
+</style>
+<script src="/site-translations.js"></script>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -678,6 +701,12 @@
             return new File([...body, ...directory, end.buffer], 'ho-so-frp.zip', {type: 'application/zip'});
         }
 
+        function consultLocalized(language, vietnamese, english) {
+            if (language === "vi") return vietnamese;
+            const dictionary = window.frpSiteTranslations?.[language];
+            return dictionary && Object.hasOwn(dictionary, vietnamese) ? dictionary[vietnamese] : english;
+        }
+
         function setupConsultDelivery(form) {
             const status = form.querySelector('#consult-status');
             const copyButton = form.querySelector('#consult-copy');
@@ -695,7 +724,7 @@
 
             function showStatus(vi, en) {
                 status.hidden = false;
-                status.textContent = form.lang === 'vi' ? vi : en;
+                status.textContent = consultLocalized(form.lang, vi, en);
             }
 
             function finish() {
@@ -830,10 +859,9 @@
                 }
             }
             const updateLanguage = () => {
-                const vi = document.documentElement.lang === 'vi';
-                form.lang = panel.lang = vi ? 'vi' : 'en';
-                for (const [node, original, english] of localizedNodes) node.nodeValue = vi ? original : english;
-                for (const [element, attr, original, english] of localizedAttrs) element.setAttribute(attr, vi ? original : english);
+                form.lang = panel.lang = document.documentElement.lang;
+                for (const [node, original, english] of localizedNodes) node.nodeValue = form.lang === "vi" ? original : original.replace(original.trim(), consultLocalized(form.lang, original.trim(), english.trim()));
+                for (const [element, attr, original, english] of localizedAttrs) element.setAttribute(attr, consultLocalized(form.lang, original, english));
                 form.elements.namedItem('phone').setCustomValidity('');
                 status.hidden = true;
                 form.querySelector('#consult-copy-fallback').hidden = true;
@@ -1560,6 +1588,71 @@ window.addEventListener('hashchange',openEmbeddedPage);
 document.addEventListener('frp-language',()=>{if(!location.hash.startsWith('#/ket-qua-tra-cuu/'))return;const y=window.scrollY;openEmbeddedPage();window.scrollTo(0,y);});
 openEmbeddedPage();
 
+</script>
+<script>
+(() => {
+  const dictionary = window.frpSiteTranslations;
+  if (!dictionary) return;
+  const sources = new WeakMap();
+  const skip = 'script,style,noscript,textarea,body [lang="en"],#langSelect,[data-i18n],[data-matrix-copy],[data-word4],.consult-panel';
+  function localize() {
+    const terms = dictionary[document.documentElement.lang] || {};
+    function apply(object,key,current,set) {
+      const entries = sources.get(object) || {};
+      let entry = entries[key];
+      if (!entry || current !== entry.last) entry = {original:current,last:current};
+      entries[key] = entry;
+      const word = entry.original.trim();
+      const translated = Object.hasOwn(terms,word) ? entry.original.replace(word,terms[word]) : entry.original;
+      if (current !== translated) set(translated);
+      entry.last = translated;
+      sources.set(object,entries);
+    }
+    const tree = document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    for (let node = tree.nextNode();node;node=tree.nextNode()) {
+      if (!node.parentElement?.closest(skip) && node.nodeValue.trim()) apply(node,'text',node.nodeValue,value=>{node.nodeValue=value;});
+    }
+    for (const el of document.body.querySelectorAll('[aria-label],[alt],[placeholder],[title]')) {
+      if (el.closest(skip)) continue;
+      for (const key of ['aria-label','alt','placeholder','title']) {
+        if (el.hasAttribute(key) && !el.hasAttribute('data-matrix-placeholder') && !el.hasAttribute('data-word4-placeholder')) apply(el,key,el.getAttribute(key),value=>el.setAttribute(key,value));
+      }
+    }
+  }
+  document.addEventListener('frp-language',localize);
+  window.addEventListener('hashchange',localize);
+  localize();
+})();
+</script>
+<script>
+(() => {
+  const menu = document.querySelector('.matrix-mobile-menu');
+  menu?.addEventListener('click', event => {
+    if (event.target.closest('a')) menu.open = false;
+  });
+  const select = document.getElementById('langSelect');
+  const supported = ['vi','en','ja','ko','zh'];
+  const url = new URL(location.href);
+  const language = url.searchParams.get('lang');
+  if (supported.includes(language)) {
+    try { localStorage.setItem('frp_lang', language); } catch {}
+    select.value = language;
+    changeLanguage(language);
+  }
+  select.addEventListener('change', () => {
+    const current = new URL(location.href);
+    current.searchParams.set('lang', select.value);
+    history.replaceState(history.state, '', current);
+  });
+  document.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const destination = new URL(link.href);
+    if (destination.origin !== location.origin || !destination.pathname.startsWith('/tin-tuc/')) return;
+    destination.searchParams.set('lang', select.value);
+    link.href = destination.href;
+  });
+})();
 </script>
 </body>
 </html>
