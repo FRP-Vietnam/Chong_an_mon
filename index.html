@@ -585,7 +585,9 @@ window.frpSiteTranslations = {
     "Dung môi hữu cơ công nghiệp": "Industrial organic solvents",
     "Nhiệt điện và khử lưu huỳnh": "Power generation and flue gas desulfurization",
     "Phân bón và hóa chất công nghiệp": "Fertilizer and chemical plants",
-    "Thủy sản, nước mắm và nước muối": "Seafood, fish sauce and brine"
+    "Thủy sản, nước mắm và nước muối": "Seafood, fish sauce and brine",
+    "542/14 Nguyễn Ảnh Thủ, P. Tân Thới Hiệp, Tp.HCM": "542/14 Nguyễn Ảnh Thủ, Tân Thới Hiệp Ward, Ho Chi Minh City",
+    "Mã số thuế: 0315533869": "Tax ID: 0315533869"
   },
   "ja": {
     "Cách tra cứu": "照合方法",
@@ -973,7 +975,9 @@ window.frpSiteTranslations = {
     "Dung môi hữu cơ công nghiệp": "工業用有機溶剤",
     "Nhiệt điện và khử lưu huỳnh": "火力発電と排煙脱硫",
     "Phân bón và hóa chất công nghiệp": "肥料工場・化学工場",
-    "Thủy sản, nước mắm và nước muối": "水産加工・魚醤・塩水"
+    "Thủy sản, nước mắm và nước muối": "水産加工・魚醤・塩水",
+    "542/14 Nguyễn Ảnh Thủ, P. Tân Thới Hiệp, Tp.HCM": "ホーチミン市 Tân Thới Hiệp区 Nguyễn Ảnh Thủ通り 542/14",
+    "Mã số thuế: 0315533869": "税務登録番号: 0315533869"
   },
   "ko": {
     "Cách tra cứu": "조회 방식",
@@ -1361,7 +1365,9 @@ window.frpSiteTranslations = {
     "Dung môi hữu cơ công nghiệp": "산업용 유기 용제",
     "Nhiệt điện và khử lưu huỳnh": "화력 발전 및 배연 탈황",
     "Phân bón và hóa chất công nghiệp": "비료 및 화학 공장",
-    "Thủy sản, nước mắm và nước muối": "수산 가공, 액젓 및 염수"
+    "Thủy sản, nước mắm và nước muối": "수산 가공, 액젓 및 염수",
+    "542/14 Nguyễn Ảnh Thủ, P. Tân Thới Hiệp, Tp.HCM": "호찌민시 Tân Thới Hiệp동 Nguyễn Ảnh Thủ 거리 542/14",
+    "Mã số thuế: 0315533869": "세금 등록번호: 0315533869"
   },
   "zh": {
     "Cách tra cứu": "查询方式",
@@ -1749,7 +1755,9 @@ window.frpSiteTranslations = {
     "Dung môi hữu cơ công nghiệp": "工业有机溶剂",
     "Nhiệt điện và khử lưu huỳnh": "火力发电与烟气脱硫",
     "Phân bón và hóa chất công nghiệp": "化肥厂与化工厂",
-    "Thủy sản, nước mắm và nước muối": "水产加工、鱼露与盐水"
+    "Thủy sản, nước mắm và nước muối": "水产加工、鱼露与盐水",
+    "542/14 Nguyễn Ảnh Thủ, P. Tân Thới Hiệp, Tp.HCM": "胡志明市 Tân Thới Hiệp 坊 Nguyễn Ảnh Thủ 路 542/14",
+    "Mã số thuế: 0315533869": "税号: 0315533869"
   }
 };
 window.frpLocalize = (original, english = original, locale = document.documentElement.lang) => {
@@ -3485,6 +3493,10 @@ window.FRPHangMuc = (() => {
   return { localize };
 })();
 </script>
+<style id="frp-company-style">
+.frp-company-info{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem .85rem;margin:.9rem auto 0;max-width:44rem;color:#94a3b8;font-size:.75rem;line-height:1.6;overflow-wrap:anywhere}
+@media(max-width:540px){.frp-company-info{flex-direction:column;align-items:center}}
+</style>
 </head>
 <body class="bg-navy-900 text-slate-100 antialiased min-h-screen flex flex-col justify-between">
 
@@ -3832,13 +3844,7 @@ window.FRPHangMuc = (() => {
 </div></a>
 </div></section>
 </section>
-<footer class="bg-navy-950 border-t border-white/10 text-slate-400 text-xs py-10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="font-bold text-white mb-2">COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK</p>
-            <p class="mb-4" data-i18n="footer_sub">Giải Pháp Chống Thấm - Chống Ăn Mòn Công Nghiệp Tại Việt Nam</p>
-            <p class="text-slate-500"><span class="frp-contact-item">Email: giaiphapcompositefrp@gmail.com</span><span class="frp-contact-divider"> | </span><span class="frp-contact-item">Hotline/Zalo: 0906 952 142</span></p>
-        </div>
-    </footer>
+
 
     <!-- SCRIPT ĐA NGÔN NGỮ CHUẨN XÁC 100% -->
     <script>
@@ -4330,6 +4336,18 @@ window.FRPHangMuc = (() => {
         });
     </script>
     <section id="embedded-page" hidden></section>
+<footer id="site-footer" class="bg-navy-950 border-t border-white/10 text-slate-400 text-xs py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-bold text-white mb-2">COMPOSITE FRP SOLUTIONS - VIETNAM NETWORK</p>
+            <p class="mb-4" data-i18n="footer_sub">Giải Pháp Chống Thấm - Chống Ăn Mòn Công Nghiệp Tại Việt Nam</p>
+            <p class="text-slate-500"><span class="frp-contact-item">Email: giaiphapcompositefrp@gmail.com</span><span class="frp-contact-divider"> | </span><span class="frp-contact-item">Hotline/Zalo: 0906 952 142</span></p>
+            <small class="frp-company-info" id="frp-company-info">
+                <span lang="vi">CÔNG TY TNHH SX TM DV TiTi</span>
+                <span>542/14 Nguyễn Ảnh Thủ, P. Tân Thới Hiệp, Tp.HCM</span>
+                <span>Mã số thuế: 0315533869</span>
+            </small>
+        </div>
+    </footer>
 <template id="page-be-axit-dam-dac">
 <main class="hm hm-detail" data-hm-view="be-axit-dam-dac">
 <nav aria-label="Đường dẫn hạng mục" data-hm-aria="navigation"><a href="#/" data-hm-copy="home">Trang chủ</a> <span aria-hidden="true">/</span> <a href="#/ung-dung" data-hm-copy="breadcrumb">Hạng mục</a></nav>
@@ -6056,7 +6074,7 @@ field.addEventListener('input', () => {
 
 }
 const subpage = document.getElementById('embedded-page');
-const homeSections = [...document.body.children].filter(node => !['SCRIPT','STYLE','TEMPLATE','NOSCRIPT','HEADER'].includes(node.tagName) && node !== subpage);
+const homeSections = [...document.body.children].filter(node => !['SCRIPT','STYLE','TEMPLATE','NOSCRIPT','HEADER'].includes(node.tagName) && node !== subpage && node.id !== 'site-footer');
 const defaultTitle = document.title;
 
 const quickSiteHeader=document.querySelector('body > header');
