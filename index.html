@@ -374,29 +374,54 @@ function testPlan(result,brand,grade){
  const matched=supported.filter(r=>target>=r.ranges[0][0]&&target<=r.ranges[0][1]);
  return {status:matched.length?'proposed':'gap',cmax,floor,target,temperature:x.t,service:x.c,refs:matched};
 }
-function render(root,input,basis){
+function openReport(input,basis,mode){
+ location.hash='#/ket-qua-tra-cuu/'+encodeURIComponent(JSON.stringify({input,basis,mode}));
+}
+function render(root,input,basis,mode){
  const vi=(document.documentElement.lang||'vi').startsWith('vi'),t=(a,b)=>vi?a:b;
- const result=evaluate(input,basis);root.replaceChildren();root.classList.add('frp-proposal');
+ root.replaceChildren();root.classList.add('frp-proposal');
  const old=root.parentElement?.querySelector('.report-actions');if(old)old.hidden=true;
  const el=(p,tag,s='',cls='')=>{const e=document.createElement(tag);e.textContent=s;if(cls)e.className=cls;p.append(e);return e;};
  const link=(p,title,url)=>{const a=el(p,'a',title);a.href=url;a.target='_blank';a.rel='noopener';return a;};
  const style=el(root,'style',`#report-page .ra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}#report-page .ra-card{background:#eef4f9;border:1px solid #9ab3c8;border-radius:14px;padding:20px;margin:16px 0;min-width:0}#report-page .ra-card h2{margin-top:0}#report-page p,#report-page li{line-height:1.65;overflow-wrap:anywhere}#report-page .ra-good{color:#176142}#report-page .ra-card a{color:#00618a}#report-page .ra-pill{padding:5px 12px;border-radius:20px;background:#dbeaf4;display:inline-block}#report-page .ra-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}#report-page button{padding:12px 18px;border:1px solid #6e91ab;border-radius:8px;background:#0c4978;color:white;cursor:pointer;font-size:16px}#report-page details{margin:12px 0}#report-page summary{cursor:pointer;font-weight:bold;padding:12px 0}#report-page .ra-row{border-bottom:1px solid #c7d6e2;padding:12px 0}#report-page .ra-row p{margin:8px 0}#report-page .ra-pre{white-space:pre-wrap}#report-page .ra-note{font-size:14px;color:#52677a}@media(max-width:700px){#report-page .ra-grid{grid-template-columns:1fr}#report-page .ra-card{padding:14px}#report-page h1{font-size:27px;line-height:1.4}}@media print{#report-page .ra-actions,#report-page button{display:none}#report-page details>*{display:block!important}#report-page .ra-grid{display:block}#report-page .ra-row{break-inside:avoid}}`);
+ const chooseExposure=input.length>1&&(mode==='choose'||mode==='separate');
  el(root,'h1',t('Tư vấn vật liệu chống ăn mòn','Corrosion-resistant material advice'));
+ function separateButtons(parent){
+  const shortcuts=el(parent,'div','','ra-actions');
+  for(const item of input.filter(x=>x.name?.trim())){
+   const c=finite(item.c)?item.c+'%':t('chưa có nồng độ','concentration missing');
+   const temperature=finite(item.t)?item.t+' °C':t('chưa có nhiệt độ','temperature missing');
+   const button=el(shortcuts,'button',t('Tra riêng ','Check separately: ')+item.name+' · '+c+' · '+temperature);
+   button.type='button';
+   button.onclick=()=>openReport([{...item,role:0}],basis,'single');
+  }
+ }
+ if(chooseExposure){
+  const card=el(root,'section','','ra-card');
+  el(card,'h2',mode==='separate'?t('Chọn điều kiện cần tra','Choose an exposure to check'):t('Các hóa chất được dùng như thế nào?','How are these chemicals used?'));
+  el(card,'p',t('Nếu dùng ở bồn riêng hoặc luân phiên, chọn từng dòng dưới đây. Nếu dùng luân phiên trong cùng bồn, xác nhận vật liệu cho mọi chế độ và cả giai đoạn chuyển đổi.','For separate tanks or alternating exposure, select one condition below. For alternating exposure in one tank, verify all regimes and transitions.'));
+  separateButtons(card);
+  const mix=el(card,'button',t('Tra dưới dạng một hỗn hợp','Check as one mixture'));
+  mix.type='button';
+  mix.onclick=()=>openReport(input,basis,'mixture');
+  const edit=el(root,'button',t('Sửa dữ liệu tra cứu','Edit lookup inputs'));
+  edit.type='button';
+  edit.onclick=()=>{location.hash='#ma-tran';};
+  return;
+ }
+ const result=evaluate(input,basis);
  el(root,'p',result.items.map(x=>`${x.name||t('Chưa có tên','Name missing')} · ${x.c===null?'?':x.c}% · ${x.t===null?'?':x.t} °C`).join(' + '));
  const notes={empty:t('Nhập ít nhất tên một hóa chất để có mã tham khảo.','Enter at least one chemical name for referenced grades.'),invalid:t('Có nồng độ hoặc nhiệt độ không hợp lệ; sửa số liệu để đối chiếu.','Invalid concentration or temperature: correct the input.'),sum:t('Tổng nồng độ vượt 100%.','Total concentration exceeds 100%.'),duplicate:t('Có hóa chất trùng; xác nhận lại thành phần.','Duplicate chemicals: confirm composition.'),temperature:t('Nhiệt độ các thành phần khác nhau: cần xác nhận nhiệt độ chung của hỗn hợp.','Different component temperatures: confirm the mixture temperature.')};
- result.errors.forEach(x=>el(root,'p',notes[x]));
+ const total=result.items.reduce((sum,x)=>sum+(x.c||0),0);
+ result.errors.forEach(x=>el(root,'p',x==='sum'
+  ? t('Tổng nồng độ hỗn hợp là ','The mixture totals ')+Number(total.toFixed(6))+'%. '+notes.sum
+  : notes[x]));
  if(result.errors.length){
   const correction=el(root,'section','','ra-card');
   el(correction,'h2',t('Kiểm tra lại điều kiện vận hành','Check operating conditions'));
   if(result.items.length>1){
    el(correction,'p',t('Mỗi lượt tra cứu nhiều thành phần được tính cho một hỗn hợp. Nếu các hóa chất nằm ở bồn riêng hoặc dùng luân phiên, hãy tra từng chế độ riêng. Với cùng một bồn dùng luân phiên, vật liệu cần được xác nhận cho tất cả các chế độ và cả giai đoạn chuyển đổi.','Multiple entries are evaluated as one mixture. For separate tanks or alternating service, check each condition separately. For alternating service in one tank, confirm the selected system for all conditions and transitions.'));
-   const shortcuts=el(correction,'div','','ra-actions');
-   for(const item of result.items.filter(x=>x.key&&x.c>0&&x.c<=100&&x.t!==null&&x.t>=0)){
-    const single={role:0,name:item.name,c:item.c,t:item.t};
-    const button=el(shortcuts,'button',t('Tra riêng ','Check separately: ')+item.name+' · '+item.c+'% · '+item.t+' °C');
-    button.type='button';
-    button.onclick=()=>{location.hash='#/ket-qua-tra-cuu/'+encodeURIComponent(JSON.stringify({input:[single],basis}));};
-   }
+   separateButtons(correction);
   }
   const edit=el(root,'button',t('Sửa dữ liệu tra cứu','Edit lookup inputs'));
   edit.type='button';
@@ -513,7 +538,36 @@ function render(root,input,basis){
  const print=el(actions,'button',t('In / Lưu PDF','Print / Save PDF'));print.type='button';print.onclick=()=>{const ds=[...root.querySelectorAll('details')],states=ds.map(x=>x.open);ds.forEach(x=>x.open=true);window.addEventListener('afterprint',()=>ds.forEach((x,i)=>x.open=states[i]),{once:true});window.print();};
  const edit=el(actions,'button',t('Bổ sung thông tin','Add information'));edit.type='button';edit.onclick=()=>location.hash='#ma-tran';
 }
-document.addEventListener('DOMContentLoaded',()=>{const form=document.getElementById('matrix-form');if(!form)return;form.noValidate=true;form.querySelectorAll('[required]').forEach(e=>e.required=false);});
+document.addEventListener('DOMContentLoaded',()=>{
+ const form=document.getElementById('matrix-form');
+ if(!form)return;
+ form.noValidate=true;
+ form.querySelectorAll('[required]').forEach(e=>e.required=false);
+ const label=document.createElement('label');
+ const caption=document.createElement('span');
+ const select=document.createElement('select');
+ select.name='exposureMode';
+ label.className='matrix-row';
+ label.id='matrix-exposure-mode';
+ label.style.display='block';
+ select.style.cssText='display:block;width:100%;margin-top:6px;padding:8px;color:#102b46;background:#fff';
+ label.append(caption,select);
+ const choices=[['','Chọn cách tra khi nhập nhiều hóa chất','Choose how to check multiple chemicals'],['separate','Tra riêng từng hóa chất hoặc chế độ','Check each chemical or exposure separately'],['mixture','Tra một hỗn hợp trong cùng bồn','Check one mixture in a tank']];
+ function translateMode(){
+  const vi=(document.documentElement.lang||'vi').startsWith('vi');
+  caption.textContent=vi?'Cách tra cứu':'Lookup mode';
+  const current=select.value;
+  select.replaceChildren(...choices.map(([value,viText,enText])=>new Option(vi?viText:enText,value)));
+  select.value=current;
+ }
+ translateMode();
+ try{
+  const saved=JSON.parse(sessionStorage.getItem('frp-matrix-input'));
+  if(['separate','mixture'].includes(saved?.mode))select.value=saved.mode;
+ }catch{}
+ form.prepend(label);
+ document.addEventListener('frp-language',translateMode);
+});
 global.FRPAdvisor={...base,evaluateStrict:base.evaluate,evaluate,testPlan,render};
 })(window);
 
@@ -1573,7 +1627,7 @@ if (form) {
     const fields=new FormData(form);
     const number=key=>fields.get(key)===''?null:Number(fields.get(key));
     const input=Array.from({length:4},(_,role)=>({role,name:fields.get('chemical'+role).trim(),c:number('conc'+role),t:number('temp'+role)})).filter(x=>x.name||x.c!==null||x.t!==null);
-    const payload={input,basis:fields.has('basis')};
+    const payload={input,basis:fields.has('basis'),mode:fields.get('exposureMode')||'choose'};
     try { sessionStorage.setItem('frp-matrix-input',JSON.stringify(payload)); } catch {}
     location.hash='/ket-qua-tra-cuu/'+encodeURIComponent(JSON.stringify(payload));
   });
@@ -1731,7 +1785,7 @@ function renderReportPage() {
   }
   const input=payload.input.slice(0,4).filter(x=>x&&Number.isInteger(x.role)&&x.role>=0&&x.role<4).map(x=>({role:x.role,name:typeof x.name==='string'?x.name.slice(0,250):'',c:Number.isFinite(x.c)?x.c:NaN,t:Number.isFinite(x.t)?x.t:NaN}));
   input.forEach(x=>{x.key=keyOf(x.name);});
-  return window.FRPAdvisor.render(root,input,payload.basis===true);
+  return window.FRPAdvisor.render(root,input,payload.basis===true,payload.mode);
   const decision=analyzeCase(input,payload.basis===true);
   const options=buildProposal(decision);
   root.classList.add('frp-proposal');
