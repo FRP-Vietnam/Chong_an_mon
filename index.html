@@ -331,6 +331,11 @@ global.FRPAdvisor={evaluate,render,identify,data};
 'use strict';
 const base=global.FRPAdvisor, finite=Number.isFinite;
 const sources={fabrication:'https://polymerinnovationblog.com/wp-content/uploads/2025/03/Ineos-Derekane-Fabrication-Guide.pdf',astm:'https://store.astm.org/c0581-26.html',pvdf:'https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf'};
+const structures={
+ tank:'https://simona-america.com/products/pvdf/',
+ concrete:'https://www.agru.at/en/products/concrete-protection/',
+ dual:'https://www.agru.at/en/products/semi-finished-products/references/agru-pvdf-used-in-acid-tank-construction',
+};
 function evaluate(input,basis){
  const items=input.map(x=>({...x,c:finite(x.c)?x.c:null,t:finite(x.t)?x.t:null,key:base.identify(x.name||'')}));
  const errors=[];
@@ -376,59 +381,121 @@ function render(root,input,basis){
  const el=(p,tag,s='',cls='')=>{const e=document.createElement(tag);e.textContent=s;if(cls)e.className=cls;p.append(e);return e;};
  const link=(p,title,url)=>{const a=el(p,'a',title);a.href=url;a.target='_blank';a.rel='noopener';return a;};
  const style=el(root,'style',`#report-page .ra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}#report-page .ra-card{background:#eef4f9;border:1px solid #9ab3c8;border-radius:14px;padding:20px;margin:16px 0;min-width:0}#report-page .ra-card h2{margin-top:0}#report-page p,#report-page li{line-height:1.65;overflow-wrap:anywhere}#report-page .ra-good{color:#176142}#report-page .ra-card a{color:#00618a}#report-page .ra-pill{padding:5px 12px;border-radius:20px;background:#dbeaf4;display:inline-block}#report-page .ra-actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}#report-page button{padding:12px 18px;border:1px solid #6e91ab;border-radius:8px;background:#0c4978;color:white;cursor:pointer;font-size:16px}#report-page details{margin:12px 0}#report-page summary{cursor:pointer;font-weight:bold;padding:12px 0}#report-page .ra-row{border-bottom:1px solid #c7d6e2;padding:12px 0}#report-page .ra-row p{margin:8px 0}#report-page .ra-pre{white-space:pre-wrap}#report-page .ra-note{font-size:14px;color:#52677a}@media(max-width:700px){#report-page .ra-grid{grid-template-columns:1fr}#report-page .ra-card{padding:14px}#report-page h1{font-size:27px;line-height:1.4}}@media print{#report-page .ra-actions,#report-page button{display:none}#report-page details>*{display:block!important}#report-page .ra-grid{display:block}#report-page .ra-row{break-inside:avoid}}`);
- el(root,'h1',t('Tư vấn lựa chọn nhựa & phương án kiểm chứng','Resin selection & verification proposal'));
- el(root,'p',new Date().toLocaleString(vi?'vi-VN':'en-GB'));
- el(root,'span',result.full&&!result.errors.length?t('Đối chiếu theo điều kiện đã nhập','Screening against entered conditions'):t('Tư vấn sơ bộ theo dữ liệu hiện có','Preliminary advice from available data'),'ra-pill');
+ el(root,'h1',t('Tư vấn vật liệu chống ăn mòn','Corrosion-resistant material advice'));
  el(root,'p',result.items.map(x=>`${x.name||t('Chưa có tên','Name missing')} · ${x.c===null?'?':x.c}% · ${x.t===null?'?':x.t} °C`).join(' + '));
  const notes={empty:t('Nhập ít nhất tên một hóa chất để có mã tham khảo.','Enter at least one chemical name for referenced grades.'),invalid:t('Có nồng độ hoặc nhiệt độ không hợp lệ; sửa số liệu để đối chiếu.','Invalid concentration or temperature: correct the input.'),sum:t('Tổng nồng độ vượt 100%.','Total concentration exceeds 100%.'),duplicate:t('Có hóa chất trùng; xác nhận lại thành phần.','Duplicate chemicals: confirm composition.'),temperature:t('Nhiệt độ các thành phần khác nhau: cần xác nhận nhiệt độ chung của hỗn hợp.','Different component temperatures: confirm the mixture temperature.')};
  result.errors.forEach(x=>el(root,'p',notes[x]));
- if(result.missing.length){el(root,'p',t('Vẫn đưa ra mã tham khảo và các dòng điều kiện tương ứng. Chưa coi những mã này là phù hợp cho toàn bộ điều kiện vận hành.','Reference grades and their published conditions are shown now. They are not yet qualified for the complete operating environment.'));
+ if(result.errors.length){
+  const correction=el(root,'section','','ra-card');
+  el(correction,'h2',t('Kiểm tra lại điều kiện vận hành','Check operating conditions'));
+  if(result.items.length>1){
+   el(correction,'p',t('Mỗi lượt tra cứu nhiều thành phần được tính cho một hỗn hợp. Nếu các hóa chất nằm ở bồn riêng hoặc dùng luân phiên, hãy tra từng chế độ riêng. Với cùng một bồn dùng luân phiên, vật liệu cần được xác nhận cho tất cả các chế độ và cả giai đoạn chuyển đổi.','Multiple entries are evaluated as one mixture. For separate tanks or alternating service, check each condition separately. For alternating service in one tank, confirm the selected system for all conditions and transitions.'));
+   const shortcuts=el(correction,'div','','ra-actions');
+   for(const item of result.items.filter(x=>x.key&&x.c>0&&x.c<=100&&x.t!==null&&x.t>=0)){
+    const single={role:0,name:item.name,c:item.c,t:item.t};
+    const button=el(shortcuts,'button',t('Tra riêng ','Check separately: ')+item.name+' · '+item.c+'% · '+item.t+' °C');
+    button.type='button';
+    button.onclick=()=>{location.hash='#/ket-qua-tra-cuu/'+encodeURIComponent(JSON.stringify({input:[single],basis}));};
+   }
+  }
+  const edit=el(root,'button',t('Sửa dữ liệu tra cứu','Edit lookup inputs'));
+  edit.type='button';
+  edit.onclick=()=>{location.hash='#ma-tran';};
+  return;
+ }
+ if(result.missing.length){
   el(root,'p',t('Cần bổ sung: ','Still needed: ')+result.missing.map(x=>(x.role===undefined?'':`H${x.role+1}: `)+({identity:t('tên/công thức xác định','confirmed identity'),concentration:t('nồng độ','concentration'),temperature:t('nhiệt độ','temperature'),basis:t('xác nhận dung dịch nước và % khối lượng','aqueous phase and wt% confirmation')}[x.field])).join('; '));
  }
+ const anyQualified=result.groups.some(b=>b.exact?.grades.some(g=>g.status==='candidate'));
+ const liners=result.strict.liners.filter(([,limit])=>result.strict.temperature<=limit);
+ const hasLimitedRatings=result.full&&result.groups.every(b=>b.exact?.matches.length&&b.exact.grades.every(g=>['NR','LS','over'].includes(g.status)));
+ if(hasLimitedRatings)el(root,'p',t('Các mã vinyl ester đã đối chiếu của hai hãng không đáp ứng điều kiện ngâm liên tục đã nhập.','The screened vinyl ester grades from both manufacturers do not meet the entered continuous-immersion conditions.'));
  const grid=el(root,'div','','ra-grid');
  for(const b of result.groups){
-  const card=el(grid,'section','','ra-card');el(card,'h2',b.brand+(b.brand==='DERAKANE'?t(' · Ưu tiên',' · Preferred'):t(' · Đối chiếu',' · Comparison')));
+  const card=el(grid,'section','','ra-card');el(card,'h2',b.brand);
   const candidates=b.exact?.grades.filter(g=>g.status==='candidate')||[];
   if(candidates.length){el(card,'p',t('Mã sơ tuyển theo đúng dòng môi trường:','Screened grades for the matched environment:'));for(const g of candidates)el(card,'p',`${b.brand} ${g.grade} · ${t('giới hạn','limit')} ${g.limit} °C`,'ra-good');}
   else if(b.refs.some(r=>r.grades.some(g=>g.possible)))el(card,'p',t('Mã có thể xem xét theo các điều kiện dưới đây:','Grades to consider under the following conditions:'));
-  else el(card,'p',t('Chưa xác định được mã đáp ứng từ các dòng đã nhập. Phân biệt rõ thiếu dữ liệu với vượt giới hạn.','No qualifying grade identified in the loaded rows. Missing evidence is distinct from exceeding a limit.'));
+  else if(!hasLimitedRatings)el(card,'p',t('Chưa xác định được mã phù hợp.','No suitable grade identified.'));
   if(b.individual)el(card,'p',t('CHỈ THAM KHẢO TỪNG CHẤT — không phải kết luận cho hỗn hợp hoặc phụ phẩm đã khai báo.','INDIVIDUAL-CHEMICAL REFERENCES ONLY — not approval of the entered mixture or byproducts.'));
-  const refs=el(card,'details','');refs.open=!candidates.length;el(refs,'summary',t('Mã nhựa, dải nồng độ và nguồn','Grades, concentration ranges and sources'));
+  if(!b.refs.length)continue;
+  const refs=el(card,'details','');refs.open=!result.full;el(refs,'summary',t('Bảng hãng và giới hạn','Manufacturer table and limits'));
   for(const ref of b.refs){const r=ref.row,line=el(refs,'div','','ra-row');el(line,'strong',r.chem.map((k,i)=>`${k.toUpperCase()} ${r.ranges[i][0]>80&&r.ranges[i][0]<80.001?'>80':r.ranges[i][0]===r.ranges[i][1]?r.ranges[i][0]:r.ranges[i][0]+'–'+r.ranges[i][1]}%`).join(' + '));
    for(const g of ref.grades){let label=typeof g.limit==='number'?`${g.limit} °C · `+(g.possible?t('có thể xem xét theo dòng này','potential under this row'):t('vượt nhiệt độ đã nhập','entered temperature exceeds limit')):g.limit==='NR'?t('NR: không khuyến nghị','NR: not recommended'):g.limit==='LS'?t('LS: tiếp xúc hạn chế, không chọn cho ngâm liên tục','LS: limited service, not selected for continuous immersion'):t('chưa có dữ liệu','no data');el(line,'p',`${b.brand} ${g.grade}: ${label}`);}
    link(line,t('Bảng hãng · PDF trang ','Manufacturer table · PDF page ')+r.page,r.source+'#page='+r.page);el(line,'p',vi?r.notes:'Read the footnotes on this exact row, including laminate, veil and cure requirements.');
   }
-  if(!b.refs.length)el(refs,'p',t('Không suy ra giới hạn từ HDT, mã tương đương hoặc dữ liệu từng thành phần.','Limits are not inferred from HDT, equivalent grades or separate component data.'));
  }
- const anyQualified=result.groups.some(b=>b.exact?.grades.some(g=>g.status==='candidate'));
- const build=el(root,'section','','ra-card');el(build,'h2',t('Phương án thi công để trình duyệt','Construction options for engineering review'));
- el(build,'p',anyQualified?t('Áp dụng cho mã sơ tuyển ở trên sau khi duyệt mã thương mại, nền và toàn bộ chú thích hãng.','For the screened grades above, subject to exact grade, substrate and manufacturer footnote approval.'):t('Các hướng dưới đây là khung khảo sát. Chưa chốt vật liệu, số lớp, chiều dày hoặc tỷ lệ pha khi điều kiện chưa đủ cơ sở.','The following are assessment routes, not a material, ply, thickness or mixing specification.'));
- const steps=[
- [t('1. Bọc lót nền bê tông hoặc thép','1. Concrete or steel lining'),t('Khảo sát độ ẩm, cường độ nền, khe nứt, ăn mòn và điều kiện bề mặt. Chuẩn bị nền theo hệ được duyệt; làm miếng thử bám dính và xác nhận primer trước khi phủ toàn diện.','Assess moisture, substrate integrity, cracks and corrosion. Prepare the substrate for the approved system; verify primer and adhesion on a test patch before full application.')],
- [t('2. Laminate kháng hóa chất','2. Chemical-resistant laminate'),t('Chốt lớp tiếp xúc giàu nhựa, veil, lớp cản ăn mòn và lớp chịu lực theo đúng dòng hóa chất. Với HF, không mặc định dùng tissue thủy tinh thông thường. Khử bọt và kiểm tra từng lớp.','Specify the resin-rich contact layer, veil, corrosion barrier and structural backing against the chemical row. Do not default to conventional glass veil for HF. Consolidate and inspect every layer.')],
- [t('3. Phủ vảy thủy tinh hoặc phủ mỏng','3. Glass-flake or thin coating'),t('Chỉ triển khai khi nhà cung cấp có xác nhận riêng cho hệ phủ, độ dày và môi trường này. Bảng laminate không tự chứng minh hiệu quả lớp phủ không sợi hoặc chất độn tự pha.','Use only with separate supplier evidence for the coating system, thickness and environment. Laminate charts do not qualify unreinforced coatings or improvised fillers.')],
- [t('4. Bồn/ống FRP chế tạo mới','4. New FRP vessels or pipes'),t('Thiết kế lớp chịu lực, cổ ống, gối đỡ, mối nối và tải trọng riêng. Giới hạn kháng hóa chất không thay thế tính toán áp suất, chân không hoặc tải cơ học.','Design the structural backing, nozzles, supports, joints and loads separately. Chemical compatibility does not replace pressure, vacuum or structural design.')],
- [t('5. Hệ lót nhiệt dẻo + vỏ FRP','5. Thermoplastic liner + FRP shell'),t('Khi vinyl ester không đủ cơ sở, khảo sát cấp PVDF/PTFE/PFA phù hợp; xác nhận mác, mối hàn, lớp liên kết, độ thấm và nhiệt độ/áp suất. Không chọn chỉ theo tên vật liệu.','Where vinyl ester is not substantiated, assess a suitable PVDF/PTFE/PFA system. Confirm grade, welds, bonding, permeation and temperature/pressure; material name alone is insufficient.')]
- ];for(const [title,body] of steps){el(build,'h3',title);el(build,'p',body);}
- el(build,'p',t('Kiểm soát thi công: hồ sơ lô nhựa và TDS → miếng thử → thi công theo quy trình duyệt → đóng rắn/post-cure → kiểm tra chiều dày, bề mặt và độ đóng rắn → kiểm tra khuyết tật/rò rỉ theo phương pháp phù hợp → bàn giao hồ sơ.','Quality sequence: resin batch/TDS → test patch → approved fabrication → cure/post-cure → thickness, appearance and cure checks → suitable defect/leak testing → documented handover.'));
- link(build,'DERAKANE Fabrication Guide · §6, §8',sources.fabrication);el(build,'p',t('Đối với SWANCOR, dùng quy trình TDS/thi công của đúng mã SWANCOR; không chuyển nguyên tỷ lệ pha và lịch đóng rắn từ DERAKANE.','For SWANCOR use its grade-specific TDS/fabrication procedure; do not transfer DERAKANE mix ratios or cure schedules.'));
- const testing=el(root,'section','','ra-card');el(testing,'h2',t('Thử ngâm 7 ngày · mốc 70% nồng độ','Seven-day immersion · 70% concentration floor'));
- el(testing,'p',t('70% dưới đây là tiêu chí dự án do chủ website yêu cầu, không phải tiêu chí ASTM/hãng. Không mặc định nồng độ cao hơn là khắc nghiệt hơn. Cmax chỉ là nồng độ lớn nhất có dòng số liệu cho mã đang xét tại nhiệt độ đã nhập trong bộ dữ liệu này, không phải giới hạn tuyệt đối của nhựa.','The 70% floor is a project criterion requested by the website owner, not an ASTM/manufacturer criterion. Higher concentration is not necessarily more aggressive. Cmax means the highest documented concentration for this grade at the entered temperature in this dataset, not an absolute resin limit.'));
- let count=0;
- for(const b of result.groups)for(const g of b.exact?.grades.filter(g=>g.status==='candidate')||[]){count++;const p=testPlan(result,b.brand,g.grade);el(testing,'h3',b.brand+' '+g.grade);
-  if(p.status==='review'||p.status==='unbounded'){el(testing,'p',t('Chưa tính 70% tự động: hỗn hợp hoặc bảng không xác định Cmax hữu hạn cho dung dịch thực. Phòng thử nghiệm phải duyệt thành phần và điều kiện thử.','No automatic 70% calculation: mixture or no finite concentration maximum for the actual solution. A laboratory must approve composition and conditions.'));continue;}
-  el(testing,'p',`Cmax = ${p.cmax}% → 70% × Cmax = ${p.floor}%. ${t('Nồng độ đề nghị để trình duyệt','Concentration proposed for approval')}: max(${p.service}%, ${p.floor}%) = ${p.target}%; ${t('nhiệt độ đối chiếu','screening temperature')}: ${p.temperature} °C.`);
-  el(testing,'p',p.status==='gap'?t('KHÔNG TỰ THỰC HIỆN: nồng độ tính ra nằm ngoài dòng dữ liệu khớp. Không nội suy; cần hãng/phòng thử nghiệm xác nhận.','DO NOT EXECUTE AUTOMATICALLY: the calculated concentration has no matching row. Do not interpolate; obtain manufacturer/laboratory confirmation.'):t('Có dòng dữ liệu nhiệt độ khớp, nhưng đây chỉ là đề nghị cho phòng thử nghiệm duyệt. Cần thử thêm đúng dung dịch vận hành; không thay mẫu thực tế bằng mẫu nồng độ cao hơn.','A matching temperature row exists, but this remains a proposal for laboratory approval. Also test the actual service solution; do not replace it with the higher-concentration specimen.'));
+ function tankOption(section,title,construction,acceptance,url){
+  el(section,'h3',title);
+  el(section,'p',construction);
+  el(section,'p',t('Kiểm tra khi nghiệm thu. ','Acceptance checks. ')+acceptance);
+  if(url)link(section,t('Tham khảo cấu tạo','Construction reference'),url);
  }
- if(!count)el(testing,'p',t('Chưa có mã đủ điều kiện tính Cmax tại nhiệt độ vận hành. Vẫn có thể chuẩn bị mẫu và kế hoạch đo; không tự đặt nồng độ thử từ thông tin còn thiếu.','No grade yet qualifies for Cmax calculation at service temperature. Prepare specimens and the measurement plan, but do not invent test concentrations.'));
- el(testing,'p',t('Kế hoạch đề xuất: phòng thử nghiệm chuẩn bị mẫu đại diện đúng nhựa, veil, phụ gia, chiều dày và lịch đóng rắn; có mẫu đối chứng chưa ngâm. Ghi trạng thái ban đầu; theo dõi ở ngày 1, 3 và 7. Duy trì dung dịch/nhiệt độ theo đề cương đã duyệt, kiểm soát bay hơi và biến đổi nồng độ. Không hướng dẫn khách tự pha hoặc gia nhiệt axit đậm đặc.','Proposed plan: a laboratory prepares representative resin/veil/additive/thickness/cure specimens and unexposed controls. Record baseline, then observe days 1, 3 and 7. Maintain solution and temperature under an approved protocol, controlling evaporation and concentration changes. This is not a customer instruction to mix or heat concentrated acids.'));
- el(testing,'h3',t('Dấu hiệu loại sớm / tạm dừng nghiệm thu','Early rejection / acceptance hold indicators'));
- const failures=[t('Phồng rộp mới, nứt/rạn, bong lớp, lộ sợi, xói mòn hoặc thấm xuyên/rò rỉ.','New blisters, cracks/crazing, delamination, exposed fibers, erosion or through-penetration/leakage.'),t('Bề mặt mềm, dính hoặc mất liên kết rõ rệt so với mẫu đối chứng.','Surface softening, tack or evident bond loss compared with the control.'),t('Thay đổi khối lượng, chiều dày, độ cứng Barcol hoặc cơ tính vượt ngưỡng đã được hai bên/phòng thử nghiệm duyệt trước. Không tự gán một % đạt chung cho mọi hệ.','Mass, thickness, Barcol hardness or mechanical changes exceeding pre-agreed laboratory/project limits. No universal passing percentage is assigned.'),t('Đổi màu hoặc biến màu dung dịch: ghi nhận, điều tra nguyên nhân; không tự coi riêng đổi màu là hỏng kết cấu.','Discoloration of specimen or liquid: record and investigate; color change alone is not automatically structural failure.')];const ul=el(testing,'ul');failures.forEach(x=>el(ul,'li',x));
- el(testing,'p',t('Không thấy dấu hiệu hỏng sau 7 ngày chỉ là vượt qua bước sàng lọc ngắn hạn. Nghiệm thu cuối cùng cần tiêu chí định lượng, thời gian thử phù hợp và hồ sơ thiết kế/thi công; không suy ra bảo hành hoặc tuổi thọ từ phép thử này.','No visible failure after seven days means only that the short screening stage was passed. Final acceptance requires quantitative criteria, suitable exposure duration and design/fabrication records; no service-life or warranty conclusion follows from this test.'));
- link(testing,'ASTM C581 · '+t('phạm vi phép thử','test scope'),sources.astm);
+ if(liners.length||anyQualified){
+  const build=el(root,'section','','ra-card');
+  el(build,'h2',t('Phương án theo loại bồn','Options by tank type'));
+  if(liners.length){
+   const x=result.items[0];
+   el(build,'p',t('Lớp tiếp xúc đề xuất cho ','Suggested contact material for ')+x.name+' '+x.c+'% · '+x.t+' °C');
+   for(const [grade,limit,page] of liners){
+    el(build,'p',grade+' · '+t('Giới hạn tham chiếu của Arkema tại dải nồng độ này: ','Arkema reference limit for this concentration band: ')+limit+' °C.','ra-good');
+    link(build,t('Bảng kháng hóa chất Arkema','Arkema chemical resistance chart'),sources.pvdf+'#page='+page);
+   }
+   el(build,'p',t('Chốt đúng cấp tấm, que hàn và cấu tạo với nhà cung cấp theo nhiệt độ thiết kế và chế độ làm việc.','Confirm the plate and welding rod grades and tank construction with the supplier for the design temperature and duty.'));
+   tankOption(build,t('Bồn rời nhỏ','Small freestanding tank'),
+    t('Chế tạo bồn tấm PVDF hàn kín. Tính chiều dày và gối đỡ theo kích thước, chiều cao chất lỏng và nhiệt độ.','Fabricate a welded PVDF sheet tank. Size the walls and supports for dimensions, liquid head and temperature.'),
+    t('Kiểm tra mẫu hàn, cổ ống và thử kín bồn theo thiết kế.','Inspect weld coupons and nozzles and leak-test the tank to its specification.'),structures.tank);
+   tankOption(build,t('Bồn bê tông','Concrete tank'),
+    t('Ốp tấm PVDF có hệ neo phù hợp, hàn kín mối nối, góc và cổ ống. Khảo sát nền và khe nứt trước khi chọn hệ neo.','Use an engineered anchored PVDF liner with welded seams, corners and penetrations. Inspect the substrate and cracks before selecting the anchors.'),
+    t('Kiểm tra nền, neo và mối hàn. Kiểm tra độ kín lớp lót bằng phương pháp phù hợp với hệ đã chọn.','Inspect the substrate, anchors and welds. Check liner integrity using a method suitable for the selected system.'),structures.concrete);
+   tankOption(build,t('Bồn rời lớn','Large freestanding tank'),
+    t('Dùng bồn hai lớp. PVDF hàn kín bên trong tiếp xúc hóa chất, vỏ FRP bên ngoài chịu lực. Thiết kế liên kết hai lớp, cổ ống và gối đỡ cho tải trọng và giãn nở nhiệt.','Use a dual-laminate tank with a welded PVDF liner in contact with the chemical and a load-bearing outer FRP shell. Design the interface, nozzles and supports for loads and thermal expansion.'),
+    t('Kiểm tra độ kín lớp PVDF, liên kết hai lớp và thử kín bồn hoàn chỉnh theo hồ sơ thiết kế.','Check liner integrity and its bond to the shell, and leak-test the finished tank to its specification.'),structures.dual);
+  }else{
+   el(build,'p',t('Chọn mã ở bảng trên và áp dụng cấu tạo lớp cản ăn mòn, lớp bề mặt và chế độ đóng rắn theo tài liệu của đúng mã.','Select a grade from the table above and follow the corrosion barrier, surface layer and cure requirements for that grade.'));
+   if(result.items.some(item=>item.key==='hf'))el(build,'p',t('Với HF, xác nhận lớp bề mặt và vật liệu gia cường theo chú thích của đúng dòng hóa chất.','For HF, confirm the surface veil and reinforcement against the notes on the matched chemical row.'));
+   tankOption(build,t('Bồn rời nhỏ','Small freestanding tank'),
+    t('Chế tạo bồn FRP có lớp cản ăn mòn phù hợp. Tính chiều dày và gối đỡ theo tải thực tế.','Fabricate an FRP tank with a suitable corrosion barrier. Size walls and supports for operating loads.'),
+    t('Kiểm tra bề mặt, chiều dày, độ đóng rắn và thử kín bồn.','Inspect surface finish, thickness and cure, then leak-test the tank.'));
+   tankOption(build,t('Bồn bê tông','Concrete tank'),
+    t('Bọc lót FRP sau khi kiểm tra độ ẩm, khe nứt và thử bám dính trên nền thực tế.','Apply FRP lining after checking moisture and cracks and testing adhesion on the actual substrate.'),
+    t('Kiểm tra độ bám dính, góc, khe và cổ ống theo quy trình đã duyệt.','Check adhesion, corners, joints and penetrations to the approved procedure.'));
+   tankOption(build,t('Bồn rời lớn','Large freestanding tank'),
+    t('Thiết kế lớp chịu lực riêng theo tải trọng, áp suất hoặc chân không và gối đỡ.','Design the structural laminate separately for loads, pressure or vacuum, and supports.'),
+    t('Kiểm tra chiều dày, độ đóng rắn, mối nối, cổ ống và thử kín theo hồ sơ thiết kế.','Verify thickness, cure, joints and nozzles and leak-test to the design specification.'));
+   link(build,'DERAKANE Fabrication Guide',sources.fabrication);
+  }
+  const testing=el(root,'section','','ra-card');
+  el(testing,'h2',t('Thử ngâm và tiêu chí nghiệm thu','Immersion testing and acceptance'));
+  el(testing,'h3',t('Dấu hiệu không đạt','Rejection indicators'));
+  el(testing,'p',t('Bề mặt phấn hóa, mềm hoặc dính, phồng rộp, nứt, bong lớp, lộ sợi, xói mòn hoặc rò rỉ. Nếu xuất hiện, tạm dừng nghiệm thu để xác định nguyên nhân.','Surface chalking, softening or tack, blistering, cracking, delamination, exposed fibers, erosion or leaks. Suspend acceptance if any appear and investigate the cause.'));
+  el(testing,'p',t('Phòng thí nghiệm thử mẫu đại diện ở nồng độ và nhiệt độ vận hành đã khai báo. Chốt thời gian thử và ngưỡng đo trước khi thử. Mốc 7 ngày dùng để phát hiện hư hỏng sớm.','A laboratory tests representative specimens at the entered service concentration and temperature. Agree duration and acceptance limits in advance. Day seven is an early screening checkpoint.'));
+  if(result.items.length===1){
+   const x=result.items[0];
+   el(testing,'p',t('Điều kiện thử theo vận hành: ','Service test condition: ')+x.name+' '+x.c+'% · '+x.t+' °C. '+t('Ghi nồng độ đo và nhiệt độ thực tế vào biên bản thử.','Record measured concentration and actual temperature in the test report.'));
+  }
+  if(liners.length)el(testing,'p',t('Với hệ PVDF, thử mẫu tấm và mối hàn. Với bồn lót, kiểm tra thêm chi tiết lớp lót và liên kết theo cấu tạo đã chọn.','For PVDF, test sheet and weld specimens. For lined tanks, also verify liner and bond details for the selected construction.'));
+  if(anyQualified){
+   const plans=el(testing,'details');
+   el(plans,'summary',t('Nồng độ thử tăng cường khi có dữ liệu','Additional concentration screening when supported'));
+   el(plans,'p',t('Mốc thử bổ sung theo dự án là ít nhất 70% nồng độ cao nhất có số liệu cho đúng mã tại nhiệt độ đang xét. Phòng thí nghiệm xác nhận điều kiện trước khi thử.','The supplementary project screening floor is 70% of the highest documented concentration for that grade at the stated temperature. The laboratory confirms test conditions before proceeding.'));
+   for(const b of result.groups)for(const g of b.exact?.grades.filter(g=>g.status==='candidate')||[]){
+    const p=testPlan(result,b.brand,g.grade);
+    const value=p.status==='proposed'
+     ? p.target+'% · '+p.temperature+' °C ('+t('70% của ','70% of ')+p.cmax+'% = '+p.floor+'%)'
+     : p.status==='gap'
+      ? t('Mốc tính '+p.target+'% chưa có dòng khớp. Cần xác nhận riêng.','Calculated '+p.target+'% has no matching row. Confirm separately.')
+      : t('Chọn điều kiện thử riêng theo hồ sơ vận hành.','Specify test conditions separately for the operating case.');
+    el(plans,'p',b.brand+' '+g.grade+' · '+value);
+   }
+   link(testing,t('ASTM C581 — đánh giá mẫu laminate FRP','ASTM C581 — FRP laminate specimen evaluation'),sources.astm);
+  }
+ }else if(result.full){
+  const review=el(root,'section','','ra-card');
+  el(review,'h2',t('Phương án cần xác nhận','Material system to verify'));
+  el(review,'p',t('Cần xác nhận hệ lót hoặc vật liệu tiếp xúc theo đúng thành phần, nhiệt độ và chế độ vận hành trước khi chọn cấu tạo bồn.','Confirm a liner or contact material for the exact composition, temperature and duty before selecting the construction.'));
+ }
  const research=el(root,'section','','ra-card');el(research,'h2',t('Giải pháp đặc biệt · tìm tài liệu bổ sung','Special environments · additional evidence'));
- if(result.strict.liners.length){for(const [grade,temp] of result.strict.liners)el(research,'p',`${grade}: ${temp} °C · `+t('chỉ theo dòng nồng độ khớp trong bảng Arkema; cần duyệt toàn hệ lót.','only for the matching Arkema concentration row; complete liner-system approval is required.'));link(research,'Arkema Kynar · PVDF',sources.pvdf);}
- el(research,'p',t('Tài liệu tham khảo. Để có phương án chính xác, cần đối chiếu bản tài liệu hiện hành và xác nhận bằng văn bản của hãng/đơn vị thiết kế theo thành phần, nồng độ, nhiệt độ, pha tiếp xúc, áp suất và cấu tạo thực tế.','Reference information. For an accurate specification, check current documents and obtain written manufacturer/designer confirmation for actual composition, concentration, temperature, phase, pressure and construction.'));
  const aiOutput=el(research,'div','','ra-ai-output');
  const config=global.FRP_ADVISOR_CONFIG||{};
  const endpoint=config.apiUrl||global.FRP_ADVISOR_AI_URL;
@@ -440,9 +507,8 @@ function render(root,input,basis){
  }
  const aiButton=el(research,'button',t('Tìm tài liệu & gợi ý giải pháp','Find evidence & solution options'));aiButton.type='button';aiButton.onclick=search;
  if(!endpoint)unavailable();else if(!anyQualified&&!result.errors.length&&result.items.some(x=>x.name))search();
- const refs=el(root,'section','','ra-card');el(refs,'h2',t('Tài liệu tham khảo & phạm vi','References & scope'));
+ const refs=el(root,'details');el(refs,'summary',t('Tài liệu tham khảo','References'));
  link(refs,'DERAKANE Chemical Resistance Guide · archived manufacturer edition',base.data.rows[0].source);el(refs,'br');link(refs,'SWANCOR Chemical Corrosion Guide 2025',base.data.rows.find(x=>x.brand==='SWANCOR').source);el(refs,'br');link(refs,'DERAKANE Fabrication Guide 2019',sources.fabrication);el(refs,'br');link(refs,'Arkema Kynar Chemical Resistance Chart',sources.pvdf);
- el(refs,'p',t('Bộ bảng nhập nguồn hiện có 89 dòng, 7 hóa chất và 12 dòng hỗn hợp; 3 họ nhựa mỗi hãng. Thiếu dòng không đồng nghĩa không có giải pháp. AI bổ sung tìm kiếm khi kết nối; không bảo đảm tìm hết mọi nguồn trên Internet.','The loaded dataset has 89 rows covering 7 chemicals and 12 mixture rows, with 3 resin families per brand. A missing row does not mean no solution exists. Connected AI adds research; it cannot guarantee exhaustive coverage of the Internet.'));
  const actions=el(root,'div','','ra-actions');const save=el(actions,'button',t('Tải toàn bộ tư vấn HTML','Download complete HTML report'));save.type='button';save.onclick=()=>{const clone=root.cloneNode(true);clone.querySelectorAll('button,.ra-actions').forEach(e=>e.remove());clone.querySelectorAll('details').forEach(e=>e.open=true);const html='<!doctype html><html lang="'+(vi?'vi':'en')+'"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FRP consultation</title><style>body{font:16px/1.65 Arial;color:#143851;background:white;margin:24px auto;padding:16px;max-width:1100px}a{display:inline-block;margin:4px 12px 4px 0;overflow-wrap:anywhere}</style></head><body>'+clone.outerHTML+'</body></html>';const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='FRP-tu-van-chon-nhua.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);};
  const print=el(actions,'button',t('In / Lưu PDF','Print / Save PDF'));print.type='button';print.onclick=()=>{const ds=[...root.querySelectorAll('details')],states=ds.map(x=>x.open);ds.forEach(x=>x.open=true);window.addEventListener('afterprint',()=>ds.forEach((x,i)=>x.open=states[i]),{once:true});window.print();};
  const edit=el(actions,'button',t('Bổ sung thông tin','Add information'));edit.type='button';edit.onclick=()=>location.hash='#ma-tran';
